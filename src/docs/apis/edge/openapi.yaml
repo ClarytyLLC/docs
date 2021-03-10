@@ -3535,22 +3535,19 @@ components:
       type: object
     GetAdminServicesResponse:
       properties:
-        count:
-          description: Total records for the query
-          type: integer
         error:
           $ref: '#/components/schemas/Error'
-        limit:
-          description: the number of applications to return.
-          type: integer
-        offset:
-          description: the number of applications to skip before getting the result
-            set
-          type: integer
         result:
-          items:
-            $ref: '#/components/schemas/ServiceDetail'
-          type: array
+          properties:
+            loadBalancers:
+              items:
+                $ref: '#/components/schemas/LoadBalancerDetail'
+              type: array
+            services:
+              items:
+                $ref: '#/components/schemas/ServiceDetail'
+              type: array
+          type: object
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -5915,6 +5912,17 @@ components:
           format: int64
           type: integer
       type: object
+    LoadBalancerDetail:
+      properties:
+        host:
+          type: string
+        port:
+          type: integer
+        protocol:
+          type: string
+        url:
+          type: string
+      type: object
     OperationSuccess:
       description: If true, the operation was successful.
       type: boolean
@@ -8153,7 +8161,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.2.2215
+  version: 3.15.2.2216
 openapi: 3.0.1
 paths:
   /admin/applications:
