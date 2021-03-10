@@ -37,7 +37,7 @@
 | *engine.max_wait_seconds_for_chunk* | int64 | 1800 |  | The max seconds an engine instance will wait for a chink |
 | *engine_instance.acquire_work.use_txn* | bool | true |  | use a transaction in engine instance acquire work |
 | *engine_instance.default_expiration_secs* | int64 | 21600 |  | Default expiration in seconds for engine instances |
-| *engine_instance.expiration_grace_seconds* | int64 | 900 |  | Grace period after expiration  in seconds an engine_instance should be up before being told to be killed |
+| *engine_instance.expiration_grace_seconds* | int64 | 900 |  | Grace period after expiration in seconds an engine_instance should be up before being told to be killed |
 | *engine_instance.expiration_seconds* | int64 | 3600 |  | Maximum time in seconds an engine_instance should be up |
 | *engine_instance.units_to_process* | int64 | 1 |  | Units of work to get on each call |
 | *handlers.drain.grace_interval_seconds* | int64 | 3600 |  | How many seconds before expiration should the host go into drain mode |
