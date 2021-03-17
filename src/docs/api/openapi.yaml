@@ -8161,7 +8161,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.3.2252
+  version: 3.15.3.2253
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -13771,9 +13771,24 @@ paths:
       schema:
         type: string
     - description: The value should be in [organizationName, organizationID, createdTime,
-        basePriority]
+        basePriority, failed, complete]
       in: query
       name: orderBy
+      schema:
+        type: string
+    - description: DESC/ ASC
+      in: query
+      name: direction
+      schema:
+        type: string
+    - description: Filter by jobStatusCount with startTime
+      in: query
+      name: startTime
+      schema:
+        type: string
+    - description: Filter by jobStatusCount with endTime
+      in: query
+      name: endTime
       schema:
         type: string
   /admin/organizations/create:
