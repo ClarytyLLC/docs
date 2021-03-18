@@ -20,24 +20,14 @@ th { text-align:left; }
 
 It's easy to get started with Veritone aiWARE. Create your free [Veritone Developer account](https://www.veritone.com/devsignup/), then dig in!
 
-<!--
-* [ML Integrator](quickstart/ml-integrator/) &mdash; Building custom Machine Learning solutions for customers with complex data analysis requirements? Let us show you how Veritone can help.
-
-* [ML Explorer](quickstart/ml-explorer/) &mdash; Build intelligence into your own apps with Veritone's Machine Box technology.
-
-* [App Developer](quickstart/app-developer/) &mdash; Learn how to build an AI-powered app that leverages Veritone's CMS/DAM/MAM technology.
-
-* [Engine Developer](quickstart/engine-developer/) &mdash; Start here if you're creating your own cognitive engine(s) and want to know how to leverage aiWARE's runtime platform.
--->
-
 **What Would You Like to Do?**
 
 I would like to: | Suggested entry point:
 -- | ---
-Build custom Machine Learning solutions for audiences <br/>with complex data analysis requirements. | See our [ML Integrator](quickstart/ml-integrator/) quickstart.
-Build AI into standalone apps. | See our [ML Explorer](quickstart/ml-explorer/) quickstart.
-Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](quickstart/app-developer/) quickstart.
-Create custom cognitive engines. | See our [Engine Developer](quickstart/engine-developer/) quickstart.
+Build custom Machine Learning solutions for audiences <br/>with complex data analysis requirements. | See our [ML Integrator](/quickstart/ml-integrator/) quickstart.
+Build AI into standalone apps. | See our [ML Explorer](/quickstart/ml-explorer/) quickstart.
+Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](/quickstart/app-developer/) quickstart.
+Create custom cognitive engines. | See our [Engine Developer](/quickstart/engine-developer/) quickstart.
 
 # Tutorials <!-- {docsify-ignore} -->
 
@@ -194,4 +184,4 @@ Working with Apps <!-- {docsify-ignore} -->
     * OAuth produces the longer JWT. 
 * Understanding app deployment/onboarding: See <https://docs.veritone.com/#/developer/applications/app-tutorial/>
     * Most customer "apps" are customer-hosted (not hosted by Veritone) and integrate to Veritone CMS via the Context Menu Extension mechanism.
-    * [Veritone Essentials](apps/) apps are, of course, Veritone-hosted.
+    * [Veritone Essentials](/apps/) apps are, of course, Veritone-hosted.

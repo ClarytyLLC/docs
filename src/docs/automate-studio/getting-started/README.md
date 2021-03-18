@@ -39,6 +39,7 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
                 <label for="list-item-2"><span class="expandText">Click here to learn how to create a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
+     
                     
 If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
