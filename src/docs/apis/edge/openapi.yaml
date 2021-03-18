@@ -2374,6 +2374,12 @@ components:
         hostID:
           format: uuid
           type: string
+        minioAccessKey:
+          description: If Minio, this is the access key.
+          type: string
+        minioSecretKey:
+          description: If Minio, this is the secret key.
+          type: string
         name:
           description: The name of the resource
           type: string
@@ -6125,6 +6131,12 @@ components:
         hostID:
           format: uuid
           type: string
+        minioAccessKey:
+          description: If Minio, this is the access key.
+          type: string
+        minioSecretKey:
+          description: If Minio, this is the secret key.
+          type: string
         modifiedBy:
           format: uuid
           type: string
@@ -6313,6 +6325,7 @@ components:
       - es
       - redis
       - ceph-fs
+      - minio
       type: string
     SchedulePartDetail:
       properties:
@@ -7832,6 +7845,12 @@ components:
         hostID:
           format: uuid
           type: string
+        minioAccessKey:
+          description: If Minio, this is the access key.
+          type: string
+        minioSecretKey:
+          description: If Minio, this is the secret key.
+          type: string
         name:
           description: The name of the resource
           type: string
@@ -8161,7 +8180,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.3.2256
+  version: 3.15.3.2267
 openapi: 3.0.1
 paths:
   /admin/applications:
