@@ -664,6 +664,13 @@ components:
       schema:
         format: uuid
         type: string
+    Use_Defaults_Optional:
+      description: Indicates if default values should be applied
+      in: query
+      name: useDefaults
+      schema:
+        format: int64
+        type: boolean
     UserID:
       description: ID of User
       in: path
@@ -8180,7 +8187,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.3.2281
+  version: 3.15.4.2282
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -13934,6 +13941,7 @@ paths:
   /admin/resource/create:
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/Use_Defaults_Optional'
     post:
       operationId: create_resource
       requestBody:
