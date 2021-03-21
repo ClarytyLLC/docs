@@ -13,7 +13,8 @@ aiware-agent hub install <path-to-config-file> [flags]
 ### Options
 
 ```
-  -h, --help   help for install
+      --channel string   Install channel for a service
+  -h, --help             help for install
 ```
 
 ### Options inherited from parent commands
