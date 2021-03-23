@@ -13,7 +13,7 @@ For specifications and examples for individual engine capabilities, please see t
 ## Full Specification
 
 The official specification is expressed in [json-schema](https://json-schema.org/) format according to various "validation contracts."
-The individual validation contracts are contained in their own schemas, which use definitions in the [master schema](/schemas/vtn-standard/master.json).
+The individual validation contracts are contained in their own schemas, which use definitions in the [master schema](/schemas/vtn-standard/master.json ':ignore').
 Engine output should express which validation contract(s) it conforms to by including the validation contract identifier in the validationContracts array at the top level of the output.
 
 > The [veritone-json-schemas npm package](https://www.npmjs.com/package/veritone-json-schemas) includes all the vtn-standard json-schemas and tools for validating against them.

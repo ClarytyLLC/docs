@@ -1,6 +1,6 @@
 # Job Quickstart Guide
 
-**NOTE: This Quickstart applies only to V2F (older aiWARE version) and is no longer current.** For the latest Quickstart, see [Working with Jobs](quickstart/jobs/).
+**NOTE: This Quickstart applies only to V2F (older aiWARE version) and is no longer current.** For the latest Quickstart, see [Working with Jobs](/quickstart/jobs/).
 
 ## Getting Started
 
