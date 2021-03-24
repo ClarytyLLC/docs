@@ -115,45 +115,74 @@ To see a list of the available ingestion engines (adapters) in aiWARE, run the f
 
 > You'll commonly use the Webstream Adapter &mdash; with ID `"9e611ad7-2d3b-48f6-a51b-0a1ba40feab4"` &mdash; to pull files from public URIs.
 
-### Example Ingestion Job
+### Example Jobs
 
-The following example assumes that you have already created a TDO with ID `88900861`.
-
-To pull a media file called `s3Test.mp4` (located at `https://s3.amazonaws.com/holdings/s3Test.mp4`) into aiWARE, you could run the following mutation:
+The following example assumes that you have already created a TDO with ID `1100548727`.
 
 ```graphql
-mutation runIngestionJob {
-  createJob(input: {
-    targetId: "88900861",
-    tasks: [{
-      engineId: "9e611ad7-2d3b-48f6-a51b-0a1ba40feab4",
-      payload: {
-        url: "https://s3.amazonaws.com/holdings/s3Test.mp4"
-      }
-    }]
-  }) {
+mutation {
+  launchSingleEngineJob(
+    input: {
+      targetId: "1100548727"
+      engineId:"c0e55cde-340b-44d7-bb42-2e0d65e98255"
+      fields:[]
+    }
+  ) {
     id
+    targetId
+    status
   }
 }
 ```
+?> In the latest aiWARE, there is no need to set `isReprocessingJob:true` when running single-engine jobs of the kind shown above. If you supply a TDO (as a `targetId` value), it is assumed that you are processing the file associated with that TDO.
 
-Once the ingestion job finishes (assuming it completes normally), you can submit the same TDO as part of a cognitive processing job, _without a need to re-ingest the file._
-
-When submitting a TDO that already contains an ingested asset to `createJob()`, it's important that you set the `isReprocessJob` flag to `true`, as shown here:
+To launch a job against a file on the web, run a mutation that looks like this:
 
 ```graphql
-mutation createJob {
-  createJob(input: {
-    targetId: "88900861",
-    isReprocessJob:true
-    tasks: [
-      {
-        engineId: "5e651457-e102-4d16-a8f2-5c0c34f58851"
-      }]}) {
+mutation {
+  launchSingleEngineJob(
+    input: {
+      uploadUrl:"https://s3-wzd-dv-fulfill-or-1.s3-us-west-2.amazonaws.com/HitchhikersGuide.mp4"
+      engineId:"c0e55cde-340b-44d7-bb42-2e0d65e98255"
+      fields:[]
+    }
+  ) {
     id
+    targetId
     status
   }
 }
 ```
 
-!> Failure to set the `isReprocessJob` flag could result in a hung job.
+In both of the above mutations, the job will be mounted on your organization's default cluster, by default. If you want to specify a particular cluster ID to run the job on, you can do it like this:
+
+```graphql
+mutation {
+  launchSingleEngineJob(
+    input: {
+      uploadUrl:"https://s3-wzd-dv-fulfill-or-1.s3-us-west-2.amazonaws.com/HitchhikersGuide.mp4"
+      engineId:"c0e55cde-340b-44d7-bb42-2e0d65e98255"
+      fields: [
+        { fieldName:"clusterId", fieldValue:"rt-1cdc1d6d-a500-467a-bc46-d3c5bf3d6901" }
+      ]
+    }
+  ) {
+    id
+    targetId
+    status
+  }
+}
+```
+
+Configuration fields required by an engine can also be set this way. For example:
+
+```js
+fields: [
+  { fieldName:"inputIsImage", fieldValue:"true" },
+  { fieldName:"minConfidence", fieldValue:"0.5" },
+]
+```
+
+Any special parameter that a cognition engine might need to know about (e.g. `diarise` and `automaticPunctuation` for a transcription engine) should be specified this way.
+
+For detailed information on how to use `launchSingleEngineJob`, see [Single-Engine Jobs](/overview/aiWARE-in-depth/single-engine-jobs?id=single-engine-jobs).
