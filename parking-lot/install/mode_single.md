@@ -17,14 +17,21 @@
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
     export AIWARE_CONTROLLER=http://IP_OF_NODE:9000/edge/v1 # primary ip of the node
+
+    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
+
+    Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
+    you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
+
 3. Run install command
 
     ```bash
     curl -sfL https://get.aiware.com | sh -
     ```
 
-    This will install the aiware-agent as a service.  You can check the status via running `service aiware-agent status` command.
+    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
+    it in realtime with `watch service aiware-agent status`.
 
 4. Validate install
 

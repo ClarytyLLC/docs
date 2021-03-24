@@ -20,7 +20,7 @@ aiware-agent dag download-job-dir [flags]
 
 ```
   -c, --config string             CLI Config file to use.  By default it will be /home/ubuntu/.config/aiware-cli.yaml
-      --controller-token string   Controller URL to use for the CLI.  If specified, this will be used instead of what is in the configuration.
+      --controller-token string   Bearer token to use for authenticating operations.
       --controller-url string     Controller URL to use for the CLI.  If specified, this will be used instead of what is in the configuration. (default "http://localhost:9000/edge/v1")
   -d, --debug                     Enables debug output
       --disable-stdout            When specified the output of the subcommand is not provided through standard output.

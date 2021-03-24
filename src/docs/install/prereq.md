@@ -86,7 +86,7 @@ aiWARE can run on any environment that provides a linux VM.  aiWARE can be infra
 apt-get update -y
 apt-get upgrade -y
 
-# install paclages
+# install packages
 apt-get install -y docker.io nfs-common awscli uuid
 ```
 
