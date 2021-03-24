@@ -144,6 +144,13 @@ This will ensure that all following steps are executed as root.
 
 #### Step 2: Set Up Environment Variables &amp; Directories
 
+To set up the `AIWARE_CONTROLLER` below, you will need the IP address of the "admin node". In a
+single-node system, all nodes, including the "admin node", are this machine. However, you cannot
+use a loopback reference like `localhost` or `127.0.0.1` but must use the actual IP address. To
+get the IP address, run `ifconfig` (if not installed, run `apt-get install -y net-tools`) and
+find the `inet` value of the default ethernet interface. The address will start with `10`, like
+`10.0.2.15`. This should be used as the value of `IP_OF_ADMIN_NODE` in the following configuration.
+
 ```pre
 export AIWARE_MODE=db,controller,engine,prometheus
 export AIWARE_HOST_EXPIRE=false
@@ -1180,7 +1187,7 @@ WHERE build_state = 'deployed'
 
 Grep controller logs to view calls being made (can confirm Relativity’s connection to Edge or if job POST 
 
-`docker logs -tf aiware-controller 2>&1 | grep -i "relativity"`
+`docker logs -tf aiware-controller 2>&1 | grep -i "relativity"`  
 `docker logs -tf aiware-controller 2>&1 | grep -i "Internal Job ID"`
 
 Query DB for tasks with job_id
