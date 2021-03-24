@@ -10,7 +10,7 @@
 | *es_data* | string | /opt/aiware/elasticsearch | _AIWARE_ES_DATA_ | This specifies the filesystem root to use for Elasticsearch |
 | *es_discoverytype* | string | single-mode | _AIWARE_ES_DISCOVERYTYPE_ | The default mode to use for ElasticSearch (single vs cluster) |
 | *es_heapsize* | string | 1g | _AIWARE_ES_HEAPSIZE_ | The heap size to use for ElasticSearch |
-| *es_image* | string | docker.elastic.co/elasticsearch/elasticsearch:7.7.1 | _AIWARE_ES_IMAGE_ | This specifies docker image to use for Elasticsearch |
+| *es_image* | string | registry.central.aiware.com/elasticsearch-core:7.1.1 | _AIWARE_ES_IMAGE_ | This specifies docker image to use for Elasticsearch |
 | *es_master* | bool | true | _AIWARE_ES_MASTER_ | The default node type of new Elasticsearch nodes |
 | *es_memlock* | bool | true | _AIWARE_ES_MEMORYLOCK_ | Allow Elasticsearch JVM to lock the heap in memory through mlockall |
 | *es_port* | int64 | 9200 | _AIWARE_ES_PORT_ | The port to use for Elasticsearch |
