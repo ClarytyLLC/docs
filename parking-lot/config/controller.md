@@ -15,10 +15,12 @@
 | *autoscale.enabled* | bool | false |  | Whether autoscale is enabled |
 | *autoscale.fast_fudge_factor_down* | int64 | 25 |  | Fast auto-scale fudge factor to multiple result by when scaling down |
 | *autoscale.fast_fudge_factor_up* | int64 | 100 |  | Fast auto-scale fudge factor to multiple result by when scaling up |
-| *autoscale.fast_threshold* | int64 | 80 |  | Fast auto-scale threshold is the desired cpu load for the cluster |
+| *autoscale.fast_lower_threshold* | int64 | 60 |  | Fast auto-scale lower threshold is required to have cpu load below this value to scale down |
+| *autoscale.fast_threshold* | int64 | 80 |  | *Deprecated* Fast auto-scale threshold is the desired cpu load for the cluster |
+| *autoscale.fast_upper_threshold* | int64 | 80 |  | Fast auto-scale upper threshold is required to have cpu load above this value to scale up |
 | *autoscale.scale_down_cpu* | int64 | 30 |  | *Deprecated* legacy - CPU usage that triggers scaling down |
 | *autoscale.scale_up_cpu* | int64 | 90 |  | *Deprecated* legacy - CPU usage that triggers scaling up |
-| *autoscale.type* | string | fast |  | Type of auto-scale algorithm (fast) |
+| *autoscale.type* | string | fast |  | *Deprecated* Type of auto-scale algorithm (fast) |
 | *config.refresh_sec* | int64 | 300 |  | The interval to refresh the controller config (sec) |
 | *cron.interval_scheduler_enabled* | bool | false |  | cron interval scheduler enabled. |
 | *cron.interval_scheduler_fast_workers* | int64 | 10 |  | cron interval service number of workers on fast channel |
