@@ -109,3 +109,159 @@
     font-style: italic;
   }
 }
+
+// embed mode
+@media screen and (min-width: 718px) and (max-width: 720px) {
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .sidebar {
+    width: 200px;
+    background: #f4f4f4;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      text-align: left;
+      line-height: 36px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin-left: $unit * 1.5;
+
+      img {
+        height: 24px;
+        margin-right: 8px;
+      }
+
+      .logo-text {
+        color: #2a323c;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0 0 12px 0;
+      }
+    }
+
+    /* For collapsing all but current page */
+    font-family: "Nunito", sans-serif;
+
+    .collapse {
+      border-top: 0.5px solid #d5dfe9;
+
+      ul {
+        display: none;
+      }
+    }
+
+    li {
+      margin: 0;
+
+      a {
+        height: 36px;
+      }
+    }
+
+    /* Top-level ul */
+    .sidebar-nav > ul {
+      margin: 0;
+
+      & > li {
+        margin: 0;
+
+        & > p {
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &::before {
+            content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjQ0MjUgNi40NDI1TDkgOS44Nzc1MUw1LjU1NzUgNi40NDI1TDQuNSA3LjVMOSAxMkwxMy41IDcuNUwxMi40NDI1IDYuNDQyNVoiIGZpbGw9IiM1NTVGN0MiLz4KPC9zdmc+Cg==");
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            padding: 0 7px;
+          }
+
+          &.active {
+            &::before {
+              content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNS41NTc1IDExLjU1NzVMOSA4LjEyMjQ5TDEyLjQ0MjUgMTEuNTU3NUwxMy41IDEwLjVMOSA1Ljk5OTk5TDQuNSAxMC41TDUuNTU3NSAxMS41NTc1WiIgZmlsbD0iIzU1NUY3QyIvPjwvc3ZnPg==");
+            }
+          }
+
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    /* Sub-level ul */
+    .sidebar-nav > ul ul {
+      margin-left: $unit * 4;
+
+      & > li {
+        border-top: none;
+
+        a {
+          font-weight: normal;
+        }
+      }
+
+      p::before {
+        display: none;
+      }
+    }
+
+    .sidebar-nav > ul ul ul {
+      margin-left: $unit * 2;
+    }
+
+    /**
+    * For highlighting the currently selected page
+    * Because the default assumes you only want things highlighted if they don't have any subpages
+    **/
+    ul li .active > a {
+      border: none;
+      color: $secondary;
+    }
+
+    .active {
+      &.engine-developer {
+        & > a,
+        & li.active > a {
+          color: $secondary;
+        }
+      }
+
+      &.ml-integrator {
+        & > a,
+        & li.active > a {
+          color: $accent2;
+        }
+      }
+
+      &.ml-explorer {
+        & > a,
+        & li.active > a {
+          color: $accent3;
+        }
+      }
+
+      &.app-developer {
+        & > a,
+        & li.active > a {
+          color: $accent1;
+        }
+      }
+    }
+
+    /* Provide some differentiation between section headings and sub-pages in the sidebar */
+    .section-link {
+      font-style: italic;
+    }
+  }
+}
