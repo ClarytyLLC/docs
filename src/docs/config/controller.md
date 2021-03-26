@@ -5,7 +5,7 @@
 | *auth.check_enable_sec* | int64 | 300 |  | How often controller checks the authorization is enabled or not (sec) |
 | *auth.enabled* | bool | false |  | If enabled, this flag enables controller authentication/authorization functionality |
 | *auth.redis_watcher.enabled* | bool | true |  | If enabled, casbin enforcer will use redis watcher to synchronize casbin policy across multiple controllers |
-| *auth.redis_watcher.mode* | string | host |  | Redis watcher mode (host or resource) |
+| *auth.redis_watcher.mode* | string | resource |  | Redis watcher mode (host or resource) |
 | *auth.refresh_sec* | int64 | 300 |  | How often controller updates the authorization policy (sec) |
 | *auth.token_types_tocheck_permission_on_orgs* | string | user |  | List of token types that needs to check permission on organizations, it should be separated by commas, looks like: engine_instance, host, api, user |
 | *automate.automate_response_timeout* | int64 | 45 |  | The max wait response time in seconds of node-red request |
