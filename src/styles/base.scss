@@ -54,3 +54,39 @@ p.graphql-link {
     display: none;
   }
 }
+
+// embed mode
+@media screen and (min-width: 718px) and (max-width: 720px) {
+  main {
+    height: 100%;
+  }
+
+  .sidebar {
+    left: 0;
+  }
+  .content {
+    padding-top: 0px;
+    left: 200px;
+    position: fixed;
+    overflow: auto;
+    width: calc(100% - 200px);
+    height: 100%;
+  }
+
+  .hide-in-embed-mode {
+    display: none !important;
+  }
+}
+
+// embed
+@media screen and (max-width: 717px) {
+  .show-in-embed-mode {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .show-in-embed-mode {
+    display: none !important;
+  }
+}

@@ -9,3 +9,8 @@ $grey: #c4c4c4;
 $grey2: #78909c;
 $white: #fff;
 $black: rgba(0, 0, 0, 0.85);
+
+// embed mode
+@media screen and (min-width: 718px) and (max-width: 720px) {
+  $secondary: #1871E8;
+}
