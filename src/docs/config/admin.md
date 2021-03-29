@@ -18,7 +18,7 @@
 | *slack_url* | string | no_url | _AIWARE_SLACK_URL_ | The url to use for notifications |
 | *storage.type* | string | nfs |  | Type of the storage |
 | *token.user.expiration_duration* | string | 24h |  | The expiration time for a user token in duration. This like `1m`, `1h`, ... |
-| *update_host_status.interval_seconds* | int64 | 60 |  | The interval between updates on the agent to controller |
+| *update_host_status.interval_seconds* | int64 | 60 | _AIWARE_AGENT_UPDATE_INTERVAL_ | The interval between updates on the agent to controller |
 | *upgrade.channel* | string | prod | _AIWARE_ADMIN_UPGRADE_CHANNEL_ | This is the channel to use for releases. Default is prod. |
 | *upgrade.enabled* | string | false | _AIWARE_ADMIN_UPGRADE_ENABLED_ | If enabled, upgrade the agents and components to the latest for that channel |
 | *upgrade.interval_seconds* | int64 | 900 | _AIWARE_ADMIN_UPGRADE_INTERVAL_SECONDS_ | If enabled, upgrade the agents and components to the latest for that channel |
