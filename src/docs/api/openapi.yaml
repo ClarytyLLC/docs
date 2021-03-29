@@ -2037,6 +2037,10 @@ components:
         isEnabled:
           description: Is the core enabled
           type: boolean
+        jobPriorityAdjustment:
+          description: Job priority adjustment for the core.
+          format: int64
+          type: integer
         scheduled:
           description: Download scheduled jobs
           type: boolean
@@ -8187,7 +8191,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.15.4.2347
+  version: 3.15.4.2364
 openapi: 3.0.1
 paths:
   /admin/applications:

@@ -15,3 +15,5 @@
 | *es_memlock* | bool | true | _AIWARE_ES_MEMORYLOCK_ | Allow Elasticsearch JVM to lock the heap in memory through mlockall |
 | *es_port* | int64 | 9200 | _AIWARE_ES_PORT_ | The port to use for Elasticsearch |
 | *es_version* | string | 7.7.1 | _AIWARE_ES_VERSION_ | This specifies docker image version to use for Elasticsearch |
+| *install.extensions* | string | pg_stat_statements,pg_trgm,uuid-ossp,hstore,pg_buffercache |  | This will install these extensions on every database created by resources |
+| *name.mode* | bool | true |  | If true, use the name as specified in the config.  This can be a security issue and may cause create databases to fail if that name is already taken. |
