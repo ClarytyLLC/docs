@@ -61,7 +61,7 @@
 | *primary.cleansystem.engine_instance_grace_secs* | int64 | 86400 |  | How long to keep  engine_instance |
 | *primary.cleansystem.engine_instance_set_termination_grace_secs* | int64 | 180 |  | How long since the last the last update to set status to termination. |
 | *primary.cleansystem.host_status_grace_secs* | int64 | 86400 |  | How long to keep  host_status |
-| *primary.cleansystem.interval* | int64 | 900 |  | The time to clean the system in seconds. This value should >= 120 seconds |
+| *primary.cleansystem.interval* | int64 | 300 |  | The time to clean the system in seconds. This value should >= 120 seconds |
 | *primary.cleansystem.task_status_grace_secs* | int64 | 82800 |  | How long to keep task_status |
 | *primary.cleansystem.task_status_limit* | int64 | 10000 |  | How many task status to clean |
 | *primary.cleansystem.task_status_loop_val* | int64 | 5 |  | How many task status loops to try |
