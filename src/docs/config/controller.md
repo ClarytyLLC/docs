@@ -74,9 +74,11 @@
 | *primary.cleantasks.enabled* | int64 | true |  | This enables or disables the processing of cleaning up tasks on the primary controller |
 | *primary.cleantasks.interval* | int64 | 1800 |  | The duration between runs of the cleaning running tasks |
 | *primary.cleantoken.enabled* | bool | true |  | This enables or disables the processing of cleaning up expired/old tokens |
+| *primary.cron.adhoc_chan_size* | int64 | 5000 |  | The size of channel for adhoc parallel processing |
 | *primary.cron.adhoc_enabled* | bool | true |  | On primary, cron adhoc job processing enabled. |
 | *primary.cron.adhoc_interval* | int64 | 20 |  | On primary, the interval for cron to query core for new adhoc jobs.  This can be between 0 and 604800 |
 | *primary.cron.adhoc_job_limit* | int64 | 25 |  | The number of jobs to get a time (via graphql). |
+| *primary.cron.adhoc_num_workers* | int64 | 20 |  | The number of workers for adhoc parallel processing |
 | *primary.cron.adhoc_polling_window* | string | 2h |  | The polling window time to get pending jobs base on createdDateTime via graphql. The value must be a duration string (e.g. 2h, 3h, ...) |
 | *primary.cron.adhoc_task_limit* | int64 | 100 |  | The number of tasks to get in a job (via graphql). |
 | *primary.cron.enabled* | bool | true |  | On primary, is cron services enabled. |
@@ -102,6 +104,7 @@
 | *primary.cron.scheduler.plan_ahead_min* | int64 | 120 |  | On primary, this controls how far the scheduler will create jobs |
 | *primary.cron.scheduler_enabled* | bool | false |  | On primary, cron scheduled job processing enabled. |
 | *primary.cron.transform_interval* | bool | true |  | Transform interval schedules to day of week. |
+| *primary.cron.use_parallel_adhoc* | bool | true |  | On primary, cron adhoc job processing use parallel version. |
 | *primary.cron.use_v3_job_storage* | bool | true |  | If true, store job in v3 format |
 | *primary.db_max_idle* | int64 | 2 |  | Primary - Max idle connections for controller |
 | *primary.db_max_open* | int64 | 10 |  | Primary - Max connections for controller |
