@@ -33,6 +33,7 @@
 | *db_max_open* | int64 | 10 | _AIWARE_DB_MAX_OPEN_ | Max connections for controller |
 | *db_migrate* | bool | false | _AIWARE_DB_MIGRATE_ | If enabled, this flag enables db migration as the first check after connection |
 | *db_port* | int64 | 5432 | _AIWARE_DB_PORT_ | The port to use for the database |
+| *default.max_engines.chunk* | int64 | 100 |  | This is the default value for max_engines on task_route for chunk engines |
 | *engine.default_wait_seconds_for_chunk* | int64 | 1800 |  | The max seconds an engine instance will wait for a chink |
 | *engine.max_chunks_per_work_item* | int64 | 10000 |  | The max chunks a work item can process |
 | *engine.max_processing_seconds_per_work_item* | int64 | 1800 |  | The max processing time a work item can process.  Chunks are not interrupted |
