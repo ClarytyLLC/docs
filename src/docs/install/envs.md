@@ -1,11 +1,26 @@
 # Environment Variables
-These must be set before curl is run to install the agent.
-
-## Environment Variables
+These may be set before the agent installer is run.  At least `AIWARE_MODE` must be set.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| AIWARE_CONTROLLER | nil | URI to controller. Either config or AIWARE_CONTROLLER is required |
+| AIWARE_MODE | nil | This is the mode for the host.  This can be comma separated list of modes.  Valid values are: None (Default), All, Single, Engine, db, Controller, NFS, redis, nsq, api, service, lb | 
+| INSTALL_AIWARE_SKIP_START | False | If true, the installer will not start aiWARE |
+| INSTALL_AIWARE_SKIP_SERVICE | False | If true, the installer will not install aiWARE  as a service |
+| AIWARE_GIT_VERSION | nil | If set, this specifies the git commit to use for the version |
+| INSTALL_AIWARE_VERSION | nil | If set, this is the aiWARE version to use for the install |
+| INSTALL_AIWARE_CHANNEL | prod | This specifies what channel to use for installation.  Options are prod, stage and dev. |
+| INSTALL_AIWARE_BIN_DIR | /usr/local/bin | This specifies the location of the binary directory for aiWARE binaries |
+| INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | This specifies the systemd directory |
+| INSTALL_AIWARE_NAME | agent | This will create the binary as `aiware-agent` |
+| INSTALL_AIWARE_EXEC | nil | These are the arguments for `aiware-agent` |
+| INSTALL_RELEASES_URL | https://get.aiware.com/dist | This is the url the installer will use to download the binaries |
+| INSTALL_RELEASES_URL_PREFIX | dist | this is the prefix used for binaries |
+
+## aiWARE Configuration Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| AIWARE_CONTROLLER | http://_LOCAL_IP_:9000/edge/v1 | URI to controller. Either config or AIWARE_CONTROLLER is required.  This will default to http://_IP_:9000/edge/v1 |
 | AIWARE_LOG_LEVEL | info | The API Token to use with controller |
 | AIWARE_LICENSE | nil | The license key for aiWARE |
 | AIWARE_CORE_TOKEN | nil | Token |
@@ -16,7 +31,7 @@ These must be set before curl is run to install the agent.
 | AIWARE_SLACK_CHANNEL | nil | If enabled, will use the default slack channel |
 | AIWARE_ENVIRONMENT | local | The name of the environment |
 | AIWARE_DB_MIGRATE | Migrate the DB UP first thing |
-| AIWARE_MODE | None | This is the mode for the host.  This can be comma separated list.  Valid values are: None (Default), All, Single, Engine, Database, Controller, NFS, Docker |
+| AIWARE_MODE | None | This is the mode for the host.  This can be comma separated list.  Valid values are: None (Default), All, Single, Engine, Database, Controller, NFS |
 | AIWARE_SERVER_TYPE | Nil | This defaults to the host type from the cloud provider.
 | AIWARE_NFS_ROOT | /data | This is the default directory for serving NFS /cache |
 | AIWARE_RUN_CONFIG | /var/run/aiware-agent.json | |
