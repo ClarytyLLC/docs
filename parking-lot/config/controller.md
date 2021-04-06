@@ -38,6 +38,7 @@
 | *engine.max_chunks_per_work_item* | int64 | 10000 |  | The max chunks a work item can process |
 | *engine.max_processing_seconds_per_work_item* | int64 | 1800 |  | The max processing time a work item can process.  Chunks are not interrupted |
 | *engine.max_wait_seconds_for_chunk* | int64 | 1800 |  | The max seconds an engine instance will wait for a chink |
+| *engine.ttl_padding_in_seconds* | int64 | 300 |  | The minimum time in seconds the engine requires to have before an engine instance expires |
 | *engine_instance.acquire_work.use_txn* | bool | true |  | use a transaction in engine instance acquire work |
 | *engine_instance.default_expiration_secs* | int64 | 21600 |  | Default expiration in seconds for engine instances |
 | *engine_instance.expiration_grace_seconds* | int64 | 900 |  | Grace period after expiration in seconds an engine_instance should be up before being told to be killed |

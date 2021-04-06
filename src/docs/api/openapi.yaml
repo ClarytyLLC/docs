@@ -2148,6 +2148,9 @@ components:
         replacementEngineID:
           format: uuid
           type: string
+        ttlPaddingInSeconds:
+          format: int64
+          type: integer
         validationJSON:
           description: JSON Data for validation
           format: json
@@ -3062,6 +3065,9 @@ components:
         replacementEngineID:
           format: uuid
           type: string
+        ttlPaddingInSeconds:
+          format: int64
+          type: integer
         updateStatusInterval:
           format: int32
           type: integer
@@ -7766,6 +7772,9 @@ components:
         replacementEngineID:
           format: uuid
           type: string
+        ttlPaddingInSeconds:
+          format: int64
+          type: integer
         updateStatusInterval:
           format: int32
           type: integer
@@ -8191,7 +8200,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.1.2417
+  version: 3.16.1.2421
 openapi: 3.0.1
 paths:
   /admin/applications:
