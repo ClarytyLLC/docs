@@ -2581,6 +2581,10 @@ components:
           type: string
         dockerImageName:
           type: string
+        internalPort:
+          description: Internal Service Port
+          format: int64
+          type: integer
         kvpJSON:
           format: json
           type: string
@@ -6703,6 +6707,10 @@ components:
           type: string
         dockerImageName:
           type: string
+        internalPort:
+          description: Internal Service Port
+          format: int64
+          type: integer
         kvpJSON:
           format: json
           type: string
@@ -8200,7 +8208,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.1.2421
+  version: 3.16.1.2423
 openapi: 3.0.1
 paths:
   /admin/applications:
