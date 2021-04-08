@@ -23,6 +23,13 @@ components:
       schema:
         format: uuid
         type: string
+    ApplicationID_Optional:
+      description: ID of Application
+      in: query
+      name: applicationID
+      schema:
+        format: uuid
+        type: string
     ApplicationStatus_Query_Optional:
       description: status
       in: query
@@ -331,6 +338,13 @@ components:
       name: type
       schema:
         $ref: '#/components/schemas/RunModeEnum'
+    InternalAplicationID_Optional:
+      description: Internal ID of Application
+      in: query
+      name: internalApplicationID
+      schema:
+        format: uuid
+        type: string
     InternalOrganizationID_Query_Optional:
       description: ID of Organization.  UUID.  This ID is unique to this aiWARE installation.
       in: query
@@ -1588,6 +1602,9 @@ components:
           description: This is the datetime the core was created
           example: '2018-03-20T09:12:28Z'
           format: date-time
+          type: string
+        internalApplicationID:
+          format: uuid
           type: string
         kvpJSON:
           format: json
@@ -3025,6 +3042,9 @@ components:
         idleTimeout:
           format: int32
           type: integer
+        internalApplicationID:
+          format: uuid
+          type: string
         internalOrganizationID:
           format: uuid
           type: string
@@ -3598,8 +3618,17 @@ components:
       type: object
     GetAdminServicesResponse:
       properties:
+        count:
+          description: Total records for the query
+          type: integer
         error:
           $ref: '#/components/schemas/Error'
+        limit:
+          description: the number of services to return.
+          type: integer
+        offset:
+          description: the number of services to skip before getting the result set
+          type: integer
         result:
           properties:
             loadBalancers:
@@ -3616,8 +3645,21 @@ components:
       type: object
     GetApplicationsResponse:
       properties:
+        count:
+          description: Total records for the query
+          type: integer
         error:
           $ref: '#/components/schemas/Error'
+        limit:
+          description: the number of records to return.
+          type: integer
+        offset:
+          description: the number of records to skip before getting the result set
+          type: integer
+        result:
+          items:
+            $ref: '#/components/schemas/ApplicationDetail'
+          type: array
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -4284,10 +4326,10 @@ components:
         error:
           $ref: '#/components/schemas/Error'
         limit:
-          description: the number of engines to return.
+          description: the number of resources to return.
           type: integer
         offset:
-          description: the number of engines to skip before getting the result set
+          description: the number of resources to skip before getting the result set
           type: integer
         result:
           items:
@@ -6743,6 +6785,9 @@ components:
           type: string
         dockerImageName:
           type: string
+        internalApplicationID:
+          format: uuid
+          type: string
         internalPort:
           description: Internal Service Port
           format: int64
@@ -8285,7 +8330,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.2.2430
+  version: 3.16.2.2431
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -8406,6 +8451,8 @@ paths:
     - $ref: '#/components/parameters/ApplicationType_Query_Optional'
     - $ref: '#/components/parameters/Offset_Query_Optional'
     - $ref: '#/components/parameters/Limit_Query_Optional'
+    - $ref: '#/components/parameters/InternalAplicationID_Optional'
+    - $ref: '#/components/parameters/ApplicationID_Optional'
     - description: The value should be in [applicationName, createdTime]
       in: query
       name: orderBy
@@ -12821,6 +12868,7 @@ paths:
       - engine
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/InternalAplicationID_Optional'
     - $ref: '#/components/parameters/InternalOrganizationID_Query_Optional'
     - $ref: '#/components/parameters/EngineName_Query_Optional'
     - $ref: '#/components/parameters/EngineState_Query_Optional'
@@ -18451,6 +18499,10 @@ paths:
       - admin
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceID_Query_Optional'
+    - $ref: '#/components/parameters/InternalAplicationID_Optional'
+    - $ref: '#/components/parameters/Offset_Query_Optional'
+    - $ref: '#/components/parameters/Limit_Query_Optional'
     - description: Filter by tags
       in: query
       name: tags
