@@ -557,6 +557,12 @@ components:
       schema:
         format: uuid
         type: string
+    ServiceID_Query_Optional:
+      description: service ID
+      in: query
+      name: serviceID
+      schema:
+        type: string
     ServiceInstanceID:
       description: ID of Service Instance
       in: path
@@ -3539,6 +3545,27 @@ components:
       - aws_p3
       - cuda
       type: string
+    GetAdminServiceInstancesByServiceResponse:
+      properties:
+        count:
+          description: Total records for the query
+          type: integer
+        error:
+          $ref: '#/components/schemas/Error'
+        limit:
+          description: the number of service instances to return.
+          type: integer
+        offset:
+          description: the number of service instances to skip before getting the
+            result set
+          type: integer
+        result:
+          items:
+            $ref: '#/components/schemas/ServiceInstanceDetail'
+          type: array
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
     GetAdminServiceInstancesResponse:
       properties:
         count:
@@ -3557,6 +3584,15 @@ components:
           items:
             $ref: '#/components/schemas/ServiceInstanceDetail'
           type: array
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
+    GetAdminServiceResponse:
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
+        result:
+          $ref: '#/components/schemas/ServiceDetail'
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -6776,6 +6812,8 @@ components:
           type: string
         ipAddress:
           type: string
+        isActive:
+          type: boolean
         modifiedDateTime:
           description: This is the datetime the core was last modified.
           example: '2018-03-20T09:12:28Z'
@@ -7989,6 +8027,45 @@ components:
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
+    UpdateServiceDetail:
+      description: This is the update request for a service object
+      properties:
+        channel:
+          type: string
+        dockerImageName:
+          type: string
+        internalPort:
+          description: Internal Service Port
+          format: int64
+          type: integer
+        kvpJSON:
+          format: json
+          type: string
+        serviceCount:
+          type: integer
+        serviceName:
+          type: string
+        serviceType:
+          $ref: '#/components/schemas/ServiceTypeEnum'
+        tags:
+          items:
+            type: string
+          type: array
+      type: object
+    UpdateServiceRequest:
+      properties:
+        service:
+          $ref: '#/components/schemas/UpdateServiceDetail'
+      type: object
+    UpdateServiceResponse:
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
+        result:
+          $ref: '#/components/schemas/ServiceDetail'
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
     UpdateTokenDetail:
       properties:
         accessAllOrganization:
@@ -8208,7 +8285,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.2.2429
+  version: 3.16.2.2430
 openapi: 3.0.1
 paths:
   /admin/applications:
@@ -17416,7 +17493,130 @@ paths:
       - admin
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceID_Query_Optional'
     - $ref: '#/components/parameters/ServiceName_Query_Optional'
+    - $ref: '#/components/parameters/Offset_Query_Optional'
+    - $ref: '#/components/parameters/Limit_Query_Optional'
+    - description: Filter by instance status
+      in: query
+      name: isActive
+      schema:
+        type: string
+  /admin/service/{ServiceID}:
+    get:
+      operationId: get_service
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAdminServiceResponse'
+          description: Successful operation
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This gets the service detail
+      tags:
+      - admin
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceID'
   /admin/service/{ServiceID}/config:
     get:
       operationId: getAdminServiceConfig
@@ -17778,6 +17978,128 @@ paths:
     - $ref: '#/components/parameters/ServiceID'
     - $ref: '#/components/parameters/ConfigSection'
     - $ref: '#/components/parameters/ConfigKey'
+  /admin/service/{ServiceID}/instances:
+    get:
+      operationId: getAdminServiceInstancesByServiceID
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAdminServiceInstancesByServiceResponse'
+          description: Successful operation
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This lists the service instances available by service ID
+      tags:
+      - admin
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceID'
+    - $ref: '#/components/parameters/Offset_Query_Optional'
+    - $ref: '#/components/parameters/Limit_Query_Optional'
+    - description: Filter by instance status
+      in: query
+      name: isActive
+      schema:
+        type: string
   /admin/service/{ServiceID}/resources:
     get:
       operationId: get_resources_for_service
@@ -17893,6 +18215,128 @@ paths:
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
     - $ref: '#/components/parameters/ServiceID'
+  /admin/service/{ServiceID}/update:
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ServiceID'
+    post:
+      operationId: update_service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceRequest'
+        description: The fields for a service
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateServiceResponse'
+          description: Result of the Update Service API
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This API updates a service.
+      tags:
+      - admin
   /admin/services:
     get:
       operationId: get_services
