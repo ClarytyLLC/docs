@@ -8330,9 +8330,124 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.2.2434
+  version: 3.16.2.2436
 openapi: 3.0.1
 paths:
+  /admin/application/{ApplicationID}/detail:
+    get:
+      operationId: getAdminApplicationDetail
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminApplicationGetDetailResponse'
+          description: Successful operation
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This provides information on the given application.
+      tags:
+      - admin
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/ApplicationID'
   /admin/applications:
     get:
       operationId: get_applications
@@ -8694,121 +8809,6 @@ paths:
       summary: This deletes an application
       tags:
       - admin
-  /admin/applications/{ApplicationID}/detail:
-    get:
-      operationId: getAdminApplicationDetail
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AdminApplicationGetDetailResponse'
-          description: Successful operation
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        400:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Invalid argument.  Please see the error response for more information.
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        401:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not authorized
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        403:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Forbidden
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        404:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not Found
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        405:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: The request is not allowed.
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        429:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Too Many Requests
-          headers:
-            Retry-After:
-              $ref: '#/components/headers/CorrelationId'
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        501:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not Implemented
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        503:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: System Unavailable
-          headers:
-            Retry-After:
-              $ref: '#/components/headers/CorrelationId'
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-      security:
-      - api_key: []
-      summary: This provides information on the given application.
-      tags:
-      - admin
-    parameters:
-    - $ref: '#/components/parameters/CorrelationID'
-    - $ref: '#/components/parameters/ApplicationID'
   /admin/applications/{ApplicationID}/update:
     parameters:
     - $ref: '#/components/parameters/ApplicationID'
