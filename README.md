@@ -196,6 +196,23 @@ docker run -it --rm -p 9000:9000 docs:latest
 
 This is for local testing only.  Production builds happen through Jenkins.
 
+## Troubleshooting
+If you run into issues with running Docsify, refer the below list of known issues:
+
+```
+$ yarn serve
+yarn run v1.22.10
+$ docsify serve ./build-${ENVIRONMENT:-local}
+env: node\r: No such file or directory
+error Command failed with exit code 127.
+
+# Fix
+vi node_modules/docsify-cli/bin/docsify
+:set ff=unix
+:wq
+```
+ 
+
 ## License
 
 Copyright 2017, Veritone Inc.

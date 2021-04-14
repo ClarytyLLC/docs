@@ -45,6 +45,7 @@
     - [Sizing](/install/sizing.md)
     - [Install Environment Variables](/install/envs.md)
     - [Install](/install/install.md)
+    - [Install](/install/anywhere.md)
     - [Install Single Computer](/install/mode_single.md)
     - [Install Cluster](/install/mode_two_node.md)
     - [Validate Install](/install/validate.md)
