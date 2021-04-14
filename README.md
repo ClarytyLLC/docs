@@ -31,6 +31,7 @@ Veritone Docs is a static site built using Markdown files and powered by [Docsif
 The first time you run after cloning the repository to your machine, you need to do the following to bootstrap the build:
 ```bash
 nvm install
+npm install -g yarn
 yarn install
 yarn build
 yarn start
