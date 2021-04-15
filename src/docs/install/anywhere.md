@@ -11,7 +11,7 @@ To install aiWARE Anywhere on your local environment.
 ## Installation
 
 ```
-curl https://get.aiware.com/anywhere | sh - 
+curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere | sh - 
 ```
 
 ## Appendix 
