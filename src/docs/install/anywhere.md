@@ -23,8 +23,7 @@ Note: This method will delete any local Docker images related to aiWARE Anywhere
 ### Step By Step Installation
 This will take you through a guided installation of aiWARE Anywhere. Start off by running the following: 
 ```
-curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere -O
-sh anywhere
+sh <(curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere)
 ```
 The first couple of steps involve clean-up of an existing environment. If you have been running aiWARE Anywhere and want to start afresh, enter 'y' for the following steps. Otherwise, enter 'n'.
 ```
