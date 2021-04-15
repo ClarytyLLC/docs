@@ -6,12 +6,23 @@ To install aiWARE Anywhere on your local environment.
 
 * Docker with 2 CPUs and 4GB of RAM
 * Node v12
+* Golang
+* Git
 * OS: Mac, Ubuntu 18.04, Ubuntu 20.04
 
 ## Installation
 
+### Automated Installation
+This installation will go through an automated run of deployment. Please run this in an empty directory as this script does perform some clean-up. 
 ```
 curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere | sh - 
+```
+
+Note: This method will delete any local Docker images related to aiWARE Anywhere. If you don't intend to do this, run through the step by step installation.
+
+### Step By Step Installation
+```
+curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere -O
 ```
 
 ## Appendix 
