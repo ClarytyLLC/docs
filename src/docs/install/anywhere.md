@@ -21,9 +21,50 @@ curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere | sh -
 Note: This method will delete any local Docker images related to aiWARE Anywhere. If you don't intend to do this, run through the step by step installation.
 
 ### Step By Step Installation
+This will take you through a guided installation of aiWARE Anywhere. Start off by running the following: 
 ```
 curl https://aiware-prod-public.s3.us-east-2.amazonaws.com/anywhere -O
+sh anywhere
 ```
+The first couple of steps involve clean-up of an existing environment. If you have been running aiWARE Anywhere and want to start afresh, enter 'y' for the following steps. Otherwise, enter 'n'.
+```
+
+        _                                        
+       (_)                                       
+   __ _ ___      ____ _ _ __ ___                 
+  / _` | \ \ /\ / / _` | '__/ _ \                
+ | (_| | |\ V  V / (_| | | |  __/                
+  \__,_|_| \_/\_/ \__,_|_|  \___|                
+                            | |                  
+   __ _ _ __  _   ___      _| |__   ___ _ __ ___ 
+  / _` | '_ \| | | \ \ /\ / / '_ \ / _ \ '__/ _ \
+ | (_| | | | | |_| |\ V  V /| | | |  __/ | |  __/
+  \__,_|_| |_|\__, | \_/\_/ |_| |_|\___|_|  \___|
+               __/ |                             
+              |___/                              
+
+[INFO]  Performing preinstall checks.
+[INFO]  Press any key to continue
+[INFO]  Preinstallation cleanup
+[INFO]  Stop and remove existing containers? (y/n)
+y
+[INFO]  Remove images? (y/n)
+y
+WARNING! This will remove all local volumes not used by at least one container.
+Are you sure you want to continue? [y/N] y
+```
+The next question deals with downloading assets for aiWARE Anywhere. You can build assets locally (with the proper permissions). The default option here is `pkg_build` which will download nightly builds of the supporting Anywhere services to your machine:
+```
+[INFO]  Cleaning up /tmp/root
+[INFO]  Creating /tmp/root
+[INFO]  Core setup.
+[INFO]  How do you want to setup core?
+1) pull_images
+2) build_locally
+3) pkg_install
+3
+```
+
 
 ## Appendix 
 
