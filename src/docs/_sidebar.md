@@ -50,6 +50,7 @@
     - [Install Cluster](/install/mode_two_node.md)
     - [Validate Install](/install/validate.md)
     - [Usage Reporting](/install/usage.md)
+    - [Maintenance](/install/maintenance.md)
   - [aiWARE In-Depth](/overview/aiWARE-in-depth/) <!-- rewrite this section -->
     - [Installation](/overview/aiWARE-in-depth/edge-installation)
     - [GPU Support](/overview/aiWARE-in-depth/gpu-support.md)
