@@ -2617,6 +2617,8 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
@@ -6809,6 +6811,8 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
@@ -6875,6 +6879,11 @@ components:
         serviceName:
           type: string
       type: object
+    ServiceStatusEnum:
+      enum:
+      - running
+      - stopped
+      type: string
     ServiceTypeEnum:
       enum:
       - http_service
@@ -8092,6 +8101,8 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
@@ -8330,7 +8341,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.3.2466
+  version: 3.16.3.2469
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
