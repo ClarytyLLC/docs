@@ -30,7 +30,7 @@
 
 
 - [Getting Started](/tbd/)
-    - [For Begginers](/quickstart/app-developer/)
+    - [For Beginners](/quickstart/app-developer/)
     - [For Application Developers](/quickstart/app-developer/)
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
@@ -40,7 +40,7 @@
 - [aiWARE](/overview/)
   - [What is aiWARE?](/tbd/)
   - [Getting Started](/tbd/)
-  - [Installation Guide](/tbd/) <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
+  - ###### [Installation Guide](/tbd/) <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
     - [Prerequisites](/install/prereq.md)
     - [Sizing](/install/sizing.md)
     - [Install Environment Variables](/install/envs.md)
@@ -133,6 +133,10 @@
     - [The Basics](/automate-studio/Training/crawl)
     - [Working with Flows](/automate-studio/Training/walk/README.md)
     - [Cognition within a Flow](/automate-studio/Training/run/run)
+    - Introduction to Automate Course
+      - [Unit 1: Introduction to aiWARE and Cognitive Engines](/automate-studio/Training/intro-to-automate/unit-1.md) 
+      - [Unit 2: Using Automate Studio](/automate-studio/Training/intro-to-automate/unit-2.md)
+      - [Unit 3: aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Tutorials](/automate-studio/tutorials/automate-tutorials)
     - [Orchestrating AI with a Flow](/automate-studio/tutorials/orchestrating-ai.md)
     - [Create aiWARE Custom API Endpoints](/automate-studio/tutorials/your-ai-flow.md)
@@ -193,7 +197,6 @@
   - [OAuth](/developer/applications/oauth.md)
   - [Resources](/developer/applications/resources.md)
   - [FAQ](/developer/applications/faq.md)
-
 
 - [Working with Structured Data](/developer/data/)
   - [Quickstart](/developer/data/quick-start/)
