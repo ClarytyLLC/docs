@@ -62,7 +62,6 @@
     - [Stream Ingestor 2](/overview/aiWARE-in-depth/stream-ingestor)
     - [More About aiWARE](/overview/aiware-features.md)
     - [aiWARE Architecture](/overview/architecture-overview/)
-    - [Build with aiWARE](/developer/)
     - [Path to Monetization](/developer/engines/getting-started/path-to-monetization/)
     - [Support](/developer/engines/getting-started/support/)
     - [Technologies Used](/developer/engines/getting-started/technologies/)
@@ -244,4 +243,4 @@
   - [CLI](/cli/aiware-agent.md)
 - [Resources](/resources/)
   - [Data Science](/developer/resources/)
-- [Developer Terms & Conditions](<https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf>)
+- [Developer Terms & Conditions](/developer/terms-and-conditions) <!-- <https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf> -->
