@@ -2623,6 +2623,8 @@ components:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     CreateServiceInstanceDetail:
       properties:
@@ -6817,6 +6819,8 @@ components:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     ServiceID:
       description: Service ID
@@ -8107,6 +8111,8 @@ components:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     UpdateServiceRequest:
       properties:
@@ -8341,7 +8347,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.3.2481
+  version: 3.16.3.2482
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
