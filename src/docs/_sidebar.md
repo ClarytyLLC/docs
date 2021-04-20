@@ -248,4 +248,4 @@
     - [Objectbox](/developer/machine-box/boxes/objectbox)
     - [Fakebox](/developer/machine-box/boxes/fakebox)
 - [Benchmark (BETA)](/benchmark/)
-- [Developer Terms & Conditions](<https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf>)
+- [Developer Terms & Conditions](https://docs.veritone.com/#/developer/terms-and-conditions)
