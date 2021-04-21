@@ -2,6 +2,10 @@
 
 Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
 
+If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
+
+Navigate to [automate.veritone.com](https://automate.veritone.com)
+
 ## Step 0: Learn about the Building Blocks
 
 Before we create a flow, let's quickly look at the main concepts you need to know about. This only takes a second!
@@ -17,12 +21,99 @@ The main concepts you need to know about are:
 1. **Nodes:** These are the button-like shapes in the editor that represent discrete steps in your flow.
 2. **Wires:** These are the lines that connect the nodes together.
 3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
-4. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
-5. **Flow Engines:** After a flow is created, it can be built, deployed, and run as an _engine_ in aiWARE. (This is a more advanced topic, but we will get to it shortly.)
+4. **Subflow:** A group of nodes presented as a node in the palette which can be reused in the main flow.
+5. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
+6. **Flow Engines:** After a flow is created, it can be built, deployed, and run as an _engine_ in aiWARE. (This is a more advanced topic, but we will get to it shortly.)
 
-> **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
+<!-- > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
 
-![node-hover](node-hover-1.png)
+![node-hover](node-hover-11.png) -->
+
+
+### Nodes 
+
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-1.1">
+                <label for="list-item-1.1"><span class="expandText">Click here to learn about nodes </span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li>
+
+
+?>Nodes are the main development tool in **Automate Studio**. 
+A node can be defined as an autonomous mini web app with a user friendly **_UI_** and **_NodeJS_** backend server. 
+Each node is developed to take care of a certain part of the large app (flow). For better orientation, they are divided into multiple categories. In Automate Studio, we can define three high level categories:
+
+1. **aiWERE**: The aiWERE nodes are developed by the **Veritone team** to simplify the usage of AI technology by bringing it down to low code.
+They can be recognized by the sky-blue color and the Veritone logo on the right or left side of the node. The aiWARE nodes are divided into three categories: **aiWARE common**, **aiWARE data lake** and **aiWARE tools**
+
+![aiware-nodes](aiware-nodes.png)
+
+2. **Node-Red core**: The native Node-Red nodes. They cover almost every basic and many advanced backend processes in a NodeJS application. 
+You can find more info about Node-Red core nodes [here](https://nodered.org/docs/user-guide/nodes)
+
+3. **Third party nodes**: Node-Red is an open source community with many contributors that generousely share their node packages.
+Any of the node packages can be installed in Automate Studio in a few simple steps:
+
+Click on the `Menu` button on the top left corner and select `Settings` on the bottom of the menu
+
+![menu-settings1](menu-settings1.png)
+
+Next, in the `User Settings` menu click on the `Palette` in the left menu. Then, in the `search bar` type the package name you would liek to install. The packages will be rendered in the section below the search bar. Once you find the desired package, just click the `install` button. Then submit by clicking on `Install` again. Within a few seconds the nodes will be available in the palette.
+
+![user-settings-palette1](user-settings-palette1.png)
+
+
+?>**Veritone** is contributing to the Node-Red community as well. To see the latest versions of the npm package visit [@veritone/node-red-contrib-aiware](https://flows.nodered.org/node/@veritone/node-red-contrib-aiware).
+To see the source code, please visit our [github repo](https://github.com/veritone/node-red-contrib-aiware)
+
+
+### Nodes Are Easy To Work On. 
+
+To add a certain functionality to your flow, just pick the right node from the palette, drag and drop it to the editor. 
+The node specifications and description, as well as requirements, expected input and output and more info are all available in the node-info section on the right side of the screen. 
+
+1. Locate the aiWARE common category in the node palette.
+2. Drag the `aiware email` node from the node palette to the canvas, and let go of the mouse.
+![drag-and-drop-node](drag-and-drop-node.gif)
+
+The next step is understanding the node structure and functionalities:
+
+1. **Select and unselect node:** Node is selected by a single click anywhere on the node. The orange border should appear. Unselect the node by clicking anywhere on the canvas. Multiple nodes are selected by holding the `ctrl` button on the keybord.
+2. **Node port:** The grey square on the left side of the node. It is used to connect the node to a previous node(s) using the wires. 
+3. **Node output on success:** The upper grey square on the right side of the node.
+4. **Node output on failure (error):** The bottom grey square on the right side of the node.
+5. **Node name on canvas:** The name of the node on the canvas. Usually, it defaults to the node name on the palette, and can be changed in the node UI settings
+6. **Node icon:** The Icon on the right or left side of the node. In aiWARE nodes, it defaults to the **Veritone** logo. The icon can be changed in the appearance section in the node UI.
+![node-structure](node-structure.png)
+
+If we double click on the node, the **Node UI editor** will slide in from right to left. This is where we manage the node properties, add description or modify the appearance. Each node has its own properties based on its purpose and functionality. This part is fully covered in the **aiWARE node help** section. 
+![node-ui](node-ui.png)
+
+Finally, as mentioned above, the right side of the screen is reseved for node info. The node specifications and description, as well as requirements, expected input and output and more info are all available there. This part is especialy helpful during development, as it contains all required information without leaving your workstation
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+### Flow 
+
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-1.2">
+                <label for="list-item-1.2"><span class="expandText">Click here to learn about flow </span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li>
+
+
+?>As a standalone entity, nodes are not very useful. They represent just a smal part of a large application. In order to make the nodes do something meaningful, they need to be logically connected and optionally pass data to each other. Two or more connected nodes, or how we like to call it - _wired_ nodes, represent a **Flow**. 
+
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
 
 </li>                  
 </ul>
@@ -40,7 +131,12 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
                 <ul>
                     <li>
      
+
                     
+
+
+
+
 If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
 Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper right corner of that page, click the Create New Flow button.
@@ -66,6 +162,9 @@ You've got the basics, now let's start building out our flow &mdash; and test it
                 <ul>
                     <li>
                     
+
+
+
 ### Nodes Are Easy to Work With
 
 &#9642; To put a node in your graph, just drag any node from the node palette to the canvas, and let go of the mouse.
