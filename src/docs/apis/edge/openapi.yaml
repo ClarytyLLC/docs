@@ -2617,10 +2617,14 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     CreateServiceInstanceDetail:
       properties:
@@ -6809,10 +6813,14 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     ServiceID:
       description: Service ID
@@ -6875,6 +6883,11 @@ components:
         serviceName:
           type: string
       type: object
+    ServiceStatusEnum:
+      enum:
+      - running
+      - stopped
+      type: string
     ServiceTypeEnum:
       enum:
       - http_service
@@ -8092,10 +8105,14 @@ components:
           type: string
         serviceType:
           $ref: '#/components/schemas/ServiceTypeEnum'
+        status:
+          $ref: '#/components/schemas/ServiceStatusEnum'
         tags:
           items:
             type: string
           type: array
+        webSocketEnabled:
+          type: boolean
       type: object
     UpdateServiceRequest:
       properties:
@@ -8330,7 +8347,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.2.2448
+  version: 3.16.4.2487
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:

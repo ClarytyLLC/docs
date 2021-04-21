@@ -205,7 +205,6 @@
   - [FAQ](/developer/applications/faq.md)
 - [Working with Structured Data](/developer/data/)
   - [Quickstart](/developer/data/quick-start/)
-- [Clarity (BETA)](/benchmark/)
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
@@ -241,6 +240,7 @@
     - [DB](/config/db.md)
     - [NFS](/config/nfs.md)
     - [Registry](/config/registry.md)
+- [Clarity (BETA)](/benchmark/)
 - [Resources](/resources/)
   - [Data Science](/developer/resources/)
-- [Developer Terms & Conditions](/developer/terms-and-conditions) <!-- <https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf> -->
+- [Developer Terms & Conditions](/overview/terms-and-conditions)
