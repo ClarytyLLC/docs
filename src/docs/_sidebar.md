@@ -30,15 +30,15 @@
 
 
 - [Getting Started](/quickstart/)
-    - [For Beginners](/page-under-construction/)
+    - [For Beginners](/page-under-construction)
     - [For Application Developers](/quickstart/app-developer/)
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
     - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    - [For Administrators](/page-under-construction/) <!-- change to IT or DevOps? -->
+    - [For Administrators](/page-under-construction) <!-- change to IT or DevOps? -->
 - [aiWARE](/overview/)
-  - [Getting Started](/page-under-construction/)
-  - [Installation Guide](/page-under-construction/) <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
+  - [Getting Started](/page-under-construction)
+  - [Installation Guide](/page-under-construction) <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
     - [Prerequisites](/install/prereq.md)
     - [Sizing](/install/sizing.md)
     - [Install Environment Variables](/install/envs.md)
@@ -137,7 +137,7 @@
       - [Veritone Applications](/apps/)
 - [Automate Studio](/automate-studio/)
   - [Getting Started](/automate-studio/getting-started/README)
-  - [Automate Traininig Course](/page-under-construction/)
+  - [Automate Traininig Course](/page-under-construction)
     - [Unit 1: Introduction to aiWARE and Cognitive Engines](/automate-studio/Training/intro-to-automate/unit-1.md) 
     - [Unit 2: Using Automate Studio](/automate-studio/Training/intro-to-automate/unit-2.md)
     - [Unit 3: aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
@@ -220,7 +220,7 @@
       - [Posting Engine Results](/apis/tutorials/engine-results.md)
       - [Lookup Available Engines](/apis/tutorials/get-engines.md)
       - [Error Handling in the GraphQL API](/apis/tutorials/graphql-error-handling.md)
-  - [Edge APIs](/page-under-construction/)
+  - [Edge APIs](/page-under-construction)
     - [REST](/api/md/docs-md/README.md)
     - [Golang API](/api/golang/README.md)
       - [Admin API](/api/golang/docs/AdminApi.md)
@@ -233,7 +233,7 @@
     - [JS API](/api/js/README.md)
     - [Python API](/api/python/README.md)
   - [CLI](/cli/aiware-agent.md)
-  - [Configuration](/page-under-construction/)
+  - [Configuration](/page-under-construction)
     - [Admin](/config/admin.md)
     - [Controller](/config/controller.md)
     - [DB](/config/db.md)
