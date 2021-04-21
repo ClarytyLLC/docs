@@ -248,4 +248,4 @@
     - [Objectbox](/developer/machine-box/boxes/objectbox)
     - [Fakebox](/developer/machine-box/boxes/fakebox)
 - [Benchmark (BETA)](/benchmark/)
-- [Developer Terms & Conditions](/developer/terms-and-conditions)
+- [Developer Terms & Conditions](/overview/terms-and-conditions)
