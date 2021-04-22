@@ -2639,6 +2639,11 @@ components:
         serviceID:
           format: uuid
           type: string
+        serviceInstanceID:
+          description: Optional service instance ID. If it's empty the controller
+            will generate a new ID.
+          format: uuid
+          type: string
       type: object
     CreateServiceRequest:
       properties:
@@ -8347,7 +8352,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.4.2489
+  version: 3.16.4.2495
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
