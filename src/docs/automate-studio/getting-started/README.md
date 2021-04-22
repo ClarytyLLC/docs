@@ -54,7 +54,7 @@ You can find more info about Node-Red core nodes [here](https://nodered.org/docs
 3. **Third party nodes**: Node-Red is an open source community with many contributors that generousely share their node packages.
 Any of the node packages can be installed in Automate Studio in a few simple steps:
 
-Click on the `Menu` button on the top left corner and select `Settings` on the bottom of the menu
+Click on the `Menu` button on the upper left corner and select `Settings` on the bottom of the menu
 
 ![menu-settings1](menu-settings1.png)
 
@@ -84,12 +84,14 @@ The next step is understanding the node structure and functionalities:
 4. **Node output on failure (error):** The bottom grey square on the right side of the node.
 5. **Node name on canvas:** The name of the node on the canvas. Usually, it defaults to the node name on the palette, and can be changed in the node UI settings
 6. **Node icon:** The Icon on the right or left side of the node. In aiWARE nodes, it defaults to the **Veritone** logo. The icon can be changed in the appearance section in the node UI.
-![node-structure](node-structure.png)
+7. **Node changes indicator:** When initially added, or any changes have been applied to the node, a blue circle will appear on the upper right corner of the node. It indicates that the current changes have not been saved yet, and will not be reflected in runtime. The changes are saved automatically, so once the blue circle disappears it means that our changes are registred.
+8. **Node misconfiguration indicator:** Tipically, nodes have user input validation added by the node developer. If the node is save with invalid changes, a red trianlge will appear in the upper right corner. We can see which validations failed by hovering the red triangle.
+![node-structure](node-structure.png)![node-save-and-error](node-save-and-error.png)
 
 If we double click on the node, the **Node UI editor** will slide in from right to left. This is where we manage the node properties, add description or modify the appearance. Each node has its own properties based on its purpose and functionality. This part is fully covered in the **aiWARE node help** section. 
 ![node-ui](node-ui.png)
 
-Finally, as mentioned above, the right side of the screen is reseved for node info. The node specifications and description, as well as requirements, expected input and output and more info are all available there. This part is especialy helpful during development, as it contains all required information without leaving your workstation
+Finally, as mentioned above, the right side of the screen is reseved for node info. The node specifications and description, as well as requirements, expected input and output and more info are all available there. This part is especialy helpful during development, as it contains all required information without leaving your workstation.
 
 </li>                  
 </ul>
@@ -107,6 +109,77 @@ Finally, as mentioned above, the right side of the screen is reseved for node in
 
 
 ?>As a standalone entity, nodes are not very useful. They represent just a smal part of a large application. In order to make the nodes do something meaningful, they need to be logically connected and optionally pass data to each other. Two or more connected nodes, or how we like to call it - _wired_ nodes, represent a **Flow**. 
+
+Automate Studio provides a rich list of ready-to-use flows, which we call **Templates**. Templates are developed by **Veritone development team** and provide an excellent starting point for begginers, and with a very few modifications it can be adapted to fit a variaty use cases. 
+
+This section will cover the basics. Advanced tutorial can be found in the sections below.
+
+Before we begin, please make sure you are at the [Automate Studio Home Page](https://automate.veritone.com)
+
+New flow can be created from scratch, or using a `Template` from **Veritone Template Gallery**. 
+1. To create a new tamplate from scratch, click on the `Add new` button in the upper left corner. In the menu, click on `New`.
+2. To create new flow from **Veritone Template Gallery**, click on the `Templates` button. Next, click on the desired flow. The flow description will slide in from right to left. Click on the `Create Flow From Template` button. 
+
+![new-flow-from-template](new-flow-from-template.png)
+
+**Flow name:** If new flow is created from scratch, the flow name defaults to `Untitled Flow`. If new flow is created from template, the flow name defaults to the template name. The flow name can easily be changed in few simple steps:
+1. Click on the flow name on the upper left corner. A modal will appear in the center of your screen.
+2. Type the desired name and submit by clicking on the `Update` button.
+> **Tip:** Choose a meaningful name for your flow. Ideally, the name will describe what the flow should be used for.
+
+![Editing the flow name](untitled-flow.png)
+
+**Flow state:** Flows have a binary state: Active or Not Active. A flow is considered active if it has a deployed revision (which means it has a deployed build too). Initially, the flow status is `AVAILABLE`, which means it is available in the search list and can be edited, but cannot be triggered and run jobs. The overal flow state info, as well as Builds, Status and more can be found on the *Flow Details Page* by clicking on the `Flow Details` button on the upper left corner of the Automate Studio workspace. More about this topic will be discussed in the sections below.
+ 
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+### Subflow 
+
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-1.3">
+                <label for="list-item-1.3"><span class="expandText">Click here to learn about flow </span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li>
+
+?>Flow can be as simple as three nodes wired up together. But imagine a complex flow made of twenty, or maybe thirty nodes on your canvas. And all the wires between them... A bit messy, isn't it? Luckily, there is a quick way to organize even the most complex flow by separating it into distinct sections such that each section addresses a separate concern. This can be easily achieved by adding **Subflows** to our flow.
+
+A subflow is a collection of nodes that are collapsed into a single node in the workspace.
+They can be used to reduce some visual complexity of a flow, or to package up a group of nodes as a reusable flow used in multiple places.
+Once created, the subflow is added to the palette of available nodes. Individual instances of the subflow can then be added to the workspace just like any other node.
+
+The following example runs some analysis on _Engine result_ converted to CSV, and sends an email with the results presented as Bar Charts ( It literally took less then 5 minutes to create this flow. Amazing, isn't it? ). Even though it is definitely not the most complex flow we will see or create, we will use it for the example to keep things simple and straight forward. 
+![subflow-1](subflow1.png)
+
+Lets take a look closer and understand what parts this flow is built of.
+1. We have the **aiware in** to inject the input data.
+2. Next, without going into what the next 5 nodes do low level, we can say that in general they *Create the Email output*
+3. Finally, we have the nodes that are responsible to get the user details and send the email. 
+![subflow-2](subflow2.png)
+
+Lets create a subflow and try to reduce the complexity of this flow:
+A subflow can be created by selecting the ‘Subflow -> Create subflow’ option in the menu. This will create a blank subflow and open it in the workspace.
+![create-subflow](create-subflow.png)
+Now lets rename the subflow. Click on the edit properties button in the upper left corner of the editor. The properties editor will slide in from the right.
+In the `Name` input type "Create email output" and click `Done`
+
+Next, in order to make the subflow be able to receive input data, locate the `inputs:` option next to the `edit properties` button and click on the `1` button.
+
+Lets add an output as well by clicking once on the `+` (plus) button.
+
+Next, we will go back to the flow and select all the nodes from the second row and 'cut' them with `ctrl` + `x`
+
+Then we go back to the subflow and paste them with `ctrl` +  `v`. Once done, just connect the `input` first node *port*. Then connect the `output` node to the last node *success output*
+
+Now, drag and drop the subflow node to the canvas and wire it to get the input from the `aiware in` node, and provide the output to the `user details` node. 
+
+The final result should be something like the following: 
+![create-subflow-final](create-subflow-final.png)
+
+> More about subfows can be found [here](https://nodered.org/docs/user-guide/editor/workspace/subflows)
 
 
 </li>                  
@@ -139,9 +212,9 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
 
 If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
-Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper right corner of that page, click the Create New Flow button.
+Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper left corner of that page, click the `Add New` button.
 
-![CreateNewFlowpage](Automate-1.png)
+![CreateNewFlowpage](Automate-new-1.png)
 
 After a few seconds, the **Automate Studio Editor** design-time environment will open. When it does, notice that you can single-click the name of your flow (shown in the upper left) to bring up a small dialog that lets you change the name of your to something more meaningful than "Untitled Flow." Try it!
 
@@ -224,7 +297,9 @@ It's easy to add cognition to a flow. Let's look at how it's done.
                 <label for="list-item-3a"><span class="expandText">Click here to learn how to add cognition to your flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li>
+
                     
+
 We'll continue to use the flow we've been working on. All we're going to do is add a **cognition** node, and **aiware-out** nodes; and make some changes to a few Properties.
 
 ### Add a Cognition Node
@@ -239,13 +314,15 @@ We'll continue to use the flow we've been working on. All we're going to do is a
 
 &#8226; Use the Category picker control to set the **Category** to "Transcription."
 
-&#8226; Use the Engine picker to select the **Engine** named "Speechmatics Transcription - English (Global) V3."
+&#8226; Use the Engine picker to select the **Engine** named "Transcription - E - English V3."
 
 &#8226; Find the **WaitForResults** checkbox and check it. (This is important, because you want cognition to be _complete_ before the flow proceeds to the next node.)
 
 &#8226; (Recommended) Set **Job Priority** to "Very High."
 
 &#8226; (Recommended) Change the **Name** field to have a value of "Transcription Job."
+
+![transcription 1](transcription1.png)![transcription 2](transcription2.png)
 
 3\. Click the blue **Done** button to close and save your new Properties. Your flow will look something like this:
 
@@ -327,7 +404,7 @@ Clicking **Build** causes the flow to be persisted as a numbered _Build_. A toas
 
 ### Open a Build
 
-To visit your flows at any time, use the **Menu** at the top left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
+To visit your flows at any time, use the **Menu** at the upper left and select **My Flows**. A new window will open, containing a list of flows you have created. Click the name of a flow to open the **latest** build of that flow in the flow editor. To open a specifc build, click the link under Flow Detail at the far right side of the row. This will open the list of Builds (for that flow) in the Flow Details page, from which you can open any Build by clicking the link under **Open in Automate Studio**.
 
 ![Flow Details Page](FlowDetails.png)
 

@@ -231,6 +231,10 @@
     - [Automate Studio and Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)
   - [Alteryx Tools](/automate-studio/alteryx/)
   - [Get Paid!](/automate-studio/flow-bounties/README)
+  - aiWARE node help
+    - [aiWARE common](/automate-studio/aiWARE-node-help/aiWARE-common/README)
+    - [aiWARE data lake](/automate-studio/aiWARE-node-help/aiWARE-data-lake/README)
+    - [aiWARE tools](/automate-studio/aiWARE-node-help/aiWARE-tools/README)
 - [Machine Box](/developer/machine-box/)
   - [Getting Started](/developer/machine-box/setup/)
     - [Install Docker](/developer/machine-box/setup/docker)
