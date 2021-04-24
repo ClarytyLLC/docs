@@ -3526,13 +3526,12 @@ components:
           format: string
           type: string
         chunkReadStart:
-          description: timestamp of when Engine Toolkit makes the request to File
-            System to get the first chunk for the work request
+          description: timestamp of when File System reads the first chunk for the
+            work request
           format: int64
           type: integer
         chunkReadStop:
-          description: timestamp of when Engine Toolkit receives the chunk from File
-            System
+          description: timestamp of when File System finishes reading the first chunk
           format: int64
           type: integer
         chunkWriteStart:
@@ -3551,6 +3550,16 @@ components:
         engineInstanceID:
           format: uuid
           type: string
+        findChunkStart:
+          description: timestamp of when Engine Toolkit makes the request to File
+            System to get the first chunk for the work request
+          format: int64
+          type: integer
+        findChunkStop:
+          description: timestamp of when Engine Toolkit receives the chunk from File
+            System
+          format: int64
+          type: integer
         getWorkStart:
           description: timestamp of the very beginning of GetWork request that would
             result in the assignment of the work request
@@ -8417,7 +8426,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.4.2503
+  version: 3.16.4.2504
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
