@@ -136,46 +136,47 @@
       - [Fakebox](/developer/machine-box/boxes/fakebox)
       - [Veritone Applications](/apps/)
 - [Automate Studio](/automate-studio/)
-  - [Quick start](/automate-studio/getting-started/README)
-  - Overview
-    - Automate Studio Work Station
+  - [Quickstart](/automate-studio/getting-started/README)
+  - Overview & Concepts
+    - Automate Studio Application
       - Canvas
       - Node Palette
       - Debug/Info
-    - Nodes
-      - Working With Nodes
-      - Nodes Structure
-      - Nodes Properties settings
-      - Node Help
-      - Nodes Categories
-      - Add Nodes To Palette
-    - Flow
-      - Flow Basics 
-        - Create New Flow
-        - Create New Flow From Template
-        - Open An Existing Flow
-        - Editing Flow 
-        - Save Flow Settings
-      - Build & Deploy Flow
-      - Run Flow As Engine
-      - Run Flow via API
+  - Working with Flows
+    - Flow Basics 
+      - Create New Flow
+      - Create New Flow From Template
+      - Open An Existing Flow
       - Flow Details
-    - Subflow
+    - Editing Flows
+      - Save Flow Settings
+      - Flow Revisions
+      - Debugging a Flow
+    - Deploying & Running Flows
+      - Run in the studio
+      - Run via HTTP
+      - Run as a Job
+    - Subflows
       - Create Subflow
       - Edit Subflow Properties
       - Organize Your Flow
+  - Working with Nodes
+    - Nodes Basics
+      - Structure
+      - Properties
+      - Help
+    - aiWARE Nodes
+    - Add Nodes To Palette
   - Tutorials
     - Basic
       - Transcription
       - Content Classification
       - Object Detection
+      - Chained Cognition
     - Advanced
       - Customer Recognition by Face
       - Detection of Negative Social Media Posts
       - Dynamic Language Translation
-  - [Automate Traininig Course](/automate-studio/Training/intro-to-automate/unit-1.md) <!--/page-under-construction)-->
-    - [Unit 1: Introduction to aiWARE and Cognitive Engines](/automate-studio/Training/intro-to-automate/unit-1.md) 
-    - [Unit 2: Using Automate Studio](/automate-studio/Training/intro-to-automate/unit-2.md)
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)
