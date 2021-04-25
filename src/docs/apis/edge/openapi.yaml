@@ -2639,6 +2639,11 @@ components:
         serviceID:
           format: uuid
           type: string
+        serviceInstanceID:
+          description: Optional service instance ID. If it's empty the controller
+            will generate a new ID.
+          format: uuid
+          type: string
       type: object
     CreateServiceRequest:
       properties:
@@ -3257,6 +3262,8 @@ components:
         engineInstanceID:
           format: uuid
           type: string
+        engineToolkitTimestamps:
+          $ref: '#/components/schemas/EngineToolkitTimestamps'
         hostID:
           format: uuid
           type: string
@@ -3511,6 +3518,78 @@ components:
           items:
             $ref: '#/components/schemas/EngineTemplate'
           type: array
+      type: object
+    EngineToolkitTimestamps:
+      properties:
+        chunkID:
+          description: optional chunkID associated with the chunk-related timestamps
+          format: string
+          type: string
+        chunkReadStart:
+          description: timestamp of when File System reads the first chunk for the
+            work request
+          format: int64
+          type: integer
+        chunkReadStop:
+          description: timestamp of when File System finishes reading the first chunk
+          format: int64
+          type: integer
+        chunkWriteStart:
+          description: timestamp of when Engine Toolkit makes the request to File
+            System to write the first output chunk
+          format: int64
+          type: integer
+        chunkWriteStop:
+          description: timestamp of when File System finishes writing the output chunk
+          format: int64
+          type: integer
+        createdDateTime:
+          description: timestamp of when the timestamps were first created
+          format: int64
+          type: integer
+        engineInstanceID:
+          format: uuid
+          type: string
+        findChunkStart:
+          description: timestamp of when Engine Toolkit makes the request to File
+            System to get the first chunk for the work request
+          format: int64
+          type: integer
+        findChunkStop:
+          description: timestamp of when Engine Toolkit receives the chunk from File
+            System
+          format: int64
+          type: integer
+        getWorkStart:
+          description: timestamp of the very beginning of GetWork request that would
+            result in the assignment of the work request
+          format: int64
+          type: integer
+        getWorkStop:
+          description: timestamp of when Engine Toolkit actually gets the work request
+          format: int64
+          type: integer
+        internalTaskID:
+          description: Internal Task ID
+          format: uuid
+          type: string
+        modifiedDateTime:
+          description: timestamp of when the timestamps were last modified
+          format: int64
+          type: integer
+        processComplete:
+          description: timestamp of when Engine Toolkit receives results or completes
+            status from the engine
+          format: int64
+          type: integer
+        processStart:
+          description: timestamp of when Engine Toolkit calls the engine to process
+            the chunk
+          format: int64
+          type: integer
+        workRequestID:
+          format: uuid
+          type: string
       type: object
     EngineTypeEnum:
       description: These are the different types of engines on what they can consume.  Chunk
@@ -8347,7 +8426,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.3.2483
+  version: 3.16.4.2504
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:

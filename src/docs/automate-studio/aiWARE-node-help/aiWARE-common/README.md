@@ -18,7 +18,12 @@ Accepts input messages from the aiWARE Edge processing framework and injects the
 
 **Name ( _string_ ):** The node name on the canvas
 
-**Output format ( _dropdown_ ):** Available options are *bytes* and *simple*. If the *bytes* option is selected, the output will be a buffer. Otherwise, if the *simple* option is selected, the output will be the same format as the input (string or JSON)
+**Output format ( _dropdown_ ):** Available options are *bytes* and *simple*. If the *bytes* option is selected, the output will be a buffer. Otherwise, if the *simple* option is selected, the output will be the same format as the input (string or JSON).
+
+**Test Options:**
+
+&#9642; Inject Mock Data ( _string_ | _json_ ): 
+&#9642;
 ### Inputs
 
 ### Outputs
