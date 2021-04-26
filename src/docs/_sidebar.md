@@ -35,6 +35,9 @@
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
     - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
+    - [aiWARE Anywhere](/quickstart/anywhere)
+      - [Install for Begineers](/quickstart/anywhere/beginners.md)
+      - [Install for Enterprise](/quickstart/anywhere/cluster-deployment.md)  
     <!--- [For Administrators](/page-under-construction)--> <!-- change to IT or DevOps? -->
 - [aiWARE](/overview/)
   <!--- [Getting Started](/page-under-construction)-->
