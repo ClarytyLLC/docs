@@ -48,6 +48,7 @@
 | *handlers.max_limit* | int64 | 1000 |  | The max limit or page size handlers can return |
 | *host.expiration_seconds* | int64 | 43200 |  | Expiration of the hosts in seconds |
 | *image* | string | aiware-controller:latest | _AIWARE_CONTROLLER_IMAGE_ | The image to use for the controller |
+| *job.creation.due_duration_minute* | int64 | 15 |  | Job creation due duration in minutes |
 | *job.launch.run_on_all* | bool | true |  | Run Job launch on all controllers. |
 | *job.launch_interval_sec* | int64 | 20 |  | Job launch check interval in seconds. |
 | *log_host* | string | localhost | _AIWARE_LOG_HOST_ | The URLs to use for sending logs to from the aiWARE System |
