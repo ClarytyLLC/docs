@@ -11,15 +11,17 @@ With aiWARE Anywhere, in addition to having the ability to run cognitive engines
 ## Requirements
 
 * At a minimum, the `controller`, `engine`, `db`, `nfs`, `prometheus`, and `registry` run modes are required
-## Database
+* Ubuntu 18.04 or Ubuntu 20.04. Support for Red Hat is coming soon. 
+
+### Database
 * An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required
-## Docker
+### Docker
 Many of the services that run in the cluster run in Docker containers. As such, ensure that there is enough disk space available for the Docker root directory (typically located at `/var/lib/docker`)
 ## Network Storage
 We don't recommend using NAS or SAN for the `AIWARE_ROOT` which is typically `/opt/aiware`. NAS or SAN can be used for the cluster cache and can replace the `nfs` run mode. 
-## Network
+### Network
 These are the network ports required if you have a firewall. 
-### Connections within aiWARE cluster
+#### Connections within aiWARE cluster
 | Source Run Mode | Target Run Mode | Port | Description |
 | --- | --- | --- | --- |
 | DB | Controller | 9000 | HTTP/HTTPS, can be changed |
@@ -41,26 +43,30 @@ These are the network ports required if you have a firewall.
 | DB | Controller | 9000 | HTTP/HTTPS, can be changed |
 | DB | Registry | 5000 | HTTP, this is used to pull engines and other containers |
 | DB | NFS | 2049 | TCP - Access to /cache |
-## SELinux
+### SELinux
 ```
 Coming soon
 ```
-## Sizing Guide
+### Sizing Guide
 ```
 Coming soon
 ```
-## RAM
+### RAM
 For the `prometheus` node(s), please consider the RAM necessary for that node. The metrics that are scraped from the entire cluster must be able to fit onto the RAM of an instance. Prometheus can crash when it runs out of memory. 
-## Swap
+### Swap
 We recommend adding swap space to the `engine` nodes at a minimum. Swap adds processing room when the RAM on the system has been exhausted. For the engines, adding swap will aid with the speed of processing jobs and tasks. 
-## Storage Space
+### Storage Space
 We recommend a minimum of 50GB for base installation. For Docker root directory of an `engine` node(s), we recommend a minimum of 500GB disk space. The `registry` node(s) typically requires enough disk space to manage the images needed to run engines. We recommend at least 500GB for this node type. Please refer to the (Sizing Guide)[#sizing-guide] for more information about tuning for disk space.
-## Registry
+### Registry
 Currently, the `registry` node(s) is not swappable with an existing Docker Registry. 
-## Backups
+### Backups
 We recommend that you back up the `db` node as that is where the most important data is store. The engine Docker containers are ephemeral. For extending the lifespan of metrics, consider tuning the `prometheus` node(s) to be able to accommodate the time-series database. 
-## aiWARE Anywhere
+### aiWARE Anywhere
 aiWARE Anywhere adds the `api`, `redis`, `elasticsearch`, `nsq`, `lb`, and `minio` run modes to an existing cluster. We recommend that you size your cluster according to the (Sizing Guide)[#sizing-guide]. 
+### Disaster Recovery
+```
+Coming soon
+```
 
 ## Installation
 1. Become root
