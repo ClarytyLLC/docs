@@ -35,10 +35,7 @@
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
     - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    - [aiWARE Anywhere](/quickstart/anywhere)
-      - [Install for Begineers](/quickstart/anywhere/beginners.md)
-      - [Install for Enterprise](/quickstart/anywhere/cluster-deployment.md)  
-    <!--- [For Administrators](/page-under-construction)--> <!-- change to IT or DevOps? -->
+    - [For MLOps Engineer](/page-under-construction) <!-- change to IT or DevOps? -->
 - [aiWARE](/overview/)
   <!--- [Getting Started](/page-under-construction)-->
   - [Installation Guide](/install/prereq.md) <!--/page-under-construction)--> <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
@@ -47,6 +44,8 @@
     - [Install Environment Variables](/install/envs.md)
     - [Install](/install/install.md)
     - [Install Anywhere](/install/anywhere.md)
+      - [Install for Begineers](/quickstart/anywhere/beginners.md)
+      - [Install for Enterprise](/quickstart/anywhere/cluster-deployment.md)  
     - [Install Single Computer](/install/mode_single.md)
     - [Install Cluster](/install/mode_two_node.md)
     - [Validate Install](/install/validate.md)
