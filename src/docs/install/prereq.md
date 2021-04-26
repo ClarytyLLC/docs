@@ -16,6 +16,7 @@ aiWARE requires a Linux box or Linux VM running on a supported chipset (ARM64 or
 | Controller | NFS | 2049 | TCP - Access to /cache |
 | Controller | Redis | 6379 | TCP, redis |
 | Controller | NSQ | 4150, 4151, 4160, 4161 | HTTP & TCP, NSQ |
+| Controller | ElasticSearch | 9200 | HTTP/HTTPS |
 | Engine | Controller | 9000 | HTTP/HTTPS - API |
 | Engine | Registry | 5000 | HTTP, this is used to pull engines and other containers |
 | Engine | NFS | 2049 | TCP - Access to /cache |
@@ -64,11 +65,12 @@ between the client and the Controllers either as port 80 or 443.
 # Supported Operating Systems
 * Ubuntu 18.04
 * Ubuntu 20.04
+* Red Hat 7.9
 
 # Supported Cloud Platforms
 aiWARE can run on any environment that provides a linux VM.  aiWARE can be infrastructure or cloud-aware if run on a supported cloud platform.  Currently, aiWARE supports:
 * AWS
-* Azure (Coming Soon)
+* Azure
 
 # Minimum Hardware
 * 8GB RAM

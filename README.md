@@ -31,6 +31,7 @@ Veritone Docs is a static site built using Markdown files and powered by [Docsif
 The first time you run after cloning the repository to your machine, you need to do the following to bootstrap the build:
 ```bash
 nvm install
+npm install -g yarn
 yarn install
 yarn build
 yarn start
@@ -195,6 +196,23 @@ docker run -it --rm -p 9000:9000 docs:latest
 ```
 
 This is for local testing only.  Production builds happen through Jenkins.
+
+## Troubleshooting
+If you run into issues with running Docsify, refer the below list of known issues:
+
+```
+$ yarn serve
+yarn run v1.22.10
+$ docsify serve ./build-${ENVIRONMENT:-local}
+env: node\r: No such file or directory
+error Command failed with exit code 127.
+
+# Fix
+vi node_modules/docsify-cli/bin/docsify
+:set ff=unix
+:wq
+```
+ 
 
 ## License
 
