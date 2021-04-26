@@ -138,24 +138,24 @@
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
   - Overview & Concepts
-    - Automate Studio Application
-      - Canvas
-      - Node Palette
-      - Debug/Info
-  - Working with Flows
-    - Flow Basics 
-      - Create New Flow
-      - Create New Flow From Template
-      - Open An Existing Flow
-      - Flow Details
-    - Editing Flows
-      - Save Flow Settings
-      - Flow Revisions
-      - Debugging a Flow
-    - Deploying & Running Flows
-      - Run in the studio
-      - Run via HTTP
-      - Run as a Job
+    - [Automate Studio Application](/automate-studio/application/README)
+      - [Canvas](/automate-studio/application/README?id=canvas)
+      - [Node Palette](/automate-studio/application/README?id=node-palette)
+      - [Debug/Info](/automate-studio/application/README?id=debug-info)
+  - [Working with Flows](/automate-studio/working-with-flows/README)
+    - [Flow Basics](/automate-studio/working-with-flows/README?id=flow-basics) 
+      - [Create New Flow](/automate-studio/working-with-flows/README?id=create-new-flow)
+      - [Create New Flow From Template](/automate-studio/working-with-flows/README?id=create-new-flow-from-template)
+      - [Open An Existing Flow](/automate-studio/working-with-flows/README?id=open-an-existing-flow)
+      - [Flow Details](/automate-studio/working-with-flows/README?id=flow-details)
+    - [Editing Flows](/automate-studio/working-with-flows/README?id=editing-flows)
+      - [Save Flow Settings](/automate-studio/working-with-flows/README?id=save-flow-settings)
+      - [Flow Revisions](/automate-studio/working-with-flows/README?id=flow-revisions)
+      - [Debugging a Flow](/automate-studio/working-with-flows/README?id=debugging-a-flow)
+    - [Deploying & Running Flows](/automate-studio/working-with-flows/README?id=deploying-amp-running-flows)
+      - [Run in the studio](/automate-studio/working-with-flows/README?id=run-in-the-studio)
+      - [Run via HTTP](/automate-studio/working-with-flows/README?id=run-via-http)
+      - [Run as a Job](/automate-studio/working-with-flows/README?id=run-as-a-job)
     - Subflows
       - Create Subflow
       - Edit Subflow Properties
