@@ -29,18 +29,16 @@
 <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
 
 
-- [Getting Started](/tbd/)
-    - [For Begginers](/quickstart/app-developer/)
+- [Getting Started](/quickstart/)
+    <!--- [For Beginners](/page-under-construction)-->
     - [For Application Developers](/quickstart/app-developer/)
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
     - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    - [For Administrators](/quickstart/tbd/) <!-- change to IT or DevOps? -->
-
+    <!--- [For Administrators](/page-under-construction)--> <!-- change to IT or DevOps? -->
 - [aiWARE](/overview/)
-  - [What is aiWARE?](/tbd/)
-  - [Getting Started](/tbd/)
-  - [Installation Guide](/tbd/) <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
+  <!--- [Getting Started](/page-under-construction)-->
+  - [Installation Guide](/install/prereq.md) <!--/page-under-construction)--> <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
     - [Prerequisites](/install/prereq.md)
     - [Sizing](/install/sizing.md)
     - [Install Environment Variables](/install/envs.md)
@@ -64,15 +62,10 @@
     - [Stream Ingestor 2](/overview/aiWARE-in-depth/stream-ingestor)
     - [More About aiWARE](/overview/aiware-features.md)
     - [aiWARE Architecture](/overview/architecture-overview/)
-    - [Build with aiWARE](/developer/)
     - [Path to Monetization](/developer/engines/getting-started/path-to-monetization/)
     - [Support](/developer/engines/getting-started/support/)
     - [Technologies Used](/developer/engines/getting-started/technologies/)
-
-- [Veritone Applications](/apps/)
-  
-- [Quickstarts](/quickstart/)
-- [Tutorials](/apis/tutorials/) <!-- merge Quickstarts & Tutorials; distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
+- [Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
   - [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos.md)
   - [Job Quickstart Guide](/apis/job-quickstart/)
   - [Search Quickstart Guide](/apis/search-quickstart/)
@@ -83,7 +76,6 @@
   - [Authentication and Authorization Tokens](/apis/tutorials/tokens.md)
   - [Paging](/apis/tutorials/paging.md)
   - [Asset Types](/apis/tutorials/asset-types.md)
-
 - [Cognitive Technology](/cognitive-technology/) <!-- Maybe Cognitive Engines? -->
   - Audio <!-- These class pages need to be clickable and have a quick intro plus toc. Also, are we still using classes? maybe better just flatted the list of categories here -->
     - [Audio Fingerprinting](/developer/engines/cognitive/audio/audio-fingerprinting/)
@@ -128,14 +120,33 @@
   - [Library-enabled Engines](/developer/libraries/engines.md)
   - [Training Engines](/developer/libraries/training.md)
   - [Running Engines](/developer/libraries/running.md)
-
+  - [Machine Box](/developer/machine-box/)
+    - [Getting Started](/developer/machine-box/setup/)
+      - [Install Docker](/developer/machine-box/setup/docker)
+      - [Box Keys](/developer/machine-box/setup/box-key)
+    - [API Reference](/developer/machine-box/api-guidelines)
+    - [Boxes](/developer/machine-box/boxes/)
+      - [Facebox](/developer/machine-box/boxes/facebox-overview)
+        - [Facebox tutorial: Teaching Facebox](/developer/machine-box/boxes/teaching-facebox)
+      - [Tagbox](/developer/machine-box/boxes/tagbox)
+        - [Tagbox tutorial: Recognizing images](/developer/machine-box/boxes/tagbox/recognizing-images)
+      - [Textbox](/developer/machine-box/boxes/textbox)
+      - [Classificationbox](/developer/machine-box/boxes/classificationbox)
+        - [Best practices for using Classificationbox](/developer/machine-box/boxes/classificationbox/best-practices)
+      - [Nudebox](/developer/machine-box/boxes/nudebox)
+      - [Objectbox](/developer/machine-box/boxes/objectbox)
+      - [Fakebox](/developer/machine-box/boxes/fakebox)
+      - [Veritone Applications](/apps/)
 - [Automate Studio](/automate-studio/)
   - [Getting Started](/automate-studio/getting-started/README)
-  - Training
+  - [Automate Traininig Course](/automate-studio/Training/intro-to-automate/unit-1.md) <!--/page-under-construction)-->
+    - [Unit 1: Introduction to aiWARE and Cognitive Engines](/automate-studio/Training/intro-to-automate/unit-1.md) 
+    - [Unit 2: Using Automate Studio](/automate-studio/Training/intro-to-automate/unit-2.md)
+    - [Unit 3: aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
+  - [Tutorials](/automate-studio/tutorials/automate-tutorials)
     - [The Basics](/automate-studio/Training/crawl)
     - [Working with Flows](/automate-studio/Training/walk/README.md)
     - [Cognition within a Flow](/automate-studio/Training/run/run)
-  - [Tutorials](/automate-studio/tutorials/automate-tutorials)
     - [Orchestrating AI with a Flow](/automate-studio/tutorials/orchestrating-ai.md)
     - [Create aiWARE Custom API Endpoints](/automate-studio/tutorials/your-ai-flow.md)
     - [AI Recognized Your Face. Now What?](/automate-studio/tutorials/ai-recognized-your-face.md)
@@ -144,7 +155,6 @@
     - [Automate Studio and Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md)
   - [Alteryx Tools](/automate-studio/alteryx/)
   - [Get Paid!](/automate-studio/flow-bounties/README)
-
 - [Building Engines](/developer/engines/)
   - [Getting Started with Engines](/developer/engines/getting-started/)
   - [Partner with Veritone](/developer/benefits.md)
@@ -183,7 +193,7 @@
       - [Step 6 - Deploy Your Adapter](/developer/adapters/quick-start/step-6.md)
     - [Construction Guidelines](/developer/adapters/guidelines.md)
     - [Adapter Manifest](/developer/adapters/manifest.md)
-
+  - [Data Science Resources](/developer/resources/)
 - [Building Applications](/developer/applications/)
   - [Tutorial: Build Your Own AI App](/developer/applications/app-tutorial/)
     - [Step 1: Register Your App](/developer/applications/app-tutorial/app-tutorial-step-1.md)
@@ -195,31 +205,9 @@
   - [OAuth](/developer/applications/oauth.md)
   - [Resources](/developer/applications/resources.md)
   - [FAQ](/developer/applications/faq.md)
-
-
 - [Working with Structured Data](/developer/data/)
   - [Quickstart](/developer/data/quick-start/)
-
-- [Machine Box](/developer/machine-box/)
-  - [Getting Started](/developer/machine-box/setup/)
-    - [Install Docker](/developer/machine-box/setup/docker)
-    - [Box Keys](/developer/machine-box/setup/box-key)
-  - [API Reference](/developer/machine-box/api-guidelines)
-  - [Boxes](/developer/machine-box/boxes/)
-    - [Facebox](/developer/machine-box/boxes/facebox-overview)
-      - [Facebox tutorial: Teaching Facebox](/developer/machine-box/boxes/teaching-facebox)
-    - [Tagbox](/developer/machine-box/boxes/tagbox)
-      - [Tagbox tutorial: Recognizing images](/developer/machine-box/boxes/tagbox/recognizing-images)
-    - [Textbox](/developer/machine-box/boxes/textbox)
-    - [Classificationbox](/developer/machine-box/boxes/classificationbox)
-      - [Best practices for using Classificationbox](/developer/machine-box/boxes/classificationbox/best-practices)
-    - [Nudebox](/developer/machine-box/boxes/nudebox)
-    - [Objectbox](/developer/machine-box/boxes/objectbox)
-    - [Fakebox](/developer/machine-box/boxes/fakebox)
-
-- [Clarity (BETA)](/benchmark/)
-
-- [Reference](/apis/using-graphql.md)
+- [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
     - [Query Methods](/apis/reference/query/)
@@ -235,7 +223,7 @@
       - [Posting Engine Results](/apis/tutorials/engine-results.md)
       - [Lookup Available Engines](/apis/tutorials/get-engines.md)
       - [Error Handling in the GraphQL API](/apis/tutorials/graphql-error-handling.md)
-  - [Edge APIs](/tbd/)
+  - [Edge APIs](/api/md/docs-md/README.md) <!--/page-under-construction)-->
     - [REST](/api/md/docs-md/README.md)
     - [Golang API](/api/golang/README.md)
       - [Admin API](/api/golang/docs/AdminApi.md)
@@ -248,14 +236,11 @@
     - [JS API](/api/js/README.md)
     - [Python API](/api/python/README.md)
   - [CLI](/cli/aiware-agent.md)
-  - [Configuration](/tbd/)
+  - [Configuration](/config/admin.md) <!--/page-under-construction)-->
     - [Admin](/config/admin.md)
     - [Controller](/config/controller.md)
     - [DB](/config/db.md)
     - [NFS](/config/nfs.md)
     - [Registry](/config/registry.md)
-
-- [Resources](/resources/)
-  - [Data Science](/developer/resources/)
-
-- [Developer Terms & Conditions](<https://s3.amazonaws.com/static.veritone.com/terms/VDA+Terms+and+Conditions+(20210125).pdf>)
+- [Clarity (BETA)](/benchmark/)
+- [Developer Terms & Conditions](/overview/terms-and-conditions)

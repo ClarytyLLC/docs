@@ -18,6 +18,46 @@ If the host is going to run docker containers such as engines or applications pl
 
 aiWARE will auto-remove old engine instance docker containers.  It will not remove old docker images however.
 
+## Validating Engine Performance
+Not all servers are created equal.  Many different factors can come into play that affect performance.  It is important to measure the performance of the individual box if running on premise through a hyperviser.  Especially if it is a shared environment.  Please keep in mind, if it is a shared environment and it is oversubscribed the measurements can change depending on the context of the cluster.
+
+### AI Benchmark
+
+This can be installed via docker or via python.
+
+1. Docker
+
+```bash
+docker run -it --rm veritone/ai-benchmark
+
+# For GPU
+# docker run -it --rm --gpus all veritone/ai-benchmark:gpu
+```
+
+
+1. Python
+This will install ai_benchmark and run the test
+```bash
+virtualenv --python=python3 venv
+. ./venv/bin/activate
+pip install tensorflow ai_benchmark
+
+echo << EOF > perf.py
+from ai_benchmark import AIBenchmark
+benchmark = AIBenchmark()
+results = benchmark.run()
+EOF
+
+python perf.py
+```
+
+## Comparison
+
+| Type | Results |
+| ---- | ------ |
+| m5.4xlarge | Device Inference Score: 365 <br/> Device Training Score: 393 <br/> Device AI Score: 758 |
+| macbook 16 | Device Inference Score: 829 <br/> Device Training Score: 803 <br/> Device AI Score: 1632 |
+
 # DB Server
 
 Current sizing guidelines are:

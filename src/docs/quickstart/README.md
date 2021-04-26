@@ -29,6 +29,11 @@ Build AI into standalone apps. | See our [ML Explorer](/quickstart/ml-explorer/)
 Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](/quickstart/app-developer/) quickstart.
 Create custom cognitive engines. | See our [Engine Developer](/quickstart/engine-developer/) quickstart.
 
+** Deployment Choices**
+-- | ---
+[Single server](/quickstart/single-single) | A single server deployment of aiWARE is suited for ML Integrators, ML Explorers and Application Developers. This brings the entire stack onto a local machine. 
+[Cluster deployment](/quickstart/cluster-deployment) | A cluster of aiWARE that is suited for enterprises, datacenters and individuals who anticipate running a daily job load of > 1000
+
 # Tutorials <!-- {docsify-ignore} -->
 
 We have plenty of sample code and walkthroughs to get you started.
