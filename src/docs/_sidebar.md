@@ -35,7 +35,7 @@
     - [For Data Scientists](/quickstart/engine-developer/)
     - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
     - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    - [For MLOps Engineer](/page-under-construction) <!-- change to IT or DevOps? -->
+    - [For MLOps Engineer](/quickstart/mlops/) <!-- change to IT or DevOps? -->
 - [aiWARE](/overview/)
   <!--- [Getting Started](/page-under-construction)-->
   - [Installation Guide](/install/prereq.md) <!--/page-under-construction)--> <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
