@@ -63,6 +63,9 @@
 | *primary.cleansystem.enabled* | bool | true |  | This enables or disables the processing of cleaning up the system |
 | *primary.cleansystem.engine_instance_grace_secs* | int64 | 86400 |  | How long to keep  engine_instance |
 | *primary.cleansystem.engine_instance_set_termination_grace_secs* | int64 | 180 |  | How long since the last the last update to set status to termination. |
+| *primary.cleansystem.etk_timestamps_enabled* | bool | true |  | Whether to clean up the edge.etk_timestamps table, default true |
+| *primary.cleansystem.etk_timestamps_grace_secs* | int64 | 259200 |  | How long to keep  records of edge.etk_timestamps table, default 3 days in seconds |
+| *primary.cleansystem.etk_timestamps_limit* | int64 | 10000 |  | How many rows to delete from edge.etk_timestamps table per iteration of loop, default 10000 |
 | *primary.cleansystem.host_status_grace_secs* | int64 | 86400 |  | How long to keep  host_status |
 | *primary.cleansystem.interval* | int64 | 300 |  | The time to clean the system in seconds. This value should >= 120 seconds |
 | *primary.cleansystem.task_status_grace_secs* | int64 | 82800 |  | How long to keep task_status |
