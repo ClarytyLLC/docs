@@ -137,56 +137,7 @@ New flow can be created from scratch, or using a `Template` from **Veritone Temp
 </ul>
 </div>
 
-### Subflow 
 
-<div class="collapse-accordion"><ul><li>
-                <input type="checkbox" id="list-item-1.3">
-                <label for="list-item-1.3"><span class="expandText">Click here to learn about flow </span><span class="collapseText">Click here to close this section.</span></label>
-                <ul>
-                    <li>
-
-?>Flow can be as simple as three nodes wired up together. But imagine a complex flow made of twenty, or maybe thirty nodes on your canvas. And all the wires between them... A bit messy, isn't it? Luckily, there is a quick way to organize even the most complex flow by separating it into distinct sections such that each section addresses a separate concern. This can be easily achieved by adding **Subflows** to our flow.
-
-A subflow is a collection of nodes that are collapsed into a single node in the workspace.
-They can be used to reduce some visual complexity of a flow, or to package up a group of nodes as a reusable flow used in multiple places.
-Once created, the subflow is added to the palette of available nodes. Individual instances of the subflow can then be added to the workspace just like any other node.
-
-The following example runs some analysis on _Engine result_ converted to CSV, and sends an email with the results presented as Bar Charts ( It literally took less then 5 minutes to create this flow. Amazing, isn't it? ). Even though it is definitely not the most complex flow we will see or create, we will use it for the example to keep things simple and straight forward. 
-![subflow-1](subflow1.png)
-
-Lets take a look closer and understand what parts this flow is built of.
-1. We have the **aiware in** to inject the input data.
-2. Next, without going into what the next 5 nodes do low level, we can say that in general they *Create the Email output*
-3. Finally, we have the nodes that are responsible to get the user details and send the email. 
-![subflow-2](subflow2.png)
-
-Lets create a subflow and try to reduce the complexity of this flow:
-A subflow can be created by selecting the ‘Subflow -> Create subflow’ option in the menu. This will create a blank subflow and open it in the workspace.
-![create-subflow](create-subflow.png)
-Now lets rename the subflow. Click on the edit properties button in the upper left corner of the editor. The properties editor will slide in from the right.
-In the `Name` input type "Create email output" and click `Done`
-
-Next, in order to make the subflow be able to receive input data, locate the `inputs:` option next to the `edit properties` button and click on the `1` button.
-
-Lets add an output as well by clicking once on the `+` (plus) button.
-
-Next, we will go back to the flow and select all the nodes from the second row and 'cut' them with `ctrl` + `x`
-
-Then we go back to the subflow and paste them with `ctrl` +  `v`. Once done, just connect the `input` first node *port*. Then connect the `output` node to the last node *success output*
-
-Now, drag and drop the subflow node to the canvas and wire it to get the input from the `aiware in` node, and provide the output to the `user details` node. 
-
-The final result should be something like the following: 
-![create-subflow-final](create-subflow-final.png)
-
-> More about subfows can be found [here](https://nodered.org/docs/user-guide/editor/workspace/subflows)
-
-
-</li>                  
-</ul>
-</li>          
-</ul>
-</div>
 
 </li>                  
 </ul>

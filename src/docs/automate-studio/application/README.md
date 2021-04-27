@@ -1,5 +1,5 @@
 # Automate Studio Application
-**APPROXIMATE READING TIME: 3 MINUTES**
+**APPROXIMATE READING TIME: 2 MINUTES**
 
 ?>Veritone Automate Studio is a low-code workflow designer that empowers technical and business teams to tap into a full-stack AI architecture to design and deploy AI-powered business processes at scale in days, not months. Leverage an intuitive drag-and-drop UI to easily create advanced business logic on a digital canvas, without the need for in-depth coding skills or AI expertise. Automate Studio enables intelligent process automation (IPA) and workflow enrichment across both new and existing systems and applications.
 

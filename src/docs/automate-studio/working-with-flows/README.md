@@ -1,5 +1,8 @@
 # Working With Flows
 
+**APPROXIMATE READING TIME: 6 MINUTES**
+
+
 ?>Flow is a group of logically connected nodes that can run a certain process in **aiWARE**. Flow can be developed in **Automate Studio** by dragging-and-dropping nodes from the [Node palette](/automate-studio/application/README?id=node-palette) to the [Canvas](/automate-studio/application/README?id=canvas) and wiring them up together. Usually, the flow will contain at least one *Input Node*, one *Functional Node* and one *Output Node*, but also, can be way more complex.
 
 In this section, we will explain how to create, edit and run flows in a few simple steps
@@ -142,12 +145,12 @@ Once *Deployed* The Revision becomes **Active**. It will be marked as *Deployed*
 
 An **Active** (Published) Flow Revision is now available to the outside world via **HTTP** or as a **Job** 
 
-!> The Flow **must** start with the **aiWARE in** node as the first node in the flow in order to be triggerable.
+!> The Flow **must** start with the **aiWARE in** node as the first node in the flow to be triggerable.
 
 #### Run in the studio
 
 
-Each Flow, whether **Active** or **Non Active**, can run in the Automate Studio Flow Editor.
+Each Flow, whether **Active** or ** Non-Active**, can run in the Automate Studio Flow Editor.
 
 Just Click on the button-like square on the left side of the **aiWARE in** node, and the flow will start running.
 

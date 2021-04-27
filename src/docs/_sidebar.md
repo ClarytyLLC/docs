@@ -156,20 +156,20 @@
       - [Run in the studio](/automate-studio/working-with-flows/README?id=run-in-the-studio)
       - [Run via HTTP](/automate-studio/working-with-flows/README?id=run-via-http)
       - [Run as a Job](/automate-studio/working-with-flows/README?id=run-as-a-job)
-    - Subflows
-      - Create Subflow
-      - Edit Subflow Properties
-      - Organize Your Flow
-  - Working with Nodes
-    - Nodes Basics
-      - Structure
-      - Properties
-      - Help
-    - aiWARE Nodes
-    - Add Nodes To Palette
+    - [Subflows](/automate-studio/subflow/README)
+      - [Create Subflow](/automate-studio/subflow/README?id=create-subflow)
+      - [Edit Subflow Properties](/automate-studio/subflow/README?id=edit-subflow-properties)
+      - [Organize Your Flow](/automate-studio/subflow/README?id=organize-your-flow)
+  - [Working with Nodes](/automate-studio/working-with-nodes/README)
+    - [Nodes Basics](/automate-studio/working-with-nodes/README?id=nodes-basics)
+      - [Structure](/automate-studio/working-with-nodes/README?id=structure)
+      - [Properties](/automate-studio/working-with-nodes/README?id=properties)
+      - [Help](/automate-studio/working-with-nodes/README?id=help)
+    - [aiWARE Nodes](/automate-studio/working-with-nodes/README?id=aiware-nodes)
+    - [Add Nodes To Palette](/automate-studio/working-with-nodes/README?id=add-nodes-to-palette)
   - Tutorials
     - Basic
-      - Transcription
+      - [Transcription](/automate-studio/tutorials/basic/transcription)
       - Content Classification
       - Object Detection
       - Chained Cognition
