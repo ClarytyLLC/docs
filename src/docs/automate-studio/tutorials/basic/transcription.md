@@ -124,7 +124,7 @@ Now we have two output nodes. One for success and one for failure.
 
 Wire the **aiware email** node success output to the **aiware out \[success\]** node.
 
-Next, we will add three **link out** nodes from the Node Palette and pleace them just below the **Cognition - Core**, **user details**, and **aiware email** node and wire each to the **failure output** of the node above.
+Next, we will add three **link out** nodes from the Node Palette and place them just below the **Cognition - Core**, **user details**, and **aiware email** node and wire each to the **failure output** of the node above.
 
 Now grab a **link in** node, put it in front of the **aiware out \[failure\]]** node, and wire it to its port.
 
