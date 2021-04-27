@@ -45,7 +45,7 @@ This step-by-step guide will help you have a instance of aiWARE Anywhere on a lo
     git_branch: HEAD
     git_commit: f8a8130c88b8ed5b0e50a8f26bf45d5d9b1a22e1
     git_author: al
-    build_url: https://jenkins.veritone.com/job/aiware/job/edge-controller/1281/
+    build_url: https://build_url/job/aiware/job/edge-controller/1281/
     build_number: 1281
     " }
 
