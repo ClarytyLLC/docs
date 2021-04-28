@@ -140,7 +140,7 @@ Coming soon
 5. Run install command for aiWARE applications
 
     ```bash
-    /usr/local/bin/aiware-agent --controller-token $AIWARE_INIT_TOKEN hub install core --channel dev
+    /usr/local/bin/aiware-agent --controller-token $AIWARE_INIT_TOKEN hub install core --channel stable
     ```
 
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
