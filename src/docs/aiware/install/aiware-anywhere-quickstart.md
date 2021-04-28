@@ -1,0 +1,1 @@
+If I just want to quickly install and care about nothing, what steps should I take? Specify the expected time to complete the task. 
