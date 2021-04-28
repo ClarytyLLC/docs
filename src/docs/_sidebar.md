@@ -49,7 +49,7 @@
       - [Enterprise Cluster Installation](/aiware/install/anywhere/cluster-deployment.md)  
       - [Install Single Computer](/aiware/install/mode_single.md)
       - [Install Cluster](/aiware/install/mode_two_node.md)
-      - [Installation](/aiware/aiWARE-in-depth/edge-installation)
+      - [Install Edge Only](/aiware/aiWARE-in-depth/edge-installation)
     - [Validate Install](/aiware/install/validate.md)
     - [Usage Reporting](/aiware/install/usage.md)
   - [Troubleshooting](/aiware/troubleshooting/toc.md)
