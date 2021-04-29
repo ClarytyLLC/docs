@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="proxyTerminateEngineInstances"></a>
 # **proxyTerminateEngineInstances**
-> proxyTerminateEngineInstances(HostID, UUID, X-Correlation-Id)
+> List proxyTerminateEngineInstances(HostID, UUID, X-Correlation-Id)
 
 Terminate engine instances running on this host.
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**List**](../Models/EngineOperationStatusResponse.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ null (empty response body)
 
 <a name="proxyUpdateEngineInstanceStatuses"></a>
 # **proxyUpdateEngineInstanceStatuses**
-> proxyUpdateEngineInstanceStatuses(HostID, EngineInstanceStatus, X-Correlation-Id)
+> List proxyUpdateEngineInstanceStatuses(HostID, EngineInstanceStatus, X-Correlation-Id)
 
 Update statuses of engine instances running on the host
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**List**](../Models/EngineOperationStatusResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **hostID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 **port** | [**Integer**](integer.md) |  | [optional] [default to null]
 **serviceID** | [**UUID**](UUID.md) |  | [optional] [default to null]
+**serviceInstanceID** | [**UUID**](UUID.md) | Optional service instance ID. If it&#39;s empty the controller will generate a new ID. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
