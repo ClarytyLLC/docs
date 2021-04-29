@@ -27,7 +27,7 @@ aiware-agent template list [flags]
   -f, --format string             [raw | text | json] Format of the information provided by the subcommand. (default "json")
   -i, --id string                 Template id.
   -o, --output string             File or URI to write the output of the command to.
-  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used. (default "default")
+  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used.  The profiles are set in ~/.config/aiware-cli.yaml (default "default")
   -q, --quiet                     Disables output extra output except the main output
   -u, --status string             Template status.
 ```

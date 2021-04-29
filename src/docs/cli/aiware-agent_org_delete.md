@@ -25,7 +25,7 @@ aiware-agent org delete [flags]
   -d, --debug                     Enables debug output
   -f, --format string             The output format.  The values are text, log or json. (default "text")
   -i, --id string                 Organization id
-  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used. (default "default")
+  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used.  The profiles are set in ~/.config/aiware-cli.yaml (default "default")
   -q, --quiet                     Disables output extra output except the main output
 ```
 

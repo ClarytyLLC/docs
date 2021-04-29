@@ -20,13 +20,13 @@ Contains subcommands to perform task operations.  Please see --help for more inf
       --controller-url string     Controller URL to use for the CLI.  If specified, this will be used instead of what is in the configuration. (default "http://localhost:9000/edge/v1")
   -d, --debug                     Enables debug output
   -f, --format string             The output format.  The values are text, log or json. (default "text")
-  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used. (default "default")
+  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used.  The profiles are set in ~/.config/aiware-cli.yaml (default "default")
   -q, --quiet                     Disables output extra output except the main output
 ```
 
 ### SEE ALSO
 
-* [aiware-agent](/cli/aiware-agent.md)	 - Provides CLI as well as launching edge services as agent
+* [aiware-agent](/cli/aiware-agent.md)	 - Provides CLI as well as running as aiware agent
 * [aiware-agent task delete](/cli/aiware-agent_task_delete.md)	 - Deletes a task
 * [aiware-agent task download](/cli/aiware-agent_task_download.md)	 - Provides the output of a task given a task id and output name.
 * [aiware-agent task get](/cli/aiware-agent_task_get.md)	 - Retrieves details about a task. The task id must be provided as the first argument.
