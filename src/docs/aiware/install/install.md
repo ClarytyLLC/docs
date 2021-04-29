@@ -18,8 +18,8 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
     export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
     export AIWARE_DB_PORT=5432 # if PG is running locally
     export AIWARE_CACHE=$HOME/aiware/cache
-    export AIWARE_DB_ROOT=$HOME/aiware/postgres
-    export AIWARE_REGISTRY_ROOT=$HOME/aiware/registry
+    export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
+    export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
     export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
     export AIWARE_ROOT=$HOME/aiware/root
     export AIWARE_AGENT_UPDATE_INTERVAL=15
