@@ -39,9 +39,6 @@
 - [aiWARE](/aiware/)
   - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
   - [Installation Guide](/aiware/install/installation-guide-overview.md)  
-    <!-- Farye: focus, Greg F has a fairly good guide for Edge deployment -->
-      <!-- Installation script, if you don't have any flags, ask questions --> 
-      <!-- we need a clear list of options, we can place in installation guide overview -->
     - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
     - [Install Cluster](/aiware/install/cluster.md) <!-- everything you need to know -->
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
@@ -51,9 +48,9 @@
     - [Sizing](/aiware/install/sizing.md)
     - [Usage Reporting](/aiware/install/usage.md)
     - [Maintenance](/aiware/troubleshooting/maintenance.md)
-  - [Troubleshooting](/aiware/troubleshooting/toc.md)
+  - [Troubleshooting](/aiware/troubleshooting/)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/) <!-- rewrite this section -->
-    - [aiWARE Architecture](/aiware/architecture-overview/)
+    - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
     - [Controller](/aiware/aiWARE-in-depth/controller)
     - [Engines](/aiware/aiWARE-in-depth/engines)
