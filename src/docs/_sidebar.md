@@ -43,12 +43,11 @@
       <!-- Installation script, if you don't have any flags, ask questions --> 
       <!-- we need a clear list of options, we can place in installation guide overview -->
     - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
-    - [Install Cluster](/aiware/install/mode_two_node.md) <!-- everything you need to know -->
-    <!-- - [Datacenter Installation] (/aiware/install/anywhere/cluster-deployment.md)  -->
+    - [Install Cluster](/aiware/install/cluster.md) <!-- everything you need to know -->
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
     - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
     - [Environment Variables](/aiware/install/envs.md) <!-- move -->
-  - [Cluster Management Guide]() <!-- advanced steps, platform mgmt -->
+  - [Cluster Management Guide](/aiware/install/manage.md) <!-- advanced steps, platform mgmt -->
     - [Sizing](/aiware/install/sizing.md)
     - [Usage Reporting](/aiware/install/usage.md)
     - [Maintenance](/aiware/troubleshooting/maintenance.md)
