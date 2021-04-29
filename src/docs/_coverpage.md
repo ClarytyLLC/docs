@@ -1,6 +1,6 @@
 <!-- markdownlint-disable no-inline-html -->
 
-<!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/overview/'" /> -->
+<!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/quickstart/'" /> -->
 <meta http-equiv="refresh" content="0; url=./#/quickstart/" />
 
 <style>
@@ -12,7 +12,7 @@ section.cover .cover-main {
     background: white;
 }
 </style>
-<div class="overview">
+<div class="quickstart">
   <div class="action-bar">
     <div class="wrapper">
     </div>
