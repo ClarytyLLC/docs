@@ -7,7 +7,7 @@
 * OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
 
 ## Install on MacOS
-This covers an installation on MacOS. For Ubuntu or AWS installation, please refer to the AWS Install Guide.
+This covers an installation on MacOS. For Ubuntu or AWS installation, please refer to the [AWS Install Guide](/aiware/aiWARE-in-depth/aws-install/).
 
 1. Open a Terminal window. This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
 
