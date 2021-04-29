@@ -5,18 +5,6 @@
 * Docker with 2 CPUs and 16GB of RAM
 * OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
 
-## Environment variables for installation
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| INSTALL_AIWARE_SKIP_START | false | If set to `true`, skip starting aiware |
-| INSTALL_AIWARE_SKIP_SERVICE | false | If set to `true`, skip installing as a service on the host |
-| INSTALL_AIWARE_VERSION | nil | If set, install this particular version |
-| INSTALL_AIWARE_CHANNEL | stable | This install the latest version from a particular channel.  The channels are: dev, stage, stable |
-| INSTALL_AIWARE_BIN_DIR | /usr/local/bin | Directory to install aiware-agent binary, links, and uninstall scripts |
-| INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | Directory for systemd service |
-| INSTALL_AIWARE_EXEC | agent | command to pass to the service when starting.  By default it starts the agent |
-
 ## Install
 1. Become root
     ```bash
@@ -85,6 +73,17 @@
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
     it in realtime with `watch service aiware-agent status`.
 
+## Environment variables for installation
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| INSTALL_AIWARE_SKIP_START | false | If set to `true`, skip starting aiware |
+| INSTALL_AIWARE_SKIP_SERVICE | false | If set to `true`, skip installing as a service on the host |
+| INSTALL_AIWARE_VERSION | nil | If set, install this particular version |
+| INSTALL_AIWARE_CHANNEL | stable | This install the latest version from a particular channel.  The channels are: dev, stage, stable |
+| INSTALL_AIWARE_BIN_DIR | /usr/local/bin | Directory to install aiware-agent binary, links, and uninstall scripts |
+| INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | Directory for systemd service |
+| INSTALL_AIWARE_EXEC | agent | command to pass to the service when starting.  By default it starts the agent |
 
 ## Optional User Data Components
 
