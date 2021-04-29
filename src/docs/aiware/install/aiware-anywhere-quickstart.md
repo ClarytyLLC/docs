@@ -2,13 +2,18 @@
 Target: Deploy on a Mac. 
 Optional: Target environment, Ubuntu, Virtual Box or AWS. Add guides on setting up those machines. --> 
 # Overview
-The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. aiWARE consists of several components include [Edge](/aiware/aiWARE-in-depth/?id=architectural-overview), applications and aiWARE Core. 
+The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. aiWARE consists of several components include [Edge](/aiware/aiWARE-in-depth/?id=architectural-overview), [aiWARE APIs](/apis/), and applications. 
 
 aiWARE can run on a Linux box or a Mac. This guide will set up aiWARE on your Mac. 
 ## Prerequisites 
 - MacOS 10.14 or greater
 - [Docker](https://docs.docker.com/docker-for-mac/install/)
 - 2 CPUs and 16GB of RAM
+
+Root is not required or recommended.
+
+Refer to [Prerequisites](/aiware/install/prereq) for details on setting up a deployment environment for aiWARE. 
+
 ## Steps
 THe installation consists of the installation of aiWARE Edge and aiWARE Core. Edge is the processing component. Adding Core provides you with a full stack of aiWARE. This pairs the processing capabilities with applications, search and other data/object operations for aiWARE.
 ### Step 1: Open Terminal Widnow

@@ -45,7 +45,6 @@
     - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
     - [Install Cluster](/aiware/install/mode_two_node.md) <!-- everything you need to know -->
     <!-- - [Datacenter Installation] (/aiware/install/anywhere/cluster-deployment.md)  -->
-    - [Install Edge Only](/aiware/aiWARE-in-depth/edge-installation) <!-- Can move under troubleshooting -->
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
     - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
     - [Environment Variables](/aiware/install/envs.md) <!-- move -->
