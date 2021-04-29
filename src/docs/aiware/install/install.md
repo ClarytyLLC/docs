@@ -1,11 +1,5 @@
 # Install
 
-To install aiWARE Agent, run
-
-```bash
-curl -sfL https://get.aiware.com | sudo sh -
-```
-
 ## Dependencies
 
 * Docker with 2 CPUs and 16GB of RAM
