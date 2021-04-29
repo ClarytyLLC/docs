@@ -179,28 +179,3 @@ service prometheus-node-exporter start
 # Run aiware install for the service
 curl -sfL https://get.aiware.com | bash -
 ```
-
-## GPU CUDA Engine Hosts
-
-For aiWARE to launch engines with nvidia GPUs, the following must be met:
-* At least Docker 19.0.3
-* nvidia-cuda-toolkit installed
-* nvidia-driver-XXX installed (at least 450)
-* nvidia-container-runtime
-* Normal requirements for engine server met
-
-
-This is an example user data for GPUs on Ubuntu 20.04:
-
-```bash
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | apt-key add -
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | tee /etc/apt/sources.list.d/nvidia-container-runtime.list
-apt-get update && apt-get upgrade -y
-
-apt-get install -y golang nvidia-cuda-toolkit nfs-common nvidia-driver-450 nvidia-container-runtime docker.io
-service docker restart
-
-# test it
-docker run -it --rm --gpus all ubuntu nvidia-smi
-```

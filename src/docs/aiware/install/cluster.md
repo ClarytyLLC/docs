@@ -111,6 +111,30 @@ it in realtime with `watch service aiware-agent status`.
 * An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required
 ### Docker
 Many of the services that run in the cluster run in Docker containers. As such, ensure that there is enough disk space available for the Docker root directory (typically located at `/var/lib/docker`)
+## GPU CUDA Engine Hosts
+
+For aiWARE to launch engines with nvidia GPUs, the following must be met:
+* At least Docker 19.0.3
+* nvidia-cuda-toolkit installed
+* nvidia-driver-XXX installed (at least 450)
+* nvidia-container-runtime
+* Normal requirements for engine server met
+
+
+This is an example user data for GPUs on Ubuntu 20.04:
+
+```bash
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+apt-get update && apt-get upgrade -y
+
+apt-get install -y golang nvidia-cuda-toolkit nfs-common nvidia-driver-450 nvidia-container-runtime docker.io
+service docker restart
+
+# test it
+docker run -it --rm --gpus all ubuntu nvidia-smi
+```
 ## Network Storage
 We don't recommend using NAS or SAN for the `AIWARE_ROOT` which is typically `/opt/aiware`. NAS or SAN can be used for the cluster cache and can replace the `nfs` run mode. 
 ### Network
