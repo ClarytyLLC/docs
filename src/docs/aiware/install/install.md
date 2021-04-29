@@ -3,7 +3,7 @@
 ## Dependencies
 
 * Docker with 2 CPUs and 16GB of RAM
-* OS:  Ubuntu 18.04, Ubuntu 20.04, Mac
+* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
 
 ## Environment variables for installation
 
