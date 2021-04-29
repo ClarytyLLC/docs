@@ -74,8 +74,28 @@ build_number: 1281
 ```
 
 ## Engine Node
+Please note the IP of the Admin box above and use for the other systems. Do this for each engine instance.
+### Step 1: Elevate Permissions to Root
+`sudo bash`
 
-## Install aiWARE Anywher
+This will ensure that all following steps are executed as root.
+### Step 2: Setup Environment Variables and Directories
+```bash
+export AIWARE_MODE=engine
+export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
+export AIWARE_HOST_EXPIRE=false
+```
+
+### Step 3: Run Installation Command
+
+```bash
+curl -sfL https://get.aiware.com | sudo sh -
+```
+
+### Step 4: Validate the Installation
+ADD
+
+## Install aiWARE Anywhere
 ### Step 1: Run install command for aiWARE applications
 
 ```bash
