@@ -11,6 +11,11 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
 
 1. Open a Terminal window. This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
 
+2. Find the IP address of the machine. This can be done in terminal by running the following:
+```bash
+export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
+```
+
 2. Set the variables
     ```bash
 
@@ -27,7 +32,7 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
     export AIWARE_REGION=us-east-1 # only relevant if running in AWS
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
-    export AIWARE_CONTROLLER=http://127.0.0.1:9000/edge/v1 # for localhost
+    export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
 
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
