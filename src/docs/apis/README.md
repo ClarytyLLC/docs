@@ -2,7 +2,7 @@
 
 Veritone's full suite of APIs enables you to easily add cognitive functionality and intelligent features to your custom solution.
 
-![Integration](../overview/architecture-overview/stack-integration.svg)
+![Integration](../aiware/aiWARE-in-depth/architecture-overview/stack-integration.svg)
 
 ## The Best of Both Worlds <!-- {docsify-ignore} -->
 
