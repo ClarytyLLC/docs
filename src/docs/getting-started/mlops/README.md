@@ -1,5 +1,7 @@
 # Machine Learning Operator Quick Start
 ## A Platform For Cognitive Engines
 Need to deploy an engine quickly, leverage aiWARE Anywhere. With a quick setup, you can have a proof-of-concept instance or an enterprise-grade cluster available to push your engines to production. 
-* [Proof of Concept Installation](/install/anywhere/proof-of-concept)
-* [Enterprise Installation](/install/anywhere/cluster-deployment)
+* [Single Machine Installation](/aiware/install/install/)
+* [Cluster Installation](/install/anywhere/cluster-deployment)
+## Read About The Architecture
+Learn more about the design and architecture of aiWARE. Read about the different components and process flow [here](/aiWARE-in-depth/architecture-overview/)
