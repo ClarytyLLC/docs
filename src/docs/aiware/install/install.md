@@ -16,7 +16,7 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
 export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
 ```
 
-2. Set the variables
+3. Set the variables
     ```bash
 
     mkdir -p $HOME/aiware
@@ -40,7 +40,7 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
     Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
     you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
-3. Run install command
+4. Run install command
 
     ```bash
     curl -sfL https://get.aiware.com | sh -
@@ -49,7 +49,7 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
     it in realtime with `watch service aiware-agent status`.
 
-4. Validate install
+5. Validate install
 
     Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, cadvisor, aiware-controller, aiware-postgres, & aiware-registry.
 
@@ -67,7 +67,7 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
     ai job create --help, to see how you can run a job.
     ai job get --help, to see how you can get job info.
 
-5. Run install command for aiWARE applications
+6. Run install command for aiWARE applications
 
     ```bash
     ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
@@ -75,6 +75,27 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
 
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
     it in realtime with `watch service aiware-agent status`.
+
+7. Test aiWARE GraphQL.
+    ```bash
+    curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
+          me {
+                  id
+            }
+        }"}'
+    ```
+
+    The above request should return the following:
+    ```bash
+    {
+        "data": {
+            "me": {
+                "id": "7682"
+            }
+        }
+    }
+    ```
+
 
 ## Environment variables for installation
 
