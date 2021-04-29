@@ -1,5 +1,6 @@
 # Overview
 Run aiWARE on the deployment footprint that suites your needs: 
+
 I would like to: | Deployment | Description:
 -- | --- | ---
 Run tests, develop an application, run aiWARE on a minimal footprint | [Single Instance Deployment](/aiware/install/install.md) | Install aiWARE on a local environment such as a MacBook, VirtualBox instance or on a cloud instance
