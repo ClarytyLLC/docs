@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-inline-html -->
 
 <!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/overview/'" /> -->
-<meta http-equiv="refresh" content="0; url=./#/overview/" />
+<meta http-equiv="refresh" content="0; url=./#/quickstart/" />
 
 <style>
 section.cover .cover-main {
