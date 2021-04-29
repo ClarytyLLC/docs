@@ -44,7 +44,7 @@
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
     - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
     - [Environment Variables](/aiware/install/envs.md) <!-- move -->
-  - [Cluster Management Guide](/aiware/install/manage.md) <!-- advanced steps, platform mgmt -->
+  - [Cluster Management Guide](/aiware/management/) <!-- advanced steps, platform mgmt -->
     - [Sizing](/aiware/install/sizing.md)
     - [Usage Reporting](/aiware/install/usage.md)
     - [Maintenance](/aiware/troubleshooting/maintenance.md)
