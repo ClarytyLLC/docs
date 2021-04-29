@@ -39,24 +39,21 @@
 - [aiWARE](/aiware/)
   - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
   - [Installation Guide](/aiware/install/installation-guide-overview.md)  
-    - [Prerequisites](/aiware/install/prereq.md)
-    - [Environment Variables](/aiware/install/envs.md)
-    - [Re-Organize] <!-- Farye: focus, Greg F has a fairly good guide for Edge deployment -->
+    <!-- Farye: focus, Greg F has a fairly good guide for Edge deployment -->
       <!-- Installation script, if you don't have any flags, ask questions --> 
       <!-- we need a clear list of options, we can place in installation guide overview -->
-      - [Install](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
-      - [Install Anywhere](/aiware/install/anywhere.md)
-      - [Proof of Concept Installation](/aiware/install/anywhere/proof-of-concept.md)
-      - [Enterprise Cluster Installation](/aiware/install/anywhere/cluster-deployment.md)  
-      - [Install Single Computer](/aiware/install/mode_single.md)
-      - [Install Cluster](/aiware/install/mode_two_node.md)
-      - [Install Edge Only](/aiware/aiWARE-in-depth/edge-installation) <!-- Can move troubleshooting under troubleshooting -->
-      - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
-  - [Cluster Management]()
+    - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
+    - [Install Cluster](/aiware/install/mode_two_node.md) <!-- everything you need to know -->
+    <!-- - [Datacenter Installation] (/aiware/install/anywhere/cluster-deployment.md)  -->
+    - [Install Edge Only](/aiware/aiWARE-in-depth/edge-installation) <!-- Can move under troubleshooting -->
+    - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
+    - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
+    - [Environment Variables](/aiware/install/envs.md) <!-- move -->
+  - [Cluster Management Guide]() <!-- advanced steps, platform mgmt -->
     - [Sizing](/aiware/install/sizing.md)
     - [Usage Reporting](/aiware/install/usage.md)
+    - [Maintenance](/aiware/troubleshooting/maintenance.md)
   - [Troubleshooting](/aiware/troubleshooting/toc.md)
-      - [Maintenance](/aiware/troubleshooting/maintenance.md)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/) <!-- rewrite this section -->
     - [aiWARE Architecture](/aiware/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
