@@ -29,13 +29,13 @@
 <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
 
 
-- [Getting Started](/quickstart/)
+- [Getting Started](/getting-started/)
     <!--- [For Beginners](/page-under-construction)-->
-    - [For Application Developers](/quickstart/app-developer/)
-    - [For Data Scientists](/quickstart/engine-developer/)
-    - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
-    - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    - [For MLOps Engineer](/quickstart/mlops/)
+    - [For Application Developers](/getting-started/app-developer/)
+    - [For Data Scientists](/getting-started/engine-developer/)
+    - [For Machine Learning Integrator](/getting-started/ml-integrator/) <!-- remove or change to developer? -->
+    - [For Machine Learning Explorer](/getting-started/ml-explorer/) <!-- remove? -->
+    - [For MLOps Engineer](/getting-started/mlops/)
 - [aiWARE](/aiware/)
   - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
   - [Installation Guide](/aiware/install/installation-guide-overview.md)  
