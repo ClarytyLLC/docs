@@ -20,13 +20,13 @@ Contains subcommands for engine instances.
       --controller-url string     Controller URL to use for the CLI.  If specified, this will be used instead of what is in the configuration. (default "http://localhost:9000/edge/v1")
   -d, --debug                     Enables debug output
   -f, --format string             The output format.  The values are text, log or json. (default "text")
-  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used. (default "default")
+  -p, --profile string            The profile to use.  If not specified, the profile named 'default' will be used.  The profiles are set in ~/.config/aiware-cli.yaml (default "default")
   -q, --quiet                     Disables output extra output except the main output
 ```
 
 ### SEE ALSO
 
-* [aiware-agent](/cli/aiware-agent.md)	 - Provides CLI as well as launching edge services as agent
+* [aiware-agent](/cli/aiware-agent.md)	 - Provides CLI as well as running as aiware agent
 * [aiware-agent engine-instance get](/cli/aiware-agent_engine-instance_get.md)	 - Retrieves details about an engine instance.
 * [aiware-agent engine-instance get-logs](/cli/aiware-agent_engine-instance_get-logs.md)	 - Retrieves the logs of an engine instance.
 * [aiware-agent engine-instance get-status](/cli/aiware-agent_engine-instance_get-status.md)	 - Retrieves the status of an engine instance.
