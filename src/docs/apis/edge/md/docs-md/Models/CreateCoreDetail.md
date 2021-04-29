@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **coreUrl** | [**String**](string.md) |  | [optional] [default to null]
 **endpoint** | [**String**](string.md) |  | [optional] [default to null]
 **isEnabled** | [**Boolean**](boolean.md) | Is the core enabled | [optional] [default to null]
+**jobPriorityAdjustment** | [**Long**](long.md) | Job priority adjustment for the core. | [optional] [default to null]
 **scheduled** | [**Boolean**](boolean.md) | Download scheduled jobs | [optional] [default to null]
 **token** | [**String**](string.md) |  | [optional] [default to null]
 

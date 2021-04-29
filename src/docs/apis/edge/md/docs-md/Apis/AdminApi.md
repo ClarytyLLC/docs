@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**deleteToken**](AdminApi.md#deleteToken) | **POST** /admin/token/{TokenID}/delete | This deletes a token
 [**deleteUser**](AdminApi.md#deleteUser) | **POST** /admin/user/{UserID}/delete | This deletes a user
 [**desiredserversServerType**](AdminApi.md#desiredserversServerType) | **POST** /admin/server_type/{ServerTypeID}/desired | This API add servers to the specified server type
-[**getAdminApplicationDetail**](AdminApi.md#getAdminApplicationDetail) | **GET** /admin/applications/{ApplicationID}/detail | This provides information on the given application.
+[**getAdminApplicationDetail**](AdminApi.md#getAdminApplicationDetail) | **GET** /admin/application/{ApplicationID}/detail | This provides information on the given application.
 [**getAdminCoreDetail**](AdminApi.md#getAdminCoreDetail) | **GET** /admin/core/{CoreID}/detail | This provides information on the given core.
 [**getAdminCores**](AdminApi.md#getAdminCores) | **GET** /admin/cores | This provides a list of core systems
 [**getAdminEngineConfigSectionKey**](AdminApi.md#getAdminEngineConfigSectionKey) | **GET** /admin/engine/{EngineID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the engine
@@ -45,6 +45,7 @@ Method | HTTP request | Description
 [**getAdminServiceConfigSection**](AdminApi.md#getAdminServiceConfigSection) | **GET** /admin/service/{ServiceID}/config/{ConfigSection} | This provides all the config for the service
 [**getAdminServiceConfigSectionKey**](AdminApi.md#getAdminServiceConfigSectionKey) | **GET** /admin/service/{ServiceID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the service
 [**getAdminServiceInstances**](AdminApi.md#getAdminServiceInstances) | **GET** /admin/service/instances | This lists the service instances available for a system
+[**getAdminServiceInstancesByServiceID**](AdminApi.md#getAdminServiceInstancesByServiceID) | **GET** /admin/service/{ServiceID}/instances | This lists the service instances available by service ID
 [**getAdminStatus**](AdminApi.md#getAdminStatus) | **GET** /admin/status | This provides information on the status of the aiWARE edge
 [**getAdminTokenDetail**](AdminApi.md#getAdminTokenDetail) | **GET** /admin/token/{TokenID}/detail | Get the token info by ID
 [**getAdminTokenPermissions**](AdminApi.md#getAdminTokenPermissions) | **GET** /admin/token/{TokenID}/permissions | This provides a list of all token permissions for a token by TokenID
@@ -73,6 +74,7 @@ Method | HTTP request | Description
 [**getServerTypeEngineRunning**](AdminApi.md#getServerTypeEngineRunning) | **GET** /admin/server_types/running_engines | This lists the running engine with server types
 [**getServerTypeEngineRunningDetail**](AdminApi.md#getServerTypeEngineRunningDetail) | **GET** /admin/server_type/{ServerTypeID}/engine/{EngineID}/detail | This gets the detail of server type - running engine
 [**getServerTypes**](AdminApi.md#getServerTypes) | **GET** /admin/server_types | This lists the server types available on the system
+[**getService**](AdminApi.md#getService) | **GET** /admin/service/{ServiceID}/detail | This gets the service detail
 [**getServices**](AdminApi.md#getServices) | **GET** /admin/services | This lists the services available on the system
 [**loginUser**](AdminApi.md#loginUser) | **POST** /admin/users/login | This logs a user in if successful
 [**oauthLoginUser**](AdminApi.md#oauthLoginUser) | **POST** /admin/users/oauth2_login | This logs a user in if successful with OAuth2
@@ -93,6 +95,7 @@ Method | HTTP request | Description
 [**updateRole**](AdminApi.md#updateRole) | **POST** /admin/users/role/{RoleID}/update | This updates a role
 [**updateServerType**](AdminApi.md#updateServerType) | **POST** /admin/server_type/{ServerTypeID}/update | This API updates the specified server type
 [**updateServerTypeEngineRunning**](AdminApi.md#updateServerTypeEngineRunning) | **POST** /admin/server_type/{ServerTypeID}/engine/{EngineID}/update | This API updates the specified server type-running engine
+[**updateService**](AdminApi.md#updateService) | **POST** /admin/service/{ServiceID}/update | This API updates a service.
 [**updateToken**](AdminApi.md#updateToken) | **POST** /admin/token/{TokenID}/update | This updates a token
 [**updateUser**](AdminApi.md#updateUser) | **POST** /admin/user/{UserID}/update | This updates a user
 [**userPasswordForgot**](AdminApi.md#userPasswordForgot) | **POST** /admin/users/password/forgot | This api will help users to reset their password when they forgot
@@ -396,7 +399,7 @@ Name | Type | Description  | Notes
 
 <a name="createResource"></a>
 # **createResource**
-> CreateResourceResponse createResource(CreateResourceRequest, X-Correlation-Id)
+> CreateResourceResponse createResource(CreateResourceRequest, X-Correlation-Id, useDefaults)
 
 This API creates a new resource definition such as a database, nsq or redis DB.
 
@@ -406,6 +409,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **CreateResourceRequest** | [**CreateResourceRequest**](../Models/CreateResourceRequest.md)| The fields for a resource definition |
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **useDefaults** | **Boolean**| Indicates if default values should be applied | [optional] [default to null]
 
 ### Return type
 
@@ -998,7 +1002,7 @@ Name | Type | Description  | Notes
 
 <a name="getAdminOrganizations"></a>
 # **getAdminOrganizations**
-> AdminOrganizationsGetResponse getAdminOrganizations(X-Correlation-Id, offset, limit, organizationID, organizationName, orderBy)
+> AdminOrganizationsGetResponse getAdminOrganizations(X-Correlation-Id, offset, limit, organizationID, organizationName, orderBy, direction, startTime, endTime)
 
 This provides a list of organizations
 
@@ -1011,7 +1015,10 @@ Name | Type | Description  | Notes
  **limit** | **Long**| the number of items to return. | [optional] [default to 10]
  **organizationID** | [**UUID**](../Models/.md)| Filter by organizationID | [optional] [default to null]
  **organizationName** | **String**| Filter by organizationName | [optional] [default to null]
- **orderBy** | **String**| The value should be in [organizationName, organizationID, createdTime, basePriority] | [optional] [default to null]
+ **orderBy** | **String**| The value should be in [organizationName, organizationID, createdTime, basePriority, failed, complete] | [optional] [default to null]
+ **direction** | **String**| DESC/ ASC | [optional] [default to null]
+ **startTime** | **String**| Filter by jobStatusCount with startTime | [optional] [default to null]
+ **endTime** | **String**| Filter by jobStatusCount with endTime | [optional] [default to null]
 
 ### Return type
 
@@ -1162,7 +1169,7 @@ Name | Type | Description  | Notes
 
 <a name="getAdminServiceInstances"></a>
 # **getAdminServiceInstances**
-> GetAdminServiceInstancesResponse getAdminServiceInstances(X-Correlation-Id)
+> GetAdminServiceInstancesResponse getAdminServiceInstances(X-Correlation-Id, serviceID, serviceName, offset, limit, isActive)
 
 This lists the service instances available for a system
 
@@ -1171,10 +1178,44 @@ This lists the service instances available for a system
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **serviceID** | **String**| service ID | [optional] [default to null]
+ **serviceName** | **String**| service name | [optional] [default to null]
+ **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
+ **limit** | **Long**| the number of items to return. | [optional] [default to 10]
+ **isActive** | **String**| Filter by instance status | [optional] [default to null]
 
 ### Return type
 
 [**GetAdminServiceInstancesResponse**](../Models/GetAdminServiceInstancesResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="getAdminServiceInstancesByServiceID"></a>
+# **getAdminServiceInstancesByServiceID**
+> GetAdminServiceInstancesByServiceResponse getAdminServiceInstancesByServiceID(ServiceID, X-Correlation-Id, offset, limit, isActive)
+
+This lists the service instances available by service ID
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ServiceID** | [**UUID**](../Models/.md)| ID of the service | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
+ **limit** | **Long**| the number of items to return. | [optional] [default to 10]
+ **isActive** | **String**| Filter by instance status | [optional] [default to null]
+
+### Return type
+
+[**GetAdminServiceInstancesByServiceResponse**](../Models/GetAdminServiceInstancesByServiceResponse.md)
 
 ### Authorization
 
@@ -1476,7 +1517,7 @@ Name | Type | Description  | Notes
 
 <a name="getApplications"></a>
 # **getApplications**
-> GetApplicationsResponse getApplications(X-Correlation-Id, ApplicationStatus\_Query\_Optional, ApplicationType\_Query\_Optional, offset, limit, orderBy)
+> GetApplicationsResponse getApplications(X-Correlation-Id, ApplicationStatus\_Query\_Optional, ApplicationType\_Query\_Optional, offset, limit, internalApplicationID, applicationID, orderBy)
 
 Get the list of applications deployed and available on aiWARE
 
@@ -1489,6 +1530,8 @@ Name | Type | Description  | Notes
  **ApplicationType\_Query\_Optional** | [**ApplicationTypeEnum**](../Models/.md)| type | [optional] [default to null] [enum: queue_service, http_service]
  **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
  **limit** | **Long**| the number of items to return. | [optional] [default to 10]
+ **internalApplicationID** | [**UUID**](../Models/.md)| Internal ID of Application | [optional] [default to null]
+ **applicationID** | [**UUID**](../Models/.md)| ID of Application | [optional] [default to null]
  **orderBy** | **String**| The value should be in [applicationName, createdTime] | [optional] [default to null]
 
 ### Return type
@@ -1958,9 +2001,35 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="getService"></a>
+# **getService**
+> GetAdminServiceResponse getService(ServiceID, X-Correlation-Id)
+
+This gets the service detail
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ServiceID** | [**UUID**](../Models/.md)| ID of the service | [default to null]
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**GetAdminServiceResponse**](../Models/GetAdminServiceResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
 <a name="getServices"></a>
 # **getServices**
-> GetAdminServicesResponse getServices(X-Correlation-Id, tags)
+> GetAdminServicesResponse getServices(X-Correlation-Id, serviceID, internalApplicationID, offset, limit, tags)
 
 This lists the services available on the system
 
@@ -1969,6 +2038,10 @@ This lists the services available on the system
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **serviceID** | **String**| service ID | [optional] [default to null]
+ **internalApplicationID** | [**UUID**](../Models/.md)| Internal ID of Application | [optional] [default to null]
+ **offset** | **Long**| the number of data to skip before getting the result set | [optional] [default to null]
+ **limit** | **Long**| the number of items to return. | [optional] [default to 10]
  **tags** | **String**| Filter by tags | [optional] [default to null]
 
 ### Return type
@@ -2490,6 +2563,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateServerTypeEngineRunningResponse**](../Models/UpdateServerTypeEngineRunningResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="updateService"></a>
+# **updateService**
+> UpdateServiceResponse updateService(ServiceID, UpdateServiceRequest, X-Correlation-Id)
+
+This API updates a service.
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ServiceID** | [**UUID**](../Models/.md)| ID of the service | [default to null]
+ **UpdateServiceRequest** | [**UpdateServiceRequest**](../Models/UpdateServiceRequest.md)| The fields for a service |
+ **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+
+### Return type
+
+[**UpdateServiceResponse**](../Models/UpdateServiceResponse.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **fieldsJSON** | [**String**](string.md) | JSON Data for fields | [optional] [default to null]
 **getWorkInterval** | [**Long**](long.md) |  | [optional] [default to null]
 **idleTimeout** | [**Integer**](integer.md) |  | [optional] [default to null]
+**internalApplicationID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 **internalOrganizationID** | [**UUID**](UUID.md) |  | [optional] [default to null]
 **jwtRightsJSON** | [**String**](string.md) | JSON Data for jwt_rights | [optional] [default to null]
 **maxProcessingSecondsPerWorkItem** | [**Integer**](integer.md) |  | [optional] [default to null]
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **preload** | [**Boolean**](boolean.md) | If it is &#x60;true&#x60;, that means the engine need to pull docker image to local | [optional] [default to null]
 **priority\_adjustment** | [**Integer**](integer.md) | On new tasks with this engine, add this value to the priority of that task | [optional] [default to null]
 **replacementEngineID** | [**UUID**](UUID.md) |  | [optional] [default to null]
+**ttlPaddingInSeconds** | [**Long**](long.md) |  | [optional] [default to null]
 **updateStatusInterval** | [**Integer**](integer.md) |  | [optional] [default to null]
 **validationJSON** | [**String**](string.md) | JSON Data for validation | [optional] [default to null]
 

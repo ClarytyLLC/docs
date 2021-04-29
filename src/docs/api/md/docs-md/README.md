@@ -35,7 +35,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**deleteToken**](Apis/AdminApi.md#deletetoken) | **POST** /admin/token/{TokenID}/delete | This deletes a token
 *AdminApi* | [**deleteUser**](Apis/AdminApi.md#deleteuser) | **POST** /admin/user/{UserID}/delete | This deletes a user
 *AdminApi* | [**desiredserversServerType**](Apis/AdminApi.md#desiredserversservertype) | **POST** /admin/server_type/{ServerTypeID}/desired | This API add servers to the specified server type
-*AdminApi* | [**getAdminApplicationDetail**](Apis/AdminApi.md#getadminapplicationdetail) | **GET** /admin/applications/{ApplicationID}/detail | This provides information on the given application.
+*AdminApi* | [**getAdminApplicationDetail**](Apis/AdminApi.md#getadminapplicationdetail) | **GET** /admin/application/{ApplicationID}/detail | This provides information on the given application.
 *AdminApi* | [**getAdminCoreDetail**](Apis/AdminApi.md#getadmincoredetail) | **GET** /admin/core/{CoreID}/detail | This provides information on the given core.
 *AdminApi* | [**getAdminCores**](Apis/AdminApi.md#getadmincores) | **GET** /admin/cores | This provides a list of core systems
 *AdminApi* | [**getAdminEngineConfigSectionKey**](Apis/AdminApi.md#getadminengineconfigsectionkey) | **GET** /admin/engine/{EngineID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the engine
@@ -48,6 +48,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**getAdminServiceConfigSection**](Apis/AdminApi.md#getadminserviceconfigsection) | **GET** /admin/service/{ServiceID}/config/{ConfigSection} | This provides all the config for the service
 *AdminApi* | [**getAdminServiceConfigSectionKey**](Apis/AdminApi.md#getadminserviceconfigsectionkey) | **GET** /admin/service/{ServiceID}/config/{ConfigSection}/{ConfigKey} | This provides a config section key for the service
 *AdminApi* | [**getAdminServiceInstances**](Apis/AdminApi.md#getadminserviceinstances) | **GET** /admin/service/instances | This lists the service instances available for a system
+*AdminApi* | [**getAdminServiceInstancesByServiceID**](Apis/AdminApi.md#getadminserviceinstancesbyserviceid) | **GET** /admin/service/{ServiceID}/instances | This lists the service instances available by service ID
 *AdminApi* | [**getAdminStatus**](Apis/AdminApi.md#getadminstatus) | **GET** /admin/status | This provides information on the status of the aiWARE edge
 *AdminApi* | [**getAdminTokenDetail**](Apis/AdminApi.md#getadmintokendetail) | **GET** /admin/token/{TokenID}/detail | Get the token info by ID
 *AdminApi* | [**getAdminTokenPermissions**](Apis/AdminApi.md#getadmintokenpermissions) | **GET** /admin/token/{TokenID}/permissions | This provides a list of all token permissions for a token by TokenID
@@ -76,6 +77,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**getServerTypeEngineRunning**](Apis/AdminApi.md#getservertypeenginerunning) | **GET** /admin/server_types/running_engines | This lists the running engine with server types
 *AdminApi* | [**getServerTypeEngineRunningDetail**](Apis/AdminApi.md#getservertypeenginerunningdetail) | **GET** /admin/server_type/{ServerTypeID}/engine/{EngineID}/detail | This gets the detail of server type - running engine
 *AdminApi* | [**getServerTypes**](Apis/AdminApi.md#getservertypes) | **GET** /admin/server_types | This lists the server types available on the system
+*AdminApi* | [**getService**](Apis/AdminApi.md#getservice) | **GET** /admin/service/{ServiceID}/detail | This gets the service detail
 *AdminApi* | [**getServices**](Apis/AdminApi.md#getservices) | **GET** /admin/services | This lists the services available on the system
 *AdminApi* | [**loginUser**](Apis/AdminApi.md#loginuser) | **POST** /admin/users/login | This logs a user in if successful
 *AdminApi* | [**oauthLoginUser**](Apis/AdminApi.md#oauthloginuser) | **POST** /admin/users/oauth2_login | This logs a user in if successful with OAuth2
@@ -96,6 +98,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**updateRole**](Apis/AdminApi.md#updaterole) | **POST** /admin/users/role/{RoleID}/update | This updates a role
 *AdminApi* | [**updateServerType**](Apis/AdminApi.md#updateservertype) | **POST** /admin/server_type/{ServerTypeID}/update | This API updates the specified server type
 *AdminApi* | [**updateServerTypeEngineRunning**](Apis/AdminApi.md#updateservertypeenginerunning) | **POST** /admin/server_type/{ServerTypeID}/engine/{EngineID}/update | This API updates the specified server type-running engine
+*AdminApi* | [**updateService**](Apis/AdminApi.md#updateservice) | **POST** /admin/service/{ServiceID}/update | This API updates a service.
 *AdminApi* | [**updateToken**](Apis/AdminApi.md#updatetoken) | **POST** /admin/token/{TokenID}/update | This updates a token
 *AdminApi* | [**updateUser**](Apis/AdminApi.md#updateuser) | **POST** /admin/user/{UserID}/update | This updates a user
 *AdminApi* | [**userPasswordForgot**](Apis/AdminApi.md#userpasswordforgot) | **POST** /admin/users/password/forgot | This api will help users to reset their password when they forgot
@@ -387,18 +390,23 @@ Class | Method | HTTP request | Description
  - [EngineInstanceWorkRequestResponse](./Models/EngineInstanceWorkRequestResponse.md)
  - [EngineInstanceWorkRequestResponseResult](./Models/EngineInstanceWorkRequestResponseResult.md)
  - [EngineLaunchDetail](./Models/EngineLaunchDetail.md)
+ - [EngineOperationStatusResponse](./Models/EngineOperationStatusResponse.md)
  - [EngineRegistrationActionEnum](./Models/EngineRegistrationActionEnum.md)
  - [EngineStateEnum](./Models/EngineStateEnum.md)
  - [EngineStatusEnum](./Models/EngineStatusEnum.md)
  - [EngineTemplate](./Models/EngineTemplate.md)
  - [EngineTemplates](./Models/EngineTemplates.md)
+ - [EngineToolkitTimestamps](./Models/EngineToolkitTimestamps.md)
  - [EngineTypeEnum](./Models/EngineTypeEnum.md)
  - [EnvKeyValue](./Models/EnvKeyValue.md)
  - [Error](./Models/Error.md)
  - [FailureReasonEnum](./Models/FailureReasonEnum.md)
  - [GPUEnum](./Models/GPUEnum.md)
+ - [GetAdminServiceInstancesByServiceResponse](./Models/GetAdminServiceInstancesByServiceResponse.md)
  - [GetAdminServiceInstancesResponse](./Models/GetAdminServiceInstancesResponse.md)
+ - [GetAdminServiceResponse](./Models/GetAdminServiceResponse.md)
  - [GetAdminServicesResponse](./Models/GetAdminServicesResponse.md)
+ - [GetAdminServicesResponseResult](./Models/GetAdminServicesResponseResult.md)
  - [GetApplicationsResponse](./Models/GetApplicationsResponse.md)
  - [GetBacklogSummaryResponse](./Models/GetBacklogSummaryResponse.md)
  - [GetCoresResponse](./Models/GetCoresResponse.md)
@@ -516,6 +524,7 @@ Class | Method | HTTP request | Description
  - [LaunchJobTemplateResponse](./Models/LaunchJobTemplateResponse.md)
  - [LaunchStatusEnum](./Models/LaunchStatusEnum.md)
  - [LicenseDetail](./Models/LicenseDetail.md)
+ - [LoadBalancerDetail](./Models/LoadBalancerDetail.md)
  - [OrganizationDetail](./Models/OrganizationDetail.md)
  - [PauseEngineRequest](./Models/PauseEngineRequest.md)
  - [PermissionDetail](./Models/PermissionDetail.md)
@@ -531,6 +540,7 @@ Class | Method | HTTP request | Description
  - [ResourceDetail](./Models/ResourceDetail.md)
  - [ResourceMappingDetail](./Models/ResourceMappingDetail.md)
  - [ResourceMappingStateEnum](./Models/ResourceMappingStateEnum.md)
+ - [ResourceRecoveryStrategyEnum](./Models/ResourceRecoveryStrategyEnum.md)
  - [ResourceStateEnum](./Models/ResourceStateEnum.md)
  - [ResourceTypeEnum](./Models/ResourceTypeEnum.md)
  - [ResumeEngineRequest](./Models/ResumeEngineRequest.md)
@@ -554,6 +564,7 @@ Class | Method | HTTP request | Description
  - [ServiceInstanceCreateResponse](./Models/ServiceInstanceCreateResponse.md)
  - [ServiceInstanceDeleteResponse](./Models/ServiceInstanceDeleteResponse.md)
  - [ServiceInstanceDetail](./Models/ServiceInstanceDetail.md)
+ - [ServiceStatusEnum](./Models/ServiceStatusEnum.md)
  - [ServiceTypeEnum](./Models/ServiceTypeEnum.md)
  - [SortOrderEnum](./Models/SortOrderEnum.md)
  - [StatusFormatEnum](./Models/StatusFormatEnum.md)
@@ -610,6 +621,9 @@ Class | Method | HTTP request | Description
  - [UpdateServerTypeEngineRunningRequest](./Models/UpdateServerTypeEngineRunningRequest.md)
  - [UpdateServerTypeEngineRunningResponse](./Models/UpdateServerTypeEngineRunningResponse.md)
  - [UpdateServerTypeResponse](./Models/UpdateServerTypeResponse.md)
+ - [UpdateServiceDetail](./Models/UpdateServiceDetail.md)
+ - [UpdateServiceRequest](./Models/UpdateServiceRequest.md)
+ - [UpdateServiceResponse](./Models/UpdateServiceResponse.md)
  - [UpdateTokenDetail](./Models/UpdateTokenDetail.md)
  - [UpdateUserDetail](./Models/UpdateUserDetail.md)
  - [UserDetail](./Models/UserDetail.md)
