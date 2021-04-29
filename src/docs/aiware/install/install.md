@@ -9,23 +9,25 @@
 ## Install on MacOS
 This covers an installation on MacOS. For Ubuntu or AWS installation, please refer to the AWS Install Guide.
 
-1. Become root
-    ```bash
-    sudo bash
-    ```
+1. Open a Terminal window. This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
 
 2. Set the variables
     ```bash
 
-    export AIWARE_MODE=single
+    mkdir -p $HOME/aiware
+    export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
     export AIWARE_DB_PORT=5432 # if PG is running locally
-    export AIWARE_CACHE=/opt/aiware/cache
-    export AIWARE_DB_ROOT=/opt/aiware/postgres
-    export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
+    export AIWARE_CACHE=$HOME/aiware/cache
+    export AIWARE_DB_ROOT=$HOME/aiware/postgres
+    export AIWARE_REGISTRY_ROOT=$HOME/aiware/registry
+    export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
+    export AIWARE_ROOT=$HOME/aiware/root
+    export AIWARE_AGENT_UPDATE_INTERVAL=15
+    export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
     export AIWARE_REGION=us-east-1 # only relevant if running in AWS
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
-    export AIWARE_CONTROLLER=http://IP_OF_NODE:9000/edge/v1 # primary ip of the node
+    export AIWARE_CONTROLLER=http://127.0.0.1:9000/edge/v1 # for localhost
 
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
@@ -50,18 +52,11 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
 
     Run: docker logs -tf aiware-controller, to see the activity of aiware-controller.
 
-    Go to http://<HOST>:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as :
+    Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as :
 
-    { "version": "---
-    build_date: Tue Feb 4 22:52:57 UTC 2020
-    git_repo: realtime
-    git_branch: HEAD
-    git_commit: f8a8130c88b8ed5b0e50a8f26bf45d5d9b1a22e1
-    git_author: al
-    build_url: https://jenkins.veritone.com/job/aiware/job/edge-controller/1281/
-    build_number: 1281
-    " }
-
+    ```
+    { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
+    ```
 
     Run a test Job:
     ai job create --help, to see how you can run a job.
@@ -70,7 +65,7 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
 5. Run install command for aiWARE applications
 
     ```bash
-    /usr/local/bin/aiware-agent --controller-token $AIWARE_INIT_TOKEN hub install core --channel stable
+    ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
     ```
 
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
@@ -87,98 +82,3 @@ This covers an installation on MacOS. For Ubuntu or AWS installation, please ref
 | INSTALL_AIWARE_BIN_DIR | /usr/local/bin | Directory to install aiware-agent binary, links, and uninstall scripts |
 | INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | Directory for systemd service |
 | INSTALL_AIWARE_EXEC | agent | command to pass to the service when starting.  By default it starts the agent |
-
-## Optional User Data Components
-
-### Logging to ElasticSearch (Optional)
-```bash
-cat >/var/local/fluent-bit.conf <<EOF
-[SERVICE]
-    Flush         1
-    Log_Level     info
-    Daemon        off
-    HTTP_Server   On
-    HTTP_Listen   0.0.0.0
-    HTTP_Port     2020
-
-[INPUT]
-    Name              tail
-    Path              /var/lib/docker/containers/*/*.log
-    DB                /var/log/flb.db
-    Mem_Buf_Limit     5MB
-    Skip_Long_Lines   On
-    Refresh_Interval  10
-
-[OUTPUT]
-    Name            es
-    Host            elasticsearch
-    Port            9200
-    Logstash_Format On
-    Logstash_Prefix v3f-prod1-nfs
-    Type            flb_type
-    Time_Key        @timestamp
-    Retry_Limit     False
-EOF
-
-docker run -d --name fluent-bit -v /var/lib/docker/containers:/var/lib/docker/containers -v /var/local/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf fluent/fluent-bit:1.4
-```
-
-### Node Exporter (Recommended)
-
-This is used to provide OS level information about the host.
-
-```bash
-apt-get install -y prometheus-node-exporter
-wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
-tar -xzf node_exporter-0.18.1.linux-amd64.tar.gz
-service prometheus-node-exporter stop
-cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/bin/prometheus-node-exporter
-curl https://get.aiware.com/files/nfs-prometheus-node-exporter -o prometheus-node-exporter
-cp prometheus-node-exporter /etc/default
-service prometheus-node-exporter start
-```
-
-Sample /etc/default/nfs-prometheus-node-exporter.  This is what is persisted at [https://get.aiware.com/files/nfs-prometheus-node-exporter](https://get.aiware.com/files/nfs-prometheus-node-exporter)
-```bash
-ARGS="--collector.diskstats.ignored-devices=^(ram|loop|fd|(h|s|v|xv)d[a-z]|nvme\\d+n\\d+p)\\d+$ \
-      --collector.filesystem.ignored-mount-points=^/(sys|proc|dev|run)($|/) \
-      --collector.netdev.ignored-devices=^lo$ \
-      --collector.textfile.directory=/var/lib/prometheus/node-exporter \
-      --collector.nfs \
-      "
-```
-
-### Example User Data
-```bash
-#!/bin/bash
-
-# Env Vars
-export AIWARE_MODE="nfs"
-export INSTALL_AIWARE_CHANNEL=prod
-export AIWARE_SERVERTYPE=62f55bfd-e2f8-4c90-8d1c-84c52a144a43
-export AIWARE_CONTROLLER="https://edge-prod.aws-prod-rt.veritone.com/edge/v1"
-
-# Mount disks
-mkfs -t ext4 /dev/xvdd
-mkdir -p /opt/aiware
-mount /dev/xvdd /opt/aiware
-mkswap /dev/xvdc
-swapon /dev/xvdc
-
-
-# Install base packages
-apt-get update && apt-get upgrade -y && apt-get install -y docker.io awscli nfs-common nfs-kernel-server prometheus-node-exporter
-
-# Install Node Exporter
-cd /tmp
-wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
-tar -xzf node_exporter-0.18.1.linux-amd64.tar.gz  # Install from tgz as ubuntu package repo is really old
-service prometheus-node-exporter stop
-cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/bin/prometheus-node-exporter
-curl https://get.aiware.com/files/nfs-prometheus-node-exporter -o prometheus-node-exporter
-cp prometheus-node-exporter /etc/default
-service prometheus-node-exporter start
-
-# Run aiware install for the service
-curl -sfL https://get.aiware.com | bash -
-```
