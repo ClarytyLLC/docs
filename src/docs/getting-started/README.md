@@ -24,16 +24,16 @@ It's easy to get started with Veritone aiWARE. Create your free [Veritone Develo
 
 I would like to: | Suggested entry point:
 -- | ---
-Build custom Machine Learning solutions for audiences <br/>with complex data analysis requirements. | See our [ML Integrator](/quickstart/ml-integrator/) quickstart.
-Build AI into standalone apps. | See our [ML Explorer](/quickstart/ml-explorer/) quickstart.
-Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](/quickstart/app-developer/) quickstart.
-Create custom cognitive engines. | See our [Engine Developer](/quickstart/engine-developer/) quickstart.
+Build custom Machine Learning solutions for audiences <br/>with complex data analysis requirements. | See our [ML Integrator](/getting-started/ml-integrator/) quickstart.
+Build AI into standalone apps. | See our [ML Explorer](/getting-started/ml-explorer/) quickstart.
+Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](/getting-started/app-developer/) quickstart.
+Create custom cognitive engines. | See our [Engine Developer](/getting-started/engine-developer/) quickstart.
 
 **Deployment Choices**
 I want to install on a: | Description
 -- | ---
-[Single server](/quickstart/single-single) | A single server deployment of aiWARE is suited for ML Integrators, ML Explorers and Application Developers. This brings the entire stack onto a local machine. 
-[Cluster deployment](/quickstart/cluster-deployment) | A cluster of aiWARE that is suited for enterprises, datacenters and individuals who anticipate running a daily job load of > 1000
+[Single server](/aiware/install/install) | A single server deployment of aiWARE is suited for ML Integrators, ML Explorers and Application Developers. This brings the entire stack onto a local machine. 
+[Cluster deployment](/aiware/install/cluster) | A cluster of aiWARE that is suited for enterprises, datacenters and individuals who anticipate running a daily job load of > 1000
 
 # Tutorials <!-- {docsify-ignore} -->
 
