@@ -136,8 +136,7 @@ export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
 echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
 ```
 
-Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
-you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
+Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
 4. Run install command
 
@@ -149,7 +148,7 @@ This will install the aiware-agent as a service. You can check the status via ru
 
 5. Validate install
 
-Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, cadvisor, aiware-controller, aiware-postgres, & aiware-registry.
+Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, aiware-controller, aiware-postgres, & aiware-registry.
 
 You can connect to the database at localhost:5342, or whichever port that you have specified for AIWARE_DB_PORT, with postgres/postgres as the username/password.
 
@@ -180,16 +179,16 @@ curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorizati
     }"}'
 ```
 
-    The above request should return the following:
-    ```bash
-    {
-        "data": {
-            "me": {
-                "id": "7682"
-            }
+The above request should return the following:
+```bash
+{
+    "data": {
+        "me": {
+            "id": "7682"
         }
     }
-    ```
+}
+```
 
 ## Install on AWS
 
