@@ -62,15 +62,7 @@ Please note the IP of the Admin box and use for the other systems.
 Go to http://<HOST>:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as :
 
 ```
-{ "version": "---
-build_date: Tue Feb 4 22:52:57 UTC 2020
-git_repo: realtime
-git_branch: HEAD
-git_commit: f8a8130c88b8ed5b0e50a8f26bf45d5d9b1a22e1
-git_author: al
-build_url: https://build_url/job/aiware/job/edge-controller/1281/
-build_number: 1281
-" }
+{ "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
 ```
 
 ## Engine Node
@@ -99,7 +91,7 @@ ADD
 ### Step 1: Run install command for aiWARE applications
 
 ```bash
-/usr/local/bin/aiware-agent --controller-url http://<HOST>:9000/edge/v1/ --controller-token $AIWARE_INIT_TOKEN hub install core --channel stable
+ai --controller-url http://<HOST>:9000/edge/v1/ --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
 ```
 
 This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
