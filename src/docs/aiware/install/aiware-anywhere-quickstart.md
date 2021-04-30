@@ -18,51 +18,52 @@ Refer to [Prerequisites](/aiware/install/prereq) for details on setting up a dep
 THe installation consists of the installation of aiWARE Edge and aiWARE Core. Edge is the processing component. Adding Core provides you with a full stack of aiWARE. This pairs the processing capabilities with applications, search and other data/object operations for aiWARE.
 ### Step 1: Open Terminal Widnow
 Open spotlight (command + space), type Terminal to open a new terminal window
-### Step 2: Create necessary install directories 
-Create aiWARE directories 
+### Step 2: Get IP adress
+```bash
+export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
 ```
+### Step 3: Create necessary install directories 
+Create aiWARE directories 
+```bash
 mkdir -p $HOME/aiware/cache
 mkdir -p $HOME/aiware/root
 ```
-### Step 3: Environment Variables
+### Step 4: Environment Variables
 Enter the following environment variables in the terminal window 
-```
-export AIWARE_MODE=controller,redis,db,nsq,es,api,lb,minio,engine
+```bash
+export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
+export AIWARE_DB_PORT=5432 # if PG is running locally
 export AIWARE_CACHE=$HOME/aiware/cache
+export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
+export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
+export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
 export AIWARE_ROOT=$HOME/aiware/root
-export AIWARE_AGENT_UPDATE_INTERVAL=5
+export AIWARE_AGENT_UPDATE_INTERVAL=15
 export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
-export AIWARE_DB_MIGRATE=true
-export AIWARE_INIT_TOKEN=`uuid`; echo "Using token $AIWARE_INIT_TOKEN"
+export AIWARE_REGION=us-east-1 # only relevant if running in AWS
+export AIWARE_HOST_EXPIRE=false
+export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
+export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
+
+echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
 ```
-### Step 4: Install aiWARE
+### Step 5: Install aiWARE
 ```
 curl -sfL https://get.aiware.com | sudo -E sh -
 ```
-### Step 5: Validate the installation
+### Step 6: Validate the installation
 Run `curl localhost:9000/edge/v1/version`, for aiWARE Edge version information. This will return information such as:
 ```
-{
-"version": "---
-build_date: Tue Feb 4 22:52:57 UTC 2020
-git_repo: realtime
-git_branch: HEAD
-git_commit: f8a8130c88b8ed5b0e50a8f26bf45d5d9b1a22e1
-git_author: joe
-build_url: https://build_url/job/aiware/job/edge-controller/1281/
-build_number: 1281
-"
-}
+{ "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
 ```
 This validates that the controller server is up and running. 
-### Step 5: Install Core
-Core extends
+### Step 7: Install Core
 ```
-/usr/local/bin/ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel stable
+ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
 ```
-### Step 6: Run a sample job
+### Step 8: Run a sample job
 ```
-/usr/local/bin/ai job create 
+/usr/local/bin/ai job create --help
 ```
 
 # Appendix

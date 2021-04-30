@@ -44,13 +44,14 @@
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
     - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
     - [Environment Variables](/aiware/install/envs.md) <!-- move -->
-  - [Cluster Management Guide](/aiware/management/) <!-- advanced steps, platform mgmt -->
-    - [Sizing](/aiware/install/sizing.md)
-    - [Usage Reporting](/aiware/install/usage.md)
-    - [Maintenance](/aiware/troubleshooting/maintenance.md)
+  - [Cluster Management Guide](/aiware/manage/) <!-- advanced steps, platform mgmt -->
+    - [Sizing](/aiware/manage/sizing.md)
+    - [Usage Reporting](/aiware/manage/usage.md)
+    - [Maintenance](/aiware/manage/maintenance.md)
   - [Troubleshooting](/aiware/troubleshooting/)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/) <!-- rewrite this section -->
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
+    - [AWS/Ubuntu Install](/aiware/aiWARE-in-depth/aws-install)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
     - [Controller](/aiware/aiWARE-in-depth/controller)
     - [Engines](/aiware/aiWARE-in-depth/engines)
