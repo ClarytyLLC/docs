@@ -2,9 +2,12 @@
 Target: Deploy on a Mac. 
 Optional: Target environment, Ubuntu, Virtual Box or AWS. Add guides on setting up those machines. --> 
 # Overview
-The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. aiWARE consists of several components include [Edge](/aiware/aiWARE-in-depth/?id=architectural-overview), [aiWARE APIs](/apis/), and applications. 
+The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. aiWARE consists of several components include [Edge](/aiware/aiWARE-in-depth/?id=architectural-overview), [Core](/apis/), and various applications & engines.
 
-aiWARE can run on a Linux box or a Mac. This guide will set up aiWARE on your Mac. 
+To get started with aiWARE, you can either [signup online](https://www.veritone.com/devsignup/) and start using the Veritone-managed SaaS offering, or you can install aiWARE on your hardware.
+
+aiWARE can run on a Linux box or on a Mac. This guide will help you set up aiWARE on your Mac. 
+
 ## Prerequisites 
 - MacOS 10.14 or greater
 - [Docker](https://docs.docker.com/docker-for-mac/install/)
