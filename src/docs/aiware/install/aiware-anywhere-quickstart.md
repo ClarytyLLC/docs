@@ -8,9 +8,8 @@ aiWARE can run on a Linux box or a Mac. This guide will set up aiWARE on your Ma
 ## Prerequisites 
 - MacOS 10.14 or greater
 - [Docker](https://docs.docker.com/docker-for-mac/install/)
-- 2 CPUs and 16GB of RAM
-
-Root is not required or recommended.
+- Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time)
+- Recommendeded Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engine running at a time)
 
 Refer to [Prerequisites](/aiware/install/prereq) for details on setting up a deployment environment for aiWARE. 
 
