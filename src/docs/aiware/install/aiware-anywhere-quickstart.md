@@ -68,6 +68,7 @@ ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
 
 # Appendix
 * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
+
 ## Environment variables for installation
 | Variable | Default | Description |
 |----------|---------|-------------|

@@ -99,6 +99,8 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
     }
     ```
 
+# Appendix
+* [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
 
 ## Environment variables for installation
 
