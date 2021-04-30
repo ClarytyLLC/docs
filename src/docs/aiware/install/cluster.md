@@ -100,9 +100,11 @@ it in realtime with `watch service aiware-agent status`.
 
 ## Deployment Considerations
 ### Database
-* An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required
+* An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required.
+
 ### Docker
-Many of the services that run in the cluster run in Docker containers. As such, ensure that there is enough disk space available for the Docker root directory (typically located at `/var/lib/docker`)
+Many of the services that run in the cluster run in Docker containers. As such, ensure that there is enough disk space available for the Docker root directory (typically located at `/var/lib/docker`).
+
 ## GPU CUDA Engine Hosts
 
 For aiWARE to launch engines with nvidia GPUs, the following must be met:

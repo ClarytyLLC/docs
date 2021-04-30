@@ -17,9 +17,10 @@
 1. Open a Terminal window. This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
 
 2. Find the IP address of the machine. This can be done in terminal by running the following:
-```bash
-export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
-```
+    ```bash
+    export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
+    ```
+
 3. Create necessary install directories 
     ```bash
     mkdir -p $HOME/aiware/cache
@@ -106,84 +107,84 @@ export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep 
 ## Install on Ubuntu
 
 1. Become root
-```bash
-sudo bash
-```
+    ```bash
+    sudo bash
+    ```
 
 2. Install Docker and dependencies
-```bash
-apt update -y 
-apt install docker.io uuidgen -y
-```
+    ```bash
+    apt update -y 
+    apt install docker.io uuidgen -y
+    ```
 
 3. Set the variables
-```bash
-export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
-export AIWARE_DB_PORT=5432 # if PG is running locally
-export AIWARE_CACHE=$HOME/aiware/cache
-export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
-export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
-export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
-export AIWARE_ROOT=$HOME/aiware/root
-export AIWARE_AGENT_UPDATE_INTERVAL=15
-export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
-export AIWARE_REGION=us-east-1 # only relevant if running in AWS
-export AIWARE_HOST_EXPIRE=false
-export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
-export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
-echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
-```
-Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
+    ```bash
+    export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
+    export AIWARE_DB_PORT=5432 # if PG is running locally
+    export AIWARE_CACHE=$HOME/aiware/cache
+    export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
+    export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
+    export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
+    export AIWARE_ROOT=$HOME/aiware/root
+    export AIWARE_AGENT_UPDATE_INTERVAL=15
+    export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
+    export AIWARE_REGION=us-east-1 # only relevant if running in AWS
+    export AIWARE_HOST_EXPIRE=false
+    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
+    export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
+    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
+    ```
+    Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
 4. Run install command
-```bash
-curl -sfL https://get.aiware.com | sh -
-```
-This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
+    ```bash
+    curl -sfL https://get.aiware.com | sh -
+    ```
+    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
 
 5. Validate install
 
-Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, aiware-controller, aiware-postgres, & aiware-registry.
+    Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, aiware-controller, aiware-postgres, & aiware-registry.
 
-You can connect to the database at localhost:5342, or whichever port that you have specified for AIWARE_DB_PORT, with postgres/postgres as the username/password.
+    You can connect to the database at localhost:5342, or whichever port that you have specified for AIWARE_DB_PORT, with postgres/postgres as the username/password.
 
-Run: docker logs -tf aiware-controller, to see the activity of aiware-controller.
+    Run: docker logs -tf aiware-controller, to see the activity of aiware-controller.
 
-Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
+    Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
 
-```bash
-{ "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
-```
+    ```bash
+    { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
+    ```
 
-Run a test Job:
-ai job create --help, to see how you can run a job.
-ai job get --help, to see how you can get job info.
+    Run a test Job:
+    ai job create --help, to see how you can run a job.
+    ai job get --help, to see how you can get job info.
 
 6. Run install command for aiWARE Core
 
-```bash
-ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
-```
+    ```bash
+    ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
+    ```
 
 7. Test aiWARE GraphQL.
-```bash
-curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
-        me {
-                id
-        }
-    }"}'
-```
+    ```bash
+    curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
+            me {
+                    id
+            }
+        }"}'
+    ```
 
-The above request should return the following:
-```bash
-{
-    "data": {
-        "me": {
-            "id": "7682"
+    The above request should return the following:
+    ```bash
+    {
+        "data": {
+            "me": {
+                "id": "7682"
+            }
         }
     }
-}
-```
+    ```
 
 # Appendix
 * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
