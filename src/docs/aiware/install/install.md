@@ -132,18 +132,14 @@ export AIWARE_REGION=us-east-1 # only relevant if running in AWS
 export AIWARE_HOST_EXPIRE=false
 export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
 export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
-
 echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
 ```
-
 Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
 4. Run install command
-
 ```bash
 curl -sfL https://get.aiware.com | sh -
 ```
-
 This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
 
 5. Validate install
