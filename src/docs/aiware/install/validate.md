@@ -49,26 +49,3 @@ The process involves these steps:
 * [Step Three](#step-three-create-the-job): Create the Job
 * [Step Four](#step-four-poll-for-status): Poll for Status
 * [Step Five](#step-five-obtain-the-results): Obtain the Results
-
-# aiWARE Anywhere 
-
-## Step One: Authorization (Getting a Token)
-
-Regardless of which API you use, an API token must be included in the request's Authorization Header, with the value formatted as: `Bearer <yourtokenhere>`. (See examples below.)
-
-There are several ways to obtain the required token.
-
-1\. If you have Admin rights for your Organization, log into the Veritone Platform and select Admin from the App Picker drop-down. Then click the API Keys widget, and click **New API Key**.
-
-2\. Use GraphQL to run the `userLogin` mutation. (This mutation is the only one that can be run without a token.) Example:
-
-```graphql
-mutation userLogin {
-  userLogin(input: {userName: "jdoe@mycompany.com" password: "Password123"}) {
-    token
-  }
-}
-```
-Run a test Job:
-ai job create --help, to see how you can run a job.
-ai job get --help, to see how you can get job info.

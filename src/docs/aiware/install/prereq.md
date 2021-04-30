@@ -1,5 +1,5 @@
 # Pre-requisites
-aiWARE requires a Linux box or Linux VM running on a supported chipset (ARM64 or AMD64). It is not natively compatible with Windows or MacOS. You can use Ubuntu Linux running on VirtualBox VM to achieve successful installation on a Mac.
+aiWARE requires a Linux box or Linux VM running on a supported chipset (ARM64 or AMD64). It is not natively compatible with Windows. 
 
 # Environment Variables
 These may be set before the agent installer is run.  At least `AIWARE_MODE` must be set.
@@ -193,8 +193,3 @@ cp prometheus-node-exporter /etc/default
 # Required directories
 
 aiWARE by default installs into `/opt/aiware`.  This can be changed with `AIWARE_ROOT` environment variable.
-
-# Known Issues
-## 172.0.0.0/8 Are not supported
-
-Currently `172.0.0.0.0/8` are not supported.  Please use `10.0.0.0/8` or `192.168.0.0/16` instead.

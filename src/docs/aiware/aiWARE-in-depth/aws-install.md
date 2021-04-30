@@ -4,9 +4,11 @@
 
 * Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time)
 * Recommendeded Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engine running at a time)
-* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
+* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur) 
 
-## Install on MacOS
+For MacOS installation, please to the [MacOS installation guide](/aiware/install/install).
+
+## Install on Ubuntu / AWS
 This covers an installation on MacOS. For Ubuntu or AWS installation, please refer to the AWS Install Guide.
 
 1. Become root

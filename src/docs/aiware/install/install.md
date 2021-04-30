@@ -2,7 +2,6 @@
 
 * [Install on MacOS](#install-on-macos) 
 * [Install on Ubuntu](#install-on-ubuntu)
-* [Install on AWS](#install-on-aws)
 * [Appendix](#appendix)
 
 # Install
@@ -185,8 +184,6 @@ The above request should return the following:
     }
 }
 ```
-
-## Install on AWS
 
 # Appendix
 * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
