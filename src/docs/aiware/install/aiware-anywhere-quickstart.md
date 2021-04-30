@@ -13,7 +13,7 @@ aiWARE can run on a Linux box or a Mac. This guide will set up aiWARE on your Ma
 
 Refer to [Prerequisites](/aiware/install/prereq) for details on setting up a deployment environment for aiWARE. 
 
-## Steps
+## Install on MacOS
 THe installation consists of the installation of aiWARE Edge and aiWARE Core. Edge is the processing component. Adding Core provides you with a full stack of aiWARE. This pairs the processing capabilities with applications, search and other data/object operations for aiWARE.
 ### Step 1: Open Terminal Widnow
 Open spotlight (command + space), type Terminal to open a new terminal window
