@@ -65,7 +65,7 @@ ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
 ```
 ### Step 8: Run a sample job
 ```
-/usr/local/bin/ai job create --help
+ai job create --help
 ```
 
 # Appendix
