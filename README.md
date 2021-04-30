@@ -2,21 +2,19 @@
 
 This is the source code to the Veritone aiWARE platform documentation available at [docs.veritone.com](https://docs.veritone.com).
 If you'd like to read the documentation, it's probably easiest to do it there.
+
 If you find something you think is inaccurate, feel free to [create an issue](https://github.com/veritone/docs/issues/new).
 
 ## Contributing
 
 If you would like to suggest an edit to the docs, feel free to submit a pull request.
-You'll probably want to chat with us in our [Slack community][veri-slack] first if it's a large change
-to make sure we're in alignment.
+You'll probably want to chat with us in our [Slack community][veri-slack] first if it's a large change to make sure we're in alignment.
 
 The process is typically to create a branch, work on new content, push a commit, then open a pull request with @kasthomas2 as reviewer. When you are creating a brand new page, try to find a suitable slot for it in the nav sidebar; and create an entry for your new page in src/docs/\_sidebar.md. (Commit the \_sidebar.md edit along with your other content and submit a PR on the whole thing.)
 
 Veritone engineers may consult [this page](https://steel-ventures.atlassian.net/wiki/spaces/VT/pages/888279528/Contribute+to+docs.veritone.com) for detailed information on how best to submit content, however this not required in order to contribute content.
 
-If this is related to aiware, then veritone/realtime repo docs directory is the master for this content.
-
-## Overview
+### Overview
 
 Veritone Docs is a static site built using Markdown files and powered by [Docsify][docsify].
 
@@ -31,6 +29,7 @@ Veritone Docs is a static site built using Markdown files and powered by [Docsif
 The first time you run after cloning the repository to your machine, you need to do the following to bootstrap the build:
 ```bash
 nvm install
+npm install -g yarn
 yarn install
 yarn build
 yarn start
@@ -60,7 +59,18 @@ If the branch is in this repo (not a fork) and the name begins with `feature/VTN
 our build system will build it and let you know if it passed in the PR.
 Once the PR is merged into master, it will be auto-deployed to docs.veritone.com.
 
-### Formatting conventions
+### Documentation Page Types
+
+For consistency, most documentation pages should fall under one of the following standard types:
+
+- Overview
+- Getting Started
+- Quickstart
+- Tutorial
+- In-Depth Topic
+- Auto-Generated Reference
+
+### Formatting Conventions
 
 In general, try to keep everything as simple as possible.
 Use heading 1s (`# Title`) for the page title, then heading 2s (`## Title`) for major sections, section 3s for subsections and so on.
@@ -195,6 +205,23 @@ docker run -it --rm -p 9000:9000 docs:latest
 ```
 
 This is for local testing only.  Production builds happen through Jenkins.
+
+## Troubleshooting
+If you run into issues with running Docsify, refer the below list of known issues:
+
+```
+$ yarn serve
+yarn run v1.22.10
+$ docsify serve ./build-${ENVIRONMENT:-local}
+env: node\r: No such file or directory
+error Command failed with exit code 127.
+
+# Fix
+vi node_modules/docsify-cli/bin/docsify
+:set ff=unix
+:wq
+```
+ 
 
 ## License
 

@@ -1,6 +1,6 @@
-# Usage Reporting for disconnected
+# Usage Reporting for Air-Gapped Environments
 
-To report usage for truly isolated and disconnected aiWARE, please run the following:
+To report usage for truly isolated and air-grapped aiWARE, please run the following:
 
 ```bash
 # Run as root on DB server

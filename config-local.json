@@ -1,5 +1,5 @@
 {
-  "apiRoot": "https://api.aws-dev.veritone.com",
+  "apiRoot": "https://api.dev.us-1.veritone.com",
   "nodeEnv": "local",
   "pendoKey": "cefc4ec9-0826-4b42-7b3e-9b3538e741d0"
 }
