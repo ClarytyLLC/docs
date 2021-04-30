@@ -42,9 +42,8 @@
     - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
     - [Install Cluster](/aiware/install/cluster.md) <!-- everything you need to know -->
     - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
-    - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
-   
   - [Cluster Management Guide](/aiware/manage/) <!-- advanced steps, platform mgmt -->
+    - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
     - [Sizing](/aiware/manage/sizing.md)
     - [Usage Reporting](/aiware/manage/usage.md)
     - [Maintenance](/aiware/manage/maintenance.md)
