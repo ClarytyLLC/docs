@@ -2,6 +2,8 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
+>**Tip** Before getting started, make sure to understand [Variables](/automate-studio/application/README?id=variables) and [Typed Inputs](/automate-studio/working-with-nodes/README?id=typed-inputs)
+
 ### Flow Description
 
 The flow receives a video or audio URL, runs it through a Speech-to-Text Engine, and creates a text transcription of the file. The transcript is emailed to the user along with a link to the Veritone CMS page that contains the full engine output.
@@ -65,7 +67,7 @@ Once done, click on the *Done* button to close the node properties and save the 
 
 <hr/>
 
-#### step 3: Setup the 'User Details' Node
+#### step 3: Setup the User Details Node
 
 Drag the **User Details** node from the Node Palette and drop it next to the previous node.
 
@@ -147,3 +149,5 @@ Within a few minutes, the flow will complete and you will be able to see the res
 Your screen should look something like this 
 
 ![transcription-success](transcription-success.png)
+
+>Learn how to run your Flow via [HTTP API](/automate-studio/working-with-flows/README?id=run-via-http)

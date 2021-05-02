@@ -24,7 +24,6 @@ The main concepts you need to know about are:
 3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
 4. **Subflow:** A group of nodes presented as a node in the palette which can be reused in the main flow.
 5. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
-6. **Flow Engines:** After a flow is created, it can be built, deployed, and run as an _engine_ in aiWARE. (This is a more advanced topic, but we will get to it shortly.)
 
 <!-- > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
 
@@ -155,6 +154,10 @@ Congratulations! You just ran your first flow.
 ## Congratulations!
 
 Congratulations on building and running your first flow engine using Automate Studio.
+
+## Next steps
+
+Now that we have the basics, go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription)
 
 ?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
 

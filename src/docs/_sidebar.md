@@ -137,11 +137,14 @@
       - [Veritone Applications](/apps/)
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
-  - Overview & Concepts
+  - [Overview & Concepts](/automate-studio/application/README)
     - [Automate Studio Application](/automate-studio/application/README)
       - [Canvas](/automate-studio/application/README?id=canvas)
       - [Node Palette](/automate-studio/application/README?id=node-palette)
       - [Debug/Info](/automate-studio/application/README?id=debug-info)
+      - [Variables](/automate-studio/application/README?id=variables)
+        - [Message (msg)](/automate-studio/application/README?id=message-msg)
+        - [Context, Flow, and Global](/automate-studio/application/README?id=context-flow-and-global)
   - [Working with Flows](/automate-studio/working-with-flows/README)
     - [Flow Basics](/automate-studio/working-with-flows/README?id=flow-basics) 
       - [Create New Flow](/automate-studio/working-with-flows/README?id=create-new-flow)
@@ -151,7 +154,8 @@
     - [Editing Flows](/automate-studio/working-with-flows/README?id=editing-flows)
       - [Save Flow Settings](/automate-studio/working-with-flows/README?id=save-flow-settings)
       - [Flow Revisions](/automate-studio/working-with-flows/README?id=flow-revisions)
-      - [Debugging a Flow](/automate-studio/working-with-flows/README?id=debugging-a-flow)
+      - [Export and Import](/automate-studio/working-with-flows/README?id=export-and-import)
+    - [Debugging a Flow](/automate-studio/working-with-flows/README?id=debugging-a-flow)
     - [Deploying & Running Flows](/automate-studio/working-with-flows/README?id=deploying-amp-running-flows)
       - [Run in the studio](/automate-studio/working-with-flows/README?id=run-in-the-studio)
       - [Run via HTTP](/automate-studio/working-with-flows/README?id=run-via-http)
@@ -164,19 +168,20 @@
     - [Nodes Basics](/automate-studio/working-with-nodes/README?id=nodes-basics)
       - [Structure](/automate-studio/working-with-nodes/README?id=structure)
       - [Properties](/automate-studio/working-with-nodes/README?id=properties)
+      - [Typed Inputs](/automate-studio/working-with-nodes/README?id=typed-inputs)
       - [Help](/automate-studio/working-with-nodes/README?id=help)
     - [aiWARE Nodes](/automate-studio/working-with-nodes/README?id=aiware-nodes)
     - [Add Nodes To Palette](/automate-studio/working-with-nodes/README?id=add-nodes-to-palette)
-  - Tutorials
-    - Basic
-      - [Transcription](/automate-studio/tutorials/basic/transcription)
-      - Content Classification
-      - Object Detection
-      - Chained Cognition
-    - Advanced
-      - Customer Recognition by Face
-      - Detection of Negative Social Media Posts
-      - Dynamic Language Translation
+  - [Tutorials](/automate-studio/tutorials/README)
+    - [Basic](/automate-studio/tutorials/basic/README)
+      - [Transcription](/automate-studio/tutorials/basic/transcription/tutorial)
+      - [Content Classification](/automate-studio/tutorials/basic/content-classification/tutorial)
+      <!-- - Object Detection -->
+      <!-- - Chained Cognition -->
+    - [Advanced](/automate-studio/tutorials/advanced/README)
+      - [Customer Recognition by Face](/automate-studio/tutorials/advanced/customer-recognition/tutorial)
+      - [Detection of Negative Social Media Posts](/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial)
+      <!-- - Dynamic Language Translation -->
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)

@@ -17,11 +17,12 @@ In this section, we will explain how to create, edit and run flows in a few simp
 - [Editing Flows](#editing-flows)
   - [Save Flow Settings](#save-flow-settings)
   - [Flow Revisions](#flow-revisions)
-  - [Debugging a Flow](#debugging-a-flow)
+  - [Export and Import](#export-and-import)
+- [Debugging a Flow](#debugging-a-flow)
 - [Deploying & Running Flows](#deploying-&running-a-flow)
   - [Run in the studio](#run-in-the-studio)
   - [Run via HTTP](#run-via-http)
-  - [Run as a Job](#run-as-a-job)
+  <!-- - [Run as a Job](#run-as-a-job) -->
 
 
 ### Flow Basics
@@ -68,6 +69,8 @@ If you are on the [Automate Studio Home Page](https://automate.veritone.com/), c
 Hover with the mouse on the desired flow, and click on the vertical menu button that appears on the right side of the flow.
 Choose the *View Detail* option. This will open the **Flow details** sidebar for that particular flow.
 
+If you are in the **Flow Editor** page, click on the *` i `* icon in the upper right corner to open the **Current Flow Details** 
+
 **Flow Details** gives you the overall information about the flow: Flow Name, Flow State, Versions, Running or Complete Jobs, etc. 
 
 The **Overview Tab** contains a quick flow overview such as Flow Description, Developer Name, Category, and more.
@@ -108,7 +111,33 @@ By such behavior, we prevent work loss and achieve continuous development and in
 
 <hr/>
 
-#### Debugging a Flow
+
+#### Export and Import
+
+Flows can be Exported and Imported from the editor using their JSON format, making it very easy to share flows with others.
+
+**Export Flow**
+
+Open the Export dialog by selecting *File -> Export*. The Export dialog can be used to copy flow JSON out of the editor by the following methods:
+
+- Copying the JSON to the system clipboard
+- Downloading the JSON as a file
+
+It can export either the selected nodes, the current flow, or the complete flow configuration.
+
+It offers the option to export compact or formatted JSON. The compact option generates a single line of JSON with no whitespace. The formatted JSON option is formatted over multiple lines with full indentation - which can be easier to read.
+
+**Import Flow**
+
+Open the Import dialog by selecting *File -> Import*. The Import dialog can be used to import a flow by the following methods:
+
+- Pasting in the flow JSON directly
+- Uploading a flow JSON file
+- In all cases, the dialog offers the option to import the nodes into the current flow, or to create a new flow for them.
+
+<hr/>
+
+### Debugging a Flow
 
 There are a few useful tools available in **Automate Studio** which can help us debug our Flow:
 
@@ -131,7 +160,8 @@ There are a few useful tools available in **Automate Studio** which can help us 
     The *Catch Node* is used for error catching on runtime. It has no input port. The error catching happens automatically, globally on flow level.
     The caught error is then provided to the output. To see the error, wire the *Catch Node* to the *Debug Node* to see the error log in the *Debug Sidebar*   (console).   
 
-We will learn how to combine them in practice to properly debug and fix eventual issues in the **Training** section
+
+<hr/>
 
 ### Deploying & Running Flows
 
@@ -154,8 +184,74 @@ Each Flow, whether **Active** or ** Non-Active**, can run in the Automate Studio
 
 Just Click on the button-like square on the left side of the **aiWARE in** node, and the flow will start running.
 
-
+<hr/>
 
 #### Run via HTTP
 
+Before we start, make sure to have an active (deployed) flow.
+
+>To create a flow in few simple steps visit our [quickstart]((/automate-studio/getting-started/README)) tutorial. 
+
+Running a deployed flow is easy.
+
+First, let's get the Flow ID, as it is required for the API. The Flow ID is available in the **Flow Details** dialog.
+
+> Here is how to open [Flow Details](#flow-details)
+
+Another way is just cutting it from the Flow URL. The selected part of the URL in the image below is the Flow ID.
+![flow id url](flow-id-url.png)
+
+
+Once you have your **Deployed** flow ID we can now construct the API URL the following way:
+
+```string
+    https://controller-edge1.veritone.com/flow/<flow-id>/process
+```
+
+Replace the ```<flow-id>``` with your actual Flow ID. You will get something like this:
+
+```string
+    https://controller-edge1.veritone.com/flow/0210e03a-5e4e-4e90-8d08-d8f7b7878a8c/process
+```
+
+The default revision used in this url is always the **DEPLOYED** revision (not the latest). As a reminder, only one revision can be deployed at a time.
+
+If the Flow is not deployed, the API will return an **Error Message**.
+
+Anyway, we can explicitly call a specific revision for testing purposes using the following URL format: 
+```string
+    https://controller-edge1.veritone.com/flow/<flow-id>/<rev id OR rev number OR 'latest'>/process. 
+```
+An HTTP POST to this endpoint will trigger the flow. The **payload** provided in the request body will be passed to the **aiware-in** node in the Flow.
+
+The **payload** must be in a valid **json** format.
+
+```json
+    {
+        "...": "..." //Injected into msg.payload.aiwareChunk.payload
+    }
+```
+
+For example, If we want to provide a **media url** to our AI Cognition Flow ( click [here](/automate-studio/tutorials/basic/transcription) to build your first AI Flow), the request body would look something like the following:
+
+```json
+    {
+        "url": "https://s3.amazonaws.com/static.veritone.com/assets/Obama_15s.mp4"
+    }
+```
+
+?>Regardless of how you initiate the **POST**, be sure to set the header: **“content-type”: “application/json”**
+
+If the Flow is started successfully, we will receive a response in the following format:
+```json
+{
+	"FlowId": "string",
+    "FlowRevisionId": "string",
+    "FlowExecutionId": "string"
+}
+```
+<hr/>
+
 #### Run as a Job
+
+This section is under construction

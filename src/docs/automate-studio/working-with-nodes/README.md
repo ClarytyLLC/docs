@@ -11,6 +11,7 @@ Each node is developed to take care of a certain part of the large app (flow).
 - [Nodes Basics](#nodes-basics)
   - [Node Structure](#node-structure)
   - [Node Properties](#node-properties)
+  - [Typed Inputs](#typed-inputs)
   - [Node Help](#node-help)
 - [aiWARE Nodes](#aiware-nodes)
 - [Add Nodes To Palette](#add-nodes-to-palette)
@@ -50,6 +51,48 @@ If we double click on the node, the **Node UI editor** will slide in from right 
 
 
 ![node-ui](node-ui.png)
+
+<hr/>
+
+#### Typed Inputs
+
+The **Input Fileds** in the **Node Properties** is the place to provide the required information for the node to successfully complete the process.
+
+Each Node, dependently on it's functionality, may expect different parameters and data inputs. 
+
+In some cases, we would define those parameters manually in the Node, but mostly, we would like it to dynamically receive the data from the previous Node to continue some process.
+
+We are using **Typed Inputs** to define and "tell" the Node where it should take the data from, or on the other hand, how to treat the manually provided data, or even combination of both. As already mentioned above, it really depends on the Node purpose. Anyway, it is pretty easy to understand the concept thanks to an intuitive user interface.
+
+We will cover some of the most common **Input Types** in Automate Studio, but the concept applies to any other case.
+![typed-input](typed-input.png)
+
+Almost every input field in Automate Studio is a **Typed Input**
+
+We can recognize it by the grey-color menu button on the left edge of the Input Field.
+
+By clicking on it, we will be able to choose the desired input type.
+
+- **JSON**
+
+    The `JSON` input type allows us to manually add JSON input. It also adds the horizontal menu button on the right edge of the Input Field. Click on it to  open the JSON editor dialog for better experience.
+
+    The value of the input field will be used as JSON data in the node process.
+
+- **String**
+
+    The `string` input type simply tells the node that the manually provided data is a string. The value of the input field will be used as a string in the node process.
+
+- **msg.** 
+
+The `msg.` input is used in case we want to pass data from one node to another. In such case we will specify the full path to the desired property starting from `msg.` (message dot). 
+
+For example, let's say we want to send an email to the logged-in user in our flow (see [Quickstart](/automate-studio/getting-started/README)).
+The **User Details** node returns the logged-in user details at runtime as part of the `msg` object. The email address specifically, can be found in `msg.payload.aiware.user.name`.
+
+The next node is the **aiware email** node. It has a typed input for the *To Email* Input Field.
+
+If we were to use the logged-in user's email from the previous node, we would choose the `msg.` type and provide the full path to the name property like this: `payload.aiware.user.name`
 
 <hr/>
 
