@@ -19,14 +19,16 @@ In this section, we will explain how to create, edit and run flows in a few simp
   - [Flow Revisions](#flow-revisions)
   - [Export and Import](#export-and-import)
 - [Debugging a Flow](#debugging-a-flow)
-- [Deploying & Running Flows](#deploying-&running-a-flow)
+- [Deploying & Running Flows](#deploying-amp-running-flows)
   - [Run in the studio](#run-in-the-studio)
   - [Run via HTTP](#run-via-http)
+- [Graphql API for Flows](#graphql-api-for-flows)
   <!-- - [Run as a Job](#run-as-a-job) -->
 
 
 ### Flow Basics
 
+<hr/>
 
 #### Create New Flow
 
@@ -79,10 +81,20 @@ The **Version History Tab** contains the list of all Flow Revisions and Builds. 
 
 The **Activity Tab** contains the list of all *Deployed* builds and *Executions* and their respective status
 
+<br/>
+<br/>
+
+[Back to Top](#overview)
 
 <hr/>
+<hr/>
+
+<br/>
+<br/>
 
 ### Editing Flows
+
+<hr/>
 
 As we learned [here](#open-an-existing-flow), flow can be reopened at any time and also edited by any developer in the same organization with appropriate permissions. 
 Once the Flow is open in the Flow Editor, the flow can be edited (redesigned, renamed). The flow changes will be saved as *Revisions*
@@ -135,7 +147,16 @@ Open the Import dialog by selecting *File -> Import*. The Import dialog can be u
 - Uploading a flow JSON file
 - In all cases, the dialog offers the option to import the nodes into the current flow, or to create a new flow for them.
 
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
 <hr/>
+<hr/>
+
+<br/>
+<br/>
 
 ### Debugging a Flow
 
@@ -161,7 +182,17 @@ There are a few useful tools available in **Automate Studio** which can help us 
     The caught error is then provided to the output. To see the error, wire the *Catch Node* to the *Debug Node* to see the error log in the *Debug Sidebar*   (console).   
 
 
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
 <hr/>
+<hr/>
+
+<br/>
+<br/>
+
 
 ### Deploying & Running Flows
 
@@ -255,3 +286,221 @@ If the Flow is started successfully, we will receive a response in the following
 #### Run as a Job
 
 This section is under construction
+
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
+<hr/>
+<hr/>
+
+<br/>
+<br/>
+
+### Graphql API for Flows
+
+>To get started with **Veritone's Graphql API** click [here](/apis/using-graphql) 
+
+Flows, Revisions and Executions can be managed and edited usign the **Graphql API**
+
+<hr/>
+
+#### QUERIES
+
+<hr/>
+
+**flow** 
+
+Query to get the flow record
+
+**Arguments**
+
+`id:` The flow ID
+
+```graphql
+    flow(id: ID!): Flow
+```
+<hr/>
+
+**getFlowRevisions**
+
+Returns all revisions
+
+**Arguments**
+
+`id:` The flow ID
+
+```graphql
+    getFlowRevisions(id: ID!): [Revision]
+```
+<hr/>
+
+**getFlowExecutions**
+
+Returns execution details, including status, result (from aiware-out node) and logs (node red debug logs).
+
+**Arguments**
+
+`flowID:` The flow ID
+
+`revisionID` (optional): revision ID in the same flow
+
+`executionID` (optional): execution ID in the same flow
+
+```graphql
+    getFlowExecutions(flowId: ID!, revisionId: ID, executionId: ID): [Execution]
+```
+<hr/>
+
+#### MUTATIONS
+
+<hr/>
+
+**createFlow**
+
+Creates a new flow with only default fields.
+
+```graphql
+    mutation{
+        createFlow(): Flow
+    }
+```
+<hr/>
+
+**copyFlow**
+
+Creates a copy of an existing flow.
+
+**Arguments**
+
+`flowID:` The flow ID
+
+`revisionID` (optional): revision ID in the same flow
+
+```graphql
+    mutation{
+        copyFlow(flowId: ID!, revisionId: ID): Flow
+    }
+```
+<hr/>
+
+**updateFlow**
+
+Update an existing flow
+
+**Arguments**
+
+`flowID:` The flow ID
+
+```graphql
+    mutation{
+        updateFlow(flowId: ID!): Flow
+    }
+```
+<hr/>
+
+<hr/>
+
+**deleteFlow**
+
+True deletion of the flow record
+
+**Arguments**
+
+`flowID:` The flow ID
+
+```graphql
+    mutation{
+        deleteFlow(flowId: ID!): Flow
+    }
+```
+<hr/>
+
+**pauseFlow**
+
+Moves the flow to status Not Active. It will remain in this status until the unpauseFlow API is called
+
+**Arguments**
+
+`flowID:` The flow ID
+
+```graphql
+    mutation{
+        pauseFlow(flowId: ID!): Flow
+    }
+```
+<hr/>
+
+**unpauseFlow**
+
+Moves the flow to status Active
+
+**Arguments**
+
+`flowID:` The flow ID
+
+```graphql
+    mutation{
+        unpauseFlow(flowId: ID!): Flow
+    }
+```
+<hr/>
+
+<hr/>
+
+**createFlowRevision**
+
+Creates the next revision
+
+**Arguments**
+
+`flowID:` The flow ID
+`revision:` Flow Revision Type
+
+```graphql
+    mutation{
+        createFlowRevision(flowId: ID!,revision: Revision!): Revision
+    }
+```
+<hr/>
+
+<hr/>
+
+**deleteFlowRevision**
+
+Marks the the revision deleted
+
+**Arguments**
+
+`flowID:` The flow ID
+`revisionID:` The ID of the revision
+
+```graphql
+    mutation{
+        unpauseFlow(flowId: ID!, revisionID: ID!): Revision
+    }
+```
+<hr/>
+
+<hr/>
+
+**deployFlowRevision**
+
+- Creates a new build from the revision specified, or the latest (HEAD) revision if none specified. 
+- Change the build status to deployed.
+- Change the deployed flag to true on the IS_DEPLOYED revision record.
+
+**Arguments**
+
+`flowID:` The flow ID
+`revisionID` (optional):  The ID of the revision
+
+```graphql
+    mutation{
+        deployFlowRevision(flowId: ID!, revisionID: ID): Revision
+    }
+```
+<hr/>
+
+[Back to Top](#overview)

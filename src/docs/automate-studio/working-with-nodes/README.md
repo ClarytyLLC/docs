@@ -101,7 +101,17 @@ If we were to use the logged-in user's email from the previous node, we would ch
 The right side of the screen is reserved for node info (help). The node specifications and description, as well as requirements, expected input and output, and more info, are all available there. This part is especially helpful during development, as it contains all required information without leaving your workstation.
 
 Select the node by a single-click on it to display the node help in the sidebar. 
+
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
 <hr/>
+<hr/>
+
+<br/>
+<br/>
 
 ### aiWARE Nodes
 
@@ -117,7 +127,16 @@ They can be recognized by the sky-blue color. The aiWARE nodes are divided into 
 >For full aiWARE nodes list visit [@veritone/node-red-contrib-aiware](https://flows.nodered.org/node/@veritone/node-red-contrib-aiware).
 For the source code, please visit our [github repo](https://github.com/veritone/node-red-contrib-aiware)
 
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
 <hr/>
+<hr/>
+
+<br/>
+<br/>
 
 ### Add Nodes To Palette
 
@@ -140,3 +159,14 @@ Click on the *File -> Settings* to open the settings menu
 Next, in the *User Settings* menu click on *Palette* in the left menu. Then, in the *search bar* type the package name you would like to install. The packages will be rendered in the section below the search bar. Once you find the desired package, just click the *Install* button. Then submit by clicking on *Install* again. Within a few seconds, the nodes will be available in the palette.
 
 ![user-settings-palette1](user-settings-palette1.png)
+
+<br/>
+<br/>
+
+[Back to Top](#overview)
+
+<hr/>
+<hr/>
+
+<br/>
+<br/>

@@ -1,6 +1,7 @@
 # Getting Started with Automate Studio
 
-**APPROXIMATE READING TIME: 8 MINUTES**
+**APPROXIMATE READING TIME: 4 MINUTES**
+
 Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
 
 If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).

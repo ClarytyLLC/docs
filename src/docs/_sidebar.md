@@ -160,6 +160,7 @@
       - [Run in the studio](/automate-studio/working-with-flows/README?id=run-in-the-studio)
       - [Run via HTTP](/automate-studio/working-with-flows/README?id=run-via-http)
       - [Run as a Job](/automate-studio/working-with-flows/README?id=run-as-a-job)
+    - [Graphql API for Flows](/automate-studio/working-with-flows/README?id=graphql-api-for-flows)
     - [Subflows](/automate-studio/subflow/README)
       - [Create Subflow](/automate-studio/subflow/README?id=create-subflow)
       - [Edit Subflow Properties](/automate-studio/subflow/README?id=edit-subflow-properties)
@@ -176,7 +177,7 @@
     - [Basic](/automate-studio/tutorials/basic/README)
       - [Transcription](/automate-studio/tutorials/basic/transcription/tutorial)
       - [Content Classification](/automate-studio/tutorials/basic/content-classification/tutorial)
-      <!-- - Object Detection -->
+      - [Object Detection](/automate-studio/tutorials/basic/object-detection/tutorial)
       <!-- - Chained Cognition -->
     - [Advanced](/automate-studio/tutorials/advanced/README)
       - [Customer Recognition by Face](/automate-studio/tutorials/advanced/customer-recognition/tutorial)

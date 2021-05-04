@@ -82,3 +82,4 @@ The final result should be something like the following:
 ![create-subflow-final](create-subflow-final.png)
 
 > More about subfows can be found [here](https://nodered.org/docs/user-guide/editor/workspace/subflows)
+
