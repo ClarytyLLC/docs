@@ -1,9 +1,0 @@
-{
-  "series": [
-    {
-      "startTimeMs": 0,
-      "stopTimeMs": 10000,
-      "speakerId": "<label>"
-    }
-  ]
-}
