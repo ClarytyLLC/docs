@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-inline-html -->
 
-<!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/overview/'" /> -->
-<meta http-equiv="refresh" content="0; url=./#/overview/" />
+<!--<meta http-equiv="Refresh" content="0; url='https://docs.veritone.com/#/aiware/'" /> -->
+<meta http-equiv="refresh" content="0; url=./#/aiware/" />
 
 <style>
 section.cover .cover-main {
@@ -12,7 +12,7 @@ section.cover .cover-main {
     background: white;
 }
 </style>
-<div class="overview">
+<div class="aiware">
   <div class="action-bar">
     <div class="wrapper">
     </div>

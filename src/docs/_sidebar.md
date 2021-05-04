@@ -29,37 +29,38 @@
 <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
 
 
-- [Getting Started](/quickstart/)
+- [Getting Started](/getting-started/)
     <!--- [For Beginners](/page-under-construction)-->
-    - [For Application Developers](/quickstart/app-developer/)
-    - [For Data Scientists](/quickstart/engine-developer/)
-    - [For Machine Learning Integrator](/quickstart/ml-integrator/) <!-- remove or change to developer? -->
-    - [For Machine Learning Explorer](/quickstart/ml-explorer/) <!-- remove? -->
-    <!--- [For Administrators](/page-under-construction)--> <!-- change to IT or DevOps? -->
-- [aiWARE](/overview/)
-  <!--- [Getting Started](/page-under-construction)-->
-  - [Installation Guide](/install/prereq.md) <!--/page-under-construction)--> <!-- better structure this section with sub sections per installation type/target, and have each page contain complete steps -->
-    - [Prerequisites](/install/prereq.md)
-    - [Sizing](/install/sizing.md)
-    - [Install Environment Variables](/install/envs.md)
-    - [Install](/install/install.md)
-    - [Install Single Computer](/install/mode_single.md)
-    - [Install Cluster](/install/mode_two_node.md)
-    - [Validate Install](/install/validate.md)
-    - [Usage Reporting](/install/usage.md)
-  - [aiWARE In-Depth](/overview/aiWARE-in-depth/) <!-- rewrite this section -->
-    - [Installation](/overview/aiWARE-in-depth/edge-installation)
-    - [GPU Support](/overview/aiWARE-in-depth/gpu-support.md)
-    - [Controller](/overview/aiWARE-in-depth/controller)
-    - [Engines](/overview/aiWARE-in-depth/engines)
+    - [For Application Developers](/getting-started/app-developer/)
+    - [For Data Scientists](/getting-started/engine-developer/)
+    - [For Machine Learning Integrator](/getting-started/ml-integrator/) <!-- remove or change to developer? -->
+    - [For Machine Learning Explorer](/getting-started/ml-explorer/) <!-- remove? -->
+    - [For MLOps Engineer](/getting-started/mlops/)
+- [aiWARE](/aiware/)
+  - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
+  - [Installation Guide](/aiware/install/installation-guide-overview.md)  
+    - [Install Single Machine](/aiware/install/install.md) <!-- installation guide overview --><!-- Single machine, small cluster, expanded cluster, should be part of the CLI -->
+    - [Install Cluster](/aiware/install/cluster.md) <!-- everything you need to know -->
+    - [Validate Install](/aiware/install/validate.md) <!-- move under installation -->
+  - [Cluster Management Guide](/aiware/manage/) <!-- advanced steps, platform mgmt -->
+    - [Prerequisites](/aiware/install/prereq.md) <!-- split this page -->
+    - [Sizing](/aiware/manage/sizing.md)
+    - [Usage Reporting](/aiware/manage/usage.md)
+    - [Maintenance](/aiware/manage/maintenance.md)
+  - [Troubleshooting](/aiware/troubleshooting/)
+  - [aiWARE In-Depth](/aiware/aiWARE-in-depth/) <!-- rewrite this section -->
+    - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
+    - [Environment Variables](/aiware/install/envs.md) 
+    - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
+    - [Controller](/aiware/aiWARE-in-depth/controller)
+    - [Engines](/aiware/aiWARE-in-depth/engines)
     - [Adapters (Ingestion)](/developer/engines/adapters/)
-    - [Job Processing](/overview/aiWARE-in-depth/job-processing)
-    - [Job Examples](/overview/aiWARE-in-depth/job-examples)
-    - [Single-Engine Jobs](/overview/aiWARE-in-depth/single-engine-jobs)
-    - [File System](/overview/aiWARE-in-depth/file-system)
-    - [Stream Ingestor 2](/overview/aiWARE-in-depth/stream-ingestor)
-    - [More About aiWARE](/overview/aiware-features.md)
-    - [aiWARE Architecture](/overview/architecture-overview/)
+    - [Job Processing](/aiware/aiWARE-in-depth/job-processing)
+    - [Job Examples](/aiware/aiWARE-in-depth/job-examples)
+    - [Single-Engine Jobs](/aiware/aiWARE-in-depth/single-engine-jobs)
+    - [File System](/aiware/aiWARE-in-depth/file-system)
+    - [Stream Ingestor 2](/aiware/aiWARE-in-depth/stream-ingestor)
+    - [More About aiWARE](/aiware/aiware-features.md)
     - [Path to Monetization](/developer/engines/getting-started/path-to-monetization/)
     - [Support](/developer/engines/getting-started/support/)
     - [Technologies Used](/developer/engines/getting-started/technologies/)
@@ -294,4 +295,4 @@
     - [NFS](/config/nfs.md)
     - [Registry](/config/registry.md)
 - [Clarity (BETA)](/benchmark/)
-- [Developer Terms & Conditions](/overview/terms-and-conditions)
+- [Developer Terms & Conditions](/terms-and-conditions)

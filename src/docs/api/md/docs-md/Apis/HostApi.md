@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
  **interval** | **Long**| Interval in seconds for output time ranges. | [optional] [default to null]
  **startTime** | **Long**| The unix timestamp, describing the start time for the stats | [optional] [default to null]
  **endTime** | **Long**| The unix timestamp, describing the end time for the stats | [optional] [default to null]
- **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs]
+ **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs, minio]
  **hostID** | [**UUID**](../Models/.md)| Filter data by hostID | [optional] [default to null]
 
 ### Return type
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
  **interval** | **Long**| Interval in seconds for output time ranges. | [optional] [default to null]
  **startTime** | **Long**| The unix timestamp, describing the start time for the stats | [optional] [default to null]
  **endTime** | **Long**| The unix timestamp, describing the end time for the stats | [optional] [default to null]
- **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs]
+ **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs, minio]
  **hostID** | [**UUID**](../Models/.md)| Filter data by hostID | [optional] [default to null]
 
 ### Return type
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
  **limit** | **Long**| the number of items to return. | [optional] [default to 10]
  **direction** | **String**| the sort order.  ASC or DESC. | [optional] [default to DESC]
  **isactive** | **Boolean**| Filter for active or inactive hosts | [optional] [default to null]
- **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs]
+ **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs, minio]
  **serverType** | **String**| Filter for server type. Currently it should be in [physical, virtual]. It can expand in the future | [optional] [default to null]
  **startCreatedTime** | **Long**| The unix timestamp | [optional] [default to null]
  **endCreatedTime** | **Long**| The unix timestamp | [optional] [default to null]
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
  **startLastUpdateTime** | **Long**| The unix timestamp | [optional] [default to null]
  **endLastUpdateTime** | **Long**| The unix timestamp | [optional] [default to null]
  **chartType** | [**ChartTypeEnum**](../Models/.md)| It will help API to kmow the response should return | [optional] [default to null] [enum: pie, time_range]
- **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs]
+ **type** | [**RunModeEnum**](../Models/.md)| Filter for hosts by type | [optional] [default to null] [enum: engine, nfs, registry, controller, db, standby, all, single, prometheus, api, apps, eventing, automatestudio, lb, nsq, es, redis, ceph-fs, minio]
 
 ### Return type
 

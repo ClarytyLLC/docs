@@ -172,18 +172,23 @@ Models/EngineInstanceWorkRequest.md
 Models/EngineInstanceWorkRequestResponse.md
 Models/EngineInstanceWorkRequestResponseResult.md
 Models/EngineLaunchDetail.md
+Models/EngineOperationStatusResponse.md
 Models/EngineRegistrationActionEnum.md
 Models/EngineStateEnum.md
 Models/EngineStatusEnum.md
 Models/EngineTemplate.md
 Models/EngineTemplates.md
+Models/EngineToolkitTimestamps.md
 Models/EngineTypeEnum.md
 Models/EnvKeyValue.md
 Models/Error.md
 Models/FailureReasonEnum.md
 Models/GPUEnum.md
+Models/GetAdminServiceInstancesByServiceResponse.md
 Models/GetAdminServiceInstancesResponse.md
+Models/GetAdminServiceResponse.md
 Models/GetAdminServicesResponse.md
+Models/GetAdminServicesResponseResult.md
 Models/GetApplicationsResponse.md
 Models/GetBacklogSummaryResponse.md
 Models/GetCoresResponse.md
@@ -301,6 +306,7 @@ Models/LaunchJobTemplateRequest.md
 Models/LaunchJobTemplateResponse.md
 Models/LaunchStatusEnum.md
 Models/LicenseDetail.md
+Models/LoadBalancerDetail.md
 Models/OrganizationDetail.md
 Models/PauseEngineRequest.md
 Models/PermissionDetail.md
@@ -316,6 +322,7 @@ Models/ResourceBindingTypeEnum.md
 Models/ResourceDetail.md
 Models/ResourceMappingDetail.md
 Models/ResourceMappingStateEnum.md
+Models/ResourceRecoveryStrategyEnum.md
 Models/ResourceStateEnum.md
 Models/ResourceTypeEnum.md
 Models/ResumeEngineRequest.md
@@ -339,6 +346,7 @@ Models/ServiceInstanceCreateRequest.md
 Models/ServiceInstanceCreateResponse.md
 Models/ServiceInstanceDeleteResponse.md
 Models/ServiceInstanceDetail.md
+Models/ServiceStatusEnum.md
 Models/ServiceTypeEnum.md
 Models/SortOrderEnum.md
 Models/StatusFormatEnum.md
@@ -395,6 +403,9 @@ Models/UpdateRoleDetail.md
 Models/UpdateServerTypeEngineRunningRequest.md
 Models/UpdateServerTypeEngineRunningResponse.md
 Models/UpdateServerTypeResponse.md
+Models/UpdateServiceDetail.md
+Models/UpdateServiceRequest.md
+Models/UpdateServiceResponse.md
 Models/UpdateTokenDetail.md
 Models/UpdateUserDetail.md
 Models/UserDetail.md

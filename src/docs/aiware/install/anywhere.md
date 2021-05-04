@@ -1,4 +1,12 @@
 # Install aiWARE Anywhere
+
+To install aiWARE Anywhere on your local environment.
+
+## Dependencies 
+
+* Docker with 2 CPUs and 16GB of RAM
+* OS: Mac, Ubuntu 18.04, Ubuntu 20.04
+
 ## Install aiWARE Anywhere on Ubuntu 18.04
 ### Install Dependencies
 Install the following dependencies to prepare you for the installation.
@@ -48,3 +56,8 @@ To install aiWARE Agent, run
 curl -sfL https://get.aiware.com | sudo -E sh -
 /usr/local/bin/aiware-agent --controller-token $AIWARE_INIT_TOKEN hub install core --channel dev
 ```
+## Appendix 
+
+### Installing Docker 
+* [MacOS Docker Installation Guide](https://docs.docker.com/docker-for-mac/install/)
+* [Ubuntu Docker Installation Guide](https://docs.docker.com/engine/install/ubuntu/)

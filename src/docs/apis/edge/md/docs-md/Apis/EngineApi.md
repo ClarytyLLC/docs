@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 <a name="getEngines"></a>
 # **getEngines**
-> GetEnginesResponse getEngines(X-Correlation-Id, internalOrganizationID, engineName, engineState, engineType, engineOutputType, engineCategoryID, engineIDs, offset, limit, direction, startTime, endTime, preload, orderBy)
+> GetEnginesResponse getEngines(X-Correlation-Id, internalApplicationID, internalOrganizationID, engineName, engineState, engineType, engineOutputType, engineCategoryID, engineIDs, offset, limit, direction, startTime, endTime, preload, orderBy)
 
 Get the list of engines deployed and available on aiWARE
 
@@ -758,6 +758,7 @@ Get the list of engines deployed and available on aiWARE
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **X-Correlation-Id** | **String**| Correlation Id that can be passed, traced in the server and will be returned in the response if present in the request | [optional] [default to null]
+ **internalApplicationID** | [**UUID**](../Models/.md)| Internal ID of Application | [optional] [default to null]
  **internalOrganizationID** | [**UUID**](../Models/.md)| ID of Organization.  UUID.  This ID is unique to this aiWARE installation. | [optional] [default to null]
  **engineName** | **String**| Field to string match against the engine names | [optional] [default to null]
  **engineState** | [**EngineStateEnum**](../Models/.md)| Field to match the current state | [optional] [default to null] [enum: active, paused, replace]

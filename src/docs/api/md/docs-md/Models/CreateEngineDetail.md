@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **preload** | [**Boolean**](boolean.md) | If it is &#x60;true&#x60;, that means the engine need to pull docker image to local | [optional] [default to null]
 **priority\_adjustment** | [**Integer**](integer.md) | On new tasks with this engine, add this value to the priority of that task | [optional] [default to null]
 **replacementEngineID** | [**UUID**](UUID.md) |  | [optional] [default to null]
+**ttlPaddingInSeconds** | [**Long**](long.md) |  | [optional] [default to null]
 **validationJSON** | [**String**](string.md) | JSON Data for validation | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

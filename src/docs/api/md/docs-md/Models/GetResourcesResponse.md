@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | [**Integer**](integer.md) | Total records for the query | [optional] [default to null]
 **error** | [**Error**](Error.md) |  | [optional] [default to null]
-**limit** | [**Integer**](integer.md) | the number of engines to return. | [optional] [default to null]
-**offset** | [**Integer**](integer.md) | the number of engines to skip before getting the result set | [optional] [default to null]
+**limit** | [**Integer**](integer.md) | the number of resources to return. | [optional] [default to null]
+**offset** | [**Integer**](integer.md) | the number of resources to skip before getting the result set | [optional] [default to null]
 **result** | [**List**](ResourceDetail.md) |  | [optional] [default to null]
 **success** | [**Boolean**](boolean.md) | If true, the operation was successful. | [optional] [default to null]
 
