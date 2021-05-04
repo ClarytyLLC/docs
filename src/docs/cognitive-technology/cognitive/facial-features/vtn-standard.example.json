@@ -1,0 +1,17 @@
+{
+  "schemaId": "https://docs.veritone.com/schemas/vtn-standard/master.json",
+  "validationContracts": [
+    "facialFeatures"
+  ],
+  "object": [
+    {
+      "type": "facial-features",
+      "lipVoiceCorrelation": {
+        "confidence": 0.9
+      },
+      "lipMovement": {
+        "confidence": 1.5
+      }
+    }
+  ]
+}

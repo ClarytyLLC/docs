@@ -1,0 +1,20 @@
+{
+  "schemaId": "https://docs.veritone.com/schemas/vtn-standard/master.json",
+  "validationContracts": [
+    "structured-data"
+  ],
+  "series": [
+    {
+      "startTimeMs": 0,
+      "stopTimeMs": 10000,
+      "structuredData": {
+        "<schema ID goes here>": {
+          "key": "value",
+          "1": 23,
+          "any": "data you'd like",
+          "as_long": "as it conforms to the schema"
+        }
+      }
+    }
+  ]
+}

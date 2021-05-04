@@ -1,0 +1,35 @@
+{
+  "schemaId": "https://docs.veritone.com/schemas/vtn-standard/master.json",
+  "validationContracts": [
+    "face"
+  ],
+  "series": [
+    {
+      "startTimeMs": 9800,
+      "stopTimeMs": 17200,
+      "object": {
+        "type": "face",
+        "label": "face 1",
+        "confidence": 0.95,
+        "boundingPoly": [
+          {
+            "x": 0.1,
+            "y": 0.1
+          },
+          {
+            "x": 0.1,
+            "y": 0.5
+          },
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 0.5,
+            "y": 0.1
+          }
+        ]
+      }
+    }
+  ]
+}
