@@ -34,7 +34,7 @@
     - [For Application Developers](/getting-started/app-developer/)
     - [For Data Scientists](/getting-started/engine-developer/)
     - [For Solution Architects](/getting-started/ml-integrator/)
-    - [For MLOps Engineer](/getting-started/mlops-engeneer/)
+    - [For MLOps Engineer](/getting-started/mlops-engineer/)
     - [Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
       - [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos.md)
       - [Job Quickstart Guide](/apis/job-quickstart/)
