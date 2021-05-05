@@ -4,7 +4,7 @@ An engine will typically act on an individual library per execution.
 When run in a special "training" mode, the engine should consume applicable identifier assets from the provided library and, depending on the type of engine, generate a trained model.
 This model is the engine's internal representation of the library and an engine state that can be referenced by future invocations.
 
-## Engine Configuration
+**Engine Configuration**
 
 An engine must configured to be library-enabled. To do so, a field called `libraryRequired` must be set to true on the engine definition. When you create your engine using the VDA "Create engine" wizard, check the "Library Required" option. You can also set this option after engine creation
 from the Configuration tab on the engine detail page.
@@ -70,7 +70,7 @@ The linkage is important for training -- when a library is created or
 modified, the system will automatically attempt to train a new model
 for all compatible engines.
 
-## Engine modes
+**Engine modes**
 
 When enabled for Libraries, the engine must support two specific modes, specified as "mode" in the task payload provided to the engine:
 
@@ -87,7 +87,7 @@ for its primary purpose, such as facial recognition.
 Thus, for a typical engine, `library-run` mode will be the
 most common case by far.
 
-## Test libraries
+**Test libraries**
 
 The simplest way to build a library to be consumed by your engine is via the [Library app](https://library.veritone.com/libraries). Alternatively, you may use the Libraries GraphQL API to generate a library.
 
