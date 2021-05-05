@@ -130,7 +130,6 @@
   - [Working with Structured Data](/data/structured-data/)
     - [Quickstart](/data/structured-data/quick-start/)
   - [Working with Search](/data/search-quickstart/)
-
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
   - [Overview & Concepts](/automate-studio/application/README)
