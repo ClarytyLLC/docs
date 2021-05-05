@@ -38,7 +38,6 @@
     - [Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
       - [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos.md)
       - [Job Quickstart Guide](/apis/job-quickstart/)
-      - [Search Quickstart Guide](/apis/search-quickstart/)
       - [Using Eventing](/apis/eventing/eventing.md)
       - [Uploading and Processing Files](/apis/tutorials/upload-and-process.md)
       - [Uploading Large Files](/apis/tutorials/uploading-large-files.md)
@@ -130,6 +129,8 @@
 - [Cognitive Data Lake](/data/)
   - [Working with Structured Data](/data/structured-data/)
     - [Quickstart](/data/structured-data/quick-start/)
+  - [Working with Search](/data/search-quickstart/)
+
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
   - [Overview & Concepts](/automate-studio/application/README)
