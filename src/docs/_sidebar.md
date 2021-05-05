@@ -72,6 +72,7 @@
     - [Stream Ingestor 2](/aiware/aiWARE-in-depth/stream-ingestor)
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
+    - [Veritone Applications](/aiware/aiWARE-in-depth/apps/)
   - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/)
 - [Cognitive Technology](/cognitive-technology/) 
   - [Capabilities](/cognitive-technology/cognitive/) 
@@ -105,11 +106,11 @@
     - [Logo Detection](/cognitive-technology/cognitive/vision/logo-detection/)
     - [Object Detection](/cognitive-technology/cognitive/vision/object-detection/)
     - [Text Recognition (OCR)](/cognitive-technology/cognitive/vision/text-recognition/)
-  - [Running Engines](/developer/libraries/running.md)
-    - [Working with Jobs](/cognitive-technology/jobs/?id=working-with-jobs)
-  - [Training Engines](/developer/libraries/training.md)
-    - [Library-enabled Engines](/developer/libraries/engines.md)
-    - [Working with Libraries](/developer/libraries/)
+  - [Running Engines](/cognitive-technology/jobs/)
+  - [Training Engines](/cognitive-technology/libraries/)
+    - [Working with Libraries](/cognitive-technology/libraries/libraries.md)
+    - [Training Library-enabled Engines](/cognitive-technology/libraries/training.md)
+    - [Running Library-enabled Engines](/cognitive-technology/libraries/running.md)
   - [Machine Box](/developer/machine-box/)
     - [Getting Started](/developer/machine-box/setup/)
       - [Install Docker](/developer/machine-box/setup/docker)
@@ -126,7 +127,6 @@
       - [Nudebox](/developer/machine-box/boxes/nudebox)
       - [Objectbox](/developer/machine-box/boxes/objectbox)
       - [Fakebox](/developer/machine-box/boxes/fakebox)
-      - [Veritone Applications](/apps/)
 - [Cognitive Data Lake](/data/)
   - [Working with Structured Data](/data/structured-data/)
     - [Quickstart](/data/structured-data/quick-start/)
@@ -180,26 +180,6 @@
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)
-
-  <!-- - [Getting Started](/automate-studio/getting-started/README) -->
-  <!-- - [Automate Traininig Course](/automate-studio/Training/intro-to-automate/unit-1.md) page-under-construction) -->
-    <!-- - [Unit 1: Introduction to aiWARE and Cognitive Engines](/automate-studio/Training/intro-to-automate/unit-1.md) 
-    - [Unit 2: Using Automate Studio](/automate-studio/Training/intro-to-automate/unit-2.md)
-    - [Unit 3: aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md) -->
-  <!-- - [Tutorials](/automate-studio/tutorials/automate-tutorials)
-    - [The Basics](/automate-studio/Training/crawl)
-    - [Working with Flows](/automate-studio/Training/walk/README.md)
-    - [Cognition within a Flow](/automate-studio/Training/run/run)
-    - [Orchestrating AI with a Flow](/automate-studio/tutorials/orchestrating-ai.md)
-    - [Create aiWARE Custom API Endpoints](/automate-studio/tutorials/your-ai-flow.md)
-    - [AI Recognized Your Face. Now What?](/automate-studio/tutorials/ai-recognized-your-face.md)
-    - [Sentiment Analysis on Helpdesk Tickets](/automate-studio/tutorials/sentiment-analysis.md)
-    - [Creating new training data with a flow](/automate-studio/tutorials/automate-tutorial-6-flow-face-libraries.md)
-    - [Automate Studio and Flow Engines](/automate-studio/tutorials/automate-tutorial-7-flow-engines.md) -->
-  <!-- - [Alteryx Tools](/automate-studio/alteryx/)
-    - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md) -->
-  <!-- - [Get Paid!](/automate-studio/flow-bounties/README) -->
-
 - [Building Engines](/developer/engines/)
   - [Getting Started with Engines](/developer/engines/getting-started/)
   - [Partner with Veritone](/developer/benefits.md)
