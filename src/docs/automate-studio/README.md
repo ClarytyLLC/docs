@@ -258,6 +258,79 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
 
 <hr>
 
+## Gets Started By Taking Quick Tutorials <!-- {docsify-ignore} -->
+
+<div class="wrapper">
+    <div class="card">
+        <span class="level">Quick Start</span>
+        <img src='/docs/_media/tutorials/quick-start.png'>
+        <h3>Quick Start - Email Sender</h3>
+        <div class="info">
+            <p>
+                Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
+            </p>
+        <a href='/#/automate-studio/getting-started/README'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
+        <span class="level">Basic</span>
+        <img src='/docs/_media/tutorials/object-detection.png'>
+        <h3>Object Detection</h3>
+        <div class="info">
+            <p>
+                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
+            </p>
+        <a href='/#/automate-studio/tutorials/basic/object-detection/tutorial'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
+        <span class="level">Basic</span>
+        <img src='/docs/_media/tutorials/content-classification.png'>
+        <h3>Content Classification</h3>
+        <div class="info">
+            <p>
+                The flow receives a text file URL, runs it through a Content Classification Engine, and creates an ouput of categories based on text excerpts. A summary email is sent to the user.
+            </p>
+        <a href='/#/automate-studio/tutorials/basic/content-classification/tutorial'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
+        <span class="level">Basic</span>
+        <img src='/docs/_media/tutorials/transcription.png'>
+        <h3>Transcription</h3>
+        <div class="info">
+            <p>
+                The flow receives a video or audio URL, runs it through a Speech-to-Text Engine, and creates a text transcription of the file. The transcript is emailed to the user along with a link to the Veritone CMS page that contains the full engine output.
+            </p>
+        <a href='/#/automate-studio/tutorials/basic/transcription/tutorial'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
+        <span class="level">Advanced</span>
+        <img src='/docs/_media/tutorials/customer-recognition-by-face.png'>
+        <h3>Customer Recognition by Face</h3>
+        <div class="info">
+            <p>
+                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
+            </p>
+        <a href='/#/automate-studio/tutorials/advanced/customer-recognition/tutorial'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
+        <span class="level">Advanced</span>
+        <img src='/docs/_media/tutorials/negative-posts.png'>
+        <h3>Detection of Negative Social Media Posts</h3>
+        <div class="info">
+            <p>
+                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
+            </p>
+        <a href='/#/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial'>View Tutorial</a>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
 ## Explore Automate Studio Templates <!-- {docsify-ignore} -->
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
@@ -356,77 +429,6 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
     </div>
 </div>
 <hr>
-
-## Gets Started By Taking Quick Tutorials
-
-<div class="wrapper">
-    <div class="card">
-        <span class="level">Quick Start</span>
-        <img src='/docs/_media/tutorials/quick-start.png'>
-        <h3>Quick Start - Email Sender</h3>
-        <div class="info">
-            <p>
-                Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
-            </p>
-        <a href='/#/automate-studio/getting-started/README'>View Tutorial</a>
-        </div>
-    </div>
-    <div class="card">
-        <span class="level">Basic</span>
-        <img src='/docs/_media/tutorials/object-detection.png'>
-        <h3>Object Detection</h3>
-        <div class="info">
-            <p>
-                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
-            </p>
-        <a href='/#/automate-studio/tutorials/basic/object-detection/tutorial'>View Tutorial</a>
-        </div>
-    </div>
-    <div class="card">
-        <span class="level">Basic</span>
-        <img src='/docs/_media/tutorials/content-classification.png'>
-        <h3>Content Classification</h3>
-        <div class="info">
-            <p>
-                The flow receives a text file URL, runs it through a Content Classification Engine, and creates an ouput of categories based on text excerpts. A summary email is sent to the user.
-            </p>
-        <a href='/#/automate-studio/tutorials/basic/content-classification/tutorial'>View Tutorial</a>
-        </div>
-    </div>
-    <div class="card">
-        <span class="level">Basic</span>
-        <img src='/docs/_media/tutorials/transcription.png'>
-        <h3>Transcription</h3>
-        <div class="info">
-            <p>
-                The flow receives a video or audio URL, runs it through a Speech-to-Text Engine, and creates a text transcription of the file. The transcript is emailed to the user along with a link to the Veritone CMS page that contains the full engine output.
-            </p>
-        <a href='/#/automate-studio/tutorials/basic/transcription/tutorial'>View Tutorial</a>
-        </div>
-    </div>
-    <div class="card">
-        <span class="level">Advanced</span>
-        <img src='/docs/_media/tutorials/customer-recognition-by-face.png'>
-        <h3>Customer Recognition by Face</h3>
-        <div class="info">
-            <p>
-                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
-            </p>
-        <a href='/#/automate-studio/tutorials/advanced/customer-recognition/tutorial'>View Tutorial</a>
-        </div>
-    </div>
-    <div class="card">
-        <span class="level">Advanced</span>
-        <img src='/docs/_media/tutorials/negative-posts.png'>
-        <h3>Customer Recognition by Face</h3>
-        <div class="info">
-            <p>
-                The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
-            </p>
-        <a href='/#/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial'>View Tutorial</a>
-        </div>
-    </div>
-</div>
 
 > More Tutorials are comming up soon
 

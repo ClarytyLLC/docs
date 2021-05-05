@@ -139,7 +139,6 @@
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
   - [Overview & Concepts](/automate-studio/application/README)
-    - [Automate Studio Application](/automate-studio/application/README)
       - [Canvas](/automate-studio/application/README?id=canvas)
       - [Node Palette](/automate-studio/application/README?id=node-palette)
       - [Debug/Info](/automate-studio/application/README?id=debug-info)

@@ -6,7 +6,7 @@
 A node can be defined as an autonomous mini web app with a user-friendly **_UI_** and **_NodeJS_** backend server. 
 Each node is developed to take care of a certain part of the large app (flow).
 
-### Overview
+## Overview <!-- {docsify-ignore} -->
 
 - [Nodes Basics](#nodes-basics)
   - [Node Structure](#node-structure)
@@ -16,7 +16,7 @@ Each node is developed to take care of a certain part of the large app (flow).
 - [aiWARE Nodes](#aiware-nodes)
 - [Add Nodes To Palette](#add-nodes-to-palette)
 
-### Nodes Basics
+## Nodes Basics <!-- {docsify-ignore} -->
 
 Nodes are the building blocks of flows you create in Automate Studio.
 
@@ -31,7 +31,7 @@ Various types of prebuilt, ready-to-use nodes are available to you from the [Nod
 3. **Transformational** or "Function" nodes that take data in, modify it (or augment it), then pass the modified data out.
 <hr/>
 
-#### Structure
+## Structure <!-- {docsify-ignore} -->
 
 1. **Select and unselect node:** Node is selected by a single click anywhere on the node. The orange border should appear. Unselect the node by clicking anywhere on the canvas. Multiple nodes are selected by holding the *ctrl* button on the keyboard.
 2. **Node port:** The grey square on the left side of the node. It is used to connect the node to a previous node(s) using the wires. 
@@ -45,7 +45,7 @@ Various types of prebuilt, ready-to-use nodes are available to you from the [Nod
 
 <hr/>
 
-#### Properties
+## Properties <!-- {docsify-ignore} -->
 
 If we double click on the node, the **Node UI editor** will slide in from right to left. This is where we manage the node properties, add descriptions or modify the appearance. Each node has its properties based on its purpose and functionality.
 
@@ -54,7 +54,7 @@ If we double click on the node, the **Node UI editor** will slide in from right 
 
 <hr/>
 
-#### Typed Inputs
+## Typed Inputs <!-- {docsify-ignore} -->
 
 The **Input Fileds** in the **Node Properties** is the place to provide the required information for the node to successfully complete the process.
 
@@ -96,24 +96,18 @@ If we were to use the logged-in user's email from the previous node, we would ch
 
 <hr/>
 
-#### Help
+## Node Help <!-- {docsify-ignore} -->
 
 The right side of the screen is reserved for node info (help). The node specifications and description, as well as requirements, expected input and output, and more info, are all available there. This part is especially helpful during development, as it contains all required information without leaving your workstation.
 
 Select the node by a single-click on it to display the node help in the sidebar. 
-
-<br/>
-<br/>
 
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-### aiWARE Nodes
+## aiWARE Nodes <!-- {docsify-ignore} -->
 
 aiWERE nodes are developed by the **Veritone team** to simplify the usage of AI technology by bringing it down to low code.
 They can be recognized by the sky-blue color. The aiWARE nodes are divided into three categories: **aiWARE common**, **aiWARE data lake**, and **aiWARE tools**
@@ -127,18 +121,12 @@ They can be recognized by the sky-blue color. The aiWARE nodes are divided into 
 >For full aiWARE nodes list visit [@veritone/node-red-contrib-aiware](https://flows.nodered.org/node/@veritone/node-red-contrib-aiware).
 For the source code, please visit our [github repo](https://github.com/veritone/node-red-contrib-aiware)
 
-<br/>
-<br/>
-
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-### Add Nodes To Palette
+## Add Nodes To Palette <!-- {docsify-ignore} -->
 
 Automate Studio provides a wide range of ready-to-use nodes out-of-the-box.
 
@@ -160,13 +148,6 @@ Next, in the *User Settings* menu click on *Palette* in the left menu. Then, in 
 
 ![user-settings-palette1](user-settings-palette1.png)
 
-<br/>
-<br/>
 
 [Back to Top](#overview)
 
-<hr/>
-<hr/>
-
-<br/>
-<br/>

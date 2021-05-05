@@ -7,7 +7,7 @@
 
 In this section, we will explain how to create, edit and run flows in a few simple steps
 
-### Overview
+## Overview <!-- {docsify-ignore} -->
 
 - [Flow Basics](#flow-basics) 
   - [Create New Flow](#create-new-flow)
@@ -26,11 +26,11 @@ In this section, we will explain how to create, edit and run flows in a few simp
   <!-- - [Run as a Job](#run-as-a-job) -->
 
 
-### Flow Basics
+## Flow Basics <!-- {docsify-ignore} -->
 
 <hr/>
 
-#### Create New Flow
+## Create New Flow <!-- {docsify-ignore} -->
 
 There are multiple ways to create a new flow from scratch. The easiest one is from the [Automate Studio Home Page](https://automate.veritone.com/).
 Just click on the *Add New* button in the upper left corner, and select *New*. You will be redirected to the **Flow Editor** instantly.
@@ -43,8 +43,9 @@ In each of the above-mentioned options, a brand new flow instance will be create
 At least one flow tab must exist at a given time and cannot be deleted.
 
 <hr/>
+<hr/>
 
-#### Create New Flow From Template
+## Create New Flow From Template <!-- {docsify-ignore} -->
 
 
 Automate Studio provides a variety of flows in different levels of complexity. These flows are developed by the **Veritone** team to provide a ready-to-use AI solution out of the box. As any flow can be edited easily, the flow templates represent a great fundamental to easily create advanced business logic that fits your exact needs, without the need for in-depth coding skills or AI expertise.  
@@ -56,15 +57,17 @@ Once the desired **Flow Template** is found, open the **Template info** sidebar 
 Click on the *Create New From Template* button to create a new instance of the flow.
 
 <hr/>
+<hr/>
 
-#### Open An Existing Flow
+## Open An Existing Flow <!-- {docsify-ignore} -->
 
 
 All flows are available in your organization. If you want to use, test, or update an existing flow, click on the *Org Flows* button in the upper left corner of the [Automate Studio Home Page](https://automate.veritone.com/). Scroll through the list of available flows or apply filtering using the *Search Bar* in the *Header Bar* above. Once the desired flow is found, click on the flow name to open it in the **Flow Editor**
 
 <hr/>
+<hr/>
 
-#### Flow Details
+## Flow Details <!-- {docsify-ignore} -->
 
 
 If you are on the [Automate Studio Home Page](https://automate.veritone.com/), click on the *Org Flows* button.
@@ -81,18 +84,13 @@ The **Version History Tab** contains the list of all Flow Revisions and Builds. 
 
 The **Activity Tab** contains the list of all *Deployed* builds and *Executions* and their respective status
 
-<br/>
-<br/>
 
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-### Editing Flows
+## Editing Flows <!-- {docsify-ignore} -->
 
 <hr/>
 
@@ -101,13 +99,14 @@ Once the Flow is open in the Flow Editor, the flow can be edited (redesigned, re
 
 <hr/>
 
-#### Save Flow Settings
+## Save Flow Settings <!-- {docsify-ignore} -->
 
 The **Save** action is performed automatically. No special action is required. On each automatic save a new *Flow Revision* will be created. 
 
 <hr/>
+<hr/>
 
-#### Flow Revisions
+## Flow Revisions <!-- {docsify-ignore} -->
 
 Each periodical *Save* action creates a **Flow Revision**. It represents the *Flow State* (in terms of development) in the given time. 
 By such behavior, we prevent work loss and achieve continuous development and integration.
@@ -122,9 +121,9 @@ By such behavior, we prevent work loss and achieve continuous development and in
 - **Delete** - Delete the selected flow revision (not available for deployed revision)
 
 <hr/>
+<hr/>
 
-
-#### Export and Import
+## Export and Import <!-- {docsify-ignore} -->
 
 Flows can be Exported and Imported from the editor using their JSON format, making it very easy to share flows with others.
 
@@ -147,18 +146,13 @@ Open the Import dialog by selecting *File -> Import*. The Import dialog can be u
 - Uploading a flow JSON file
 - In all cases, the dialog offers the option to import the nodes into the current flow, or to create a new flow for them.
 
-<br/>
-<br/>
 
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-### Debugging a Flow
+## Debugging a Flow <!-- {docsify-ignore} -->
 
 There are a few useful tools available in **Automate Studio** which can help us debug our Flow:
 
@@ -182,19 +176,12 @@ There are a few useful tools available in **Automate Studio** which can help us 
     The caught error is then provided to the output. To see the error, wire the *Catch Node* to the *Debug Node* to see the error log in the *Debug Sidebar*   (console).   
 
 
-<br/>
-<br/>
-
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-
-### Deploying & Running Flows
+## Deploying & Running Flows <!-- {docsify-ignore} -->
 
 Flows have a binary state: **Active** or **Not Active**. A flow is considered Active only if it has a deployed revision, which means it has a deployed build too. Only one Revision can be published at a given time, and it does not have to be the latest (HEAD) Revision.
 
@@ -208,7 +195,7 @@ An **Active** (Published) Flow Revision is now available to the outside world vi
 
 !> The Flow **must** start with the **aiWARE in** node as the first node in the flow to be triggerable.
 
-#### Run in the studio
+## Run in the studio <!-- {docsify-ignore} -->
 
 
 Each Flow, whether **Active** or ** Non-Active**, can run in the Automate Studio Flow Editor.
@@ -216,8 +203,9 @@ Each Flow, whether **Active** or ** Non-Active**, can run in the Automate Studio
 Just Click on the button-like square on the left side of the **aiWARE in** node, and the flow will start running.
 
 <hr/>
+<hr/>
 
-#### Run via HTTP
+## Run via HTTP <!-- {docsify-ignore} -->
 
 Before we start, make sure to have an active (deployed) flow.
 
@@ -282,23 +270,19 @@ If the Flow is started successfully, we will receive a response in the following
 }
 ```
 <hr/>
+<hr/>
 
-#### Run as a Job
+## Run as a Job <!-- {docsify-ignore} -->
 
 This section is under construction
 
-<br/>
-<br/>
 
 [Back to Top](#overview)
 
 <hr/>
 <hr/>
 
-<br/>
-<br/>
-
-### Graphql API for Flows
+ ## Graphql API for Flows <!-- {docsify-ignore} -->
 
 >To get started with **Veritone's Graphql API** click [here](/apis/using-graphql) 
 
@@ -306,11 +290,11 @@ Flows, Revisions and Executions can be managed and edited usign the **Graphql AP
 
 <hr/>
 
-#### QUERIES
+## QUERIES <!-- {docsify-ignore} -->
 
 <hr/>
 
-**flow** 
+### **flow** 
 
 Query to get the flow record
 
@@ -323,7 +307,7 @@ Query to get the flow record
 ```
 <hr/>
 
-**getFlowRevisions**
+### **getFlowRevisions**
 
 Returns all revisions
 
@@ -336,7 +320,7 @@ Returns all revisions
 ```
 <hr/>
 
-**getFlowExecutions**
+### **getFlowExecutions**
 
 Returns execution details, including status, result (from aiware-out node) and logs (node red debug logs).
 
@@ -352,12 +336,13 @@ Returns execution details, including status, result (from aiware-out node) and l
     getFlowExecutions(flowId: ID!, revisionId: ID, executionId: ID): [Execution]
 ```
 <hr/>
+<hr/>
 
-#### MUTATIONS
+## MUTATIONS <!-- {docsify-ignore} -->
 
 <hr/>
 
-**createFlow**
+### **createFlow**
 
 Creates a new flow with only default fields.
 
@@ -368,7 +353,7 @@ Creates a new flow with only default fields.
 ```
 <hr/>
 
-**copyFlow**
+### **copyFlow**
 
 Creates a copy of an existing flow.
 
@@ -385,7 +370,7 @@ Creates a copy of an existing flow.
 ```
 <hr/>
 
-**updateFlow**
+### **updateFlow**
 
 Update an existing flow
 
@@ -398,11 +383,10 @@ Update an existing flow
         updateFlow(flowId: ID!): Flow
     }
 ```
-<hr/>
 
 <hr/>
 
-**deleteFlow**
+### **deleteFlow**
 
 True deletion of the flow record
 
@@ -417,7 +401,7 @@ True deletion of the flow record
 ```
 <hr/>
 
-**pauseFlow**
+### **pauseFlow**
 
 Moves the flow to status Not Active. It will remain in this status until the unpauseFlow API is called
 
@@ -432,7 +416,7 @@ Moves the flow to status Not Active. It will remain in this status until the unp
 ```
 <hr/>
 
-**unpauseFlow**
+### **unpauseFlow**
 
 Moves the flow to status Active
 
@@ -447,9 +431,7 @@ Moves the flow to status Active
 ```
 <hr/>
 
-<hr/>
-
-**createFlowRevision**
+### **createFlowRevision**
 
 Creates the next revision
 
@@ -465,9 +447,7 @@ Creates the next revision
 ```
 <hr/>
 
-<hr/>
-
-**deleteFlowRevision**
+### **deleteFlowRevision**
 
 Marks the the revision deleted
 
@@ -483,9 +463,7 @@ Marks the the revision deleted
 ```
 <hr/>
 
-<hr/>
-
-**deployFlowRevision**
+### **deployFlowRevision**
 
 - Creates a new build from the revision specified, or the latest (HEAD) revision if none specified. 
 - Change the build status to deployed.

@@ -158,7 +158,7 @@ Congratulations on building and running your first flow engine using Automate St
 
 ## Next steps
 
-Now that we have the basics, go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription)
+Now that we have the basics, go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription/tutorial)
 
 ?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
 

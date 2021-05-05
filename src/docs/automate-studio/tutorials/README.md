@@ -16,6 +16,17 @@ A step-by-step guid to build some basic and some more advanced **AI Flows** from
 
 <div class="wrapper">
     <div class="card">
+        <span class="level">Quick Start</span>
+        <img src='/docs/_media/tutorials/quick-start.png'>
+        <h3>Quick Start - Email Sender</h3>
+        <div class="info">
+            <p>
+                Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
+            </p>
+        <a href='/#/automate-studio/getting-started/README'>View Tutorial</a>
+        </div>
+    </div>
+    <div class="card">
         <span class="level">Basic</span>
         <img src='/docs/_media/tutorials/object-detection.png'>
         <h3>Object Detection</h3>
@@ -62,7 +73,7 @@ A step-by-step guid to build some basic and some more advanced **AI Flows** from
     <div class="card">
         <span class="level">Advanced</span>
         <img src='/docs/_media/tutorials/negative-posts.png'>
-        <h3>Customer Recognition by Face</h3>
+        <h3>Detection of Negative Social Media Posts</h3>
         <div class="info">
             <p>
                 The flow receives a video URL, runs it through an Object Detection Engine, and creates a annoated version of the file. The annotation link is   emailed to the user.
