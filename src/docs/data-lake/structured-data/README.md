@@ -3,7 +3,7 @@
 The Veritone Developer platform supports structured data.
 Together with other capabilities for unstructured data, the Veritone platform can process and transform a vast swath of the world's data, to extract actionable intelligence for our users.
 
-## Background
+**Background**
 
 Structured data is data with well-defined fixed fields, which usually can be stored in relational databases and is readily indexed for searching. Structured data can take any text-based format, and Veritone is initially supporting structured data expressed as JSON. Look for other formats to be supported in the future, though.
 
@@ -21,7 +21,7 @@ Structured data can be used in two ways, as primary data or secondary data. When
 
 Note that the same dataset can be used as either primary or secondary data, depending on the use case.
 
-## Overview
+**Overview**
 
 We'll provide a quick, high-level overview of the requirements for working with structured data within the Veritone platform, for both primary and secondary data.
 

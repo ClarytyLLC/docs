@@ -1,12 +1,20 @@
-# Building Cognitive Engines
+# Cognitive Engines
 
-[](_summary.md ':include')
+Engines are the main unit of cognitive computing in aiWARE. They process the data brought in by adapters and employ sophisticated algorithms and machine learning techniques to produce even more data from which you can derive actionable insights.
 
-## Developer tools
+Examples of what a cognition engine does include natural language processing, transcription, and object detection.
 
-To get started building chunk engines, developers should use the [developer toolkit](/developer/engines/toolkit/).
+You can build a pipeline of cognitive engines, to be run sequentially or in parallel, each one enhancing the target output data set.  For example, a pipeline could include the following engines:
+1. Ingest video stream (Adapter)
+2. Transcribe video to text (Cognitive)
+3. Translate to another language (Cognitive)
+4. Do sentiment analysis (Cognitive)
 
-## Classes
+Each cognitive engine conforms to a particular **Class** and **Capability**.
+
+> **Tip:** You can use aiWARE's Developer Tools to build, deploy, and even monetize your own Cognitive Engine [(learn more)](/developer/engines/).
+
+**Engine Classes**
 
 Cognitive engines are categorized into engine classes based on the type of data that they analyze.
 Below is a table of our currently supported engine classes.
@@ -23,7 +31,7 @@ Transformation | Transforms input to produce an enhanced or modified data set.  
 Verification | Determines the confidence of a person's face or voice matching that of a CLAIM THIS FLOW! identity.  | Picture or audio data | Face verification, speaker verification
 Vision | Processes images to identify, segment, and extract details. | Pictures and videos | Object recognition, visual moderation (tagging)
 
-## Capabilities
+**Capabilities**
 
 Within each engine class is a set of capabilities, which are based on what type of data they output.
 This table presents the engine capabilities currently supported for extension through Veritone Developer.
