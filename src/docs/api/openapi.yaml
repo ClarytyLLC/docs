@@ -6967,7 +6967,17 @@ components:
           type: string
       type: object
     ServiceStatusEnum:
+      description: 'This is the status of the service.
+
+        pending - The service is created but the resources may not be available yet
+
+        running - The service is available to run (and should be running)
+
+        stopped - The service should be stopped
+
+        '
       enum:
+      - pending
       - running
       - stopped
       type: string
@@ -8430,7 +8440,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.17.1.2560
+  version: 3.17.2.2568
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:

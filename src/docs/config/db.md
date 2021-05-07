@@ -1,6 +1,6 @@
 | Name | Type | Default Value | Environment Var | Description |
  | :--- | :--- | :--- | :--- | :--- |
- | *db_dbname* | bool | postgres | _AIWARE_DB_DBNAME_ | This specifies the database name to use for aiWARE Edge |
+ | *db_dbname* | string | postgres | _AIWARE_DB_DBNAME_ | This specifies the database name to use for aiWARE Edge |
 | *db_image* | string | postgres:12 | _AIWARE_DB_IMAGE_ | This specifies docker image to use for the database service.  This must be a postgres variant. |
 | *db_password* | string | postgres | _AIWARE_DB_USERNAME_ | *Secure* The DB Username to use for access to the database |
 | *db_port* | int64 | 5432 | _AIWARE_DB_PORT_ | The port to use for the database |
