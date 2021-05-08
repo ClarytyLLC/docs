@@ -5472,6 +5472,25 @@ components:
         status:
           $ref: '#/components/schemas/HostAction'
       type: object
+    HostResponseToWork:
+      additionalProperties: true
+      properties:
+        engineID:
+          format: uuid
+          type: string
+        engineInstanceID:
+          format: uuid
+          type: string
+        hostID:
+          format: uuid
+          type: string
+        workRequestAccepted:
+          description: host accepted the work request
+          type: boolean
+        workRequestID:
+          format: uuid
+          type: string
+      type: object
     HostStatus:
       properties:
         CPUUtilized:
@@ -5558,6 +5577,13 @@ components:
         numGPU:
           description: The number of GPU attached to the container
           type: integer
+        ttl:
+          description: the remaining TTL for the engine instance
+          format: int64
+          type: integer
+        workRequestID:
+          format: uuid
+          type: string
       type: object
     HostTerminationReasonEnum:
       description: The reason for the termination of the host
@@ -8440,7 +8466,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.17.2.2577
+  version: 3.17.2.2578
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
