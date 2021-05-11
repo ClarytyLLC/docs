@@ -19,9 +19,12 @@ In this section, we will explain how to create, edit and run flows in a few simp
   - [Flow Revisions](#flow-revisions)
   - [Export and Import](#export-and-import)
 - [Debugging a Flow](#debugging-a-flow)
-- [Deploying Flows](#deploying-amp-running-flows)
-- [Run Flow in the studio](#run-in-the-studio)
-- [Run Flow via HTTP](#run-via-http)
+- [Deploying Flows](#deploying-flows)
+- [Running Flows](#running-flows)
+    - [Run Flow in the studio](#run-in-the-studio)
+    - [Run Flow via HTTP](#run-via-http)
+    - [Run via HTTP with Authentication](#run-via-http-with-authentication)
+    - [Run Flow as a Job](#run-as-a-job)
 - [Graphql API for Flows](#graphql-api-for-flows)
   <!-- - [Run as a Job](#run-as-a-job) -->
 
@@ -181,7 +184,7 @@ There are a few useful tools available in **Automate Studio** which can help us 
 <hr/>
 <hr/>
 
-## Deploying & Running Flows <!-- {docsify-ignore} -->
+## Deploying Flows <!-- {docsify-ignore} -->
 
 Flows have a binary state: **Active** or **Not Active**. A flow is considered Active only if it has a deployed revision, which means it has a deployed build too. Only one Revision can be published at a given time, and it does not have to be the latest (HEAD) Revision.
 
@@ -194,6 +197,11 @@ Once *Deployed* The Revision becomes **Active**. It will be marked as *Deployed*
 An **Active** (Published) Flow Revision is now available to the outside world via **HTTP** or as a **Job** 
 
 !> The Flow **must** start with the **aiWARE in** node as the first node in the flow to be triggerable.
+
+## Running Flows <!-- {docsify-ignore} -->
+
+<hr/>
+<hr/>
 
 ## Run in the studio <!-- {docsify-ignore} -->
 
