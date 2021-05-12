@@ -8474,7 +8474,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.17.2.2591
+  version: 3.17.2.2592
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
