@@ -23,7 +23,6 @@ In this section, we will explain how to create, edit and run flows in a few simp
 - [Running Flows](#running-flows)
     - [Run Flow in the studio](#run-in-the-studio)
     - [Run Flow via HTTP](#run-via-http)
-    - [Run via HTTP with Authentication](#run-via-http-with-authentication)
     - [Run Flow as a Job](#run-as-a-job)
 - [Graphql API for Flows](#graphql-api-for-flows)
   <!-- - [Run as a Job](#run-as-a-job) -->
@@ -280,9 +279,9 @@ If the Flow is started successfully, we will receive a response in the following
 <hr/>
 <hr/>
 
-## Run via HTTP with Authentication  <!-- {docsify-ignore} -->
+## Authentication  <!-- {docsify-ignore} -->
 
-To run an Authenticated request we need to get the **token**.
+To run the request we need to Authentication. For that we need to get the **token**.
 
 The Easiest way to find the token using our [Graphql API playground](https://api.veritone.com/v3/graphql)
 
