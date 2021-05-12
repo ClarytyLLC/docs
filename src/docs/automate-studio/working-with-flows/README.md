@@ -1,6 +1,6 @@
 # Working With Flows
 
-**APPROXIMATE READING TIME: 6 MINUTES**
+**APPROXIMATE READING TIME: 15 MINUTES**
 
 
 ?>Flow is a group of logically connected nodes that can run a certain process in **aiWARE**. Flow can be developed in **Automate Studio** by dragging-and-dropping nodes from the [Node palette](/automate-studio/application/README?id=node-palette) to the [Canvas](/automate-studio/application/README?id=canvas) and wiring them up together. Usually, the flow will contain at least one *Input Node*, one *Functional Node* and one *Output Node*, but also, can be way more complex.
@@ -19,9 +19,11 @@ In this section, we will explain how to create, edit and run flows in a few simp
   - [Flow Revisions](#flow-revisions)
   - [Export and Import](#export-and-import)
 - [Debugging a Flow](#debugging-a-flow)
-- [Deploying & Running Flows](#deploying-amp-running-flows)
-  - [Run in the studio](#run-in-the-studio)
-  - [Run via HTTP](#run-via-http)
+- [Deploying Flows](#deploying-flows)
+- [Running Flows](#running-flows)
+    - [Run Flow in the studio](#run-in-the-studio)
+    - [Run Flow via HTTP](#run-via-http)
+    - [Run Flow as a Job](#run-as-a-job)
 - [Graphql API for Flows](#graphql-api-for-flows)
   <!-- - [Run as a Job](#run-as-a-job) -->
 
@@ -181,7 +183,7 @@ There are a few useful tools available in **Automate Studio** which can help us 
 <hr/>
 <hr/>
 
-## Deploying & Running Flows <!-- {docsify-ignore} -->
+## Deploying Flows <!-- {docsify-ignore} -->
 
 Flows have a binary state: **Active** or **Not Active**. A flow is considered Active only if it has a deployed revision, which means it has a deployed build too. Only one Revision can be published at a given time, and it does not have to be the latest (HEAD) Revision.
 
@@ -194,6 +196,11 @@ Once *Deployed* The Revision becomes **Active**. It will be marked as *Deployed*
 An **Active** (Published) Flow Revision is now available to the outside world via **HTTP** or as a **Job** 
 
 !> The Flow **must** start with the **aiWARE in** node as the first node in the flow to be triggerable.
+
+## Running Flows <!-- {docsify-ignore} -->
+
+<hr/>
+<hr/>
 
 ## Run in the studio <!-- {docsify-ignore} -->
 
@@ -271,6 +278,45 @@ If the Flow is started successfully, we will receive a response in the following
 ```
 <hr/>
 <hr/>
+
+## Authentication  <!-- {docsify-ignore} -->
+
+To run the request we need to Authentication. For that we need to get the **token**.
+
+The Easiest way to find the token using our [Graphql API playground](https://api.veritone.com/v3/graphql)
+
+Run this query 
+```graphql
+mutation {
+  userLogin(
+    input: {
+      userName: "email@veritone.com"
+      password: "xxx"
+    }
+  ) {
+    token
+    organization {
+      id
+      name
+    }
+  }
+}
+```
+
+Once we have the **token**, we can use it in a post request by setting the Authentication header in the request.
+
+Here is a **curl** example to run from the terminal:
+
+```bash
+curl --location --request POST 'https://automate-controller-v3f.aws-prod-rt.veritone.com/edge/v1/flow/7ec7fdef-bcd8-42b1-8d67-82b6286fce60/afce5bc7-74af-41f3-94f1-d91ebb621f4b/process' \
+--header 'Authorization: Bearer <user token>'
+```
+So for example, if the user token received from the mentioned graphql query is `abcd1234`, the request would look as the following:
+
+```bash
+curl --location --request POST 'https://automate-controller-v3f.aws-prod-rt.veritone.com/edge/v1/flow/7ec7fdef-bcd8-42b1-8d67-82b6286fce60/afce5bc7-74af-41f3-94f1-d91ebb621f4b/process' \
+--header 'Authorization: Bearer abcd1234'
+```
 
 ## Run as a Job <!-- {docsify-ignore} -->
 
