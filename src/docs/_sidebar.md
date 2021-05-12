@@ -154,7 +154,6 @@
     - [Running Flows](/automate-studio/working-with-flows/README?id=running-flows)
       - [Run Flow in the studio](/automate-studio/working-with-flows/README?id=run-in-the-studio)
       - [Run Flow via HTTP](/automate-studio/working-with-flows/README?id=run-via-http)
-      - [Run via HTTP with Authentication](/automate-studio/working-with-flows/README?id=run-via-http-with-authentication)
       - [Run Flow as a Job](/automate-studio/working-with-flows/README?id=run-as-a-job)
     - [Graphql API for Flows](/automate-studio/working-with-flows/README?id=graphql-api-for-flows)
     - [Subflows](/automate-studio/subflow/README)
