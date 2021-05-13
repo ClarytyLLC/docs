@@ -59,6 +59,7 @@
 | *primary.alloc_task.size* | int64 | 1500 |  | The size for the alloc tasks |
 | *primary.autoscale.interval* | int64 | 300 |  | The interval for autoscale |
 | *primary.autoscale.scan_period* | int64 | 900 |  | The period autoscale will use to analyze |
+| *primary.checkservices.interval* | int64 | 20 |  | Scan interval in seconds for checking services if in pending whether or not all resources are available for them. 0 means disabled.   |
 | *primary.cleansystem.default_grace_secs* | int64 | 432000 |  | How long to keep jobs and tasks |
 | *primary.cleansystem.enabled* | bool | true |  | This enables or disables the processing of cleaning up the system |
 | *primary.cleansystem.engine_instance_grace_secs* | int64 | 86400 |  | How long to keep  engine_instance |
