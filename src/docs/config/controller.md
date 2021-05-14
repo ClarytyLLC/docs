@@ -131,7 +131,6 @@
 | *primary.tasks_report.max_interval_sec* | int64 | 14400 |  | Maximum time interval (sec) for the tasks report |
 | *primary.top_engines.enabled* | bool | true |  | Feature Flag - Is Top N Enabled |
 | *primary.top_engines.launch_interval* | int64 | 45 |  | How many seconds to delay before relaunching an engine instance for this task_route |
-| *primary.top_engines.max_launches* | int64 | 30 |  | How many launches before failing the tasks |
 | *primary.update_scaling_info_for_modes* | string |  |  | Comma separated list of running modes to update scaling info from AWS |
 | *primary.update_stats.enabled* | bool | true |  | If enabled, this will run loop to update job task status and emit metrics |
 | *primary.update_tasks.interval* | int64 | 60 |  | The interval for scanning for tasks to sync  |
