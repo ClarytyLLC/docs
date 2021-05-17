@@ -149,6 +149,8 @@
 | *report.to_email* | string |  |  | The email to send the task report to |
 | *resource.planner.enabled* | bool | true |  | Whether resource planner is enabled |
 | *resource.planner.frequency_sec* | int64 | 30 |  | The interval for resource planner in sec |
+| *sentry.dsn* | string |  |  | The Sentry DSN url for Sentry error reporting |
+| *sentry.enabled* | bool | false |  | If enabled, this flag enables Sentry error reporting |
 | *servertype.reconcile_arns.enabled* | bool | true |  | Reconcile AWS ARNs between columns and json |
 | *task.reprocessing.delay_in_seconds* | int64 | 300 |  | The amount of seconds to delay task reprocessing |
 | *task.reprocessing.max_retries* | int64 | 3 |  | The maximum number of retries to reprocess tasks |
