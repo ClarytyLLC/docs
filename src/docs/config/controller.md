@@ -59,6 +59,7 @@
 | *primary.alloc_task.size* | int64 | 1500 |  | The size for the alloc tasks |
 | *primary.autoscale.interval* | int64 | 300 |  | The interval for autoscale |
 | *primary.autoscale.scan_period* | int64 | 900 |  | The period autoscale will use to analyze |
+| *primary.checkservices.interval* | int64 | 20 |  | Scan interval in seconds for checking services if in pending whether or not all resources are available for them. 0 means disabled.   |
 | *primary.cleansystem.default_grace_secs* | int64 | 432000 |  | How long to keep jobs and tasks |
 | *primary.cleansystem.enabled* | bool | true |  | This enables or disables the processing of cleaning up the system |
 | *primary.cleansystem.engine_instance_grace_secs* | int64 | 86400 |  | How long to keep  engine_instance |
@@ -110,7 +111,7 @@
 | *primary.cron.scheduler.plan_ahead_min* | int64 | 120 |  | On primary, this controls how far the scheduler will create jobs |
 | *primary.cron.scheduler_enabled* | bool | false |  | On primary, cron scheduled job processing enabled. |
 | *primary.cron.transform_interval* | bool | true |  | Transform interval schedules to day of week. |
-| *primary.cron.use_parallel_adhoc* | bool | false |  | On primary, cron adhoc job processing use parallel version. |
+| *primary.cron.use_parallel_adhoc* | bool | true |  | On primary, cron adhoc job processing use parallel version. |
 | *primary.cron.use_v3_job_storage* | bool | true |  | If true, store job in v3 format |
 | *primary.db_max_idle* | int64 | 2 |  | Primary - Max idle connections for controller |
 | *primary.db_max_open* | int64 | 10 |  | Primary - Max connections for controller |
@@ -120,6 +121,7 @@
 | *primary.enginebuilds.all_engines* | bool | true |  | If true, download all engines and builds available |
 | *primary.enginebuilds.interval_seconds* | int64 | 900 |  | The interval to update the engine builds (sec). This value should >= 5 minutes |
 | *primary.enginebuilds.page_size* | int64 | 20 |  | The number of engine builds in a call to graphql to get engine builds |
+| *primary.enginebuilds.validate_interval_seconds* | int64 | 1800 |  | The interval to validate the engine builds (sec) |
 | *primary.enginebuilds.validation_enabled* | bool | false |  | If true, validate engines before marking it deployed |
 | *primary.job_statuscheck.interval* | int64 | 30 |  | The interval to update jobs' status |
 | *primary.job_statuscheck.limit* | int64 | 500 |  | The limit of jobs to check per iteration |
@@ -129,7 +131,6 @@
 | *primary.tasks_report.max_interval_sec* | int64 | 14400 |  | Maximum time interval (sec) for the tasks report |
 | *primary.top_engines.enabled* | bool | true |  | Feature Flag - Is Top N Enabled |
 | *primary.top_engines.launch_interval* | int64 | 45 |  | How many seconds to delay before relaunching an engine instance for this task_route |
-| *primary.top_engines.max_launches* | int64 | 30 |  | How many launches before failing the tasks |
 | *primary.update_scaling_info_for_modes* | string |  |  | Comma separated list of running modes to update scaling info from AWS |
 | *primary.update_stats.enabled* | bool | true |  | If enabled, this will run loop to update job task status and emit metrics |
 | *primary.update_tasks.interval* | int64 | 60 |  | The interval for scanning for tasks to sync  |
@@ -148,6 +149,9 @@
 | *report.to_email* | string |  |  | The email to send the task report to |
 | *resource.planner.enabled* | bool | true |  | Whether resource planner is enabled |
 | *resource.planner.frequency_sec* | int64 | 30 |  | The interval for resource planner in sec |
+| *sentry.dsn* | string |  |  | The Sentry DSN url for Sentry error reporting |
+| *sentry.enabled* | bool | false |  | If enabled, this flag enables Sentry error reporting |
+| *servertype.reconcile_arns.enabled* | bool | true |  | Reconcile AWS ARNs between columns and json |
 | *task.reprocessing.delay_in_seconds* | int64 | 300 |  | The amount of seconds to delay task reprocessing |
 | *task.reprocessing.max_retries* | int64 | 3 |  | The maximum number of retries to reprocess tasks |
 | *task_status.enable* | bool | true |  | If enabled, store task_statuses in the db |

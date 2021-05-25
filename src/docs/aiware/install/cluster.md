@@ -15,7 +15,9 @@ With aiWARE Anywhere, in addition to having the ability to run cognitive engines
 
 ## Admin Node
 ### Step 1: Elevate Permissions to Root
-`sudo bash`
+```
+sudo bash
+```
 
 This will ensure that all following steps are executed as root.
 
@@ -50,7 +52,7 @@ For the reminder of the cluster, install aiWARE in the same fashion, changing th
 
 ### Step 3: Run Installation Command
 ```bash
-curl -sfL https://get.aiware.com | sudo sh -
+curl -sfL https://get.aiware.com | sh -
 ```
 
 ### Step 4: Validate the Installation

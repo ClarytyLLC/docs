@@ -3411,6 +3411,10 @@ components:
           items:
             $ref: '#/components/schemas/TaskStatusDetail'
           type: array
+        tokenID:
+          description: for authentication purpose if not sent over Authorization header
+          format: uuid
+          type: string
         workRequestDetails:
           type: string
         workRequestID:
@@ -4863,6 +4867,10 @@ components:
       properties:
         agentProxyEnabled:
           type: boolean
+        controllers:
+          items:
+            $ref: '#/components/schemas/HostDetail'
+          type: array
         launchContainer:
           items:
             $ref: '#/components/schemas/HostActionLaunch'
@@ -5468,6 +5476,25 @@ components:
         status:
           $ref: '#/components/schemas/HostAction'
       type: object
+    HostResponseToWork:
+      additionalProperties: true
+      properties:
+        engineID:
+          format: uuid
+          type: string
+        engineInstanceID:
+          format: uuid
+          type: string
+        hostID:
+          format: uuid
+          type: string
+        workRequestAccepted:
+          description: host accepted the work request
+          type: boolean
+        workRequestID:
+          format: uuid
+          type: string
+      type: object
     HostStatus:
       properties:
         CPUUtilized:
@@ -5515,6 +5542,10 @@ components:
         numGPU:
           description: Total GPU
           type: integer
+        tokenID:
+          description: for authentication purpose if not sent over Authorization header
+          format: uuid
+          type: string
         vCPUAvailable:
           description: The number of vCPUs available.  THis is calculated by Number
             of CPUs * % available * 1024
@@ -5554,6 +5585,13 @@ components:
         numGPU:
           description: The number of GPU attached to the container
           type: integer
+        ttl:
+          description: the remaining TTL for the engine instance
+          format: int64
+          type: integer
+        workRequestID:
+          format: uuid
+          type: string
       type: object
     HostTerminationReasonEnum:
       description: The reason for the termination of the host
@@ -6963,7 +7001,17 @@ components:
           type: string
       type: object
     ServiceStatusEnum:
+      description: 'This is the status of the service.
+
+        pending - The service is created but the resources may not be available yet
+
+        running - The service is available to run (and should be running)
+
+        stopped - The service should be stopped
+
+        '
       enum:
+      - pending
       - running
       - stopped
       type: string
@@ -8426,7 +8474,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.16.4.2532
+  version: 3.17.4.2672
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
