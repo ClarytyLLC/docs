@@ -106,28 +106,29 @@
 
 ## Install on Ubuntu
 
-1. Become root
+1. Install Docker and dependencies
     ```bash
-    sudo bash
+    sudo apt update -y 
+    sudo apt install docker.io uuidgen -y
     ```
 
-2. Install Docker and dependencies
+2. Find the IP address of the machine. This can be done in terminal by running the following:
     ```bash
-    apt update -y 
-    apt install docker.io uuidgen -y
+    export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
     ```
 
 3. Set the variables
     ```bash
     export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
     export AIWARE_DB_PORT=5432 # if PG is running locally
-    export AIWARE_CACHE=$HOME/aiware/cache
-    export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
-    export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
-    export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
-    export AIWARE_ROOT=$HOME/aiware/root
+    export AIWARE_HOME=$HOME/aiware
+    [ ! -d $AIWARE_HOME ] && mkdir $AIWARE_HOME || echo aiware directory exists 
+    export AIWARE_ROOT=$AIWARE_HOME/root
+    export AIWARE_DB_ROOT=$AIWARE_ROOT/postgres
+    export AIWARE_REGISTRY_ROOT=$AIWARE_ROOT/registry
+    export AIWARE_CACHE=$AIWARE_HOME/cache # please make sure this exists
     export AIWARE_AGENT_UPDATE_INTERVAL=15
-    export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
+    export AIWARE_RUN_CONFIG=$AIWARE_HOME/aiware-config.json
     export AIWARE_REGION=us-east-1 # only relevant if running in AWS
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
@@ -136,9 +137,11 @@
     ```
     Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
+    This installation is a single user installation. If you want all users to use aiWARE, update the path of `AIWARE_HOME` to `/opt/aiware`
+
 4. Run install command
     ```bash
-    curl -sfL https://get.aiware.com | sh -
+    curl -sfL https://get.aiware.com | sudo -E sh -
     ```
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
 
