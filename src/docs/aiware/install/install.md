@@ -29,20 +29,7 @@
 
 4. Set the variables
     ```bash
-    export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
-    export AIWARE_DB_PORT=5432 # if PG is running locally
-    export AIWARE_CACHE=$HOME/aiware/cache
-    export AIWARE_DB_ROOT=$HOME/aiware/root/postgres
-    export AIWARE_REGISTRY_ROOT=$HOME/aiware/root/registry
-    export AIWARE_CACHE=$HOME/aiware/cache # please make sure this exists
-    export AIWARE_ROOT=$HOME/aiware/root
-    export AIWARE_AGENT_UPDATE_INTERVAL=15
-    export AIWARE_RUN_CONFIG=$HOME/aiware/aiware-config.json
-    export AIWARE_REGION=us-east-1 # only relevant if running in AWS
-    export AIWARE_HOST_EXPIRE=false
-    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
-    export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
-
+    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
 
