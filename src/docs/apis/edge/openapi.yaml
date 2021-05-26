@@ -2351,6 +2351,9 @@ components:
         port:
           description: Port of the NR container
           type: string
+        revisionID:
+          format: uuid
+          type: string
       type: object
     CreateOrganizationDetail:
       properties:
@@ -5014,6 +5017,9 @@ components:
         port:
           description: Port of the node-red container
           type: string
+        revisionId:
+          description: the flow revisionId for the flow engine
+          type: string
         runtimeTTL:
           description: Seconds to run
           type: integer
@@ -5042,6 +5048,9 @@ components:
           type: string
         port:
           description: Port of the node-red container
+          type: string
+        revisionId:
+          description: the buildId for the engine
           type: string
       type: object
     HostActionTerminate:
@@ -8474,7 +8483,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.17.4.2676
+  version: 3.17.4.2677
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
