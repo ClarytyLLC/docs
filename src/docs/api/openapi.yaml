@@ -5497,6 +5497,10 @@ components:
         hostID:
           format: uuid
           type: string
+        tokenID:
+          description: for authentication purpose if not sent over Authorization header
+          format: uuid
+          type: string
         workRequestAccepted:
           description: host accepted the work request
           type: boolean
@@ -8483,7 +8487,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.17.4.2678
+  version: 3.17.4.2679
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
