@@ -33,3 +33,65 @@ our DASH/HLS-compatible media streaming service that can be used to clip and sti
 - For accessing **engine output**, use the [engineResults](/apis/reference/query/?id=engineresults) query.
 It normalizes multiple versions of engine output to our most recent standard and can retrieve time-based sections of content.
 - For accessing **thumbnails**, use the `temporalDataObject.thumbnail` property, which will return a signed URI.
+
+### Accessing the Media-Streamer
+
+The media-streamer service is a secure service since it contains proprietary content. If you
+attempt to access a file without authorization, you will get a 401 response code. In order to
+access content on the media-streamer, you will need to provide a session token in the
+Authorization header.
+
+You can get a session token in several ways, but the most common ones are by logging in via
+GraphQL with the `userLogin` mutation or, if you are creating an engine, then a token generated
+for the engine's current session will be provided to you as part of the request to process
+content.
+
+**Example:**
+
+To access the primary media asset for a TDO, you might get the URL with this GraphQL:
+
+```
+query {
+	temporalDataObject(id:1550065668) {
+    primaryAsset(assetType:"media") {
+      id
+      signedUri
+    }
+  }
+}
+```
+
+Which will return something like
+
+```
+{
+  "data": {
+    "temporalDataObject": {
+      "primaryAsset": {
+        "id": "VlRBOm1lZGlhOjE1NTAwNjU2Njg=",
+        "signedUri": "https://api.veritone.com/media-streamer/download/tdo/1550065668"
+      }
+    }
+  }
+}
+```
+
+Accessing this directly gives a 401:
+
+```
+$ curl -I "https://api.veritone.com/media-streamer/download/tdo/1550065668"
+HTTP/2 401 
+content-type: text/html; charset=utf-8
+...
+```
+and the body of the response contains `missing header`
+
+To access the content, provide an Authorization token along with the request:
+
+```
+$ curl -I \
+  -H "Authorization: Bearer afd7f3f9-a79e-4a47-92bf-a83ffb8bfb28" \
+  "https://api.veritone.com/media-streamer/download/tdo/1550065668"           
+HTTP/2 200 
+content-type: audio/mpeg
+```
