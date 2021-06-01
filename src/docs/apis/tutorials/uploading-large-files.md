@@ -137,7 +137,6 @@ Create the TDO/container and upload a local file up to 100 MB or the primary fil
 curl -X POST \
   https://api.veritone.com/v3/graphql \
   -H 'authorization: Bearer 31gcf6:2e76022093e64732b4c48f202234394328abcf72d50e4981b8043a19e8d9baac' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F 'filename=rescued puppies road trip.mp4' \
   -F 'file=@/Users/bobjones/Downloads/rescued puppies road trip.mp4' \
   -F 'query=mutation {
@@ -219,8 +218,6 @@ curl -X POST \
   https://api.veritone.com/v3/graphql \
   -H 'authorization: Bearer 31rzg6:2e76022093e64732b4c48f202234394328abcf72d50e4981b8043a19e8d9baac' \
   -H 'cache-control: no-cache' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -H 'postman-token: e73ec9f6-050a-0c1f-2a50-8ca09ad8ac4d' \
   -F 'query=mutation {
              createAsset(
                input: {
