@@ -177,6 +177,7 @@
     - [Advanced](/automate-studio/tutorials/advanced/README)
       - [Customer Recognition by Face](/automate-studio/tutorials/advanced/customer-recognition/tutorial)
       - [Detection of Negative Social Media Posts](/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial)
+      - [Build An Automate Flow Remotely & Run It Locally](/automate-studio/tutorials/advanced/build-remote-run-local/tutorial)
       <!-- - Dynamic Language Translation -->
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)

@@ -4,6 +4,7 @@
 
   - [Customer Recognition by Face](/automate-studio/tutorials/advanced/customer-recognition/customer-recognition-by-face)
   - [Detection of Negative Social Media Posts](/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial)
+  - [Build An Automate Flow Remotely & Run It Locally](/automate-studio/tutorials/advanced/build-remote-run-local/tutorial)
   <!-- - Dynamic Language Translation -->
 
 > More Tutorials are comming up soon
