@@ -2,9 +2,7 @@
 
 **aiWare** lets you define Jobs that in turn consist of Tasks. A job is the smallest building block that can be processed by the engine. All engines in aiWARE break up a workflow into multiple jobs. You must understand that a typical workflow might use multiple engines. Jobs, and their tasks, lets you design and build your workflow utilizing the [available engines](/cognitive-technology/).
 
-the main unit of work is the _Job_. A Job, in turn, wraps Tasks; and the work for each Task is done by an _engine_.
-
-> Typically, jobs consist of multiple tasks and each task operates on a potentially large media file. All jobs run asynchronously and are mostly long-running. You must plan ahead to poll a job to know its [status](#step-four-poll-job-for-status) periodically.
+> Typically, jobs consist of multiple tasks and each task operates on a potentially large media file. All jobs run asynchronously and are mostly long-running. You must plan to poll a job to know its [status](#step-four-poll-for-status) periodically.
 
 This topic lets you quickly understand how you can create a job, poll the job status, and get the job results. We will use both GraphQL (for cloud) and Edge REST API (on-premise/hosted) examples to demonstrate the process. We will also see [how you can delete a TDO](#delete-a-tdo-andor-its-content) when it is no longer required.
 
@@ -13,7 +11,7 @@ This topic lets you quickly understand how you can create a job, poll the job st
 1. [Step One: Get a Token](#step-one-get-a-token)
 2. [Step Two: Select and Engine](#step-two-select-an-engine)
 3. [Step Three: Create the Job](#step-three-create-the-job)
-4. [Step Four: Poll Job for Status](#step-four-poll-job-for-status)
+4. [Step Four: Poll for Status](#step-four-poll-for-status)
 5. [Step Five: View Results](#step-five-view-results)
 
 
@@ -24,7 +22,7 @@ You can also [export the results in specific output formats](#export-the-results
 
 ## **Step One: Get a Token**
 
-You must use an API token to access any aiWare API. The token must be included in the request’s Authorization Header and the value must be formatted as: `Bearer <yourtokenhere>`. 
+You must use an API token to access any aiWare API. The token must be included in the request’s Authorization Header and the value must be formatted as `Bearer <yourtokenhere>`. 
 
 You can get an authorization token using one of the following methods:
 
@@ -620,12 +618,11 @@ When the status changes to `complete`, you can retrieve the results at the URL r
 
 Jobs operate on a Temporal Data Object (TDO), which is a generic data wrapper that stores metadata about media files. You can delete a TDO, when it is no longer required, from your organization’s files to free up storage space or to comply with organizational policies. You can either delete a TDO and all its assets or delete only its assets so that the TDO can be reused.
 
-- [ ] > When you delete TDO data, the data is permanently removed from aiWARE and will not be accessible through CMS, search, or any other method. You cannot revert this change.
-  >
+> When you delete TDO data, the data is permanently removed from aiWARE and will not be accessible through CMS, search, or any other method. You cannot revert this change.
 
 ### Delete a TDO and All Assets
 
-You can remove a TDO and all its asset metadata, by making a request to `deleteTDO` mutation with the TDO `id`. The operation is processed immediately after the request and permanently deletes the TDO *as well as its assets* from the organization's account. Any subsequent requests against the TDO or assets will return an error.
+You can remove a TDO and all its asset metadata, by requesting to `deleteTDO` mutation with the TDO `id`. The operation is processed immediately after the request and permanently deletes the TDO *as well as its assets* from the organization's account. Any subsequent requests against the TDO or assets will return an error.
 
 Below is a sample request to delete a TDO with `id 44512341`:
 
@@ -654,7 +651,7 @@ Below is a sample response:
 
 ### Remove TDO Content
 
-You can remove only the content associated with a TDO, while keeping the TDO and asset metadata, by making a request to the `cleanupTDO` mutation with the TDO `id`. You can specify the types of data you want to delete in the `options` parameter:
+You can remove only the content associated with a TDO, while keeping the TDO and asset metadata, by requesting to the `cleanupTDO` mutation with the TDO `id`. You can specify the types of data you want to delete in the `options` parameter:
 
 * `storage`: Deletes the TDO's assets from storage, including the engine results. The asset metadata will remain until the TDO or container is deleted.
 * `searchIndex`: Deletes all search index data. The TDO and its assets will no longer be accessible through search.
