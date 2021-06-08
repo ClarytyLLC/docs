@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Permission overview
 
 Currently, aiWARE includes a list of permission. It will help to grant permission to a token/user

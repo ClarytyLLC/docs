@@ -58,3 +58,7 @@ The only things that usually change are the `language` code and the values in th
 
 > The `page`, `paragraph`, `sentence` values are optional for the input.
 Whatever is given in the input for those values (if any) should be returned on the output as well.
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

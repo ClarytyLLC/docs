@@ -70,3 +70,7 @@ face(s) for the entity is the `confidence`. The `mode` specifies whether the eng
 Here is an example of the simplest type of face verification engine output:
 
 [](vtn-standard.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

@@ -78,3 +78,7 @@ get_usage() {
   get_usage
 }
 ```
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

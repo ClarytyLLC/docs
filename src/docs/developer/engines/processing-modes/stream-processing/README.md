@@ -1,3 +1,8 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
+
 # Stream Engine Processing
 
 Stream Engines process data in streams, where the stream is broken up into stream bytes.
@@ -16,7 +21,13 @@ Because they work off the raw stream, they need to take care of decoding the raw
 They are often used in situations like:
 
 - Transcription
+
+<hr/>
+
 - Object tracking through a scene
+
+<hr/>
+
 - Gesture recognition
 
 ## Basic Steps
@@ -24,12 +35,18 @@ They are often used in situations like:
 The lifecycle for a stream engine is as follows:
 
 1. The Docker container for your engine will be started up with the environment variables set.
-1. The engine consumes `raw_stream` messages from its `KAFKA_INPUT_TOPIC`.
-1. For each `raw_stream` message, the engine does its processing.
-1. When processing of each `raw_stream` is done, the engine produces an `engine_output` message conforming to the [vtn-standard format](/developer/engines/standards/engine-output/).
-1. The engine produces the `engine_output` message to `KAFKA_CHUNK_TOPIC`.
-1. When the entire stream is processed (the engine should receive a `stream_eof` message), produce a `stream_eof` message.
-1. Throughout this process, produce an `engine_heartbeat` message every 5-10 seconds to let us know that your engine is working correctly.
+
+2. The engine consumes `raw_stream` messages from its `KAFKA_INPUT_TOPIC`.
+
+3. For each `raw_stream` message, the engine does its processing.
+
+4. When processing of each `raw_stream` is done, the engine produces an `engine_output` message conforming to the [vtn-standard format](/developer/engines/standards/engine-output/).
+
+5. The engine produces the `engine_output` message to `KAFKA_CHUNK_TOPIC`.
+
+6. When the entire stream is processed (the engine should receive a `stream_eof` message), produce a `stream_eof` message.
+
+7. Throughout this process, produce an `engine_heartbeat` message every 5-10 seconds to let us know that your engine is working correctly.
 
 ## Environment Variables
 
@@ -53,8 +70,11 @@ The lifecycle for a stream engine is as follows:
 Stream engines deal with four different Kafka messages:
 
 - `raw_stream`
+
 - `engine_output`
+
 - `engine_heartbeat`
+
 - `stream_eof`
 
 ### raw_stream

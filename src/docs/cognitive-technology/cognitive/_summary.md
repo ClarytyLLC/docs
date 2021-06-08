@@ -12,3 +12,7 @@ You can build a pipeline of cognitive engines, to be run sequentially or in para
 4. Do sentiment analysis (Cognitive)
 
 Each cognitive engine conforms to a particular [class](/developer/engines/cognitive/?id=classes) and [capability](/developer/engines/cognitive/?id=capabilities).
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

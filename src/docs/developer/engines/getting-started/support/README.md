@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Support
 
 We provide multiple different support channels to help you in extending aiWARE.

@@ -74,3 +74,7 @@ When reporting lattices, the following rules must be followed:
 
 Some translation engines will take the outputs of transcription engines as input to their translation engines.
 To learn how those engines are built please see [Translating Transcripts](/developer/engines/cognitive/text/translation/transcript/).
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

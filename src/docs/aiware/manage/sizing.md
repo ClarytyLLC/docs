@@ -110,3 +110,6 @@ This will produce a report like:
 
 If I wanted to run TVR, SI2 Playback, SI2 audio/video chunk and Output Writer then per count that is 70,310 ms or 70 CPU-Seconds per count.  If that is a 15 minute audio file (on average), and I wanted to process 1,000 files per hour then I would need 70,310 CPU-seconds in an hour on that hardware.  If I am using 4 CPU boxes, then dividing by the period and the number of CPUs (70,310.62397 / period_secs / numCPU) gives me 4.88 boxes which is 5.  I would add another box for overhead.
 
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

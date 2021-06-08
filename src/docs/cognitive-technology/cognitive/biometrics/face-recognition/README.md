@@ -43,3 +43,7 @@ Each `object` should be of type `face`, and because each recognized face always 
 Here is an example of the simplest type of face recognition output:
 
 [](vtn-standard.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

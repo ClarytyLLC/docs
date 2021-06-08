@@ -53,3 +53,7 @@ The minimal example of anomaly detection engine output using only required keys 
 Here is a more typical engine output example that classifies a anomalies in a time-based form:
 
 [](../../../../../../schemas/vtn-standard/anomaly/examples/real-world.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

@@ -16,7 +16,7 @@ Before we create a flow, let's quickly look at the main concepts you need to kno
                 <input type="checkbox" id="list-item-1">
                 <label for="list-item-1"><span class="expandText">Click here to learn about the main concepts</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
-                    <li>
+                    <li class="inner-content">
 
 The main concepts you need to know about are:
 
@@ -44,7 +44,7 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
                 <input type="checkbox" id="list-item-2">
                 <label for="list-item-2"><span class="expandText">Click here to learn how to create a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
-                    <li>
+                    <li class="inner-content">
      
 
                     
@@ -75,7 +75,7 @@ You've got the basics, now let's start building out our flow &mdash; and test it
                 <input type="checkbox" id="list-item-3">
                 <label for="list-item-3"><span class="expandText">Click here to learn how to build a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
-                    <li>
+                    <li class="inner-content">
                     
 
 
@@ -124,7 +124,7 @@ Let's test our brand new flow
                 <input type="checkbox" id="list-item-4">
                 <label for="list-item-4"><span class="expandText">Click here to learn how to test your flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
-                    <li>
+                    <li class="inner-content">
                 
 
 1\. Click the little _bug_ icon in the information pane, on the right, to enable the display of debug messages.
@@ -163,6 +163,7 @@ Now that we have the basics, go ahead and create your first [AI flow](/automate-
 ?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
 
 <style>
+
 label {
         color: #fff;
     }
@@ -238,6 +239,15 @@ label {
     .collapse-accordion ul ul li {
         padding: 10px;
         
+    }
+    .inner-content p{
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .inner-content *{
+        font-size: 18px;
+        font-weight: 500;
     }
 
 

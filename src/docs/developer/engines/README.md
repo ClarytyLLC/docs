@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Building Engines
 
 <!--TODO: Need to re-document builds, states, all that stuff.  Can pull from previous docs.-->
@@ -80,9 +84,13 @@ An aggregator can either be intracategory (processing results from a single cogn
 Below is a sample pipeline that includes an intracategory aggregator engine at the end.
 
 1. Ingest audio stream (Adapter)
+
 2. Transcribe audio using a cloud engine provider A (Cognitive)
+
 3. Transcribe audio using a cloud engine provider B (Cognitive)
+
 4. Transcribe audio using a cloud engine provider C (Cognitive)
+
 5. Select the best result from all 3 transcripts (Aggregator)
 
 > Aggregator engines are currently not available to deploy through Veritone Developer.

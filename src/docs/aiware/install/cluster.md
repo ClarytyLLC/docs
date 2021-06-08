@@ -181,3 +181,7 @@ aiWARE Anywhere adds the `api`, `redis`, `elasticsearch`, `nsq`, `lb`, and `mini
 ```
 Coming soon
 ```
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

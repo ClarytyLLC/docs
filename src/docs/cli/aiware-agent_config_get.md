@@ -13,7 +13,10 @@ aiware-agent config get section key [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+ 
+ <style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style> -h, --help   help for get
 ```
 
 ### Options inherited from parent commands

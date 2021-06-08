@@ -18,3 +18,7 @@ See the full documentation for [engine manifest standards](/engines/standards/en
 ### Example
 
 [](vtn-standard.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

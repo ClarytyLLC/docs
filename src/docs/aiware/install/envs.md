@@ -77,3 +77,8 @@ These may be set before the agent installer is run.  At least `AIWARE_MODE` must
 | AIWARE_ENGINE_ID | <engineId> | | All |
 | AIWARE_ENGINE_SCRATCH | /cache/engine/<engineId>/scratch | | All |
 | AIWARE_ENGINE_INSTANCE_SCRATCH | /cache/engine/<engineId>/<launchId> | | All |
+
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

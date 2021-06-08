@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Token overview
 
 Edge tokens will be used to call Edge controller APIs

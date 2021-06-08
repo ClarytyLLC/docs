@@ -6,12 +6,19 @@ Run `docker ps -a` .
 Depending on the mode, this will show various containers.
 
 - controller
+
     - `aiware-controller`
+
 - database
+
     - `aiware-postgres`
+
 - registry
+
     - `aiware-registry`
+
 - prometheus
+
     - `aiware-prometheus`
 
 
@@ -45,7 +52,15 @@ This page gives a quick overview of how Jobs work in aiWARE. We will show exampl
 The process involves these steps:
 
 * [Step One](#step-one-authorization-getting-a-token): Authorization and Authentication (Get a Token)
+
 * [Step Two](#step-two-choose-an-engine): Choose an Engine
+
 * [Step Three](#step-three-create-the-job): Create the Job
+
 * [Step Four](#step-four-poll-for-status): Poll for Status
+
 * [Step Five](#step-five-obtain-the-results): Obtain the Results
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

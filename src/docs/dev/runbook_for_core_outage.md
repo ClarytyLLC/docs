@@ -1,4 +1,8 @@
 
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Edge Dependency on core
 
 Edge services or engines that need core connection:

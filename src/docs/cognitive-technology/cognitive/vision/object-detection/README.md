@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Building an Object Detection Engine
 
 [badge/API/Yes/green]

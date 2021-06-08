@@ -86,3 +86,7 @@ PUTing to the same URL twice will overwrite the contents of the first PUT reques
 [](../_snippets/advanced-combined-doc-translation.md ':include')
 
 [](../../../../../../../schemas/vtn-standard/media-translated/examples/with-text.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

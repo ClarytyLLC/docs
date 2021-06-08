@@ -42,3 +42,7 @@ The simplest example is a single summary of an entire document
 
 <!--TODO: Technically, summary also exists on the series array object but there doesn't seem like many use cases for that.-->
 <!--TODO: Consider adding summary to the object array so it can be specified on a per-phrase basis.-->
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

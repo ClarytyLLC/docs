@@ -42,3 +42,7 @@ The `label` can be used for grouping together multiple faces that likely belong 
 Here is an example of the simplest type of face detection output:
 
 [](vtn-standard.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

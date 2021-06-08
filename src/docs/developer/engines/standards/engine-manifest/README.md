@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Engine Manifest
 
 Every Docker image uploaded to aiWARE as a build for an engine or adapter should include a manifest.json file, which contains important information about your engine and build.
@@ -21,6 +25,12 @@ If fields are missing, we may invalidate your engine or in some cases, assume th
 Fields that are not marked as being required are optional; they should be included in the manifest file if you have any values to declare but may be omitted if you don't.
 
 <!--TODO: Need to do an audit of this table to make sure it is up-to-date-->
+
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-0">
+                <label for="list-item-0"><span class="expandText">Show Field</span><span class="collapseText">Close Fields.</span></label>
+                <ul>
+                    <li class="inner-content">
 
 | Field   | Format | Required for Cognitive Engines | Required for Adapters | Description  | Example |
 | ------- | ------ | -------------------------------| --------------------- | ------------ | ------- |
@@ -52,34 +62,106 @@ Fields that are not marked as being required are optional; they should be includ
 | serverCountry | string | No | No | Indicate the ISO codes of the country where the server is located if the engine makes external calls. | "serverCountry": "US"|
 | releaseNotes          | string           | No       | No | Tell users what has changed in this version of your code base. Enter unformatted, plain text in this field only.  | "releaseNotes": "This version integrates a new algorithm that is better at detecting accented speech, specifically targeting Southern US accents. In addition to the improved accuracy, the algorithm runs 20% faster now. The version also fixes some minor bugs with dictionary files and permissions." |
 
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+
 ## Valid Values
 
 ### Available categories for cognitive engines
 
 <!--TODO: These should map to either engine category IDs (preferably) or validation contract keys-->
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-1">
+                <label for="list-item-1"><span class="expandText">Show Categories</span><span class="collapseText">Close Categories.</span></label>
+                <ul>
+                    <li class="inner-content">
 
 * transcode
+
+<hr>
+
 * transcription
+
+<hr>
+
 * sentiment
+
+<hr>
+
 * fingerprint
+
+<hr>
+
 * facial detection
+
+<hr>
+
 * face verification
+
+<hr>
+
 * object detection
+
+<hr>
+
 * translate
+
+<hr>
+
 * geolocation
+
+<hr>
+
 * conductor
+
+<hr>
+
 * station playout
+
+<hr>
+
 * text recognition
+
+<hr>
+
 * speaker verification
+
+<hr>
+
 * facial features
+
+<hr>
+
 * logo recognition
+
+<hr>
+
 * thumbnail
+
+<hr>
+
 * correlation
+
+<hr>
+
 * reduction
+
+<hr>
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
 
 ### Available categories for adapters
 
 * pull
+
 * push
 
 ### Available cluster sizes
@@ -109,31 +191,118 @@ Fields that are not marked as being required are optional; they should be includ
 <!--TODO: Consider supportedInputFormat = vtn-standard-->
 <!--TODO: There's potentially some importance around `text/plain` vs `text/plan;charset=utf-8`-->
 
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-2">
+                <label for="list-item-2"><span class="expandText">Show MimeTypes</span><span class="collapseText">Close MimeTypes.</span></label>
+                <ul>
+                    <li class="inner-content">
+
 * application/json
+
+<hr>
+
 * application/vtn-engineout+json
+
+<hr>
+
 * application/pdf
+
+<hr>
+
 * application/smil+xml
+
+<hr>
+
 * application/ttml+xml
+
+<hr>
+
 * application/x-flv
+
+<hr>
+
 * application/xmlaudio/aac
+
+<hr>
+
 * audio/flac
+
+<hr>
+
 * audio/midi
+
+<hr>
+
 * audio/mp4
+
+<hr>
+
 * audio/mpeg
+
+<hr>
+
 * audio/wav
+
+<hr>
+
 * audio/webmimage/gif
+
+<hr>
+
 * image/jpeg
+
+<hr>
+
 * image/tifftext/csv
+
+<hr>
+
 * text/html
+
+<hr>
+
 * text/plainvideo/3gpp
+
+<hr>
+
 * video/mp4
+
+<hr>
+
 * video/mpeg
+
+<hr>
+
 * video/ogg
+
+<hr>
+
 * video/quicktime
+
+<hr>
+
 * video/webm
+
+<hr>
+
 * video/x-m4v
+
+<hr>
+
 * video/x-ms-wmv
+
+<hr>
+
 * video/x-msvideo
+
+<hr>
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
 
 ## Example
 
@@ -164,3 +333,157 @@ Putting it all together, an example of a manifest.json submission is provided be
     "This version integrates a new algorithm that is better at detecting accented speech, specifically targeting Southern US accents. In addition to the improved accuracy, the algorithm runs 20% faster now. The version also fixes some minor bugs with dictionary files and permissions."
 }
 ```
+
+<style>
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #766;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#bda0a0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+</style>
