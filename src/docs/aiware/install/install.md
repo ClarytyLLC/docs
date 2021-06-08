@@ -96,7 +96,7 @@
 1. Install Docker and dependencies
     ```bash
     sudo apt update -y 
-    sudo apt install docker.io uuidgen -y
+    sudo apt install docker.io uuidgen nfs-common -y
     ```
 
 2. Find the IP address of the machine. This can be done in terminal by running the following:
@@ -107,16 +107,6 @@
 3. Set the variables
     ```bash
     export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
-    export AIWARE_DB_PORT=5432 # if PG is running locally
-    export AIWARE_HOME=$HOME/aiware
-    [ ! -d $AIWARE_HOME ] && mkdir $AIWARE_HOME || echo aiware directory exists 
-    export AIWARE_ROOT=$AIWARE_HOME/root
-    export AIWARE_DB_ROOT=$AIWARE_ROOT/postgres
-    export AIWARE_REGISTRY_ROOT=$AIWARE_ROOT/registry
-    export AIWARE_CACHE=$AIWARE_HOME/cache # please make sure this exists
-    export AIWARE_AGENT_UPDATE_INTERVAL=15
-    export AIWARE_RUN_CONFIG=$AIWARE_HOME/aiware-config.json
-    export AIWARE_REGION=us-east-1 # only relevant if running in AWS
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
     export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
@@ -183,6 +173,12 @@
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| AIWARE_DB_PORT | 5432 | The port to use for the PostgreSQL database |
+| AIWARE_HOME | /opt/aiware |The installation location for aiWARE |
+| AIWARE_CACHE | /opt/aiware/cache | The the cache directory to mount NFS servers on each local box |
+| AIWARE_AGENT_UPDATE_INTERVAL | 60 | The interval between updates on the agent to controller |
+| AIWARE_RUN_CONFIG | /var/run/aiware-agent.json | Location of stored configuration of aiWARE | 
+| AIWARE_REGION | us-east-1 | Only relevant for AWS | 
 | INSTALL_AIWARE_SKIP_START | false | If set to `true`, skip starting aiware |
 | INSTALL_AIWARE_SKIP_SERVICE | false | If set to `true`, skip installing as a service on the host |
 | INSTALL_AIWARE_VERSION | nil | If set, install this particular version |

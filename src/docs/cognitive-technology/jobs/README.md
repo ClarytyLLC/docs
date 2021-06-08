@@ -1,48 +1,60 @@
 # Working with Jobs
 
-In aiWARE, the main unit of work is the _Job_. A Job, in turn, wraps Tasks; and the work for each Task is done by an _engine_.
+**aiWare** lets you define Jobs that in turn consist of Tasks. A job is the smallest building block that can be processed by the engine. All engines in aiWARE break up a workflow into multiple jobs. You must understand that a typical workflow might use multiple engines. Jobs, and their tasks, lets you design and build your workflow utilizing the [available engines](/cognitive-technology/).
 
-> Jobs are typically long-running, since there may be multiple Tasks within a Job, each one operating on a potentially large media file. Thus, Jobs operate asynchronously and you should plan on polling the Job to discover its [status](#job-status).
+the main unit of work is the _Job_. A Job, in turn, wraps Tasks; and the work for each Task is done by an _engine_.
 
-This page gives a quick overview of how Jobs work in aiWARE. We will show examples of how to run a job using the GraphQL API (the "cloud API") as well as the Edge REST API (which is tyically used in on-premise/hosted aiWARE).
+> Typically, jobs consist of multiple tasks and each task operates on a potentially large media file. All jobs run asynchronously and are mostly long-running. You must plan ahead to poll a job to know its [status](#step-four-poll-job-for-status) periodically.
 
-The process involves these steps:
+This topic lets you quickly understand how you can create a job, poll the job status, and get the job results. We will use both GraphQL (for cloud) and Edge REST API (on-premise/hosted) examples to demonstrate the process. We will also see [how you can delete a TDO](#delete-a-tdo-andor-its-content) when it is no longer required.
 
-* [Step One](#step-one-authorization-getting-a-token): Authorization and Authentication (Get a Token)
-* [Step Two](#step-two-choose-an-engine): Choose an Engine
-* [Step Three](#step-three-create-the-job): Create the Job
-* [Step Four](#step-four-poll-for-status): Poll for Status
-* [Step Five](#step-five-obtain-the-results): Obtain the Results
+**To run a job, you must:**
 
-## Step One: Authorization (Getting a Token)
+1. [Step One: Get a Token](#step-one-get-a-token)
+2. [Step Two: Select and Engine](#step-two-select-an-engine)
+3. [Step Three: Create the Job](#step-three-create-the-job)
+4. [Step Four: Poll Job for Status](#step-four-poll-job-for-status)
+5. [Step Five: View Results](#step-five-view-results)
 
-Regardless of which API you use, an API token must be included in the request's Authorization Header, with the value formatted as: `Bearer <yourtokenhere>`. (See examples below.)
 
-There are several ways to obtain the required token.
 
-1\. If you have Admin rights for your Organization, log into the Veritone Platform and select Admin from the App Picker drop-down. Then click the API Keys widget, and click **New API Key**.
+You can also [export the results in specific output formats](#export-the-results-in-a-specific-output-format).
 
-2\. Use GraphQL to run the `userLogin` mutation. (This mutation is the only one that can be run without a token.) Example:
 
-```graphql
-mutation userLogin {
-  userLogin(input: {userName: "jdoe@mycompany.com" password: "Password123"}) {
-    token
+
+## **Step One: Get a Token**
+
+You must use an API token to access any aiWare API. The token must be included in the request’s Authorization Header and the value must be formatted as: `Bearer <yourtokenhere>`. 
+
+You can get an authorization token using one of the following methods:
+
+- Generating an API key if you have admin-level privileges for your organization:
+
+  1. Log into the Veritone Platform.
+  2. Select Admin from the App Picker drop-down. 
+  3. Click the API Keys widget, and click New API Key to generate a new API.
+
+  This generates a long-last token that you must store safely.
+
+- Running the `userLogin` mutation (the only mutation that you can run without a token) using GraphQL to run the `userLogin` mutation.
+
+  ```graphql
+  mutation userLogin {
+    userLogin(input: {userName: "jdoe@mycompany.com" password: "Password123"}) {
+      token
+    }
   }
-}
-```
+  ```
 
-3\. Use OAuth to obtain a token programmatically (as described in our [Build Your Own AI App](/developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) tutorial).
+  This generates a token that expires in a day and is 36 ASCII bytes in length, such as `8a2d0596-2447-40f8-8ea1-cfebaec68459`.
 
-Use the first option if you need a long-lasting token (i.e., one that will not expire in a day). Take care to store it properly.
+- Using OAuth to get a token. For more information, see [Build Your Own AI App](/developer/applications/app-tutorial/app-tutorial-step-2?id=authentication-option-2-oauth) tutorial.
 
-The second option produces a short-lived (~1 day) session token, 36 ASCII bytes in length, looking like `8a2d0596-2447-40f8-8ea1-cfebaec68459`.
+  This generates a [JSON Web Token (JWT)](https://jwt.io/) of around one kilobyte in length that expires in a day.
 
-The third option produces a [JSON Web Token (JWT)](https://jwt.io/) of around one kilobyte in length. (The actual size will vary somewhat, but is always around 1024 bytes.) It expires in a day.
 
-### How to Use the Token in an API Call
 
-The token is simply a String. One possible way to use it in a web client is shown below:
+All tokens are strings that must be included in the request’s Authorization Header. Following is a sample of using the token in a web client:
 
 ```js
     const API_ENDPOINT = 'https://api.veritone.com/v3/graphql';
@@ -73,11 +85,15 @@ The token is simply a String. One possible way to use it in a web client is show
    }
 ```
 
-## Step Two: Choose an Engine
+
+
+## Step Two: Select an Engine
+
+After generating a token, you must select a cognition engine that you want to use to run your job. However, you must first get all available engines and review them to understand which engine suits your job.
 
 ### Using GraphQL
 
-You may want to start by finding all the possible _categories_ of cognition engine:
+To get all engines’ information, you must start with finding all the possible *categories* of cognition engine. To find categories, query for categories using the following sample code:
 
 ```graphql
 query enumerateCognitionEngineCategories {
@@ -95,7 +111,9 @@ query enumerateCognitionEngineCategories {
 }
 ```
 
-If you know the category you're interested in, query for engines in that category (but provide a reasonable limit on the number of records returned). In the following query, we ask for engines that can do translation; and at the same time, we ask for the _custom fields and options_ that each translation engine supports:
+
+
+Once you know the category you want, query for engines in the category (“Translate” in this example). You must set a reasonable limit on the number of records returned. The following sample query returns engines that can translate, and lists the custom fields and options supported by each engine:
 
 ```graphql
 {
@@ -126,23 +144,35 @@ If you know the category you're interested in, query for engines in that categor
 }
 ```
 
+
+
 ### Using the Edge REST API
 
-Make a GET request to `/admin/engines`. This will return a list of the available engines on a given instance of Edge.
+You get a list of all engines using the Edge REST API by making a GET request to `/admin/engines`. This returns a list of the available engines on a given instance of Edge.
 
-The response is a JSON array, inclusive of these three key-value pairs:
+The response is a JSON array that includes three key-value pairs:
 
-* `"engineCategoryID": "3fa85f64-5717-4562-b3fc-2c963f66afa6"` (the category ID of the engine &mdash; transcription, translation, etc.)
+- The category ID of the engine(transcription, translation, and so on).
 
-* `"engineID": "3fa85f64-5717-4562-b3fc-2c963f66afa6"` (the ID of the engine itself, for creating the job)
+  `"engineCategoryID": "3fa85f64-5717-4562-b3fc-2c963f66afa6"` 
 
-* `"engineName": "string"` (the human-readable name of the engine, for populating a UI)
+- The engine ID that will be used to create the job.
+
+  `"engineID": "3fa85f64-5717-4562-b3fc-2c963f66afa6"`
+
+- The name of the engine
+
+  `"engineName": "string"`
+
+
 
 ## Step Three: Create the Job
 
+Once you know the engine category, you can create the job.
+
 ### Using GraphQL
 
-Jobs run on clusters, so you should obtain a cluster ID before going further. If your Organization has already created clusters, find their IDs with this query:
+You must get the ID of the cluster on which you want to run the job. You can find existing clusters in your organization using the following query:
 
 ```graphql
 {
@@ -156,7 +186,7 @@ Jobs run on clusters, so you should obtain a cluster ID before going further. If
 }
 ```
 
-If no clusters exist, create one with:
+If your organization does not have any existing clusters, then you can create a cluster using the following query:
 
 ```graphql
 mutation createCluster {
@@ -184,13 +214,9 @@ mutation createCluster {
 }
 ```
 
-Take note of the ID that is returned. You will need this `clusterId` for running your Job.
+Jobs operate on a Temporal Data Object (TDO), which is a generic data wrapper that stores metadata about media files. You can dynamically create a TDO by passing a `target` block to your `createJob` mutation. Alternatively, you can use an existing TDO by passing its ID in the `targetId` field. You can delete the TDO and its content after your job is complete.
 
-A Job will need to operate against a Temporal Data Object (TDO), which is a generic data wrapper for storing metadata about media files. You can create a TDO on the fly by passing a `target` block to your `createJob` mutation (as shown in the  example below). If you aalready know the ID of an existing TDO you want to use, pass that ID (as a String) in the `targetId` field.
-
-The following example shows how to set up (and run) a transcription job against an .mp4 file (see the `payload.url` in the first Task object).
-
-Each Task has (at a minimum) an `engineId` and one or more `ioFolders`. The `routes` array shows how data gets routed between Tasks.
+The below example shows how you can set up and run a transaction job on an .mp4 file (passed in the payload attribute). All tasks have an `engineId` and one or more `ioFolders`. The `routes` array shows how the data gets routed between Tasks.
 
 ```graphql
 mutation {
@@ -342,11 +368,11 @@ mutation {
 }
 ```
 
-Take note of the `id` (Job ID) that is returned. You'll need this to poll for status.
+ The job `id` returned is used to [poll the job for status](#step-four-poll-for-status).
 
 ### Using the Edge REST API
 
-If you are running a hosted instance of aiWARE Edge, POST your job to `/proc/job/create`. The `curl` command could look something like this:
+You can create a job on a hosted instance of aiWARE Edge by sending a POST request to `/proc/job/create`. Below is a sample `curl` command:
 
 ```bash
 curl --request POST \
@@ -354,9 +380,9 @@ curl --request POST \
  --header 'authorization: Bearer <token here>' \
  --header 'content-type: application/json' \
  --data '<the JSON shown below, starting with { "jobs" '
- ```
+```
 
-The JSON data payload would look something like the following. (A translation job is shown.)
+Below is a sample JSON data payload for a translation job:
 
 ```json
 {
@@ -418,13 +444,22 @@ The JSON data payload would look something like the following. (A translation jo
 }
 ```
 
-Note that the input file is not uploaded directly but is specified via URL (in a serialized payload object). Also note that fields containing "UUID___" need to contain a unique identifier in the form of a UUID. (You can use any UUID-generation library for this.)
+The input file is no uploaded but is specified via a URL(in a serialized payload object). The fields containing “UUID___” must include a unique identifier in the form of a UUID. You can use any UUID-generation library to generate these values.
 
 ## Step Four: Poll for Status
 
+You can review the status of the job you created by polling it for status. The possible statuses of a job are:
+
+- Pending
+- Complete
+- Running
+- Canceled
+- Queued
+- Failed
+
 ### Using GraphQL
 
-Pass your job's ID to a `job` query, as follows:
+To poll a job status, you run the following `job` query by passing the job’s `id`:
 
 ```graphql
 query jobStatus {
@@ -456,25 +491,9 @@ query jobStatus {
 }
 ```
 
-### Job Status
-
-The possible statuses of a Job are:
-
-```pre
-pending
-complete
-running
-cancelled
-queued
-failed
-```
-
 ### Using the Edge REST API
 
-Poll for job status by making a GET request to `/proc/job/<job id here>/outputs`.
-Replace &lt;job id here&gt; with the `InternalJobId` returned earlier.
-
-Continue to make GET requests to this endpoint every minute or so, until a JSON file is returned in the `name` key of the outputs array of the API response. For example, in blue below:
+You can poll a job status by sending a GET request to `/proc/job/<job id here>/outputs` with the `InternalJobId`. You can periodically make GET requests until a JSON file is returned in the `name` key of the outputs array of the API response:
 
 ```json
 {
@@ -491,11 +510,13 @@ Continue to make GET requests to this endpoint every minute or so, until a JSON 
 }
 ```
 
-## Step Five: Obtain the Results
+## Step Five: View Results
+
+Once the job is completed, you can get the results for your job. Optionally, you can also [request output in specific output formats](#export-the-results-in-a-specific-output-format).
 
 ### Using GraphQL
 
-You can query for results based on `engineId` or `jobId`.
+You can query for results of a job based on `engineId` or `jobId`.
 
 ```graphql
 query  {
@@ -513,8 +534,7 @@ query  {
 
 ### Using the Edge REST API
 
-Download the engine results. Note that `InternalJobId` from Step 3 and the value of `name` from Step 4 must be included in the GET request.
-An example in `curl` is shown below.
+You can download the engine results by passing `InternalJobId` from Step 3 and `name` from Step 4, as shown in the `curl` sample below.
 
 ```bash
 curl --request GET \
@@ -522,10 +542,9 @@ curl --request GET \
  --header 'authorization: Bearer <token here>'
 ```
 
-## Requesting a Specific Output Format
+## Export the Results in a Specific Output Format
 
-Sometimes you may want a particular flavor of output (such as `ttml` or `srt` for captioning).
-In that case, you can use the `createExportRequest` mutation:
+You can export the results in specific output formats (such as `ttml` or `srt` for captioning) using the `createExportRequest` mutation: 
 
 ```graphql
 mutation createExportRequest {
@@ -551,7 +570,7 @@ mutation createExportRequest {
 }
 ```
 
-The response:
+Below is a sample response:
 
 ```json
 {
@@ -569,8 +588,7 @@ The response:
 }
 ```
 
-Since an export request may take time to process, you should poll until the status is complete,
-using the `id` returned above.
+An export request may take time to process. You can poll the request status using the `id`, until the status is complete.
 
 ```graphql
 query exportRequest {
@@ -582,7 +600,7 @@ query exportRequest {
 }
 ```
 
-The response (showing that the export is, in this case, incomplete):
+Below is a sample response where the export is incomplete:
 
 ```json
 {
@@ -596,31 +614,20 @@ The response (showing that the export is, in this case, incomplete):
 }
 ```
 
-When the status becomes `complete`, you can retrieve the results at the URL returned in the `assetUri` field.
+When the status changes to `complete`, you can retrieve the results at the URL returned in the `assetUri` field.
 
 ## Delete a TDO and/or Its Content
 
-If a TDO is no longer needed, it can be deleted from an organization’s files
-to free up storage space or comply with organizational policies.
-The API provides flexible options that allow you to delete a TDO and all of its assets,
-or clean up a TDO's content by removing the associated assets so the TDO can be reused
-and new assets can be created.
+Jobs operate on a Temporal Data Object (TDO), which is a generic data wrapper that stores metadata about media files. You can delete a TDO, when it is no longer required, from your organization’s files to free up storage space or to comply with organizational policies. You can either delete a TDO and all its assets or delete only its assets so that the TDO can be reused.
 
-!> Deleting a TDO data permanently removes contents from aiWARE and they will no longer be accessible via CMS, search, or any other method.
-**Deleting a TDO cannot be undone**!
+- [ ] > When you delete TDO data, the data is permanently removed from aiWARE and will not be accessible through CMS, search, or any other method. You cannot revert this change.
+  >
 
 ### Delete a TDO and All Assets
 
-To delete a TDO and all asset metadata, make a request to the `deleteTDO` mutation
-and pass the TDO `id` as an argument.
-This operation is processed immediately at the time of the request and
-permanently deletes the specified TDO *as well as its assets* from the organization's account.
-Any subsequent requests against the TDO or assets will return an error.
+You can remove a TDO and all its asset metadata, by making a request to `deleteTDO` mutation with the TDO `id`. The operation is processed immediately after the request and permanently deletes the TDO *as well as its assets* from the organization's account. Any subsequent requests against the TDO or assets will return an error.
 
-First, we'll look at how to delete the entire TDO.
-Then we'll discuss how to remove *just the content items*.
-
-#### Example: Delete a TDO
+Below is a sample request to delete a TDO with `id 44512341`:
 
 ```graphql
 mutation{
@@ -632,7 +639,7 @@ mutation{
     }
 ```
 
-The response is:
+Below is a sample response:
 
 ```json
 {
@@ -647,18 +654,13 @@ The response is:
 
 ### Remove TDO Content
 
-To remove just the asset (content) associated with a TDO, while retaining the TDO/container
-and asset metadata, make a request to the `cleanupTDO` mutation with the TDO `id`.
-This mutation uses the `options` parameter along with any combination of the values below
-to specify the type(s) of data to be deleted.
+You can remove only the content associated with a TDO, while keeping the TDO and asset metadata, by making a request to the `cleanupTDO` mutation with the TDO `id`. You can specify the types of data you want to delete in the `options` parameter:
 
-* `storage`: Deletes the TDO's assets from storage, including engine results. Asset metadata will remain until the TDO/container is deleted.
+* `storage`: Deletes the TDO's assets from storage, including the engine results. The asset metadata will remain until the TDO or container is deleted.
 * `searchIndex`: Deletes all search index data. The TDO and its assets will no longer be accessible through search.
-* `engineResults`: Deletes engine results stored on related task objects. Engine results that are stored as assets will remain unless `storage` is passed as a value in the request.
+* `engineResults`: Deletes engine results stored on related task objects. The engine results that are stored as assets will remain unless `storage` is passed as a value in the request.
 
-!> Requests that do not use the `options` parameter will remove the TDO's content from `storage` and the `search index` by default.
-
-#### Example: Remove TDO Content (storage, engineResults)
+Below is a sample request to remove TDO Content (storage, engineResults):
 
 ```graphql
 mutation {
@@ -669,7 +671,11 @@ mutation {
 }
 ```
 
-Response:
+> If you do not use the `options` parameter, then the request will remove the TDO's content from `storage` and the `search index`.
+
+
+
+Below is a sample response:
 
  ```json
  {
@@ -680,7 +686,7 @@ Response:
     }
   }
 }
-```
+ ```
 
 ### For More Information
 
