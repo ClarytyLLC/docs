@@ -338,6 +338,12 @@ components:
       name: type
       schema:
         $ref: '#/components/schemas/RunModeEnum'
+    Host_Detail_Query_Optional:
+      description: Get engine instances host details
+      in: query
+      name: hostDetail
+      schema:
+        type: boolean
     InternalAplicationID_Optional:
       description: Internal ID of Application
       in: query
@@ -3202,6 +3208,8 @@ components:
           items:
             $ref: '#/components/schemas/Error'
           type: array
+        hostDetails:
+          $ref: '#/components/schemas/HostDetail'
         hostID:
           format: uuid
           type: string
@@ -5535,6 +5543,9 @@ components:
         hostID:
           format: uuid
           type: string
+        hostIP:
+          description: The host IP
+          type: string
         memoryAvailable:
           description: The available memory to the container in bytes
           format: int64
@@ -5734,6 +5745,10 @@ components:
       type: object
     JobDetail:
       properties:
+        TaskWorkRequests:
+          items:
+            $ref: '#/components/schemas/TaskWorkRequest'
+          type: array
         abortedDateTime:
           description: This is the datetime the task was aborted
           example: '2018-03-20T09:12:28Z'
@@ -8487,7 +8502,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.1.2716
+  version: 3.18.2.2737
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
@@ -24500,6 +24515,7 @@ paths:
     - $ref: '#/components/parameters/ModifiedAfter_Query_Optional'
     - $ref: '#/components/parameters/CreatedBefore_Query_Optional'
     - $ref: '#/components/parameters/CreatedAfter_Query_Optional'
+    - $ref: '#/components/parameters/Host_Detail_Query_Optional'
   /engine/{EngineID}/launch/{LaunchID}/detail:
     get:
       operationId: get_engine_launch_detail

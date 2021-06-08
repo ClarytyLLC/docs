@@ -1,6 +1,9 @@
 #!groovy
 
-@Library(value='jenkins-scripts@master', changelog=false) _
+import groovy.transform.Field
+
+@Field
+@Library(value='jenkins-scripts@master') _
 
 /*
 This is copied and modified from https://github.com/veritone/jenkins-scripts/blob/master/vars/veritoneStaticPipeline.groovy
