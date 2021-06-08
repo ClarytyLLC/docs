@@ -24,7 +24,7 @@ This will ensure that all following steps are executed as root.
 ### Step 2: Install Dependencies
 ```
 apt update -y
-apt install docker.io uuid
+apt install docker.io nfs-common uuid prometheus-node-exporter
 ```
 
 ### Step 3: Setup Environment Variables and Directories

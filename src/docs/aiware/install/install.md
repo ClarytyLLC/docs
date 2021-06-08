@@ -96,7 +96,7 @@
 1. Install Docker and dependencies
     ```bash
     sudo apt update -y 
-    sudo apt install docker.io uuidgen nfs-common -y
+    sudo apt install docker.io nfs-common awscli uuid prometheus-node-exporter -y
     ```
 
 2. Find the IP address of the machine. This can be done in terminal by running the following:
