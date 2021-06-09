@@ -30,8 +30,8 @@
 
 
 - [aiWARE](/aiware/)
-  - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
-  - [Installation Guide](/aiware/install/installation-guide-overview.md)  
+  <!-- - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md)  -->
+  <!-- - [Installation Guide](/aiware/install/installation-guide-overview.md)   -->
     - [Install Single Machine](/aiware/install/install.md) 
     - [Install Cluster](/aiware/install/cluster.md)
     - [Validate Install](/aiware/install/validate.md)

@@ -1,139 +1,72 @@
 <!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
 
-# Veritone aiWARE 
-
-<style>
-    div.featureBox {
-        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        width: 425px;
-        height: 100px;
-        padding: 7px;
-        font-size: 80%;
-        display: flex;
-        background: #FAFAFA;
-    }
-
-    div.featureColumn {
-        position:relative;
-        left:25px;
-        width: 500px;
-    }
-    
-    div.featureText {
-        width: 75%
-    }
-
-    div.featureImage {
-        width: 25%;
-        position: relative;
-        bottom: 8px;
-    }
-
-    div.do-more-aiware-featureColumn {
-        position:relative;
-        left:50px;
-        width: 500px;
-    }
-    
-    div.do-more-aiwareFeatureText {
-        position: relative; 
-        top: -40px
-    }
-
-    a.link {
-        text-decoration: none;
-        bottom: -10px;
-        position: relative;
-        font-size:90%;
-        bottom: -5px;
-    }
-
-    a.in-text-link {
-        text-decoration: none;
-    }
-    
-    div.joinUsBox {
-        -webkit-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        -moz-box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        box-shadow: -2px 2px 6px 3px rgba(207,208,209,1);
-        background: #FAFAFA;
-        width: 400px;
-        height: 100px;
-        padding: 7px;
-        font-size: 80%;
-        display: flex;
-        position: relative; 
-        left: 515px;
-        transform: translateX(-50%);
-    }
-    
-    div.joinUsColumn {
-        width: 760px;
-    }
-
-    div.joinUsImage {
-        width: 24%;
-        padding: 5px;
-        padding-right: 15px
-    }
-
-    div.newsSectionColumn{
-        width: 975px;
-        position:relative;
-        left:10px;
-        display: flex
-    }
-    
-    div.newsDateColumn {
-        width: 175px
-    }
-
-    div.newsColumn {
-        width: 800px
-    }
-
-
-
-    .date-text {
-        background-color: #d9d9d7;
-        width: 110px;
-        border-radius: 10px;
-        font-size: 95%;
-        padding: 4px 6px;  
-        text-align: center
-    }
-
-    #learn-aiware-btn {
-        display: block;
-        background-color: #2F80ED;
-        text-decoration: none;
-        color: white;
-        width: 300px;
-        height: 30px;
-        text-align: center;
-        padding: 5px;
-        position: relative;
-    }
-
-    #explore-api-basics-btn {
-        display: block;
-        color: #2F80ED;
-        border: 1px solid #2F80ED;
-        width: 300px;
-        height: 30px;
-        text-align: center;
-        padding: 5px;
-        position: relative;
-        text-decoration: none;
-    }
-
-
-</style>
 
 <style>
      p, ul, ol, li { font-size: 18px !important;}
+     
+     .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .section{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .image-or-video{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 500px;
+        height: 350px;
+        background: #FAFAFA;
+
+    }
+    .card{
+        display: flex;
+        justify-content: space-between;
+        width: 333px;
+        border: 0.5px solid #D5DFE9;
+        background: #FFFFFF;
+        padding: 10px;
+        height: 110px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+    .card:hover{
+        background: #F9FCFF;
+        border: 0.5px solid #118BBF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        height: 90px;
+    }
+    .card-content h3{
+        padding: 0;
+        margin: 0;
+    }
+    .card-content div{
+        color: #5C6269;
+        font-size: 12px;
+    }
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+        justify-content: space-between;
+        padding: 15px 0px 25px 15px;
+    }
+    .card-container{
+    justify-content:space-between; 
+    background: #FAFAFA;
+    padding: 20px;
+    border-radius: 4px;
+    }
 </style>
 
 <!-- DISABLE VIDEO
@@ -147,23 +80,143 @@
 </div>
 -->
 
-</div>
+<!-- </div> -->
 
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<!-- <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script> -->
 
 
 
-## What is Veritone aiWARE? <!-- {docsify-ignore} -->
+<!-- ## What is Veritone aiWARE? {docsify-ignore} -->
+<div class="container">
 
+# Veritone aiWARE Overview
+
+<div class="section">
+<p style="padding-right:30px; padding-top:50px;">
 Veritone aiWARE is a production-proven AI platform that lets you harness the power of AI anywhere, any time. Cognitively enable new or existing apps rapidly, using a unified API for more than 300 engines available on the aiWARE platform. Deploy enterprise-grade solutions at scale, using our infrastructure or your own. Process massive amounts of data — audio, video, image, text, and more — to extract actionable intelligence. Boost the productivity of your business and IT teams by intelligently automating manual, repetitive, and data-driven tasks — no in-depth coding skills or AI expertise required.
+</p>
+
+<div style="width: 500px; height: 350px;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+</div>
 
 <hr>
 
-## Start building with Veritone aiWARE <!-- {docsify-ignore} -->
+## aiWARE: The Operating System for Artificial Intelligence <!-- {docsify-ignore} -->
+
+<div class="section">
+
+<div style="min-height:350px; min-width:500px">
+
+![aiWare_OS](aiware_OS.svg)
+</div>
+
+<p style="padding-left:30px; padding-top:100px;">
+A computer’s operating system connects a processor, peripherals and applications so they can communicate, working together to display what you see on your screen and respond to your commands. An AI operating system works in a similar fashion. It provides a common software infrastructure that lets you use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — in either general or industry-specific applications. With thousands of limited cognitive engines on the market, you need an operating system to manage and orchestrate them all, so you can use them with general or industry-specific applications to solve real-world challenges.
+</p>
+</div>
+<hr>
+
+## The Benefits of an OS for AI <!-- {docsify-ignore} -->
+
+* Rapidly develop AI applications to solve business problems
+
+* No need to manage and orchestrate underlying AI engines
+
+* Seamlessly leverage multiple AI engines from multiple vendors
+
+* Mitigate risks of single vendor dependency
+
+* Flexibility to deploy in the Veritone cloud, your private cloud or on-premise
+
+<hr>
+
+
+## Getting started <!-- {docsify-ignore} -->
+
+<br>
+<div class="section card-container">
+<a class="card" href="https://www.veritone.com/devsignup/">
+<div class="icon">
+
+![cloud](cloud.svg)
+</div>
+<div class="card-content">
+<h3>Signup to Cloud Platform</h3>
+<div>
+    Gain immediate access to aiware SaaS applications
+</div>
+</div>
+</a>
+
+<a class="card" href="/#/aiware/install/install">
+<div class="icon">
+
+![local](laptop.svg)
+</div>
+<div class="card-content">
+<h3>Install on Local Machine</h3>
+<div>
+    Install aiWARE on a local environment such as a MacBook, VirtualBox instance or on a cloud instance
+</div>
+</div>
+</a>
+
+<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
+<div class="icon">
+
+![cluster](install.svg)
+</div>
+<div class="card-content">
+<h3>Install Production Cluster</h3>
+<div>
+    Install aiWARE on a 2+ node cluster.
+</div>
+</div>
+</a>
+
+
+</div>
+
+
+## Do More With aiWARE <!-- {docsify-ignore} -->
+
+<br>
+<div class="section card-container" style="justify-content:space-around">
+<a class="card" href="/#/automate-studio/">
+<div class="icon">
+
+![automate](automate.svg)
+</div>
+<div class="card-content">
+<h3>Automate Studio</h3>
+<div>
+    Start to build AI flows today with Veritone's Automate Studio
+</div>
+</div>
+</a>
+
+<a class="card" href="/#/benchmark/?id=veritone-benchmark-beta">
+<div class="icon">
+
+![benchmark](benchmark.svg)
+</div>
+<div class="card-content">
+<h3>Veritone Benchmark</h3>
+<div>Compare the performance of different cognitive engines against your own use case.</div>
+</div>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ## Start building with Veritone aiWARE <!-- {docsify-ignore} -->
 
 <!-- tabs:start -->
 
-#### ** WHAT ARE YOU TRYING TO ACHIEVE? **
+<!-- #### ** WHAT ARE YOU TRYING TO ACHIEVE? **
 
 <div style="display: flex">
     <div class="featureColumn">
@@ -315,12 +368,12 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- tabs:end -->
 
-## Do more with aiWARE <!-- {docsify-ignore} -->
-<br>
+<!-- ## Do more with aiWARE {docsify-ignore} -->
+<!-- <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
         <div class="featureBox"> 
@@ -353,7 +406,7 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
             <a class="link" href="https://veritonedev.slack.com"> JOIN CHANNEL</a>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- DISABLE THIS FOR NOW
