@@ -7,7 +7,7 @@ Prevents the agent from starting any new containers regardless of launch request
 Prevents the agent from starting any new containers regardless of launch requests from Edge Controller.
 
 ```
-aiware-agent host drain [flags]
+aiware-agent host drain [hostID] [flags]
 ```
 
 ### Options
