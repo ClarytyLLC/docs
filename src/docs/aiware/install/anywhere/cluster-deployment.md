@@ -77,7 +77,7 @@ Coming soon
 2. Install Dependencies
    ```
    apt update -y
-   apt install docker.io uuid
+   apt install docker.io nfs-common uuid prometheus-node-exporter
    ```
 
 3. Set the variables and install db and controller
