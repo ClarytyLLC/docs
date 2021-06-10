@@ -90,7 +90,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 </div>
 </a>
 
-<a class="card" href="/#/aiware/install/install">
+<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
 <div class="icon">
 
 ![cluster](../install.svg)
@@ -103,7 +103,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 </div>
 </a>
 
-<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
+<a class="card" href="/#/aiware/install/validate">
 <div class="icon">
 
 ![validate](../validate.svg)
@@ -123,7 +123,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <br>
 <div class="section card-container">
 
-<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
+<a class="card" href="/#/aiware/manage/">
 <div class="icon">
 
 ![cluster-management](../cluster-management.svg)
@@ -136,7 +136,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 </div>
 </a>
 
-<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
+<a class="card" href="/#/aiware/troubleshooting/">
 <div class="icon">
 
 ![troubleshooting](../troubleshooting.svg)
@@ -149,7 +149,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 </div>
 </a>
 
-<a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
+<a class="card" href="/#/aiware/aiWARE-in-depth/">
 <div class="icon">
 
 ![aiware-in-depth](../aiware-in-depth.svg)
