@@ -116,7 +116,7 @@
 | *primary.db_max_idle* | int64 | 2 |  | Primary - Max idle connections for controller |
 | *primary.db_max_open* | int64 | 10 |  | Primary - Max connections for controller |
 | *primary.engine_instance.drain_percentage* | int64 | 10 |  | The percentage of engine instances to drain |
-| *primary.engine_launch.enabled* | bool | false |  | If enabled, this flag enables engine instance checker |
+| *primary.engine_launch.enabled* | bool | true |  | If enabled, this flag enables engine instance checker |
 | *primary.engine_launch.interval_seconds* | int64 | 300 |  | Time interval for the engine instance checker (sec) |
 | *primary.enginebuilds.all_engines* | bool | true |  | If true, download all engines and builds available |
 | *primary.enginebuilds.interval_seconds* | int64 | 900 |  | The interval to update the engine builds (sec). This value should >= 5 minutes |
