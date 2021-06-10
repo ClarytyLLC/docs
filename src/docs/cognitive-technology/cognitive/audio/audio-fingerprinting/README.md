@@ -72,3 +72,7 @@ Because audio fingerprints always map back to an entity in a library, they shoul
 [here](/schemas/vtn-standard/audio-fingerprint.json ':ignore').
 
 <!--TODO: Include info on logging, etc.?  This would be global to all.-->
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

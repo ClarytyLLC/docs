@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Engine Output Standard - vtn-standard
 
 ## Overview
@@ -45,7 +49,20 @@ In the meantime, please see the example engine outputs for various capabilities 
 
 An annotated example of the full specification is shown below demonstrating most of the capabilities:
 
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-0">
+                <label for="list-item-0"><span class="expandText">Show Full Example</span><span class="collapseText">Close Full Example.</span></label>
+                <ul>
+                    <li class="inner-content">
+
 [](vtn-standard.example.js ':include :type=code javascript')
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
 
 ## Extending The Standard
 
@@ -217,3 +234,158 @@ Then you can reference the schema ID in the `structuredData` section and include
 
 If you would like your data to be displayed in the aiWARE UI as its own new capability, please [contact us](mailto:ecosystem@veritone.com)
 to discuss how the specification should be extended and what types of user interfaces should be created.
+
+
+<style>
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #766;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#bda0a0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+</style>

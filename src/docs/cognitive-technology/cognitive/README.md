@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Cognitive Engines
 
 Engines are the main unit of cognitive computing in aiWARE. They process the data brought in by adapters and employ sophisticated algorithms and machine learning techniques to produce even more data from which you can derive actionable insights.

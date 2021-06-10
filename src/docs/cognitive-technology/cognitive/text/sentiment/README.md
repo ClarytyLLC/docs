@@ -89,3 +89,7 @@ Otherwise this is the only one with a differently-named confidence key
 #### Neutral
 
 [](../../../../../../schemas/vtn-standard/sentiment/examples/polarized.neutral.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

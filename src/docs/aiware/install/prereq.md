@@ -193,3 +193,8 @@ cp prometheus-node-exporter /etc/default
 # Required directories
 
 aiWARE by default installs into `/opt/aiware`.  This can be changed with `AIWARE_ROOT` environment variable.
+
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Segment Engine Processing
 
 Segment engines process data in small discrete quantities, which are produced by segmenting the input data into messages.
@@ -19,12 +23,33 @@ Because they do not store state, segment engines can scale horizontally.
 They are often used in situations like:
 
 - Face detection
+
+<hr/>
+
 - Object detection
+
+<hr/>
+
 - Optical character recognition
+
+<hr/>
+
 - Translation
+
+<hr/>
+
 - Text analytics
+
+<hr/>
+
 - Pose estimation
+
+<hr/>
+
 - License plate recognition
+
+<hr/>
+
 - Text to speech
 
 ## Basic Steps
@@ -32,11 +57,16 @@ They are often used in situations like:
 The basic lifecycle for a segment engine is as follows:
 
 1. The Docker container for your engine will be started up with the environment variables set.
-1. The engine consumes `media_chunk` messages from its `KAFKA_INPUT_TOPIC`.
-1. For each `media_chunk` message, the engine does its processing.
-1. When processing of each `media_chunk` is done, the engine compiles an `engine_output` message conforming to the [vtn-standard format](/developer/engines/standards/engine-output/).
-1. The engine produces the `engine_output` message to `KAFKA_CHUNK_TOPIC`, along with a `ChunkProcessedStatus` message.
-1. If there is no work for the engine within the timeframe set in `END_IF_IDLE_SECS`, the engine shuts itself down.
+
+2. The engine consumes `media_chunk` messages from its `KAFKA_INPUT_TOPIC`.
+
+3. For each `media_chunk` message, the engine does its processing.
+
+4. When processing of each `media_chunk` is done, the engine compiles an `engine_output` message conforming to the [vtn-standard format](/developer/engines/standards/engine-output/).
+
+5. The engine produces the `engine_output` message to `KAFKA_CHUNK_TOPIC`, along with a `ChunkProcessedStatus` message.
+
+6. If there is no work for the engine within the timeframe set in `END_IF_IDLE_SECS`, the engine shuts itself down.
 
 ## Environment Variables
 

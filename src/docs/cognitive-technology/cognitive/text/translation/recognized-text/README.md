@@ -53,3 +53,7 @@ The only things that usually change are the `language` code and the values in th
 ### Example Output
 
 [](../../../../../../../schemas/vtn-standard/text/examples/recognized-text.with-language.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

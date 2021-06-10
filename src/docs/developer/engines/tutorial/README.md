@@ -1,5 +1,172 @@
 <!-- markdownlint-disable -->
 
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+     th, td { padding: 15px !important;}
+</style>
+
+<style>
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #766;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .inner-content p{
+        font-size: 18px;
+    }
+    .inner-content *{
+        font-size: 18px;
+    }
+
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#bda0a0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+</style>
+
 # Tutorial: Build Your Own Cognitive Engine
 
 ![Cognitive Engine](CogEngine.png)
@@ -24,11 +191,17 @@ Cognitive engines process the data brought in by [adapters](/developer/engines/?
 Examples of what a cognition engine does include: 
 
 * Natural language processing (NLP)
+
 * Transcription of audio to text
+
 * Convert text to speech
+
 * Detect and/or identify faces or objects in video
 
-<div style="transform:scaleX(.91);">
+<br/>
+
+?> *For a full list of engine classes and capabilities currently supported by aiWARE, see the guide to <a href="https://docs.veritone.com/#/developer/engines/?id=cognitive-engines">Cognitive Engines</a>.*
+<!-- <div style="transform:scaleX(.91);">
 <img alt="helpful mini-robot" width="16%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
 <div 
 style="font-family:Palatino;
@@ -40,7 +213,7 @@ These are just a few examples of what engines can do.
 For a full list of engine classes and capabilities currently supported by aiWARE, see the guide to <a href="https://docs.veritone.com/#/developer/engines/?id=cognitive-engines">Cognitive Engines</a>.
 <div class="bottomruled"><br/></div>
 </div>
-</div>
+</div> -->
 
 
 ## How Engines Work <!-- {docsify-ignore} -->
@@ -57,15 +230,22 @@ Stateful engines that require contextual knowledge based on the _order_ of data 
 
 Regardless of engine type, an engine's "contract" with aiWARE is quite simple:
 
-* When the engine receives a GET request on a route of `/ready` (or the route you specify in the environment variable called `VERITONE_WEBHOOK_READY`), the engine should respond with HTTP status `200 OK` if the engine is ready to begin, or else `503 Service Unavailable` if it is not ready.
-* When the engine receives a POST (of `ContentType` `multipart/form-data`) on a route of `/process` (or the route you specify in `VERITONE_WEBHOOK_PROCESS`), your engine should process the incoming data chunk, then respond with status `200 OK` while sending output formatted as `application/json` data.
+<hr>
 
- > Your engine's output needs to conform to Veritone's [vtn-standard](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard) (specifically, the portion of that schema that applies to your engine's particular [cognitive capability](/developer/engines/cognitive/?id=capabilities)).
+>When the engine receives a GET request on a route of `/ready` (or the route you specify in the environment variable called `VERITONE_WEBHOOK_READY`), the engine should respond with HTTP status `200 OK` if the engine is ready to begin, or else `503 Service Unavailable` if it is not ready.
+
+<hr>
+
+>When the engine receives a POST (of `ContentType` `multipart/form-data`) on a route of `/process` (or the route you specify in `VERITONE_WEBHOOK_PROCESS`), your engine should process the incoming data chunk, then respond with status `200 OK` while sending output formatted as `application/json` data.
+
+<hr>
+
+?> Your engine's output needs to conform to Veritone's [vtn-standard](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard) (specifically, the portion of that schema that applies to your engine's particular [cognitive capability](/developer/engines/cognitive/?id=capabilities)).
 
 When your engine receives the `/process` request, it will be able to inspect various fields of the incoming chunk's `multipart/form-data` (see below) to obtain information about the chunk.
 The actual _raw data_ of the chunk will be in a file-upload stream associated with the `chunk` field.
 
-### A Simple Segment Engine in Node.js
+## A Simple Segment Engine in Node.js <!-- {docsify-ignore} -->
 Here is how a segment (chunk) engine could look if written in [Node.js](https://nodejs.org):
 
 ```javascript
@@ -98,11 +278,11 @@ app.post('/process', chunkUpload, async (req, res)=>{
 
 Just a couple dozen lines of code! And yes, it's deployable in aiWARE.
 
-?> Note that this reusable skeleton does no "cognition" per se &mdash; it merely delegates cognitive processing to a custom, user-written external module called `my-cognition-logic.js`.
+*Note that this reusable skeleton does no "cognition" per se &mdash; it merely delegates cognitive processing to a custom, user-written external module called `my-cognition-logic.js`.*
 
 In this example, the task of reading the file-upload stream is handled by a third-party open-source middleware module called [Multer](https://www.npmjs.com/package/multer).
 
-<div style="transform:scaleX(.91);">
+<!-- <div style="transform:scaleX(.91);">
 <img alt="helpful mini-robot" width="18%" style="float:left;" src="docs/developer/applications/app-tutorial/_media/botty.png">
 <div 
 style="font-family:Palatino;
@@ -113,8 +293,10 @@ transform-origin: top left; "><div class="topruled"><br/></div>
 Different programming languages offer different ways of accessing a file upload. In NodeJS, Multer is just one way of handling form-based file streaming.
 <div class="bottomruled"><br/></div>
 </div>
-</div>
-<br/>
+</div> 
+<br/>-->
+
+?>Different programming languages offer different ways of accessing a file upload. In NodeJS, Multer is just one way of handling form-based file streaming.
 
 The above code fetches the incoming chunk as an in-memory string, then hands the string to the (custom) cognition module.
 
@@ -126,32 +308,50 @@ Every incoming chunk of data arrives as part of a `multipart/form-data` POST to 
 
 The following fields are posted to your `/process` webhook:
 
-* `chunk` - (File) The file to process.
-* `chunkMimeType` - (string) The MIME type of the chunk (for example, `image/jpg`).
-* `startOffsetMS` - (int) The start time of the chunk (for example, the timestamp of when a frame was extracted from a video). This applies only to temporal data.
-* `endOffsetMS` - (int) The end time of the chunk (see `startOffsetMS`).
-* `width` - (int) The width of the chunk. (This applies only to visual media.)
-* `height` - (int) The height of the chunk. (This applies only to visual media.)
-* `libraryId` - (string) ID of the library related to this task. (Applies to engines that require an external library.)
-* `libraryEngineModelId` - (string) ID of the library engine model related to this task.
-* `cacheURI` - (string) URL of the chunk's source file. 
-* `veritoneApiBaseUrl` - (string) The root URL for Veritone platform API requests.
-* `token` - (string) The token to use when making low level API requests. (Note: This token is specially scoped and cannot be reused in other contexts.)
-* `payload` - (string) JSON string containing any custom task payload.
-* `heartbeatWebhook` - (string) This is the heartbeat webhook provided by Engine Toolkit. Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats (once per second) with progress information.
-* `resultWebhook` - (string)  This is the result webhook provided by Engine Toolkit. For chunk engines, it is optional; your chunk engine can simply return results in the HTTP response. For all others: The engine should submit results of the processing via a POST  to this webhook as soon as possible.
-* `externalCallbackWebhook` - (string) Optional. Engines may give this webhook to an external entity performing the real processing.
-* `maxTTL` - (int) The maximum time that engine toolkit can wait for results from the engine.
-* `chunkContext` - (string) A context value like `"000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.in"`
-* `chunkTimestamp`- (int) A value in milliseconds, like `1604611238960`
-* `chunk-metadata-endoffsetms` - (int) Usually "0"
-* `chunk-metadata-startoffsetms` - (int) Usually "0"
-* `chunk-metadata-groupid`- (string) A value like `"00d13315-0f5a-4ca1-9fdb-54ad564c0cde"`
-* `chunk-metadata-index` - (int) The chunk number, such as `"0"`,
-* `chunk-metadata-main-message` - (string) Looks like `"map[cacheURI:https://edge-prod.aws-prod-rt.veritone.com/edge/v1/chunk/432026fc-cfea-4f5d-85b6-1466a129af7b/e90b9ddd-d7b3-4fe4-8085-7d1efd33d820/ae259b10-94b1-48f5-b1e9-df7582beeec6/ffba7a3e-89fc-4f6f-bdcd-ba9f21d1cfa5/000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.out endOffsetMs:0 mimeType:text/plain startOffsetMs:0 timestampUTC:1.604611238969e+12 type:media_chunk]"`
-* `chunk-metadata-mimetype` - (string)_ Mimetype of the chunk, such as `"text/plain"`
-* `chunk-metadata-tdoid` - (string) TDO ID, e.g. `"1260741603"`
-* `redisETUrl` - (string) A Redis URL that can be used for caching values across chunks, e.g. `"http://localhost:33193"`
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-0">
+                <label for="list-item-0"><span class="expandText">Click here to see the fields list</span><span class="collapseText">Close.</span></label>
+                <ul>
+                    <li class="inner-content">
+                    
+
+
+| Field Name | Description |
+-------------|--------------
+| `chunk` | (File) The file to process.|
+| `chunkMimeType` | (string) The MIME type of the chunk (for example, `image/jpg`)|
+| `startOffsetMS` | (int) The start time of the chunk (for example, the timestamp of when a frame was extracted from a video). This applies only to temporal data|
+| `endOffsetMS` | (int) The end time of the chunk (see `startOffsetMS`)|
+| `width` | (int) The width of the chunk. (This applies only to visual media.)|
+| `height` | (int) The height of the chunk. (This applies only to visual media.)|
+| `libraryId` | (string) ID of the library related to this task. (Applies to engines that require an external library.)|
+| `libraryEngineModelId` | (string) ID of the library engine model related to this task.|
+| `cacheURI` | (string) URL of the chunk's source file|
+| `veritoneApiBaseUrl` | (string) The root URL for Veritone platform API requests.|
+| `token` | (string) The token to use when making low level API requests. (Note: This token is specially scoped and cannot be reused in other contexts.)|
+| `payload` | (string) JSON string containing any custom task payload|
+| `heartbeatWebhook` | (string) This is the heartbeat webhook provided by Engine Toolkit. Engines with async processing for the `/process` webhook, such as stream or batch engines, should submit heartbeats (once per second) with progress information.|
+| `resultWebhook` | (string)  This is the result webhook provided by Engine Toolkit. For chunk engines, it is optional; your chunk engine can simply return results in the HTTP response. For all others: The engine should submit results of the processing via a POST  to this webhook as soon as possible.|
+| `externalCallbackWebhook` | (string) Optional. Engines may give this webhook to an external entity performing the real processing.|
+| `maxTTL` | (int) The maximum time that engine toolkit can wait for results from the engine|
+| `chunkContext` | (string) A context value like `"000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.in"`|
+| `chunkTimestamp`| (int) A value in milliseconds, like `1604611238960`|
+| `chunk-metadata-endoffsetms` | (int) Usually "0"|
+| `chunk-metadata-startoffsetms` | (int) Usually "0"|
+| `chunk-metadata-groupid`| (string) A value like `"00d13315-0f5a-4ca1-9fdb-54ad564c0cde"`|
+| `chunk-metadata-index` | (int) The chunk number, such as `"0"`|
+| `chunk-metadata-main-message` | (string) Looks like `"map[cacheURI:https://edge-prod.aws-prod-rt.veritone.com/edge/v1/chunk/432026fc-cfea-4f5d-85b6-1466a129af7b/e90b9ddd-d7b3-4fe4-8085-7d1efd33d820/ae259b10-94b1-48f5-b1e9-df7582beeec6/ffba7a3e-89fc-4f6f-bdcd-ba9f21d1cfa5/000000.000000000.000000000_1604611231892635750_6b8bdc9d-bc80-4d8e-a796-87dd8ab2fab6.out endOffsetMs:0 mimeType:text/plain startOffsetMs:0 timestampUTC:1.604611238969e+12 type:media_chunk]"`|
+| `chunk-metadata-mimetype` | (string)_ Mimetype of the chunk, such as `"text/plain"`|
+| `chunk-metadata-tdoid` | (string) TDO ID, e.g. `"1260741603"`|
+| `redisETUrl` | (string) A Redis URL that can be used for caching values across chunks, e.g. `"http://localhost:33193"`|
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+
 
 > It's entirely possible your engine will not need to use most (or any!) of the above parameters. Their use is optional.
 
@@ -176,10 +376,15 @@ At runtime, the platform will call the Toolkit (over HTTP), and the Toolkit will
 At a high level, the steps you need to carry out in order to create and onboard an engine include:
 
 * **Step 0** (this page, below): Set up your project &mdash; create all artifacts except the `manifest.json` file
+
 * **[Step 1](/developer/engines/tutorial/engine-tutorial-step-1)**: Register your project with Veritone &dash; During this step, you'll generate a `manifest.json` file, then add it to your project
+
 * **[Step 2](/developer/engines/tutorial/engine-tutorial-step-2)**: Customize your Dockerfile and use it to create an engine build
+
 * **[Step 3](/developer/engines/tutorial/engine-tutorial-step-3)**: Test your build locally
+
 * **[Step 4](/developer/engines/tutorial/engine-tutorial-step-4)**: Push your build to Veritone &mdash; and when it's Approved, use the online UI to Deploy it
+
 * **[Step 5](/developer/engines/tutorial/engine-tutorial-step-5)**: Test your engine in aiWARE, and debug as necessary 
 
 ![](EngineDevJourney.svg)
@@ -196,15 +401,27 @@ Here's a short checklist of prerequisites:
 
 &#x2714; 1\. **Decide which kind of cognitive capability your engine will support** (and therefore, what the _output_ of your engine needs to look like). Your engine will likely support one of the preexisting capabilities shown in our [Capabilities chart](/developer/engines/cognitive/?id=capabilities). (Note that for each entry in the chart, there's a link to a more detailed page showing what the _output_ for the type of engine in querstion should look like.) If your engine supports an entirely new type of capability that's not in our system, by all means contact us. We'll work with you!
 
+<hr>
+
 &#x2714; 2\. **Determine which MIME type(s) your engine needs to support** in terms of data _input._
+
+<hr>
 
 &#x2714; 3\. **Understand whether your engine will be _stateless_ (segment; "chunk"), or _stateful_ ("stream")** with regard to the processing of chunks of data. (If your engine can process data chunks in any order, without knowing a chunk's sequence number, it's likely stateless.)
 
+<hr>
+
 &#x2714; 4\. **Know whether your engine will be [network-isolated](/developer/engines/deployment-model/?id=network-isolated), or need [external access](/developer/engines/deployment-model/?id=external-access).**
+
+<hr>
 
 &#x2714; 5\. **Obtain your (free) Veritone system [login](https://www.veritone.com/onboarding/#/signUp),** if you have not already done so.
 
+<hr>
+
 &#x2714; 6\. **Install Docker** on your (Mac, Linux, or virtualized Linux) development machine, if you have not already done so.
+
+<hr>
 
 Okay. Ready to get started? Let's go . . .
 
@@ -397,7 +614,11 @@ Although, strictly speaking, a `package.json` file isn't mandatory, we've provid
 Ready to begin? Learn how to:
 
 * [Register your project with Veritone](/developer/engines/tutorial/engine-tutorial-step-1) &mdash; **Step 1**
+
 * [Use Docker to create a build](/developer/engines/tutorial/engine-tutorial-step-2) &mdash; **Step 2**
+
 * [Test your build locally](/developer/engines/tutorial/engine-tutorial-step-3) using the Engine Developer Toolkit's Test Console App &mdash; **Step 3**
+
 * [Push your engine build to Veritone](/developer/engines/tutorial/engine-tutorial-step-4) &mdash; **Step 4**
+
 * [Test your engine in aiWARE](/developer/engines/tutorial/engine-tutorial-step-5) and, if necessary, debug/rebuild/re-deploy &mdash; **Step 5**

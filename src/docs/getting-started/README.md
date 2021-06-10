@@ -1,193 +1,305 @@
-<!-- markdownlint-disable -->
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
 
 <style>
 th { text-align:left; }
 </style>
 
-# Contents <!-- {docsify-ignore} -->
+# Getting Stated <!-- {docsify-ignore} -->
 
-* [Quickstarts](#quickstarts) 
-* [Tutorials](#tutorials)
-* [The Veritone Technology Stack](#the-veritone-tech-stack)
-* [Working With GraphQL](#working-with-graphql)
-* [Working With Unstructured Data](#working-with-unstructured-data)
-* [Cognitive Capabilities](#cognitive-capabilities)
-* [The VTN Standard](#the-vtn-standard)
-* [Understanding Schemas](#understanding-schemas)
-* [Working with Apps](#working-with-apps)
+**APPROXIMATE READING TIME: 8 MINUTES**
 
-# Quickstarts <!-- {docsify-ignore} -->
+It is easy to get started with Veritones aiWARE platform. Runnig a cognition job is just few steps away.
 
-It's easy to get started with Veritone aiWARE. Create your free [Veritone Developer account](https://www.veritone.com/devsignup/), then dig in!
 
-**What Would You Like to Do?**
+## Step 1: Register for free <!-- {docsify-ignore} -->
 
-I would like to: | Suggested entry point:
--- | ---
-Build custom Machine Learning solutions for audiences <br/>with complex data analysis requirements. | See our [ML Integrator](/getting-started/ml-integrator/) quickstart.
-Build AI into standalone apps. | See our [ML Explorer](/getting-started/ml-explorer/) quickstart.
-Build AI-powered web apps that integrate with Veritone's CMS. | See our [App Developer](/getting-started/app-developer/) quickstart.
-Create custom cognitive engines. | See our [Engine Developer](/getting-started/engine-developer/) quickstart.
+The registration is straight forward and requires less then a minute
 
-**Deployment Choices**
-I want to install on a: | Description
--- | ---
-[Single server](/aiware/install/install) | A single server deployment of aiWARE is suited for ML Integrators, ML Explorers and Application Developers. This brings the entire stack onto a local machine. 
-[Cluster deployment](/aiware/install/cluster) | A cluster of aiWARE that is suited for enterprises, datacenters and individuals who anticipate running a daily job load of > 1000
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-1">
+                <label for="list-item-1"><span class="expandText">Registration steps</span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li class="inner-content">
 
-# Tutorials <!-- {docsify-ignore} -->
+1. If you still haven't done so, go ahead and follow this [registration link](https://www.veritone.com/onboarding/#/signUp?type=developer)
 
-We have plenty of sample code and walkthroughs to get you started.
+2. After creating an account, you will receive an email from the **Veritone Team**
 
-* [GraphQL API Basics](/apis/tutorials/graphql-basics.md) &mdash; Start here if you're new to GraphQL.
-* [API Examples](/apis/examples.md) &mdash;  GraphQL-based API tips and tricks, as runnable queries.
-* [Build Your Own AI App](/developer/applications/app-tutorial/) &mdash; A step-by-step guide to building an AI-powered web app.
-* [Build Your Own Cognitive Engine](/developer/engines/tutorial/) &mdash; Step-by-step instructions for building a cognitive engine.
-* [Customizing Engine Output](/developer/engines/tutorial/customizing-engine-output) &mdash; Extend the VTN Standard schema for custom output data.
-* [Customizing Engine Input](/developer/engines/tutorial/engine-custom-fields) &mdash; Learn how to pass custom data in to your engine.
-* [How to Train a Cognitive Engine](/developer/engines/tutorial/engine-training-tutorial) &mdash; A tutorial that shows how to train an engine to recognize faces.
-* [Clean up TDO data](/apis/tutorials/cleanup-tdo.md) &mdash; Learn how to clean up and reuse Temporal Data Objects.
-* [Creating Export Requests](/apis/tutorials/create-export-request/) &mdash; Export data out of aiWARE in specific formats.
-* [Posting Engine Results](/apis/tutorials/engine-results.md) &mdash; If you're building a `batch` engine, read this.
-* [Look Up Available Engines](/apis/tutorials/get-engines.md) &mdash; This mini-tutorial shows how to interrogate aiWARE so as to discover which engines are available.
-* [Error Handling in the GraphQL API](/apis/tutorials/graphql-error-handling.md) &mdash; Learn about the different error messages available on query responses.
-* [Uploading and Processing Files](/apis/tutorials/upload-and-process.md) &mdash; This tutorial will show you how to process arbitrary file.
-* [Uploading Large Files](/apis/tutorials/uploading-large-files.md) &mdash; Learn how to overcome challenges presented by large files.
-* [Handling File Upload Errors](/apis/tutorials/file-upload-error-handling.md) &mdash; Learn how to handle File Upload errors.
-* [Authentication and Authorization Tokens](/apis/tutorials/tokens.md) &mdash; Read about bearer tokens and how aiWARE uses them.
-* [Paging](/apis/tutorials/paging.md) &mdash; GraphQL handles large-result-set paging in a particular way.
-* [Asset Types](/apis/tutorials/asset-types.md) &mdash; When you create assets on a temporal data object (TDO), you are required to specify a *type*.
-* [Job Quickstart Guide](/apis/job-quickstart/) &mdash; It's easy to run an AI job. Here's how!
-* [Search Quickstart Guide](/apis/search-quickstart/) &mdash; Learn how to use the Veritone Search API on processed results.
+3. Confirm your account by clicking the **CONFIRM ACCOUNT** button, using the link.
 
-The Veritone Technology Stack <!-- {docsify-ignore} -->
------------------------
+4. Choose your password 
 
-Our stack includes:
+5. Congratulations! You are in!
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
 
-* Web technologies (HTTP, JSON, AJAX, etc.)
-* Security standards around tokens ([OAuth](https://oauth.net/), [JWT](https://jwt.io/))
-* Cloud tech (AWS, ECS, Azure)
-* [Webhooks](https://www.google.com/search?q=webhook)
-* [GraphQL](https://www.google.com/search?q=graphql)
-    * [Sandbox IDE](https://api.veritone.com/v3/graphiql)
-* GraphQL Schema Definition Language (SDL) applies to GraphQL schemas
-    * Includes notions of Interface, Union, @Directives
-* JSON-Schema applies to JSON
-    * EXAMPLE: vtn-standard: <https://github.com/veritone/edge-output-writer/blob/master/vtn-standard.schema.json>
+## Step 2: Get introduced to Veritone Apps <!-- {docsify-ignore} -->
 
-?> TL;DR -- We use GraphQL SDL to define our object model. GraphQL object types define what you can access (for CRUD). We use JSON Schema primarily for *data-output* definitions (e.g., vtn-standard).
+Veritone aiWARE platform comes with a set of modern web applications that make AI easy to use
 
-* Veritone data model (ERD) -- Familiarize yourself with the relationships in the diagram at <https://docs.veritone.com/#/apis/data-model?id=the-veritone-data-model>
-* Inter-process messaging via [NSQ](https://nsq.io/overview/design.html)
-    * We are phasing out Kafka and RabbitMQ
-        * We now use NSQ (brokerless message queue written in Go), which scales better than Kafka
-* Workflow concepts (vis-a-vis Automate and [Node-RED](https://nodered.org/))
-* It helps (but is not essential) to have some prior exposure to BPM
-    * Know what a Directed Acyclic Graph is
-    * Know what a "node" is
-    * Know what [Node-RED](https://nodered.org/) is
-* [Docker](https://www.docker.com/) -- central to understanding Veritone's Engine technology
-    * What is Docker? Answer: Containerization technology for easy packaging and deployment of runtimes
-        * It's currently a Linux-centric technology. Partial support for Docker exists on Windows, but not to a degree that's useful for building Veritone-friendly engines. 
-        * Understand what a Docker *container* is, versus a Docker *image*, versus a Dockerfile
-        * Understand which one a *build* is!
-        * Understand how Docker differs from VMWare
-        * Be familiar with [Docker Compose](https://docs.docker.com/compose/) for launching and coordinating multiple Docker processes in a single host
-        * Be familiar with [multistage builds](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84)
-    * PRO: Excellent process isolation, scalability, security, and programming-language independence
-    * CON: Deeply tied to Linux; somewhat arcane command-line interface; we do not support Docker for Windows
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-2">
+                <label for="list-item-2"><span class="expandText">Click here to learn more about Veritone Apps </span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li class="inner-content">
+     
 
-Working With GraphQL <!-- {docsify-ignore} -->
---------------------
+**Veritone Apps** can be found in the Applications menu on the left side of your screen (3rd from the left)
 
-* What even is it? *ISON-based query language*
-    * We offer REST *and* GraphQL styles of API design
-    * GraphQL's primitive types are  easy to learn (same as JavaScript's)
-    * It helps if you understand how SDL is used to define GraphQL schemas
-        - [Schema stitching](https://www.apollographql.com/docs/graphql-tools/schema-stitching/) 
-        - [Interfaces](https://www.apollographql.com/docs/apollo-server/schema/unions-interfaces/)
-            * What are the limitations of GraphQL Interfaces? (Hint: No true inheritance.)
-* Free IDE: [Sandbox](https://api.veritone.com/v3/graphql)
+Below, we will present the most frequently used applications:
 
-Working With Unstructured Data <!-- {docsify-ignore} -->
-------------------------------
+### ADMIN
 
-* Onboard JSON schemas
-    * Using [VDA](https://developer.veritone.com/)
-    * Using the GraphQL API
-* Upload and process files
-    * Using https://cms.veritone.com/#/
-    * Using the API
-* Access engine results
-    * Using [CMS](https://cms.veritone.com/#/)
-    * Using the API
+> Visit [admin.veritone.com](https://admin.veritone.com/)
 
-Cognitive capabilities <!-- {docsify-ignore} -->
-----------------------
+Using the **Admin App** it is easy to manage your organization details, edit profile, add, edit, or remove users, grant permissions, generate API keys and manage your billing info.
 
-The official list can always be found at <https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities>.
 
-The capabilities we support are shown below. These exist within a handful of "classes" (which are listed at <https://docs.veritone.com/#/developer/engines/cognitive/?id=classes> but are not really rigorously defined elsewhere). In general, it is safe to rely on the notion of cognitive *capabilities*. Cognitive *classes* are purely notional (*not* safe).
+### DEVELOPER APP
 
-* Anomaly Detection
-* Audio Fingerprinting
-* Content Classification
-* Correlation (not really a cognition type! This is a Veritone construct)
-* Entity Extraction
-* Face Detection
-* Face Recognition
-* Geolocation
-* Image Classification
-* Keyword Extraction
-* Language Identification
-* License Plate Recognition (ALPR)
-* Logo Detection
-* Object Detection
-* Sentiment Analysis
-* Speaker Detection
-* Speaker Recognition (Diarization)
-* Summarization
-* Keyword Extraction
-* Text Recognition (OCR)
-* Transcription
-* Translation
-* Visual Redaction
+> Visit [developer.veritone.com](https://developer.veritone.com/)
 
-Each of these capabilities is further defined in a VTN Standard subschema.
+Just like the name says, this is the development platform where you can build your own costum engines, schemas, adapters, or even create your own applications.
 
-The VTN Standard <!-- {docsify-ignore} -->
-----------------
 
-The VTN Standard is a schema that defines data-output contracts for all the Veritone-supported cognitive capabilities. Read more about it at <https://docs.veritone.com/#/developer/engines/standards/engine-output/>. 
+In the next sections we will learn how to run an existig engine in few simple steps.
 
-* What does it mean to you as a developer?
-    * Interoperability
-    * Apples-to-apples benchmarking
-    * Tools for *validating* engine output
 
-Understanding Schemas <!-- {docsify-ignore} -->
----------------------
+### AUTOMATE STUDIO
 
-Schemas are an important concept not just in the database world but in the world of JSON data generally.
+> Visit [automate.veritone.com](https://automate.veritone.com/)
 
-* Schema Definition Language -- This is a GraphQL technology.
-    * We use SDL to define our data model (which is to say, everything that can be queried/mutated by GraphQL).
-* JSON Schema -- This is not a GraphQL technology. It is much broader and more general. We use it extensively for things like VTN Standard, as well as our REST APIs.
-* Structured Data Object (SDO) -- "Structured data" means arbitrary custom data defined by Veritone or its customers.
-    * The data complies with a JSON Schema and becomes *searchable*.
-    * An SDO usually lives as part of a Temporal Data Object.
-* Custom Schemas -- Can come into play in various places, such as for custom input data, custom extensions of VTN Standard (output data), etc.
+Veritone **Automate Studio** is a low-code workflow designer that empowers technical and business teams to tap into a full-stack AI architecture to design and deploy AI-powered business processes at scale in days, not months. Leverage an intuitive drag-and-drop UI to easily create advanced business logic on a digital canvas, without the need for in-depth coding skills or AI expertise. Automate Studio enables intelligent process automation (IPA) and workflow enrichment across both new and existing systems and applications.
 
-Working with Apps <!-- {docsify-ignore} -->
------------------
+?>Learn how to use Automate Studio and build your first flow by visitin the [Automate Studio](/automate-studio/) section
 
-* Authentication
-    * Can be scoped to a User and Organization
-* Tokens: Are generally short-lived (1 day).
-    * Can be a 16-byte hash, or can be a much longer (999-byte) [JSON Web Token](https://jwt.io/) (JWT). Both are used the same exact way.
-    * Direct programmatic login (via the GraphQL `userLogin` mutation) gives the 16-byte token.
-    * OAuth produces the longer JWT. 
-* Understanding app deployment/onboarding: See <https://docs.veritone.com/#/developer/applications/app-tutorial/>
-    * Most customer "apps" are customer-hosted (not hosted by Veritone) and integrate to Veritone CMS via the Context Menu Extension mechanism.
-    * [Veritone Essentials](/apps/) apps are, of course, Veritone-hosted.
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+## Step 3: Run Your First Engine <!-- {docsify-ignore} -->
+
+Veritone provides over 100 active and ready-to-use engines (flows) out of the box. Learn how to run an existing engine using Automate Studio in just few clicks
+
+<div class="collapse-accordion"><ul><li>
+                <input type="checkbox" id="list-item-3">
+                <label for="list-item-3"><span class="expandText">Click here to learn run your first engine</span><span class="collapseText">Click here to close this section.</span></label>
+                <ul>
+                    <li class="inner-content">
+                    
+
+1. From the Apps menu select the Automate Studio app. It will open in a new tab.
+
+2. Click on the **Add New** button and select *New From Template*
+
+3. Type "Starter Flow: Object Detection" in the search bar
+
+4. Select the flow by clicking on it and then click on the **Create Flow From Template** button
+
+5. Once the flow (engine) is open, click on the **Deploy** button in the headbar.
+
+6. Locate the "aiware-in" node ( the first node in the flow from left to right ) and click on the blue square button on the left side of the node.
+
+7. The flow is now running. Once done, open the *Application Menu* once again and choose the **Data Center** app
+
+8. Under *Streams -> Files* locate and click on the video-like file. That's the video that has been processed. Next, in the same card, click on the long bold number ( this number is the ID of the temporal data object - TDO ). 
+
+9. The result of the engine process is now open. By clicking on each and one of the tabs, we are able to see the frame of the video where the object was detected
+
+10. Cool, isn't it? 
+
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+
+</li>                  
+</ul>
+</li>          
+</ul>
+</div>
+
+## Congratulations on running your first engine!! <!-- {docsify-ignore} -->
+
+
+## Next steps <!-- {docsify-ignore} -->
+
+[Learn more about Engines](/developer/engines/getting-started/) | 
+[Learn more about Apps](/developer/applications/app-tutorial/) |
+[Create your first flow in Automate Studio](/automate-studio/getting-started/README) | 
+
+?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
+
+<style>
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #766;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .inner-content p{
+        font-size: 18px;
+    }
+    .inner-content *{
+        font-size: 18px;
+    }
+
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#bda0a0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+li {
+    font-size: 16px;
+}
+</style>

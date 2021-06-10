@@ -22,3 +22,7 @@ Look at this for inspiration: https://github.com/veritone/docs/pull/59/files#dif
 Here is an example of tagging a particular object within a time series with a `gps` location:
 
 [](vtn-standard-series-object.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

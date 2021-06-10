@@ -22,3 +22,7 @@ A keyword extraction engine identifies key terms and/or phrases that appear in o
 ### Example
 
 [](../../../../../../schemas/vtn-standard/keyword/examples/simple.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

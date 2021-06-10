@@ -696,3 +696,8 @@ Below is a sample response:
 * All supported [Mutations](/apis/reference/mutation/) and [Queries](/apis/reference/query/)
 * [GraphQL API Examples](/apis/examples)
 * [Edge REST API](/apis/edge/index.html)
+
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

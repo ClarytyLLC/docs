@@ -43,3 +43,7 @@ If your application also generates third-party (not your own) Engine processing 
 ## Dataset Licensing Fees
 
 The business model for Dataset licensing is still a work in process and will continue to evolve over time. There are a number of types of data that could generate license fees - training data sets, structured data feeds, even data normalization adapters and schemas.  At this early stage we are open to discussion and suggestion as to how we can work together to create a market for your data products.
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

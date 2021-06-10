@@ -79,3 +79,7 @@ between the transcribed audio and the `userPhrase` in the input JSON object.
 Here is an example of the simplest type of speaker verification engine output:
 
 [](vtn-standard.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

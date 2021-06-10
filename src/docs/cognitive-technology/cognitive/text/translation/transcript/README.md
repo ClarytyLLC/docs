@@ -126,3 +126,7 @@ There will only be one of these in each `words` array.
 ### Example Output
 
 [](../../../../../../../schemas/vtn-standard/transcript/examples/translated.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Engine Processing Modes
 
 <!--TODO: Incorporate edge-messages from https://github.com/veritone/edge-messages-->

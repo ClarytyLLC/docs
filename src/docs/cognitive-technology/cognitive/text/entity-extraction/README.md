@@ -63,3 +63,7 @@ This is a more involved example that includes a label, confidence, a mapping to 
 This is an example output that maps an extracted entity back to an aiWARE library entity.
 
 [](../../../../../../schemas/vtn-standard/entity/examples/library-entity.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

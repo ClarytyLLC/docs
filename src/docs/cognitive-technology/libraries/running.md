@@ -55,3 +55,7 @@ Here are some sample results:
     }]
 }
 ```
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

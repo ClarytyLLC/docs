@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Implementing Engine Polling
 
 In normal [segment processing](/developer/engines/processing-modes/segment-processing/), engines are expected to respond with their results within seconds.

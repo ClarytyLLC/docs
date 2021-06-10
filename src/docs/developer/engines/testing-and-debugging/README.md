@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Testing your Engine
 
 Before submitting your build, you should test your engine thoroughly using the techniques described here.

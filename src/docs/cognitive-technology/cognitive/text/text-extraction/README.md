@@ -43,3 +43,7 @@ The output can also include a language code and confidence scores if desired.
 The following simple example shows what the output of a text extraction engine could look like:
 
 [](../../../../../../schemas/vtn-standard/text/examples/extracted-text.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

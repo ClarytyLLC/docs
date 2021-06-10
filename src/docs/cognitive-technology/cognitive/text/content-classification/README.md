@@ -57,3 +57,7 @@ IPTC is simply chosen as one example.
 Any taxonomy may be used as long as its classes can be referenced with a URI.
 
 [](../../../../../../schemas/vtn-standard/concept/examples/real-world.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

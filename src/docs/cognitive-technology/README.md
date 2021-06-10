@@ -315,3 +315,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
     </div>
 </div>
 <hr>
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

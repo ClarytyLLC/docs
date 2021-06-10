@@ -186,3 +186,7 @@
 | INSTALL_AIWARE_BIN_DIR | /usr/local/bin | Directory to install aiware-agent binary, links, and uninstall scripts |
 | INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | Directory for systemd service |
 | INSTALL_AIWARE_EXEC | agent | command to pass to the service when starting.  By default it starts the agent |
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

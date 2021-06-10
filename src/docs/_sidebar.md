@@ -29,6 +29,7 @@
 <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
 
 
+- [aiWARE](/aiware/)
 - [Getting Started](/getting-started/)
     - [For Beginners](/getting-started/beginner/)
     - [For Application Developers](/getting-started/app-developer/)
@@ -36,21 +37,10 @@
     - [For Solution Architects](/getting-started/ml-integrator/)
     - [For MLOps Engineer](/getting-started/mlops-engineer/)
     - [Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
-      - [Jobs, Tasks, and TDOs](/apis/jobs-tasks-tdos.md)
-      - [Job Quickstart Guide](/apis/job-quickstart/)
-      - [Using Eventing](/apis/eventing/eventing.md)
-      - [Uploading and Processing Files](/apis/tutorials/upload-and-process.md)
-      - [Uploading Large Files](/apis/tutorials/uploading-large-files.md)
-      - [Handling File Upload Errors](/apis/tutorials/file-upload-error-handling.md)
-      - [Authentication and Authorization Tokens](/apis/tutorials/tokens.md)
-      - [Paging](/apis/tutorials/paging.md)
-      - [Asset Types](/apis/tutorials/asset-types.md)
-- [aiWARE](/aiware/)
-  - [Quickstart](/aiware/install/aiware-anywhere-quickstart.md) 
-  - [Installation Guide](/aiware/install/installation-guide-overview.md)  
-    - [Install Single Machine](/aiware/install/install.md) 
-    - [Install Cluster](/aiware/install/cluster.md)
-    - [Validate Install](/aiware/install/validate.md)
+- [aiWARE Anywhere](/aiware/install/installation-guide-overview.md)  
+  - [Install Single Machine](/aiware/install/install.md) 
+  - [Install Cluster](/aiware/install/cluster.md)
+  - [Validate Install](/aiware/install/validate.md)
   - [Cluster Management Guide](/aiware/manage/)
     - [Prerequisites](/aiware/install/prereq.md)
     - [Sizing](/aiware/manage/sizing.md)
@@ -72,7 +62,7 @@
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/)
-  - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/)
+  <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
 - [Cognitive Technology](/cognitive-technology/) 
   - [Capabilities](/cognitive-technology/cognitive/) 
     - [Audio Fingerprinting](/cognitive-technology/cognitive/audio/audio-fingerprinting/)

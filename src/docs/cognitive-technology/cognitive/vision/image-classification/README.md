@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Image Classification
 
 Image classification refers to the art of classifying an entire image into a class or category. This is different from object detection or recognition which attempts to locate specific objects within an image.
@@ -78,4 +82,5 @@ Below is an example output from an image classification engine run inside Verito
                   "uri": "https://chunk-cache.s3.amazonaws.com/frames/341278665/b037c273-24a0-4764-8403-650dbcb2133b.jpg"
                 }
               }...
-}```
+}
+```

@@ -45,3 +45,7 @@ This example shows categorizing an entire document according to one language.
 [](../../../../../../schemas/vtn-standard/language/examples/basic.json ':include :type=code json')
 
 <!--TODO: Consider adding support for phrase-based language identification by allowing object.language the same way we have series.words.language-->
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

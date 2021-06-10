@@ -37,3 +37,7 @@ Often times, translation engines will define custom fields for inputs such as:
 - Output document type (e.g. plain, rich, extracted, recognized, transcript)
 
 The values submitted to these fields by users can then be accessed by the engine in the message payload it receives.
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

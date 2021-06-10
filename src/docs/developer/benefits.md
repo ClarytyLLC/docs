@@ -1,3 +1,8 @@
+
+<style>
+     p, ul, ol, li { font-size: 18px !important; }
+</style>
+
 # Developer Benefits
 
 Veritone has developed a robust developer ecosystem designed to enable cognitive engine, custom application, and data product developers to monetize their intellectual property in an efficient manner.  We rely on developer partners as a critical component of the Veritone business model.
@@ -16,17 +21,29 @@ As a developer partner in the Veritone Ecosystem, there are several ways to earn
 
 We compensate engine developers based on variable engine usage, measured in either hours of media processed or API calls made.  Rates are negotiated with each partner, and we prefer tiered pricing based on volume.  We are open to discussing other models as well, including flat fees, but we generally prefer a variable cost structure.  A typical tiered structure would look like this:
 
+<hr>
+
 0-1,000 hours = $Z
+
+<hr>
 
 1,000-10,000 hours = $Z x 90%
 
+<hr>
+
 10,000 - 100,000 hours = $Z x 75%
+
+<hr>
 
 100,000 - 1 million hours = $Z x $60%
 
+<hr>
+
 Over 1 million hours = $Z x 50%
 
-(Discounts are illustrative and subject to negotiation)
+<hr>
+
+_(Discounts are illustrative and subject to negotiation)_
 
 Veritone's proprietary technology stack includes Conductor, a machine learning software layer that optimizes results by automatically choosing the best cognitive engine(s) for each processing job based on the combination of accuracy, speed, and cost constraints determined by our clients.  Accuracy is determined by comparative benchmarking across each cognitive class.  Conductor is currently an optional feature available only for transcription, but it will continue to expand to other cognitive classes (intraclass Conductor) and across cognitive classes (interclass Conductor) over time.
 

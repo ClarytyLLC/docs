@@ -139,3 +139,7 @@ Calculation: 100 - ( 1 substitution + 1 deletion ) / 9 * 100
 ## Limitations
 
 Benchmarking is currently limited to _transcription_ results, single TDOs, and existing results in the system. We are working hard to improve the capabilities of Benchmark to make it easier to store and find results, aggregate results across multiple TDOs, and fire off engines in realtime &mdash; as well as encompassing other engine capabilities. So be sure to check back here for updates! This page will update as new functionalities become available.
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

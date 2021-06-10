@@ -54,3 +54,7 @@ Here is an example of the simplest type of speaker recognition output:
 !> There is a legacy format that is still supported but has been deprecated.
 
 [](vtn-standard-legacy.example.json ':include :type=code json')
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
