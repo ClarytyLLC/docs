@@ -106,15 +106,15 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 
 <br>
 <div class="section card-container">
-<a class="card" href="https://www.veritone.com/devsignup/">
+<a class="card" href="/#/getting-started/">
 <div class="icon">
 
 ![cloud](cloud.svg)
 </div>
 <div class="card-content">
-<h3>Signup to Cloud Platform</h3>
+<h3>Quick Start</h3>
 <div>
-    Gain immediate access to aiware SaaS applications
+    Get immediate access to aiWARE platform & applications
 </div>
 </div>
 </a>
