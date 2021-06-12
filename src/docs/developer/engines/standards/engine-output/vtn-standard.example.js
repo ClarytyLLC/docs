@@ -60,6 +60,12 @@ sample = {
     "value": "bar2"
   }],
 
+  // Collation order (optional)
+  // Indicates relative order of this file. Files with lower collateIndex values come before higher collateIndex values.
+  // Used to preserve ordering, esp. when parallel processing large documents. Indexes do not have to be sequential, but may not be duplicated.
+  // You may use whatever integers are convenient: indexes, page number, byte offsets, etc.
+  "collateIndex": 4,
+
   // Language Identification (optional)
   // Format: BCP-47 https://tools.ietf.org/rfc/bcp/bcp47.txt
   "language": "en-US",
@@ -146,6 +152,12 @@ sample = {
     // Text found (optional)
     // REQUIRED for OCR and text extraction
     "text": "The quick brown fox jumped over the lazy dog",
+
+    // Collation order (optional)
+    // Indicates relative order of this object. Objects with lower collateIndex values come before higher collateIndex values.
+    // Used to preserve ordering, esp. when parallel processing. Indexes do not have to be sequential, but may not be duplicated.
+    // You may use whatever integers are convenient: indexes, frame numbers, byte offsets, etc.
+    "collateIndex": 4,
 
     // Document location (optional)
     // For referencing where in a document recognized text or entities or occur.
