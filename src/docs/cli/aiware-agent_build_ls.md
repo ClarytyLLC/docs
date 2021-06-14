@@ -7,7 +7,7 @@ Retrieves details about the builds of an engine.
 Retrieves details about the builds of an engine. The engine id must be provided
 
 ```
-aiware-agent build ls [flags]
+aiware-agent build ls [engineID] [flags]
 ```
 
 ### Options
