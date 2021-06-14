@@ -1,4 +1,4 @@
-# Transcription Flow Tutorial
+# Object Detection Flow Tutorial
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
