@@ -7,7 +7,7 @@ Retrieves details about the build of an engine. The build id must be provided as
 Retrieves details about the build of an engine. The build id must be provided as the first argument.
 
 ```
-aiware-agent build get [flags]
+aiware-agent build get [buildID] [flags]
 ```
 
 ### Options
