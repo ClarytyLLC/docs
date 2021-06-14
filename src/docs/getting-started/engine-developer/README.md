@@ -121,14 +121,13 @@
 
 </style>
 
-# Engine Developer Quick Start
+# Getting Started With Engine Development
 
 <div class="topVideo">
     <iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
-## Getting Started With Engine Development?
 On the aiWARE platform each cognitive artificial intelligence capability is packaged into a container called a cognitive engine. You can write your engine in any language and deploy it as a Docker container. Let us worry about the rest.
 
 Here's the quickest way to get started building your cognitive engine:
@@ -143,7 +142,7 @@ Here's the quickest way to get started building your cognitive engine:
  
 <hr>
 
-## Video Tutorial Series: How to Build a Cognitive Engine
+## Video Tutorial Series: How to Build a Cognitive Engine <!-- {docsify-ignore} -->
 <div class="tutorialColumn">
     <div class= "videoTutorialColumn">
         <div><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -168,7 +167,7 @@ Here's the quickest way to get started building your cognitive engine:
     <a href="/" id="view-all-series-btn">VIEW ALL SERIES (TODO)</a>
 </div>
 
-## Do More With aiWARE
+<!-- ## Do More With aiWARE
 <br>
 <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
@@ -203,4 +202,4 @@ Here's the quickest way to get started building your cognitive engine:
             <a class="link" href="https://veritonedev.slack.com"> JOIN CHANNEL</a>
         </div>
     </div>
-</div>
+</div> -->

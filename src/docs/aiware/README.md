@@ -5,12 +5,16 @@
      p, ul, ol, li { font-size: 18px !important;}
      
      .container{
+        /* padding-right: 50px; */
         display: flex;
         flex-direction: column;
     }
     .section{
         display: flex;
+        justify-content: center;
+        /* align-items: center; */
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
     }
     .image-or-video{
@@ -24,14 +28,16 @@
     }
     .card{
         display: flex;
-        justify-content: space-between;
-        width: 333px;
+        margin: 15px;
+        /* justify-content: space-between; */
+        min-width: 333px;
         border: 0.5px solid #D5DFE9;
         background: #FFFFFF;
         padding: 10px;
         height: 110px;
         border-radius: 4px;
         text-decoration: none;
+        flex: 3;
     }
     .card:hover{
         background: #F9FCFF;
@@ -62,54 +68,86 @@
         padding: 15px 0px 25px 15px;
     }
     .card-container{
-    justify-content:space-between; 
-    background: #FAFAFA;
-    padding: 20px;
-    border-radius: 4px;
+        align-items: center;
+        background: #FAFAFA;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    .info-text{
+        padding-right:30px; 
+        padding-top:50px; 
+        flex: 6; 
+        min-width: 400px
     }
 </style>
 
-<!-- DISABLE VIDEO
-<div style="display:flex;">
-<div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/375527305?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
-<div style="float:right; width: 200px; padding-top: 125px">
-    <a href="/#/developer/applications/quick-start/" id="learn-aiware-btn">LEARN AIWARE IN 15 MINUTES</a>
-    <br>
-    <a href="/#/apis" id="explore-api-basics-btn">EXPLORE API BASICS</a>
-</div>
--->
-
-<!-- </div> -->
-
-<!-- <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script> -->
-
-
-
-<!-- ## What is Veritone aiWARE? {docsify-ignore} -->
 <div class="container">
 
 # Veritone aiWARE Overview
 
 <div class="section">
-<p style="padding-right:30px; padding-top:50px;">
+<p class="info-text">
 Veritone aiWARE is a production-proven AI platform that lets you harness the power of AI anywhere, any time. Cognitively enable new or existing apps rapidly, using a unified API for more than 300 engines available on the aiWARE platform. Deploy enterprise-grade solutions at scale, using our infrastructure or your own. Process massive amounts of data — audio, video, image, text, and more — to extract actionable intelligence. Boost the productivity of your business and IT teams by intelligently automating manual, repetitive, and data-driven tasks — no in-depth coding skills or AI expertise required.
 </p>
 
-<div style="width: 500px; height: 350px;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 500px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 </div>
 
 <hr>
 
-## Getting started <!-- {docsify-ignore} -->
+## Table of Contents <!-- {docsify-ignore} -->
 
 <br>
 <div class="section card-container">
+
+<!-- getting started-->
+<a class="card" href="/#/getting-started/quickstart/">
+<div class="icon">
+
+![cloud](./icons/cloud.svg)
+</div>
+<div class="card-content">
+<h3>Quick Start</h3>
+<div>
+    Get immediate access to aiWARE platform & applications
+</div>
+</div>
+</a>
+
+<!-- self hosted aiware -->
+<a class="card" href="/#/aiware/install/installation-guide-overview">
+<div class="icon">
+
+![self-hosted](./icons/self-hosted.svg)
+</div>
+<div class="card-content">
+<h3>Self Hosted aiWARE</h3>
+<div>
+    aiWARE Anywhere provides a solution for a self hosted aiWARE OS
+</div>
+</div>
+</a>
+
+<!-- automate studio -->
+<a class="card" href="/#/automate-studio/">
+<div class="icon">
+
+![automate](./icons/automate.svg)
+</div>
+<div class="card-content">
+<h3>Automate Studio</h3>
+<div>
+    Start to build AI flows today with Veritone's Automate Studio
+</div>
+</div>
+</a>
+
+<!-- concept guides -->
 <a class="card" href="/#/getting-started/">
 <div class="icon">
 
-![cloud](cloud.svg)
+![cloud](./icons/cloud.svg)
 </div>
 <div class="card-content">
 <h3>Quick Start</h3>
@@ -122,7 +160,7 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 <a class="card" href="/#/aiware/install/installation-guide-overview">
 <div class="icon">
 
-![self-hosted](self-hosted.svg)
+![self-hosted](./icons/self-hosted.svg)
 </div>
 <div class="card-content">
 <h3>Self Hosted aiWARE</h3>
@@ -135,7 +173,7 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 <a class="card" href="/#/automate-studio/">
 <div class="icon">
 
-![automate](automate.svg)
+![automate](./icons/automate.svg)
 </div>
 <div class="card-content">
 <h3>Automate Studio</h3>
@@ -154,12 +192,11 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 
 <div class="section">
 
-<div style="min-height:350px; min-width:500px">
-
+<!-- <div style="min-height:350px; min-width:500px">
 ![aiWare_OS](aiware_OS.svg)
-</div>
+</div> -->
 
-<p style="padding-left:30px; padding-top:100px;">
+<p  class="info-text">
 A computer’s operating system connects a processor, peripherals and applications so they can communicate, working together to display what you see on your screen and respond to your commands. An AI operating system works in a similar fashion. It provides a common software infrastructure that lets you use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — in either general or industry-specific applications. With thousands of limited cognitive engines on the market, you need an operating system to manage and orchestrate them all, so you can use them with general or industry-specific applications to solve real-world challenges.
 </p>
 </div>
