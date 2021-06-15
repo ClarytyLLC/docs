@@ -18,7 +18,7 @@
 
 2. Find the IP address of the machine. This can be done in terminal by running the following:
     ```bash
-    export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
+    export IPADDR=$(ip addr | grep inet | grep -v inet6 | grep -v docker0 | grep -v 127.0.0.1 | awk '{ print $2 }' | awk -F/ '{ print $1 }'); echo $IPADDR
     ```
 
 3. Create necessary install directories 
