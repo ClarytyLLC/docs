@@ -1,3 +1,14 @@
+# Can't Access Docker
+When receiving the following error message after attempting to run a Docker command (such as `docker ps` or `docker images`):
+```bash
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1: dial unix /var/run/docker.sock: connect: permission denied
+```
+You can add your current user to the `docker` group on your machine to allow your user access to the Docker command line. 
+```bash 
+sudo usermod -aG docker $(whoami)
+```
+A restart of the current shell session is necessary after running the above command. 
+
 # Upgrading
 
 ```bash
