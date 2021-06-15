@@ -190,37 +190,37 @@
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
 - [Tutorials](/tutorials/pages/temp-under-construction.md)
-  - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md)
-  - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md)
-  - [Automate Studio Tutorials](/tutorials/pages/temp-under-construction.md)
-  - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md)
-  - [Callbacks](/tutorials/pages/temp-under-construction.md)
-  - [Create application in developer app](/tutorials/pages/temp-under-construction.md)
-  - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md)
-  - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md)
-  - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md)
-  - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md)
-  - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md)
-  - [Customizing Engine Output](/tutorials/pages/temp-under-construction.md)
-  - [Customizing Engine Input](/tutorials/pages/temp-under-construction.md)
-  - [Developer App Guide](/tutorials/pages/temp-under-construction.md)
-  - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md)
-  - [How to get your engine approved](/tutorials/pages/temp-under-construction.md)
-  - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md)
-  - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md)
-  - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md)
-  - [Polling](/tutorials/pages/temp-under-construction.md)
-  - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md)
-  - [Training an Engine](/tutorials/pages/temp-under-construction.md)
-  - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md)
-  - [Using MachineBox](/tutorials/pages/temp-under-construction.md)
-  - [Upload files using the CMS app](/tutorials/pages/temp-under-construction.md)
-  - [Upload streams using the CMS app](/tutorials/pages/temp-under-construction.md)
-  - [Using Temporal Data Objects](/tutorials/pages/temp-under-construction.md)
-  - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md)
-  - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md)
-  - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md)
-  - [Working with Jobs](/tutorials/pages/temp-under-construction.md)
+  <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Automate Studio Tutorials](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Customizing Engine Output](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Customizing Engine Input](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Training an Engine](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Using MachineBox](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Upload files using the CMS app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Upload streams using the CMS app](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Using Temporal Data Objects](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
