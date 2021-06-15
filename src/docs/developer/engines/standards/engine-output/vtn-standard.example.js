@@ -68,13 +68,13 @@ sample = {
   "summary": "",
 
   // Sentiment (optional)
-  // Provides a scale of how negative to positive it is
-  // If a single number is returned, then positive must be used
-  // Scale: 0 to 1.00 for all fields
+  // Provides a rating of how positive and/or negative some text is. 
+  // Text can be purely positive ("I love you."), negative ("This tastes rotten."), or mixed ("I appreciate that you tried, but this is a failure.")
+  // Values: 0.0 (neutral) to 1.0 (extreme). Confidence: 0.0 (not) to 1.0 (confident)
   "sentiment": {
-    "positiveValue": 0.12, // REQUIRED
+    "positiveValue": 0.12, // REQUIRED if negativeValue is not provided or positiveConfidence is provided
     "positiveConfidence": 0.12, // OPTIONAL
-    "negativeValue": 0.12, // OPTIONAL
+    "negativeValue": 0.12, // REQUIRED if positiveValue is not provided or negativeConfidence is provided
     "negativeConfidence": 0.12 // OPTIONAL
   },
 
@@ -180,13 +180,13 @@ sample = {
     },
 
     // Sentiment (optional)
-    // Provides a scale of how negative to positive it is
-    // If a single number is returned, then positive must be used
-    // Scale: 0 to 1.00 for all fields
+    // Provides a rating of how positive and/or negative some text is. 
+    // Text can be purely positive ("I love you."), negative ("This tastes rotten."), or mixed ("I appreciate that you tried, but this is a failure.")
+    // Values: 0.0 (neutral) to 1.0 (extreme). Confidence: 0.0 (not) to 1.0 (confident)
     "sentiment": {
-      "positiveValue": 0.12, // REQUIRED
+      "positiveValue": 0.12, // REQUIRED if negativeValue is not provided or positiveConfidence is provided
       "positiveConfidence": 0.12, // OPTIONAL
-      "negativeValue": 0.12, // OPTIONAL
+      "negativeValue": 0.12, // REQUIRED if positiveValue is not provided or negativeConfidence is provided
       "negativeConfidence": 0.12 // OPTIONAL
     },
 
@@ -350,13 +350,13 @@ sample = {
     "language": "en-US",
 
     // Sentiment (optional)
-    // Provides a scale of how negative to positive it is
-    // If a single number is returned, then positive must be used
-    // Scale: 0 to 1.00 for all fields
+    // Provides a rating of how positive and/or negative some text is. 
+    // Text can be purely positive ("I love you."), negative ("This tastes rotten."), or mixed ("I appreciate that you tried, but this is a failure.")
+    // Values: 0.0 (neutral) to 1.0 (extreme). Confidence: 0.0 (not) to 1.0 (confident)
     "sentiment": {
-      "positiveValue": 0.12, // REQUIRED
+      "positiveValue": 0.12, // REQUIRED if negativeValue is not provided or positiveConfidence is provided
       "positiveConfidence": 0.12, // OPTIONAL
-      "negativeValue": 0.12, // OPTIONAL
+      "negativeValue": 0.12, // REQUIRED if positiveValue is not provided or negativeConfidence is provided
       "negativeConfidence": 0.12 // OPTIONAL
     },
 
