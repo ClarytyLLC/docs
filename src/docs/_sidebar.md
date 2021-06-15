@@ -64,7 +64,7 @@
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/) -->
   <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
-- [Concept Giudes](/concept-guides/)
+- [aiWARE Overview & Concepts](/concept-guides/)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)

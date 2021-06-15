@@ -83,98 +83,23 @@
 th { text-align:left; }
 </style>
 
-# Getting Stated <!-- {docsify-ignore} -->
+# Get Stated <!-- {docsify-ignore} -->
+
+<!-- <br>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <br>
+<hr> -->
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-<br><br>
-<div class="section card-container">
-
-<!-- Quick Start for First Time Users -->
-<a class="card" href="/#/getting-started/quickstart/">
-<div class="icon">
-
-![cloud](./icons/cloud.svg)
-</div>
-<div class="card-content">
-<h3>Quick Start for First Time Users</h3>
-<div>
-    Get immediate access to aiWARE platform & applications
-</div>
-</div>
-</a>
-
-<!-- Get Started as an Application Developer -->
-<a class="card" href="/#/aiware/install/installation-guide-overview">
-<div class="icon">
-
-![app-developer](./icons/app-developer.svg)
-</div>
-<div class="card-content">
-<h3>Get Started as an Application Developer</h3>
-<div>
-    aiWARE Anywhere provides a solution for a self hosted aiWARE OS
-</div>
-</div>
-</a>
-
-<!-- Get Started as a Data Scientist -->
-<a class="card" href="/#/automate-studio/">
-<div class="icon">
-
-![data-science](./icons/data-science.svg)
-</div>
-<div class="card-content">
-<h3>Get Started as a Data Scientist</h3>
-<div>
-    Start to build AI flows today with Veritone's Automate Studio
-</div>
-</div>
-</a>
-
-<!-- Get Started as a ML or MLOps Engineer -->
-<a class="card" href="/#/getting-started/">
-<div class="icon">
-
-![machine-learning](./icons/machine-learning.svg)
-</div>
-<div class="card-content">
-<h3>Get Started as a ML or MLOps Engineer</h3>
-<div>
-    Get immediate access to aiWARE platform & applications
-</div>
-</div>
-</a>
-
-<a class="card" href="/#/aiware/install/installation-guide-overview">
-<div class="icon">
-
-![self-hosted](./icons/self-hosted.svg)
-</div>
-<div class="card-content">
-<h3>Self Hosted aiWARE</h3>
-<div>
-    aiWARE Anywhere provides a solution for a self hosted aiWARE OS
-</div>
-</div>
-</a>
-
-<a class="card" href="/#/automate-studio/">
-<div class="icon">
-
-![automate](./icons/automate.svg)
-</div>
-<div class="card-content">
-<h3>Automate Studio</h3>
-<div>
-    Start to build AI flows today with Veritone's Automate Studio
-</div>
-</div>
-</a>
+<!-- ## Table of Contents -->
+ - [Quick Start for First Time Users](/getting-started/quickstart/)
+ - [Get Started as an Application Developer](/getting-started/app-developer/)
+ - [Get Started as a Data Scientist](/getting-started/engine-developer/)
+ - [Get Started as a ML or MLOps Engineer]()
+ - [More Tutorials](/tutorials/)
 
 
 </div>

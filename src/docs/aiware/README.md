@@ -96,7 +96,35 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 
 <hr>
 
-## Table of Contents <!-- {docsify-ignore} -->
+## aiWARE: The Operating System for Artificial Intelligence 
+
+<div class="section">
+
+<!-- <div style="min-height:350px; min-width:500px">
+![aiWare_OS](aiware_OS.svg)
+</div> -->
+
+<p  class="info-text">
+A computer’s operating system connects a processor, peripherals and applications so they can communicate, working together to display what you see on your screen and respond to your commands. An AI operating system works in a similar fashion. It provides a common software infrastructure that lets you use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — in either general or industry-specific applications. With thousands of limited cognitive engines on the market, you need an operating system to manage and orchestrate them all, so you can use them with general or industry-specific applications to solve real-world challenges.
+</p>
+</div>
+<hr>
+
+## The Benefits of an OS for AI 
+
+* Rapidly develop AI applications to solve business problems
+
+* No need to manage and orchestrate underlying AI engines
+
+* Seamlessly leverage multiple AI engines from multiple vendors
+
+* Mitigate risks of single vendor dependency
+
+* Flexibility to deploy in the Veritone cloud, your private cloud or on-premise
+
+<hr>
+
+## Getting Started 
 
 <br>
 <div class="section card-container">
@@ -143,40 +171,92 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 </div>
 </a>
 
-<!-- concept guides -->
-<a class="card" href="/#/getting-started/">
+</div>
+
+## Navigate the Docs 
+
+<br>
+<div class="section card-container">
+
+<!-- cognitive technology -->
+<a class="card" href="/#/cognitive-technology/">
 <div class="icon">
 
-![cloud](./icons/cloud.svg)
+![cognition](./icons/cognition.svg)
 </div>
 <div class="card-content">
-<h3>Quick Start</h3>
+<h3>Cognitive Technology</h3>
 <div>
-    Get immediate access to aiWARE platform & applications
+    Choose from hundreds of available engines across various categories of cognition
 </div>
 </div>
 </a>
 
-<a class="card" href="/#/aiware/install/installation-guide-overview">
+<!-- Engines -->
+<a class="card" href="/#/aiware/aiWARE-in-depth/engines">
 <div class="icon">
 
-![self-hosted](./icons/self-hosted.svg)
+![engines](./icons/engine.svg)
 </div>
 <div class="card-content">
-<h3>Self Hosted aiWARE</h3>
+<h3>Engines</h3>
 <div>
-    aiWARE Anywhere provides a solution for a self hosted aiWARE OS
+    Get in-depth understanding of Veritone aiWARE engines
 </div>
 </div>
 </a>
 
-<a class="card" href="/#/automate-studio/">
+<!-- applications -->
+<a class="card" href="/#/developer/applications/">
 <div class="icon">
 
-![automate](./icons/automate.svg)
+![applications](./icons/applications.svg)
 </div>
 <div class="card-content">
-<h3>Automate Studio</h3>
+<h3>Applications</h3>
+<div>
+    Build your own applications using the aiWARE platform
+</div>
+</div>
+</a>
+
+<!-- Jobs -->
+<a class="card" href="/#/aiware/aiWARE-in-depth/job-processing">
+<div class="icon">
+
+![jobs](./icons/jobs.svg)
+</div>
+<div class="card-content">
+<h3>Jobs</h3>
+<div>
+    The ability to ingest and process data with a set of Engines in an order defined by the user
+</div>
+</div>
+</a>
+
+<!-- api -->
+
+<a class="card" href="/#/apis/using-graphql">
+<div class="icon">
+
+![api](./icons/api.svg)
+</div>
+<div class="card-content">
+<h3>API</h3>
+<div>
+    Veritone's REST and Core Graphql API documentation
+</div>
+</div>
+</a>
+
+<!-- troubleshooting -->
+<a class="card" href="/#/aiware/troubleshooting/">
+<div class="icon">
+
+![troubleshooting](./icons/troubleshooting.svg)
+</div>
+<div class="card-content">
+<h3>Troubleshooting</h3>
 <div>
     Start to build AI flows today with Veritone's Automate Studio
 </div>
@@ -188,32 +268,6 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 
 <hr>
 
-## aiWARE: The Operating System for Artificial Intelligence <!-- {docsify-ignore} -->
 
-<div class="section">
-
-<!-- <div style="min-height:350px; min-width:500px">
-![aiWare_OS](aiware_OS.svg)
-</div> -->
-
-<p  class="info-text">
-A computer’s operating system connects a processor, peripherals and applications so they can communicate, working together to display what you see on your screen and respond to your commands. An AI operating system works in a similar fashion. It provides a common software infrastructure that lets you use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — in either general or industry-specific applications. With thousands of limited cognitive engines on the market, you need an operating system to manage and orchestrate them all, so you can use them with general or industry-specific applications to solve real-world challenges.
-</p>
-</div>
-<hr>
-
-## The Benefits of an OS for AI <!-- {docsify-ignore} -->
-
-* Rapidly develop AI applications to solve business problems
-
-* No need to manage and orchestrate underlying AI engines
-
-* Seamlessly leverage multiple AI engines from multiple vendors
-
-* Mitigate risks of single vendor dependency
-
-* Flexibility to deploy in the Veritone cloud, your private cloud or on-premise
-
-<hr>
 
 
