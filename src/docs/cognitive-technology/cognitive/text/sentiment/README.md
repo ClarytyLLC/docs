@@ -31,17 +31,42 @@ In this case, engines are given the entire file as their input and are responsib
 
 ## Engine Output
 
-Sentiment analysis engine output can take multiple forms depending on the format of the data being analyzed as well as the depth and detail of the insights the engine is able to express.
+Sentiment analysis engine output can express multiple values depending on the format of the data being analyzed 
+as well as the depth and detail of the insights the engine is able to express.
 
 > The official `sentiment` validation contract json-schema is available
 [here](/schemas/vtn-standard/sentiment/sentiment.json ':ignore').
 
+Positive values express the strength of a positive sentiment from 0.0 (neutral: "I woke up") to 1.0 
+(extreme: "The joy of waking up is the most supremely happy feeling!"),
+and the positive confidence is the confidence that the positive value is accurate. Lower confidences could indicate uncertainty or sarcasm
+("I'm so ... happy to be awake.") or indeterminate interpretation. ("That sandwich was sick!")
+
+Similarly, negative values express the strength of the negative sentiment from 0.0 (neutral: "I ate dinner") to 1.0 
+(extreme: "I ate the most foul, disgusting slop that was ever unfortunate enough to touch a plate"), and the negative
+confidence is confidence that the negative value is accurate.
+
+Text can also have mixed sentiment like "Although the Daytona hotel was the best I'd stayed at, it still had a lot of problems and I wouldn't recommend it."
+or "Though his prowess exceeded that of any other man, sadly he was defeated in the end." This may be indicated by both positive and negative
+values being present. When both values are present, their values are independent of one another. (That is, they don't have to add up to 1.0.) 
+A positive value of 0.6 with a negative value of 0.1 simply means that the document or phrase was significantly positive with
+a slight negative tone (like "Even though I didn't want to, I found myself thoroughly enjoying the experience.") and a positive value of 0.1 with
+a negative value of 0.6 means that the document or phrase was significantly negative with a slight positive tone (like "Everything about
+the experience was poor, except for one enjoyable moment.")
+
+You must provide at least one value, whether it be positive or negative, and missing values are assumed to be 0.0 (neutral). 
+Confidences are always optional, and are assumed to be 1.0 if not specified. 
+
 ### Example 1: Simple Output
 
-The simplest possible sentiment output involves reporting a single positive sentiment value for the entire document.
-Such an analysis would be reported like this:
+The simplest possible sentiment output involves reporting a single positive or negative sentiment value for the entire document.
+A positive analysis would be reported like this:
 
 [](../../../../../../schemas/vtn-standard/sentiment/examples/simple.json ':include :type=code json')
+
+And a negative analysis would would be reported like this:
+
+[](../../../../../../schemas/vtn-standard/sentiment/examples/simple-negative.json ':include :type=code json')
 
 ### Example 2: Richer Output
 
@@ -69,24 +94,32 @@ and optionally referencing the page, paragraph, and/or sentence index where they
 
 ### Example 4: Polarized
 
-A common output of standalone "sentiment analysis" engines is report a single sentiment value of "positive," "negative," or "neutral" along with a single confidence value.
-In vtn-standard format, those can be expressed as such:
+A common output of standalone "sentiment analysis" engines is to report a single sentiment value of 
+"positive," "negative," or "neutral" along with a single confidence value.
+In vtn-standard format, those can be expressed by mapping the polarization score to the appropriate value.
 
-<!--
-TODO: Explore whether it's too late to rewrite this entirely to just sentiment.value and sentime.confidence and just have value be from -1 to 1.
-Or at least consolidate the confidence scores into just a `confidence` key.
-Otherwise this is the only one with a differently-named confidence key
--->
-
-#### Positive
+#### Example with error range
+If the sentiment analysis reports a 56% ±3% positive score, then the positive value is 0.56 and the uncertainty is the ratio
+of the error value to the score: `0.03/0.56 = 0.0535714`. Then subtract this from 1.0 to convert the "uncertanty" to a "confidence"
 
 [](../../../../../../schemas/vtn-standard/sentiment/examples/polarized.positive.json ':include :type=code json')
 
-#### Negative
+#### Example from a single-value scale
+
+If the sentiment analysis reports the sentiment as a single value in a range, say from -1.0 (negative) to 1.0 (positive), then 
+divide the range into two portions and map to the appropriate positive or negative value.
+
+For example, if the engine reports on a scale of 0.0 (negative) to 1.0 (positive) with 0.5 being neutral, and the output is 0.46
+then the `positiveValue` is 0.0 (or just left undefined) and the `negativeValue` is calculated as follows:
+- Invert the strength from high meaning neutral 0.5 -> 0.0 to low meaning neutral 0.0 -> 0.5: `0.5 - 0.46 = 0.04`
+- Change the scale from 0.0 -> 0.5 to 0.0 -> 1.0: `0.04 * 2 = 0.08`
+
 
 [](../../../../../../schemas/vtn-standard/sentiment/examples/polarized.negative.json ':include :type=code json')
 
-#### Neutral
+#### Example of a neutral value
+
+If the sentiment analysis simply reports "neutral sentiment" then set both positive and negative values to 0.0
 
 [](../../../../../../schemas/vtn-standard/sentiment/examples/polarized.neutral.json ':include :type=code json')
 
