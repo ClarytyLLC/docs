@@ -1956,6 +1956,9 @@ components:
         isEnabled:
           description: Is the core enabled
           type: boolean
+        jobPriorityAdjustment:
+          format: int64
+          type: integer
         modifiedDateTime:
           description: This is the datetime the core was last modified.
           example: '2018-03-20T09:12:28Z'
@@ -8546,7 +8549,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.3.2791
+  version: 3.18.3.2792
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
