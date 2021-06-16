@@ -134,7 +134,7 @@ In the above example, we have customized some of the titles just to suit our nee
 
    
 
-6. When you're done, click **SUBMIT**. Your schema is registered and is displayed in the schema summary view.
+6. When you're done, click **SUBMIT**. Your schema is registered and is displayed in the schema summary view. 
 
    ![Schema summary](..\images\SchemaSummaryView.png)
 
