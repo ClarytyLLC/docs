@@ -3529,6 +3529,44 @@ components:
       - paused
       - replace
       type: string
+    EngineStatsInfo:
+      properties:
+        CPUMSecondsPerCount:
+          description: amount of CPU time per hour
+          format: float
+          type: number
+        CPUMSecondsPerHour:
+          description: amount of CPU time per hour
+          format: float
+          type: number
+        count:
+          description: Total amount of tasks with a particular status and an engine
+          format: int64
+          type: integer
+        engineID:
+          format: uuid
+          type: string
+        engineName:
+          description: Engine name
+          example: Speechmatic en global engine
+          type: string
+        totalBytes:
+          description: Total amount of bytes used by engine
+          format: int64
+          type: integer
+        totalCPUMSeconds:
+          description: Total of time elapsed
+          format: int64
+          type: integer
+        totalCPUMSecondsPerMB:
+          description: Amount of milliseconds spent per mb
+          format: float
+          type: number
+        totalDuration:
+          description: Total amount of time spent running engine
+          format: int64
+          type: integer
+      type: object
     EngineStatusEnum:
       enum:
       - active
@@ -3960,6 +3998,28 @@ components:
           items:
             $ref: '#/components/schemas/EngineLaunchDetail'
           type: array
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
+    GetEngineStatsResponse:
+      example:
+        engines:
+        - CPUMSecondsPerCount: 27080.33333
+          CPUMSecondsPerHour: 3481757.14286
+          count: 3
+          engineID: 9e611ad7-2d3b-48f6-a51b-0a1ba40fe255
+          engineName: Webstream Adapter V3F
+          totalBytes: 4326453
+          totalCPUMSeconds: 58343
+          totalCPUMSecondsPerMB: 6014.1726
+          totalDuration: 86
+      properties:
+        engines:
+          items:
+            $ref: '#/components/schemas/EngineStatsInfo'
+          type: array
+        error:
+          $ref: '#/components/schemas/Error'
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -8549,7 +8609,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.3.2800
+  version: 3.18.3.2801
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
