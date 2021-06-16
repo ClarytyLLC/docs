@@ -1,22 +1,22 @@
 # Customizing Engine Output
 
-**APPROXIMATE READING TIME: N MINUTES**
+**APPROXIMATE READING TIME: 8 MINUTES**
 
->**Tip** Before getting started, we recommend to read  [Build Your Own Engine](https://docs.veritone.com/#/developer/engines/tutorial/) to understand how you can build your engine and generate an output.
+>**Tip** Before getting started, we recommend to read  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine and generate an output.
 
 ## Subject Description <!-- {docsify-ignore} -->
 
-In this tutorial we will learn together how to customize an engine's output to contain additional data. For interoperability, Veritone requires all cognitive engines to produce a [standardized output](#/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard). However, we can easily include data that is beyond the minimum requirements of the `vtn-standard` schema. 
+In this tutorial we will learn together how to customize an engine's output to contain additional data. For interoperability, Veritone requires all cognitive engines to produce a [standardized output](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard). However, we can easily include data that is beyond the minimum requirements of the `vtn-standard` schema. 
 
-For most cases, you need to include a summary block of data as a part of the engine's output. You can do this by including a `jsondata` blob (arbitrary JSON data) under a `vendor` field, as shown in [Extending the Standard](#/developer/engines/standards/engine-output/?id=extending-the-standard). The disadvantage of this approach is that your summary data will not be indexed and so will not be searchable.
+For most cases, you need to include a summary block of data as a part of the engine's output. You can do this by including a `jsondata` blob (arbitrary JSON data) under a `vendor` field, as shown in [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard). The disadvantage of this approach is that your summary data will not be indexed and so will not be searchable.
 
 
 
 We will instead take the following approach and create a searchable engine output:
 
-1. [Define a JSON schema for your summary blob]().
-2. Register the schema with Veritone and get its schema ID.
-3. Refer the schema in your final output *using the schema ID.* 
+1. [Define a JSON schema for your summary blob](#step_1_create_a_summary_schema).
+2. [Register the schema with Veritone and get its schema ID](#step_2_register_the_schema_with_veritone).
+3. [Refer the schema in your final output *using the schema ID*](step_3_update_the_engine_output_to_include_the_schema). 
 
 
 
@@ -32,7 +32,7 @@ In the end, we will create a JSON schema for our summary blob. This structured s
 
 ### Step 1: Create a Summary Schema
 
-We will first create a summary schema and include it in our output. We will be continuing the [Build Your Own Engine](https://docs.veritone.com/#/developer/engines/tutorial/) tutorial, where we created a simple cognitive engine that extracts vocabulary from text. We include some summary stats for the job, such this:
+We will first create a summary schema and include it in our output. We will be continuing the [Build Your Own Engine](/developer/engines/tutorial/) tutorial, where we created a simple cognitive engine that extracts vocabulary from text. We include some summary stats for the job, such this:
 
 ```
 {
@@ -154,7 +154,7 @@ In the above example, we have customized some of the titles just to suit our nee
 
 The easiest way to insert our schema into our engine's output is to append an extra element to the keyword `object` array.
 
-> For this example, we will update the `keyword-extraction.js` file used in the [Build Your Own Engine](https://docs.veritone.com/#/developer/engines/tutorial/) tutorial. You can find the complete code for the tutorial in [the repo for that project](https://github.com/veritone/V3-Engine-Examples). 
+> For this example, we will update the `keyword-extraction.js` file used in the [Build Your Own Engine](#/developer/engines/tutorial/) tutorial. You can find the complete code for the tutorial in [the repo for that project](https://github.com/veritone/V3-Engine-Examples). 
 
 
 
@@ -213,9 +213,11 @@ let _words = null;
 
 These lines support our timing variable, `_startTime`, and a new global `_words` (for word count), in this snippet.
 
-You can Save the file, re-build the engine, and test it locally (using Test Mode) as described in the [Build Your Own Engine](https://docs.veritone.com/#/developer/engines/tutorial/) tutorial. After you verify that the engine works as planned, you can deploy it to Veritone.
+You can Save the file, re-build the engine, and test it locally (using Test Mode) as described in the [Build Your Own Engine](#/developer/engines/tutorial/) tutorial. After you verify that the engine works as planned, you can deploy it to Veritone.
 
-We ran the modified `hello-world` engine (from  [Build Your Own Engine](https://docs.veritone.com/#/developer/engines/tutorial/) tutorial) on a large text file, and got a vocabulary-extraction dataset that included stats as show below:
+### Final Results
+
+We ran the modified `hello-world` engine (from  [Build Your Own Engine](#/developer/engines/tutorial/) tutorial) on a large text file, and got a vocabulary-extraction dataset that included stats as show below:
 
 ![Engine Results](images\EngineResults.png)
 
@@ -225,8 +227,8 @@ The highlighted portion is our custom summary block, showing that 8,104 vocabula
 
 Sometimes, you need to add an extra field to each data item in a series. For example, in our vocabulary extraction engine, it would be great to have an *occurrence count* for every vocabulary word, so that we can see how many times a given word occurs in the input.
 
-To do this, just insert a Structured Data Object (having its own schema ID) into *every item of the data series*. Then repeat the steps in this tutorial for creating and registering your custom schema. You can then modify your engine's code to output data array elements that contain the corresponding Structured Data Object (one per array element). See the discussion at [Extending the Standard](https://docs.veritone.com/#/developer/engines/standards/engine-output/?id=extending-the-standard) for more information.
+To do this, just insert a Structured Data Object (having its own schema ID) into *every item of the data series*. Then repeat the steps in this tutorial for creating and registering your custom schema. You can then modify your engine's code to output data array elements that contain the corresponding Structured Data Object (one per array element). See the discussion at [Extending the Standard](/developer/engines/standards/engine-output/?id=extending-the-standard) for more information.
 
 
 
->Now that you know how to customize an engine output, you must review the **Customize Engine Input** tutorial. You can further review **Training an Engine**.
+>Now that you know how to customize an engine output, we recommend you review the [Customize Engine Input](customizing-engine-input) tutorial. You can further review [Training an Engine](training-an-engine).
