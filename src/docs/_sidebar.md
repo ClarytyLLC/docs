@@ -217,8 +217,6 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
-  
-
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
 
   
@@ -247,7 +245,7 @@
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
-
+  
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
