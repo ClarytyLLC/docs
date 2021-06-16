@@ -1,4 +1,4 @@
-# Veritone aiWARE Tutorials
+<!-- # Veritone aiWARE Tutorials
 
  Veritone encourages learning ...  
 
@@ -6,4 +6,8 @@
  - [Tutorial name like in the sidebar](/link/to/page)
 
 ## Some other section
- - [Tutorial name like in the sidebar](/link/to/page)
+ - [Tutorial name like in the sidebar](/link/to/page) -->
+
+ # Veritone aiWARE Tutorials
+
+This page is under construction and will be available soon
