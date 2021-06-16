@@ -217,6 +217,11 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
+<<<<<<< HEAD
+=======
+  
+
+>>>>>>> 4856185b... Fixed broken links
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
 
   
@@ -245,7 +250,11 @@
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 4856185b... Fixed broken links
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)

@@ -114,7 +114,11 @@ In the above example, we have customized some of the titles just to suit our nee
 
 2. In the upper left, click **NEW > Schema**.
 
+<<<<<<< HEAD
    ![](\images\NewSchema.png)
+=======
+   ![](..\images\NewSchema.png)
+>>>>>>> 4856185b... Fixed broken links
 
    
 
@@ -122,7 +126,11 @@ In the above example, we have customized some of the titles just to suit our nee
 
 3. Enter Basic Schema Details, such as Name and Description, for your schema.
 
+<<<<<<< HEAD
    ![Basic_Schema_Details](\images\BasicSchemaDetails.png)
+=======
+   ![Basic_Schema_Details](..\images\BasicSchemaDetails.png)
+>>>>>>> 4856185b... Fixed broken links
 
    
 
@@ -130,13 +138,21 @@ In the above example, we have customized some of the titles just to suit our nee
 
 5. In the Create Schema editor window, paste or type your JSON schema.
 
+<<<<<<< HEAD
    ![Create Schema](\images\CreateSchema.png)
+=======
+   ![Create Schema](..\images\CreateSchema.png)
+>>>>>>> 4856185b... Fixed broken links
 
    
 
 6. When you're done, click **SUBMIT**. Your schema is registered and is displayed in the schema summary view.
 
+<<<<<<< HEAD
    ![Schema summary](\images\SchemaSummaryView.png)
+=======
+   ![Schema summary](..\images\SchemaSummaryView.png)
+>>>>>>> 4856185b... Fixed broken links
 
    
 
@@ -144,7 +160,11 @@ In the above example, we have customized some of the titles just to suit our nee
 
 8. Click the *kebab* menu for our schema, and select **VIEW**. In the view page, select copy the schema ID from the browser address bar.
 
+<<<<<<< HEAD
    ![SchemaID](\images\SchemaID.png)
+=======
+   ![SchemaID](..\images\SchemaID.png)
+>>>>>>> 4856185b... Fixed broken links
 
    
 
@@ -221,7 +241,11 @@ You can Save the file, re-build the engine, and test it locally (using Test Mode
 
 We ran the modified `hello-world` engine (from  [Build Your Own Engine](#/developer/engines/tutorial/) tutorial) on a large text file, and got a vocabulary-extraction dataset that included stats as show below:
 
+<<<<<<< HEAD
 ![Engine Results](\images\EngineResults.png)
+=======
+![Engine Results](..\images\EngineResults.png)
+>>>>>>> 4856185b... Fixed broken links
 
 The highlighted portion is our custom summary block, showing that 8,104 vocabulary words were extracted from 96,059 total words in just 185 milliseconds.
 
