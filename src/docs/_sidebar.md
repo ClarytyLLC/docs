@@ -48,8 +48,8 @@
     - [Usage Reporting](/aiware/manage/usage.md)
     - [Maintenance](/aiware/manage/maintenance.md)
     - [Environment Variables](/aiware/install/envs.md) 
-    <!-- - [Troubleshooting](/aiware/troubleshooting/) -->
-    <!-- - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
+  <!-- - [Troubleshooting](/aiware/troubleshooting/) -->
+  <!-- - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
     - [Controller](/aiware/aiWARE-in-depth/controller)
@@ -63,7 +63,7 @@
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/) -->
-    <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
+  <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
 - [aiWARE Overview & Concepts](/concept-guides/)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
@@ -132,7 +132,7 @@
         - [Nudebox](/developer/machine-box/boxes/nudebox)
         - [Objectbox](/developer/machine-box/boxes/objectbox)
         - [Fakebox](/developer/machine-box/boxes/fakebox)
-        <!-- - [Cognitive Data Lake](/data-lake/)  -->
+  <!-- - [Cognitive Data Lake](/data-lake/)  -->
   - [Working with Structured Data](/data-lake/structured-data/)
     - [Quickstart](/data-lake/structured-data/quick-start/)
   - [Working with Search](/data-lake/search-quickstart/)
@@ -201,8 +201,8 @@
   <!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
-  [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
-  <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
+  <!-- - [Customizing Engine Output](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [Customizing Engine Input](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
@@ -211,7 +211,7 @@
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Training an Engine](/tutorials/pages/training-an-engine.md) -->
+  <!-- - [Training an Engine](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using MachineBox](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Upload files using the CMS app](/tutorials/pages/temp-under-construction.md) -->
@@ -307,5 +307,5 @@
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)
-  <!-- - [Clarity (BETA)](/benchmark/) -->
+<!-- - [Clarity (BETA)](/benchmark/) -->
 - [Developer Terms & Conditions](/terms-and-conditions/)
