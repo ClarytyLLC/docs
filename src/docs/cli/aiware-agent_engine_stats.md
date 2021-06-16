@@ -1,19 +1,19 @@
-## aiware-agent engine load
+## aiware-agent engine stats
 
-Loads the engine with the provided id to the agent.
+Get useful engine statistics for debugging purposes.
 
 ### Synopsis
 
-Loads the engine with the provided id to the agent.
+Get useful engine statistics for debugging purposes.
 
 ```
-aiware-agent engine load [flags]
+aiware-agent engine stats [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for load
+  -h, --help   help for stats
 ```
 
 ### Options inherited from parent commands
