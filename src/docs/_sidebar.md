@@ -74,9 +74,10 @@
     - [Controller](/aiware/aiWARE-in-depth/controller)
     - [Engines](/aiware/aiWARE-in-depth/engines)
     - [Adapters (Ingestion)](/aiware/aiWARE-in-depth/adapters/)
-    - [Job Processing](/aiware/aiWARE-in-depth/job-processing)
-    - [Job Examples](/aiware/aiWARE-in-depth/job-examples)
-    - [Single-Engine Jobs](/aiware/aiWARE-in-depth/single-engine-jobs)
+    - [Jobs](/aiware/aiWARE-in-depth/jobs)
+      - [Job Processing](/aiware/aiWARE-in-depth/job-processing)
+      - [Job Examples](/aiware/aiWARE-in-depth/job-examples)
+      - [Single-Engine Jobs](/aiware/aiWARE-in-depth/single-engine-jobs)
     - [File System](/aiware/aiWARE-in-depth/file-system)
     - [Stream Ingestor 2](/aiware/aiWARE-in-depth/stream-ingestor)
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
@@ -199,7 +200,7 @@
 
   <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Automate Studio Tutorials](/tutorials/pages/temp-under-construction.md) -->
+  - [Automate Studio Tutorials](/automate-studio/tutorials/README)
 
   <!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) -->
 
@@ -275,12 +276,12 @@
     - [JS API](/api/js/README.md)
     - [Python API](/api/python/README.md)
   - [CLI](/cli/aiware-agent.md)
-  - [Configuration](/config/admin.md) <!--/page-under-construction)-->
+  <!-- - [Configuration](/config/admin.md) /page-under-construction)
     - [Admin](/config/admin.md)
     - [Controller](/config/controller.md)
     - [DB](/config/db.md)
     - [NFS](/config/nfs.md)
-    - [Registry](/config/registry.md)
+    - [Registry](/config/registry.md) -->
   
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)

@@ -1,5 +1,9 @@
 <!-- markdownlint-disable -->
 
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Engines
 
 ## Engine Types

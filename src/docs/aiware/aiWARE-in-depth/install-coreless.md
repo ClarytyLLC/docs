@@ -1,4 +1,9 @@
 <!-- markdownlint-disable -->
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # How to Install aiWARE Edge
 
 This page describes how to install, configure, and validate an instance of Veritone aiWARE Edge (Coreless) for use in a fully network-isolated deployment.

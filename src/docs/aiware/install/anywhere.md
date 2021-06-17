@@ -61,3 +61,7 @@ curl -sfL https://get.aiware.com | sudo -E sh -
 ### Installing Docker 
 * [MacOS Docker Installation Guide](https://docs.docker.com/docker-for-mac/install/)
 * [Ubuntu Docker Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

@@ -1,3 +1,8 @@
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # How to View Job and Task Logs
 
 Below, we discuss how to use the Edge REST APIs to obtain engine logs at the job and task levels. This is done with GET calls.

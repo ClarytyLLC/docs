@@ -57,3 +57,7 @@
     Run a test Job:
     ai job create --help, to see how you can run a job.
     ai job get --help, to see how you can get job info.
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

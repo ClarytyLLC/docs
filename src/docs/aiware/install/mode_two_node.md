@@ -51,3 +51,7 @@ curl -sfL https://get.aiware.com | sudo sh -
 
 ### Step 4: Validate the Installation
 ADD
+
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>

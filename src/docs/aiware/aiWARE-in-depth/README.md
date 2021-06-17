@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 <!-- markdownlint-disable -->
 
 # Working with Self-Hosted aiWARE 

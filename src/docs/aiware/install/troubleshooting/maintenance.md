@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Maintenance 
 The following are maintenance steps that you can take to keep your cluster clean. 
 ## Clean Up Docker Images

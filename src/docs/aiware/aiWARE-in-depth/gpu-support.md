@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # GPU Support
 
 The aiWARE platform can take advantage of GPUs. This page shows the commands you will run to set up an Nvidia GPU-aware environment (via a Docker container). When the setup is complete, you can install aiWARE components (such as Edge) into that environment, and then GPU-aware cognitive engines can take advantage of GPU-based processing.

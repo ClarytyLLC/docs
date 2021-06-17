@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Adapters
 
 In aiWARE, an adapter is an engine that ingests data, usually by _pulling_ it from a public URL.

@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # aiWARE Architecture Overview
 
 Veritone's aiWARE architecture is a layered, componentized, open architecture, built with extensibility and integration-friendliness  in mind.

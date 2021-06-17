@@ -1,4 +1,7 @@
 <!-- markdownlint-disable -->
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
 
 # Engine Developer's Toolkit
 

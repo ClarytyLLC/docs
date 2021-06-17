@@ -2,6 +2,10 @@
 
 <!-- THIS IS STEALTH CONTENT (this page is deliberately not listed in sidebar) -->
 
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # How to Run aiWARE Locally
 
 1. Clone this repo [https://github.com/veritone/realtime](https://github.com/veritone/realtime)

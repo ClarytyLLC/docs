@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # aiWARE Anywhere - Proof of Concept Installation
 
 This step-by-step guide will help you have a instance of aiWARE Anywhere on a local environment. This can be used as a proof of concept environment to test any engines or applications on the aiWARE platform. 

@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Path to Monetization - Earn Revenue with Veritone
 
 As a developer partner in the Veritone Ecosystem, there are several ways to earn revenue from your software products.

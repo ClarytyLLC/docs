@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Glossary of Terms
 
 This section includes definitions of common words and phrases that you will encounter when learning about aiWARE.

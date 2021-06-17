@@ -1,3 +1,7 @@
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # AdminApi
 
 All URIs are relative to */edge/v1*

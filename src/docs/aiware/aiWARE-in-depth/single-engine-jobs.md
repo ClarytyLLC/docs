@@ -1,5 +1,9 @@
 <!-- markdownlint-disable no-inline-html -->
 <style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
+<style>
          pre {
             overflow-x: auto;
             white-space: pre-wrap;

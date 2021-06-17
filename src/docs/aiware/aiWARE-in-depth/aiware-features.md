@@ -1,5 +1,9 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+</style>
+
 # Veritone aiWARE Features
 
 ### Ingestion
