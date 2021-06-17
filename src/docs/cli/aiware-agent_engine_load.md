@@ -4,7 +4,7 @@ Loads the engine with the provided id to the agent.
 
 ### Synopsis
 
-Loads the engine with the provided id to the agent.
+Loads the engine with the provided id to the agent
 
 ```
 aiware-agent engine load [flags]
