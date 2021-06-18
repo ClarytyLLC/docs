@@ -11,7 +11,7 @@ In an Edge deployment, Agent is the only native process that is run directly on 
 All other subsystems are launched by agent as docker containers.
 
 
-aiWARE Agent leverages a configuration file, ~/.config/aiware-cli.yaal,  for the connection profiles including the default.
+aiWARE Agent leverages a configuration file, ~/.config/aiware-cli.yaml,  for the connection profiles including the default.
 
 Example config:
 profiles:
