@@ -227,7 +227,7 @@
 
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) 
+  - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
