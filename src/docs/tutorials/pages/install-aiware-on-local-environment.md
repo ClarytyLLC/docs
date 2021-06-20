@@ -2,7 +2,7 @@
 
 **APPROXIMATE READING TIME: 5 MINUTES**
 
-## Before we begin
+## Before we begin <!-- {docsify-ignore} -->
 
 If you're new to Veritone aiWARE, we will recommend you to read about aiWARE and its benefits using the below links.
 
@@ -12,15 +12,15 @@ If you're new to Veritone aiWARE, we will recommend you to read about aiWARE and
 
 [aiWARE-in-depth]()
 
-## Installing aiWARE Locally  
+## Installing aiWARE Locally  <!-- {docsify-ignore} -->
 
 In this step-by-step tutorial, we will explain how to install the aiWARE operating system on your local computer. We will provide installation instructions for both Linux (Ubuntu) and Mac Operating systems for easy creation and deployment of aiWARE resources anywhere. If you would rather install aiWARE on the cluster, check the aiWARE cluster installation instructions [here.]()
 
-## Expected Result
+## Expected Result <!-- {docsify-ignore} -->
 
 After following this step-by-step tutorial, you will be able to successfully install aiWARE as a service on your local machine and test its intelligent capabilities.
 
-## Steps  
+## Steps  <!-- {docsify-ignore} -->
 
 ## Installing aiWARE on Ubuntu
 
@@ -315,7 +315,7 @@ curl -sfL https://get.aiware.com | sh -
 
 To check the status of aiWARE Agent and download progress of container images, run `launchctl list | grep aiware-agent` command every few minutes.
 
-Note that downloading container images will take some time.Let the process complete before moving to the next step.
+Note that downloading of container images will take some time let the process complete before moving to the next step.
 
 
 ### Step 7: Validate aiWARE Installation
