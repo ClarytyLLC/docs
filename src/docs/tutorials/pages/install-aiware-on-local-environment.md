@@ -22,7 +22,7 @@ After following this step-by-step tutorial, you will be able to successfully ins
 
 ## Steps  <!-- {docsify-ignore} -->
 
-## Installing aiWARE on Ubuntu
+## Installing aiWARE on Ubuntu <!-- {docsify-ignore} -->
 
 ### System Requirements
 
@@ -34,7 +34,7 @@ After following this step-by-step tutorial, you will be able to successfully ins
 
 
 
-## Step 1: Open Terminal in Ubuntu
+### Step 1: Open Terminal in Ubuntu
 
 Open Terminal and access it as a root user. The root access is specified in Ubuntu Linux by root@hostname.
 
@@ -43,7 +43,7 @@ Open Terminal and access it as a root user. The root access is specified in Ubun
 
 
 
-## Step 2: Install Docker and dependencies
+### Step 2: Install Docker and dependencies
 
 aiWARE resources are packaged and deployed as [Docker](https://www.docker.com/) containers , so to initialize aiWARE, Docker is required,
 
@@ -230,7 +230,7 @@ In the response, GraphQL will send an API response which means aiWARE components
 
 
 
-## Installing aiWARE on Mac
+## Installing aiWARE on Mac <!-- {docsify-ignore} -->
 
    System Requirements
 
@@ -378,7 +378,7 @@ curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorizati
 ```
 
 
-## Final Result:
+### Final Result:
 
 In the response, GraphQL will send an API response which means aiWARE components are successfully installed and working perfectly. To know more about GraphQL basics, visit [here](https://docs.veritone.com/#/apis/tutorials/graphql-basics)
 
@@ -386,7 +386,7 @@ In the response, GraphQL will send an API response which means aiWARE components
 {"errors":[{"data":{"requestId":"AC110001:81E8_AC11000B:2328_60CCCF4C_013D:0023","contentType":"not set","errorId":"9fa4a6c2-ee6f-419d-a5ba-c5e16dcb63e2"},"name":"invalid_input","message":"The HTTP request has an invalid content type as sent in the \"Content-Type\" header. Acceptable content types are \"application/json\" and \"multipart/form-data\". See https://docs.veritone.com/#/apis/tutorials/graphql-basics for more information."}],"data":{}}
 ```
 
-## Next Steps
+## Next Steps <!-- {docsify-ignore} -->
 
 - [Install aiWARE on Cluster]()
 - [Know more about GraphQL API through Tutorials](https://docs.veritone.com/#/apis/tutorials/graphql-basics)
