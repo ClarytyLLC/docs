@@ -2,12 +2,16 @@
      p, ul, ol, li { font-size: 18px !important;}
      
      .container{
+        /* padding-right: 50px; */
         display: flex;
         flex-direction: column;
     }
     .section{
         display: flex;
+        justify-content: center;
+        /* align-items: center; */
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
     }
     .image-or-video{
@@ -21,14 +25,16 @@
     }
     .card{
         display: flex;
-        justify-content: space-between;
-        width: 333px;
+        margin: 15px;
+        /* justify-content: space-between; */
+        min-width: 333px;
         border: 0.5px solid #D5DFE9;
         background: #FFFFFF;
         padding: 10px;
         height: 110px;
         border-radius: 4px;
         text-decoration: none;
+        flex: 3;
     }
     .card:hover{
         background: #F9FCFF;
@@ -59,10 +65,16 @@
         padding: 15px 0px 25px 15px;
     }
     .card-container{
-    justify-content:space-between; 
-    background: #FAFAFA;
-    padding: 20px;
-    border-radius: 4px;
+        align-items: center;
+        background: #FAFAFA;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    .info-text{
+        padding-right:30px; 
+        padding-top:50px; 
+        flex: 6; 
+        min-width: 400px
     }
 </style>
 
@@ -80,7 +92,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/install/install">
 <div class="icon">
 
-![local](../laptop.svg)
+![local](../icons/laptop.svg)
 </div>
 <div class="card-content">
 <h3>Install on a Single Machine</h3>
@@ -93,7 +105,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/install/cluster?id=cluster-deployment">
 <div class="icon">
 
-![cluster](../install.svg)
+![cluster](../icons/install.svg)
 </div>
 <div class="card-content">
 <h3>Install Cluster</h3>
@@ -106,7 +118,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/install/validate">
 <div class="icon">
 
-![validate](../validate.svg)
+![validate](../icons/validate.svg)
 </div>
 <div class="card-content">
 <h3>Validate Install</h3>
@@ -126,7 +138,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/manage/">
 <div class="icon">
 
-![cluster-management](../cluster-management.svg)
+![cluster-management](../icons/cluster-management.svg)
 </div>
 <div class="card-content">
 <h3>Cluster Management Guide</h3>
@@ -139,7 +151,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/troubleshooting/">
 <div class="icon">
 
-![troubleshooting](../troubleshooting.svg)
+![troubleshooting](../icons/troubleshooting.svg)
 </div>
 <div class="card-content">
 <h3>Troubleshooting</h3>
@@ -152,7 +164,7 @@ Run aiWARE on the deployment footprint that suites your needs:
 <a class="card" href="/#/aiware/aiWARE-in-depth/">
 <div class="icon">
 
-![aiware-in-depth](../aiware-in-depth.svg)
+![aiware-in-depth](../icons/aiware-in-depth.svg)
 </div>
 <div class="card-content">
 <h3>aiWARE In-Depth</h3>
