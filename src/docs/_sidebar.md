@@ -39,9 +39,9 @@
     <!-- - [For Solution Architects](/getting-started/ml-integrator/) -->
     - [For MLOps Engineer](/getting-started/mlops-engineer/)
     - [More Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
-    
+
 - [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)  
-  - [Install Single Machine](/aiware/install/install.md) 
+  - [Install Single Machine](/aiware/install/install.md)
   - [Install Cluster](/aiware/install/cluster.md)
   - [Validate Install](/aiware/install/validate.md)
   - [Cluster Management Guide](/aiware/manage/)
@@ -49,7 +49,7 @@
     - [Sizing](/aiware/manage/sizing.md)
     - [Usage Reporting](/aiware/manage/usage.md)
     - [Maintenance](/aiware/manage/maintenance.md)
-    - [Environment Variables](/aiware/install/envs.md) 
+    - [Environment Variables](/aiware/install/envs.md)
     <!-- - [Troubleshooting](/aiware/troubleshooting/) -->
     <!-- - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
@@ -66,7 +66,7 @@
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/) -->
     <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
-  
+
 - [aiWARE Overview & Concepts](/concept-guides/)
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
@@ -82,8 +82,8 @@
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/)
-  - [Cognitive Technology](/cognitive-technology/) 
-    - [Capabilities](/cognitive-technology/cognitive/) 
+  - [Cognitive Technology](/cognitive-technology/)
+    - [Capabilities](/cognitive-technology/cognitive/)
       - [Audio Fingerprinting](/cognitive-technology/cognitive/audio/audio-fingerprinting/)
       - [Face Detection](/cognitive-technology/cognitive/biometrics/face-detection/)
       - [Face Recognition](/cognitive-technology/cognitive/biometrics/face-recognition/)
@@ -192,7 +192,7 @@
     - [OAuth](/developer/applications/oauth.md)
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
-  
+
 - [Tutorials](/tutorials/pages/temp-under-construction.md)
 
   <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
@@ -217,7 +217,7 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
 
   <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
 
@@ -227,7 +227,7 @@
 
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) -->
+  - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) 
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
@@ -278,7 +278,7 @@
     - [DB](/config/db.md)
     - [NFS](/config/nfs.md)
     - [Registry](/config/registry.md)
-  
+
 - [Automate Studio](/automate-studio/)
   - [Quickstart](/automate-studio/getting-started/README)
   - [Overview & Concepts](/automate-studio/application/README)
@@ -289,7 +289,7 @@
         - [Message (msg)](/automate-studio/application/README?id=message-msg)
         - [Context, Flow, and Global](/automate-studio/application/README?id=context-flow-and-global)
   - [Working with Flows](/automate-studio/working-with-flows/README)
-    - [Flow Basics](/automate-studio/working-with-flows/README?id=flow-basics) 
+    - [Flow Basics](/automate-studio/working-with-flows/README?id=flow-basics)
       - [Create New Flow](/automate-studio/working-with-flows/README?id=create-new-flow)
       - [Create New Flow From Template](/automate-studio/working-with-flows/README?id=create-new-flow-from-template)
       - [Open An Existing Flow](/automate-studio/working-with-flows/README?id=open-an-existing-flow)
@@ -331,5 +331,5 @@
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)
   <!-- - [Clarity (BETA)](/benchmark/) -->
-  
+
 - [Developer Terms & Conditions](/terms-and-conditions/)
