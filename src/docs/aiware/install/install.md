@@ -2,6 +2,7 @@
 
 * [Install on MacOS](#install-on-macos) 
 * [Install on Ubuntu](#install-on-ubuntu)
+* [Uninstall aiWARE Anywhere](#uninstall-aiware-anywhere)
 * [Appendix](#appendix)
 
 # Install
@@ -165,6 +166,12 @@
         }
     }
     ```
+    
+# Uninstall aiWARE Anhwhere
+To uninstall aiWARE Anywhere, run the following script: 
+```bash 
+sh /usr/local/bin/aiware-agent-uninstall.sh
+```
 
 # Appendix
 * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
