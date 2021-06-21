@@ -17,10 +17,18 @@ const docsifyConfig = {
   },
   basePath: "/docs",
   search: "auto", // default
+  search: {
+    maxAge: 86400000, // Expiration time, the default one day
+    paths: 'auto',
+    placeholder: 'Search...',
+    noData: 'No Results!',
+    // Headline depth, 1 - 6
+    depth: 6
+ },
   maxLevel: 1,
   repo: "",
   // routerMode: 'history',
-  subMaxLevel: 2,
+  subMaxLevel: 1,
   loadSidebar: true,
   auto2top: true,
   coverpage: true,

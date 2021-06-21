@@ -9,6 +9,7 @@
         display: flex;
         flex-direction: column;
     }
+
     .section{
         display: flex;
         justify-content: center;

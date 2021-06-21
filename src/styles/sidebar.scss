@@ -11,6 +11,10 @@
     color: inherit;
   }
   .logo {
+    position: fixed;
+    padding-bottom: 17px;
+    border-bottom: 1px solid lightgrey;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +46,7 @@
 
   /* Top-level ul */
   .sidebar-nav > ul {
+    padding-top: 80px;
     margin-left: $unit * 4;
 
     & > li {

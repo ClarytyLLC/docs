@@ -65,7 +65,7 @@ p.graphql-link {
     left: 0;
   }
   .content {
-    padding-top: 0px;
+    padding-top: 100px;
     left: 200px;
     position: fixed;
     overflow: auto;
@@ -75,6 +75,11 @@ p.graphql-link {
 
   .hide-in-embed-mode {
     display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .content {
+    padding-top: 100px;
   }
 }
 
