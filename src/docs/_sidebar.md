@@ -217,7 +217,9 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
+  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
+  - [Polling](/tutorials/pages/polling.md)
 
   <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
 
