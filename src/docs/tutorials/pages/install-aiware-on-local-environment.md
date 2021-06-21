@@ -209,11 +209,11 @@ service aiware-agent status
 
 
 
-6. Once all the core containers are launched. They can be easily tested.For instance, let's test aiWARE GraphQL by sending an **POST** request to the **GRAPHQL** server.
+6. Once all the core containers are launched. They can be easily tested. For instance, let's test aiWARE GraphQL by sending an **POST** request to the **GRAPHQL** server.
 
 ```
-curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root: f37c9708-0969-4ca7-b646-bed3e51845f1 --header 'Content-Type: application/json' --data '{"query":"query {
-  me {
+curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
+        me {
                 id
         }
     }"}'
@@ -224,7 +224,14 @@ curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorizati
 In the response, GraphQL will send an API response which means aiWARE components are successfully installed and responding perfectly. To know more about GraphQL commands, visit [here](https://docs.veritone.com/#/apis/tutorials/graphql-basics).
 
 ```
-{"errors":[{"data":{"requestId":"AC110001:81E8_AC11000B:2328_60CCCF4C_013D:0023","contentType":"not set","errorId":"9fa4a6c2-ee6f-419d-a5ba-c5e16dcb63e2"},"name":"invalid_input","message":"The HTTP request has an invalid content type as sent in the \"Content-Type\" header. Acceptable content types are \"application/json\" and \"multipart/form-data\". See https://docs.veritone.com/#/apis/tutorials/graphql-basics for more information."}],"data":{}}
+{
+    "data": {
+        "me": {
+            "id": "7682"
+        }
+    }
+}
+
 ```
 
 
@@ -370,8 +377,8 @@ Note: If the specified containers dont show up, check the download progress of t
 4. Once all the aiWARE core components are up and running. They can be easily tested ; for instance, let's check aiWARE GraphQL API by sending an **POST** request to the **GRAPHQL** server.
 
 ```
-curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root: f37c9708-0969-4ca7-b646-bed3e51845f1 --header 'Content-Type: application/json' --data '{"query":"query {
-  me {
+curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
+        me {
                 id
         }
     }"}'
@@ -383,7 +390,13 @@ curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorizati
 In the response, GraphQL will send an API response which means aiWARE components are successfully installed and working perfectly. To know more about GraphQL basics, visit [here](https://docs.veritone.com/#/apis/tutorials/graphql-basics)
 
 ```
-{"errors":[{"data":{"requestId":"AC110001:81E8_AC11000B:2328_60CCCF4C_013D:0023","contentType":"not set","errorId":"9fa4a6c2-ee6f-419d-a5ba-c5e16dcb63e2"},"name":"invalid_input","message":"The HTTP request has an invalid content type as sent in the \"Content-Type\" header. Acceptable content types are \"application/json\" and \"multipart/form-data\". See https://docs.veritone.com/#/apis/tutorials/graphql-basics for more information."}],"data":{}}
+{
+    "data": {
+        "me": {
+            "id": "7682"
+        }
+    }
+}
 ```
 
 ## Next Steps <!-- {docsify-ignore} -->
