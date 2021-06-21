@@ -2,6 +2,7 @@
 
 * [Install on MacOS](#install-on-macos) 
 * [Install on Ubuntu](#install-on-ubuntu)
+* [Uninstall aiWARE Anywhere](#uninstall-aiware-anywhere)
 * [Appendix](#appendix)
 
 # Install
