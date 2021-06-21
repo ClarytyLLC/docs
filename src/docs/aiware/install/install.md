@@ -165,6 +165,12 @@
         }
     }
     ```
+    
+# Uninstall aiWARE Anhwhere
+To uninstall aiWARE Anywhere, run the following script: 
+```bash 
+sh /usr/local/bin/aiware-agent-uninstall.sh
+```
 
 # Appendix
 * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
