@@ -36,7 +36,7 @@
 </div>
 
 <!-- Hide the logo in the embed mode and only show text -->
-<div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
+<!-- <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div> -->
 
 - [Veritone aiWARE](/aiware/README.md)
 
