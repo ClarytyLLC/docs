@@ -1,6 +1,6 @@
 # Install aiWARE on Local Environment
 
-**APPROXIMATE READING TIME: 5 MINUTES**
+**APPROXIMATE READING TIME: 35 MINUTES**
 
 ## Before we begin <!-- {docsify-ignore} -->
 

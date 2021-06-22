@@ -22,13 +22,13 @@ const docsifyConfig = {
     paths: 'auto',
     placeholder: 'Search...',
     noData: 'No Results!',
-    // Headline depth, 1 - 6
+    //Headline depth, 1 - 6
     depth: 6
  },
-  maxLevel: 1,
+  maxLevel: 2,
   repo: "",
   // routerMode: 'history',
-  subMaxLevel: 1,
+  subMaxLevel: 2,
   loadSidebar: true,
   auto2top: true,
   coverpage: true,
