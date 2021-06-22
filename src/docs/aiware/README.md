@@ -29,7 +29,7 @@
     }
     .card{
         display: flex;
-        margin: 15px;
+        margin: 7.5px;
         /* justify-content: space-between; */
         min-width: 333px;
         border: 0.5px solid #D5DFE9;
@@ -71,7 +71,8 @@
     .card-container{
         align-items: center;
         background: #FAFAFA;
-        padding: 20px;
+        /* padding: 20px; */
+        padding: 7.5px;
         border-radius: 4px;
     }
     .info-text{

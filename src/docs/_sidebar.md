@@ -59,8 +59,8 @@
     - [Usage Reporting](/aiware/manage/usage.md)
     - [Maintenance](/aiware/manage/maintenance.md)
     - [Environment Variables](/aiware/install/envs.md)
-      <!-- - [Troubleshooting](/aiware/troubleshooting/) -->
-      <!-- - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
+    <!-- - [Troubleshooting](/aiware/troubleshooting/) -->
+    <!-- - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
     - [Controller](/aiware/aiWARE-in-depth/controller)
@@ -74,7 +74,7 @@
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
     - [Technologies Used](/aiware/aiWARE-in-depth/technologies-used/)
     - [Veritone Applications](/aiware/aiWARE-in-depth/apps/) -->
-      <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
+    <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
 
 - [aiWARE Overview & Concepts](/concept-guides/)
 
@@ -240,7 +240,7 @@
 
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) -->
+  - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
