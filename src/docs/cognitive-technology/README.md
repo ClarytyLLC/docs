@@ -1,6 +1,6 @@
 <!--TODO: Replace all references to "VDA", "Developer Application", and "Developer App" with "Veritone Developer"-->
 
-# Veritone's Cognitive Technology
+<!-- # Veritone's Cognitive Technology -->
 
 <style>
 
@@ -140,7 +140,87 @@
 
 </style>
 
-<div style="display:flex;">
+<style>
+     p, ul, ol, li { font-size: 18px !important;}
+     a {text-decoration: none !important}
+     .container{
+        /* padding-right: 50px; */
+        display: flex;
+        flex-direction: column;
+    }
+    .section{
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .image-or-video{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 500px;
+        height: 350px;
+        background: #FAFAFA;
+
+    }
+    .card{
+        display: flex;
+        margin: 7.5px;
+        /* justify-content: space-between; */
+        min-width: 333px;
+        border: 0.5px solid #D5DFE9;
+        background: #FFFFFF;
+        padding: 10px;
+        height: 110px;
+        border-radius: 4px;
+        text-decoration: none;
+        flex: 3;
+    }
+    .card:hover{
+        background: #F9FCFF;
+        border: 0.5px solid #118BBF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        height: 90px;
+    }
+    .card-content h3{
+        padding: 0;
+        margin: 0;
+    }
+    .card-content div{
+        color: #5C6269;
+        font-size: 12px;
+    }
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+        justify-content: space-between;
+        padding: 15px 0px 25px 15px;
+    }
+    .card-container{
+        align-items: center;
+        background: #FAFAFA;
+        padding: 7.5px;
+        border-radius: 4px;
+    }
+    .info-text{
+        padding-right:30px; 
+        padding-top:50px; 
+        flex: 6; 
+        min-width: 400px
+    }
+</style>
+
+<!-- <div style="display:flex;">
 <div style="width: 650px; height: 300px" display:inline><iframe src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" style="border:0;top:0;left:0;width:100%;height:100%;" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 <div style="float:right; width: 200px; padding-top: 125px">
@@ -149,17 +229,28 @@
     <a href="/#/apis" id="explore-api-basics-btn">EXPLORE API BASICS</a>
 </div>
 
+</div> -->
+
+# What is Veritone's Cognitive Technology? <!-- {docsify-ignore} -->
+
+<hr>
+
+<div class="section">
+<p class="info-text">
+The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. Choose from hundreds of available engines across various categories of cognition. Use either our unified API or UI to process your data — audio, video, image, text, and more — at scale, and from multiple sources and formats.
+</p>
+<div style="width: 500px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 </div>
 
-## What is Veritone's Cognitive Technology? <!-- {docsify-ignore} -->
-The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. Choose from hundreds of available engines across various categories of cognition. Use either our unified API or UI to process your data — audio, video, image, text, and more — at scale, and from multiple sources and formats.
+<hr>
 
+[Learn How To Develop Cognitive Engines](/#/developer/engines/tutorial/)   |   [Explore API Basics](/#/apis)
 
 <hr>
 
 ## Explore aiWARE Cognitive Capabilities <!-- {docsify-ignore} -->
 
-<br>
+<!-- <br>
 
 <div style="display: flex">
     <div class="featureColumn">
@@ -167,7 +258,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class="featureText">
                 <h3>Anomaly Detection</h3>
                 <div>Identify data points, events, and observations that deviate from a dataset's normal behavior.</div>
-                <a class="link" href="/#/developer/engines/cognitive/text/anomaly-detection/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/text/anomaly-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -179,7 +270,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class="featureText">
                 <h3>Content Classification</h3>
                 <div>Use aiWARE to classify text into particular categories based on what words the text contains.</div>
-                <a class="link" href="/#/developer/engines/cognitive/text/content-classification/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/text/content-classification/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -191,7 +282,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class="featureText">
                 <h3>Entity Extraction</h3>
                 <div>Use Natural Language Processing (NLP) engines to label words, phrases or even concepts in text.</div>
-                <a class="link" href="/#/developer/engines/cognitive/text/entity-extraction/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/text/entity-extraction/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -203,7 +294,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class= "featureText">
                 <h3>Audio Fingerprinting</h3>
                 <div> Identify pre-recorded audio snippets in audio files based on a particular signature or "fingerprint."</div>
-                <a class="link" href="/#/developer/engines/cognitive/audio/audio-fingerprinting/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/audio/audio-fingerprinting/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -215,7 +306,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class= "featureText">
                 <h3>Correlation</h3>
                 <div>Associate data items based on some common factor, such as temporal co-occurrence.</div>
-                <a class="link" href="/#/developer/engines/cognitive/data/correlation/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/data/correlation/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -227,7 +318,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
             <div class= "featureText">
                 <h3>Face Detection</h3>
                 <div>Detect human faces in media assets, and locate them (within the visual frame) in terms of a bounding polygon.</div>
-                <a class="link" href="/#/developer/engines/cognitive/biometrics/face-detection/"> EXPLORE</a>
+                <a class="link" href="/#/cognitive-technology/cognitive/biometrics/face-detection/"> EXPLORE</a>
             </div>
             <div class= "featureImage">
                 <img src="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4" alt="https://avatars3.githubusercontent.com/u/6934985?s=200&v=4">
@@ -242,12 +333,101 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
 </div>
 -->
 <br>
-<br>
+<div class="section card-container">
+
+<!-- anomaly -->
+<a class="card" href="/#/cognitive-technology/cognitive/text/anomaly-detection/">
+<div class="icon">
+
+![anomaly](./icons/anomaly.svg)
+</div>
+<div class="card-content">
+<h3>Anomaly Detection</h3>
+<div>
+    Identify data points, events, and observations that deviate from a dataset's normal behavior.
+</div>
+</div>
+</a>
+
+<!-- Audio Fingerprinting -->
+<a class="card" href="/#/cognitive-technology/cognitive/audio/audio-fingerprinting/">
+<div class="icon">
+
+![audio-fingerprint](./icons/audio-fingerprint.svg)
+</div>
+<div class="card-content">
+<h3>Audio Fingerprinting</h3>
+<div>
+    Identify pre-recorded audio snippets in audio files based on a particular signature or "fingerprint."
+</div>
+</div>
+</a>
+
+<!-- Content Classification -->
+<a class="card" href="/#/cognitive-technology/cognitive/text/content-classification/">
+<div class="icon">
+
+![Content Classification](./icons/content-classification.svg)
+</div>
+<div class="card-content">
+<h3>Content Classification</h3>
+<div>
+    Use aiWARE to classify text into particular categories based on what words the text contains.
+</div>
+</div>
+</a>
+
+<!-- Correlation -->
+<a class="card" href="/#/cognitive-technology/cognitive/data/correlation/">
+<div class="icon">
+
+![Correlation](./icons/correlation.svg)
+</div>
+<div class="card-content">
+<h3>Correlation</h3>
+<div>
+Associate data items based on some common factor, such as temporal co-occurrence.
+</div>
+</div>
+</a>
+
+<!-- Entity Extraction -->
+
+<a class="card" href="/#/cognitive-technology/cognitive/text/entity-extraction/">
+<div class="icon">
+
+![Entity Extraction](./icons/entity-extraction.svg)
+</div>
+<div class="card-content">
+<h3>Entity Extraction</h3>
+<div>
+    Use Natural Language Processing (NLP) engines to label words, phrases or even concepts in text.
+</div>
+</div>
+</a>
+
+<!-- Face Detection -->
+<a class="card" href="/#/cognitive-technology/cognitive/biometrics/face-detection/">
+<div class="icon">
+
+![Face Detection](./icons/face-detection.svg)
+</div>
+<div class="card-content">
+<h3>Face Detection</h3>
+<div>
+    Detect human faces in media assets, and locate them (within the visual frame) in terms of a bounding polygon.
+</div>
+</div>
+</a>
+
+
+</div>
+
 <hr>
 
-## Do more with aiWARE <!-- {docsify-ignore} -->
-<br>
-<div style="display: flex">
+<!-- ## Do more with aiWARE {docsify-ignore} -->
+<!-- <br> -->
+<!-- <div style="display: flex">
     <div class="do-more-aiware-featureColumn">
         <div class="featureBox"> 
             <div class="do-more-aiwareFeatureText">
@@ -269,8 +449,8 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
 </div>
 
 
-## Whats New <!-- {docsify-ignore} -->
-<div class= "newsSectionColumn">
+<!-- ## Whats New {docsify-ignore} -->
+<!-- <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
             06/22/2020
@@ -294,7 +474,7 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
     <div class="newsColumn">
         - New documentation tells how you can <a class="in-text-link" href="/#/benchmark/"> benchmark</a> your engines with the Benchmark app (beta).
         <br>
-        - New documentation on how to update <a class="in-text-link" href="/#/developer/engines/"> cognitive engines</a> for the latest version of aiWARE Edge.
+        - New documentation on how to update <a class="in-text-link" href="/#/cognitive-technology/"> cognitive engines</a> for the latest version of aiWARE Edge.
         <br>
         - New Automate Studio <a class="in-text-link" href="/#/automate-studio/faq"> FAQ</a>.
     </div>
@@ -314,8 +494,5 @@ The aiWARE platform lets you build and use end-to-end, AI-powered solutions — 
         - All of your engines, both ingestion and cognitive types are displayed in one centralized table for you to view, filter, and query
     </div>
 </div>
-<hr>
+<hr> -->
 
-<style>
-     p, ul, ol, li { font-size: 18px !important;}
-</style>
