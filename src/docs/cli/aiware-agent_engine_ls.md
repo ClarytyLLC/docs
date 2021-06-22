@@ -13,8 +13,23 @@ aiware-agent engine ls [flags]
 ### Options
 
 ```
-  -h, --help         help for ls
-  -o, --out string   File to use for the generated output
+      --application-id string    Filter by application ID
+      --category-id string       Filter by engine category ID
+      --end-time string          Filter by engines that started before the specified time
+  -h, --help                     help for ls
+  -i, --id string                Filter by engine ID
+  -l, --limit int                This limits the result to the specified page size (default 100)
+  -n, --name string              Filter by engine name
+      --offset int               This skips the specified number
+      --order-by string          Order by a particular field
+      --order-direction string   Ascending or descending order (asc, desc)
+      --organization-id string   Filter by organization ID
+  -o, --out string               File to use for the generated output
+      --output-type string       Filter by engine output type (stream, batch, chunk, any)
+      --preload string           Filter by preload (true, false)
+      --start-time string        Filter by engines that started after the specified time
+  -s, --state string             Filter by engine state (active, paused, replace, ready)
+  -t, --type string              Filter by engine type (stream, batch, chunk, any)
 ```
 
 ### Options inherited from parent commands
