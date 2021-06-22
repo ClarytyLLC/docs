@@ -214,9 +214,9 @@
     }
     .info-text{
         padding-right:30px; 
-        padding-top:50px; 
+        /* padding-top:10px;  */
         flex: 6; 
-        min-width: 400px
+        min-width: 350px
     }
 </style>
 
@@ -233,13 +233,11 @@
 
 # What is Veritone's Cognitive Technology? <!-- {docsify-ignore} -->
 
-<hr>
-
 <div class="section">
 <p class="info-text">
 The aiWARE platform lets you build and use end-to-end, AI-powered solutions — from data ingestion to intelligent data analysis — accessible in the application of your choice. Choose from hundreds of available engines across various categories of cognition. Use either our unified API or UI to process your data — audio, video, image, text, and more — at scale, and from multiple sources and formats.
 </p>
-<div style="width: 500px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 400px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:400px; height:350px" src="https://player.vimeo.com/video/375686298?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 </div>
 
 <hr>
