@@ -77,9 +77,9 @@
     }
     .info-text{
         padding-right:30px; 
-        padding-top:50px; 
+        /* padding-top:10px;  */
         flex: 6; 
-        min-width: 400px
+        min-width: 350px
     }
 </style>
 
@@ -92,7 +92,7 @@
 Veritone aiWARE is a production-proven AI platform that lets you harness the power of AI anywhere, any time. Cognitively enable new or existing apps rapidly, using a unified API for more than 300 engines available on the aiWARE platform. Deploy enterprise-grade solutions at scale, using our infrastructure or your own. Process massive amounts of data — audio, video, image, text, and more — to extract actionable intelligence. Boost the productivity of your business and IT teams by intelligently automating manual, repetitive, and data-driven tasks — no in-depth coding skills or AI expertise required.
 </p>
 
-<div style="width: 500px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:500px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width: 400px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:400px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 </div>
 

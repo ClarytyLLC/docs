@@ -72,9 +72,9 @@
     }
     .info-text{
         padding-right:30px; 
-        padding-top:50px; 
+        /* padding-top:10px;  */
         flex: 6; 
-        min-width: 400px
+        min-width: 350px
     }
 </style>
 
