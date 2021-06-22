@@ -81,7 +81,6 @@
 | *primary.cleantasks.enabled* | int64 | true |  | This enables or disables the processing of cleaning up tasks on the primary controller |
 | *primary.cleantasks.interval* | int64 | 1800 |  | The duration between runs of the cleaning running tasks |
 | *primary.cleantoken.enabled* | bool | true |  | This enables or disables the processing of cleaning up expired/old tokens |
-| *primary.core_health_check_frequency_sec* | int64 | 300 |  | The interval for core health check in sec |
 | *primary.cron.adhoc_chan_size* | int64 | 5000 |  | The size of channel for adhoc parallel processing |
 | *primary.cron.adhoc_enabled* | bool | true |  | On primary, cron adhoc job processing enabled. |
 | *primary.cron.adhoc_interval* | int64 | 20 |  | On primary, the interval for cron to query core for new adhoc jobs.  This can be between 0 and 604800 |
