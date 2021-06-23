@@ -30,7 +30,10 @@
   height: 70px;
 }
 
+
 </style>
+
+
 <div class="logo-wrapper">
   <a href="/"><div class="logo hide-in-embed-mode"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">VERITONE DOCS<span></div></a>
 </div>
@@ -47,7 +50,7 @@
   - [For Data Scientists](/getting-started/engine-developer/)
     <!-- - [For Solution Architects](/getting-started/ml-integrator/) -->
   - [For MLOps Engineer](/getting-started/mlops-engineer/)
-  - [More Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
+  - [More Tutorials](/tutorials/pages/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
 - [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)
 
   - [Install Single Machine](/aiware/install/install.md)
@@ -77,7 +80,7 @@
     <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
 
 - [aiWARE Overview & Concepts](/concept-guides/)
-  - [aiWARE Users](/aiware/users)
+
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
@@ -228,7 +231,7 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
   - [Getting Started](/tutorials/pages/getting-started.md)
-  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
 

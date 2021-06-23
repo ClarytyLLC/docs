@@ -112,6 +112,14 @@
     <script src="/docs/apis/swagger/swagger-ui-standalone-preset.js"> </script>
     -->
     <style>
+      .sidebar-toggle-button{
+        position: fixed;
+        background: white;
+        opacity: 1 !important;
+        padding: 30px 18px 22px;
+        top: -1px;        
+        left: -1px;
+      }
       #search-wrapper{
         display: flex;
         flex-direction: row;
@@ -174,6 +182,11 @@
        * Styles are slightly changed, and some actions are hidden in embed mode.
        */
       @media screen and (min-width: 718px) and (max-width: 720px) {
+        .headerbar {
+          display: flex;
+          width: 100% !important;
+          justify-content: space-between;
+        }
         ::-webkit-scrollbar {
           width: 8px !important;
         }
@@ -194,7 +207,15 @@
       @media only screen and (max-width: 768px) {
         .headerbar {
           display: flex;
-          width: 100%;
+          width: calc(100% - 50px);
+          justify-content: space-between;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        body.close .headerbar {
+          display: flex;
+          width: calc(100% - 50px);
           justify-content: space-between;
         }
       }
