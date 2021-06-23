@@ -207,7 +207,7 @@
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
 
-- [Tutorials](/tutorials/pages/temp-under-construction.md)
+- [Tutorials](/tutorials/)
 
   <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
@@ -230,7 +230,7 @@
   <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
-  - [Getting Started](/tutorials/pages/getting-started.md)
+  - [Getting Started with Core](/tutorials/pages/getting-started-with-core.md)
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)

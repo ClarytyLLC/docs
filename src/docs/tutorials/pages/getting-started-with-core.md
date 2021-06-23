@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with Core
 
 **APPROXIMATE READING TIME: 5 MINUTES**
 
