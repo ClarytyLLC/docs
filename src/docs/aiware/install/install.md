@@ -1,35 +1,83 @@
 # Contents <!-- {docsify-ignore} -->
 
-* [Install on MacOS](#install-on-macos) 
+**APPROXIMATE READING TIME: 35 MINUTES**
+
+* [Single Instance Install](#single-instance-install) 
 * [Install on Ubuntu](#install-on-ubuntu)
 * [Uninstall aiWARE Anywhere](#uninstall-aiware-anywhere)
 * [Appendix](#appendix)
 
 # Install
+You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow the instructions below. 
+<!-- Replace the above with Hub once released https://hub.aiware.com -->
 
 ## Dependencies
 
+* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
 * Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time)
 * Recommendeded Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engine running at a time)
-* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
+  * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
+  * [Docker on Ubuntu Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
 
-## Install on MacOS
+## Single Instance Install
 
-1. Open a Terminal window. This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
+1. Open a Terminal window. 
+   
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-1">
+    <label for="list-item-1"><span class="expandText">Open a Terminal window.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+   MacOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
+   
+   Ubuntu: Press `Ctrl` + `Alt` + `T` to open a terminal window.
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
-2. Find the IP address of the machine. This can be done in terminal by running the following:
+1. Change to root user 
+
+   The aiWARE installation needs elevated privileges to install
+
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-2">
+    <label for="list-item-2"><span class="expandText">Change to root user.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+
     ```bash
-    export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
+    sudo bash 
     ```
 
-3. Create necessary install directories 
-    ```bash
-    mkdir -p $HOME/aiware/cache
-    mkdir -p $HOME/aiware/root
-    ```
+    The root access is specified in Ubuntu Linux by root@hostname. For MacOS, root indicates that you have root access.
 
-4. Set the variables
+    <!-- make the screenshot smaller -->
+    <img src="https://user-images.githubusercontent.com/65766301/122611396-e3314800-d09e-11eb-8ce0-7fd9fbc5c2c6.PNG" width="500" align="middle" alt="screenshot 1"/>
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Set up environment variables (Optional).
+
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-3">
+    <label for="list-item-3"><span class="expandText">Set up environment variables (Optional).</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+
+    The following environment environments are necessary for an initial installation. `AIWARE_MODE` indicates the mode that should be installed. `AIWARE_MODE` with `single` mode installs the entire aiWARE stack on an instance. This is suitable for a single instance installation. This variable is broken up for a [cluster installation](/aiware/install/cluster). `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from termination. aiWARE gives each instance a lifecycle. `AIWARE_INIT_TOKEN` provides the initial admin token for the installation. 
+    <!-- single needs updating in code-->
+    <!-- #export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es,automate -->
+    <!-- if AIWARE_MODE isn't set, assume single -->
+
     ```bash
+    export AIWARE_MODE=single
+    export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
@@ -37,163 +85,381 @@
     Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
     you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
 
-5. Run install command
+    Set the [environment variables](/aiware/install/envs) that you want before installation. 
+
+    Tip: If you are reinstalling aiWARE on the machine, make sure that the variables are set to the right values. [Learn more](/aiware/troubleshooting/maintenance)
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Run install command
+
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-4">
+    <label for="list-item-4"><span class="expandText">aiWARE Installation.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
 
     ```bash
-    curl -sfL https://get.aiware.com | sh -
+    curl -sfL https://get.aiware.com |  sh -
     ```
 
-    This will install the aiware-agent as a service. You can check the status via running `launchctl list | grep aiware-agent`
+    This will install the aiware-agent as a service.
 
-6. Validate install
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
-    Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, cadvisor, aiware-controller, aiware-postgres, & aiware-registry.
+# Post Install
 
-    You can connect to the database at localhost:5342, or whichever port that you have specified for AIWARE_DB_PORT, with postgres/postgres as the username/password.
+## Validate aiWARE
 
-    Run: docker logs -tf aiware-controller, to see the activity of aiware-controller.
+We need to ensure that the aiware-agent service is running. 
 
-    Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
+1. Service Validation
+
+   Validate service installation by ensuring that the aiWARE Service is running.
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-5">
+   <label for="list-item-5"><span class="expandText">MacOS Service Validation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   MacOS: You can check the status of the installation via running `launchctl list | grep aiware-agent`
+
+   ![screenshot 2](https://user-images.githubusercontent.com/53197964/123053909-37973900-d3b9-11eb-9e29-590a14a113c6.png)
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-6">
+   <label for="list-item-6"><span class="expandText">Ubuntu Service Validation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   Ubuntu: This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
+
+   ![screenshot 3](https://user-images.githubusercontent.com/53197964/123047225-e5064e80-d3b1-11eb-8972-cdee8d8ee45d.png)
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Docker Container Validation 
+   
+   Validate that the Docker containers for aiWARE start as expected. 
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-7">
+   <label for="list-item-7"><span class="expandText">Docker container validation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   Run: `docker ps -a`. This should show the `aiware-prom-alertmgr`, `aiware-prometheus`, `cadvisor`, `aiware-controller`, and other services with the prefix `aiware-` 
+
+   ![screenshot 4](https://user-images.githubusercontent.com/53197964/123047643-64941d80-d3b2-11eb-8148-8eb58cf1ddc3.png)
+
+   If you notice any issues, visit the [Troubleshooting page](/aiware/install/troubleshooting/maintenance) for steps to address potential issues. 
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. aiWARE Validation 
+
+   Check to see if the aiWARE API is running and accessible. 
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-8">
+   <label for="list-item-8"><span class="expandText">aiWARE validation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
+
+   ```bash
+   { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
+   ```
+
+   If you are running aiWARE on a VM or remote machine, replace localhost with the IP address or hostname of that machine. 
+
+   If you run into issues, visit the [Troubleshooting page](/aiware/install/troubleshooting/maintenance) for steps to address potential issues. 
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Configure aiWARE CLI 
+
+   The aiWARE CLI is a helpful tool that interacts with aiWARE stack just deployed. 
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-9">
+   <label for="list-item-9"><span class="expandText">aiWARE CLI Configuration.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   Create `~/.config/aiware-cli.yaml`. This step is helpful if you are working with an aiWARE Anywhere installation that is not on your local environment or if you are managing multiple aiWARE Anywhere clusters. 
+
+   ```bash
+   ---
+   profiles:
+     default:
+       url: "http://localhost:9000/edge/v1"
+       token: "$AIWARE_INIT_TOKEN"
+   ```
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Create User(s) Using aiWARE CLI
+
+   A new user needs to be created to access tools such as the Edge UI. 
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-10">
+   <label for="list-item-10"><span class="expandText">Create a user.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   Running the following using the aiWARE CLI will create a new user `admin-user` with the password `test123`
+    
+   ```bash
+   ai users create -a --display-name Admin -e admin@admin.com --password test123 admin-user
+   ```
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Run install command for aiWARE Core (Optional)
+   <!-- to be removed -->
+   <!-- Note the default channel -->
+   <!-- Add to installation script, assume single -->
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-11">
+   <label for="list-item-11"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
 
     ```bash
-    { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
-    ```
-
-    Run a test Job:
-    ai job create --help, to see how you can run a job.
-    ai job get --help, to see how you can get job info.
-
-7. Run install command for aiWARE Core
-
-    ```bash
-    ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
+    ai hub install core
     ```
 
     This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
     it in realtime with `watch service aiware-agent status`.
 
-8. Test aiWARE GraphQL.
-    ```bash
-    curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
-          me {
-                  id
-            }
-        }"}'
-    ```
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
-    The above request should return the following:
-    ```bash
-    {
-        "data": {
-            "me": {
-                "id": "7682"
-            }
-        }
-    }
-    ```
+1. Next Steps 
 
-## Install on Ubuntu
+   Explore the full capabilities of aiWARE. You can review the following applications or jobs that you can take advantage of:
 
-1. Install Docker and dependencies
-    ```bash
-    sudo apt update -y 
-    sudo apt install docker.io nfs-common awscli uuid prometheus-node-exporter -y
-    ```
+   - [Admin](/aiware/aiWARE-in-depth/apps/?id=admin) <!-- doublecheck -->
+   - [Automate Studio](/aiware/aiWARE-in-depth/apps/?id=automate-studio)
+   - [CMS](/aiware/aiWARE-in-depth/apps/?id=cms)
+   - [Developer](/aiware/aiWARE-in-depth/apps/?id=developer)
+   - [Tutorials](/tutorials/pages/getting-started) <!-- update the link -->
+ 
 
-2. Find the IP address of the machine. This can be done in terminal by running the following:
-    ```bash
-    export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
-    ```
-
-3. Set the variables
-    ```bash
-    export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es
-    export AIWARE_HOST_EXPIRE=false
-    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for edge token
-    export AIWARE_CONTROLLER=http://$IPADDR:9000/edge/v1 # for localhost
-    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
-    ```
-    Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
-
-    This installation is a single user installation. If you want all users to use aiWARE, update the path of `AIWARE_HOME` to `/opt/aiware`
-
-4. Run install command
-    ```bash
-    curl -sfL https://get.aiware.com | sudo -E sh -
-    ```
-    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
-
-5. Validate install
-
-    Run: docker ps -a . This should show the aiware-prom-alertmgr, aiware-prometheus, aiware-controller, aiware-postgres, & aiware-registry.
-
-    You can connect to the database at localhost:5342, or whichever port that you have specified for AIWARE_DB_PORT, with postgres/postgres as the username/password.
-
-    Run: docker logs -tf aiware-controller, to see the activity of aiware-controller.
-
-    Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
-
-    ```bash
-    { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
-    ```
-
-    Run a test Job:
-    ai job create --help, to see how you can run a job.
-    ai job get --help, to see how you can get job info.
-
-6. Run install command for aiWARE Core
-
-    ```bash
-    ai --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
-    ```
-
-7. Test aiWARE GraphQL.
-    ```bash
-    curl --request POST --url http://localhost:8080/v3/graphql --header 'Authorization: Bearer root:2035f315-3bf9-44ea-9c33-71fc3d82ac04-17aa22ff-dbdd-40f5-ada1-a694c20c1719' --header 'Content-Type: application/json' --data '{"query":"query {
-            me {
-                    id
-            }
-        }"}'
-    ```
-
-    The above request should return the following:
-    ```bash
-    {
-        "data": {
-            "me": {
-                "id": "7682"
-            }
-        }
-    }
-    ```
-    
 # Uninstall aiWARE Anywhere
 To uninstall aiWARE Anywhere, run the following script: 
 ```bash 
 sh /usr/local/bin/aiware-agent-uninstall.sh
 ```
 
-# Appendix
-* [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
-
-## Environment variables for installation
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| AIWARE_DB_PORT | 5432 | The port to use for the PostgreSQL database |
-| AIWARE_HOME | /opt/aiware |The installation location for aiWARE |
-| AIWARE_CACHE | /opt/aiware/cache | The the cache directory to mount NFS servers on each local box |
-| AIWARE_AGENT_UPDATE_INTERVAL | 60 | The interval between updates on the agent to controller |
-| AIWARE_RUN_CONFIG | /var/run/aiware-agent.json | Location of stored configuration of aiWARE | 
-| AIWARE_REGION | us-east-1 | Only relevant for AWS | 
-| INSTALL_AIWARE_SKIP_START | false | If set to `true`, skip starting aiware |
-| INSTALL_AIWARE_SKIP_SERVICE | false | If set to `true`, skip installing as a service on the host |
-| INSTALL_AIWARE_VERSION | nil | If set, install this particular version |
-| INSTALL_AIWARE_CHANNEL | stable | This install the latest version from a particular channel.  The channels are: dev, stage, stable |
-| INSTALL_AIWARE_BIN_DIR | /usr/local/bin | Directory to install aiware-agent binary, links, and uninstall scripts |
-| INSTALL_AIWARE_SYSTEMD_DIR | /etc/systemd/system | Directory for systemd service |
-| INSTALL_AIWARE_EXEC | agent | command to pass to the service when starting.  By default it starts the agent |
 
 <style>
      p, ul, ol, li { font-size: 18px !important;}
+
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; padding-bottom: 25px; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #1871E8;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .inner-content p{
+        font-size: 18px;
+    }
+    .inner-content *{
+        font-size: 18px;
+    }
+    .inner-content code *{
+        font-size: 14px;
+    }
+
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#00a2ff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+li {
+    font-size: 16px;
+}
 </style>

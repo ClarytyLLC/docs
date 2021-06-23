@@ -19,6 +19,28 @@ You can now use the `default` profile with the `ai` command command to manage a 
 $ ai --profile default engine ls
 ```
 
+## Upgrading aiWARE
+
+Upgrading aiWARE is a quick process. We'll need to stop the stack before we can perform an upgrade. If this is an HA deployment, review the [cluster guide](/aiware/install/cluster) for inforomation about upgrading your cluster.
+```bash
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+# edit /etc/systemd/system/aiaware-agent.service.env as appropriate
+vi /etc/systemd/system/aiware-agent.service.env
+export $(cat /etc/systemd/system/aiware-agent.service.env | xargs)
+
+# Please validate there is AIWARE_CONTROLLER
+env | sort | grep AIWARE_
+
+curl -sfL https://get.aiware.com | sh -
+```
+
+In the output you will see the docker version installed on your local machine.
+
+![screenshot 4](https://user-images.githubusercontent.com/65766301/122611892-bdf10980-d09f-11eb-8c5b-45c2907f63e1.PNG)
+
 ## Engines
 
 ### List Existing Engines 

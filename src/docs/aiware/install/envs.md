@@ -1,8 +1,10 @@
 # Environment Variables
+<!-- pre-installation environment variables -->
 These may be set before the agent installer is run.  At least `AIWARE_MODE` must be set.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| AIWARE_ROOT | /opt/aiware | The aiWARE install directory |
 | AIWARE_MODE | nil | This is the mode for the host.  This can be comma separated list of modes.  Valid values are: None (Default), All, Single, Engine, db, Controller, NFS, redis, nsq, api, service, lb | 
 | INSTALL_AIWARE_SKIP_START | False | If true, the installer will not start aiWARE |
 | INSTALL_AIWARE_SKIP_SERVICE | False | If true, the installer will not install aiWARE  as a service |
