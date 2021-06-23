@@ -1956,6 +1956,9 @@ components:
         isEnabled:
           description: Is the core enabled
           type: boolean
+        jobPriorityAdjustment:
+          format: int64
+          type: integer
         modifiedDateTime:
           description: This is the datetime the core was last modified.
           example: '2018-03-20T09:12:28Z'
@@ -3526,6 +3529,44 @@ components:
       - paused
       - replace
       type: string
+    EngineStatsInfo:
+      properties:
+        CPUMSecondsPerCount:
+          description: amount of CPU time per hour
+          format: float
+          type: number
+        CPUMSecondsPerHour:
+          description: amount of CPU time per hour
+          format: float
+          type: number
+        count:
+          description: Total amount of tasks with a particular status and an engine
+          format: int64
+          type: integer
+        engineID:
+          format: uuid
+          type: string
+        engineName:
+          description: Engine name
+          example: Speechmatic en global engine
+          type: string
+        totalBytes:
+          description: Total amount of bytes used by engine
+          format: int64
+          type: integer
+        totalCPUMSeconds:
+          description: Total of time elapsed
+          format: int64
+          type: integer
+        totalCPUMSecondsPerMB:
+          description: Amount of milliseconds spent per mb
+          format: float
+          type: number
+        totalDuration:
+          description: Total amount of time spent running engine
+          format: int64
+          type: integer
+      type: object
     EngineStatusEnum:
       enum:
       - active
@@ -3957,6 +3998,28 @@ components:
           items:
             $ref: '#/components/schemas/EngineLaunchDetail'
           type: array
+        success:
+          $ref: '#/components/schemas/OperationSuccess'
+      type: object
+    GetEngineStatsResponse:
+      example:
+        engines:
+        - CPUMSecondsPerCount: 27080.33333
+          CPUMSecondsPerHour: 3481757.14286
+          count: 3
+          engineID: 9e611ad7-2d3b-48f6-a51b-0a1ba40fe255
+          engineName: Webstream Adapter V3F
+          totalBytes: 4326453
+          totalCPUMSeconds: 58343
+          totalCPUMSecondsPerMB: 6014.1726
+          totalDuration: 86
+      properties:
+        engines:
+          items:
+            $ref: '#/components/schemas/EngineStatsInfo'
+          type: array
+        error:
+          $ref: '#/components/schemas/Error'
         success:
           $ref: '#/components/schemas/OperationSuccess'
       type: object
@@ -8546,7 +8609,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.4.8
+  version: 3.18.4.2824
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
@@ -12013,6 +12076,118 @@ paths:
       security:
       - api_key: []
       summary: This API creates a new engine
+      tags:
+      - engine
+  /admin/engine/stats:
+    get:
+      operationId: get_engine_stats
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEngineStatsResponse'
+          description: Engine statisitcs
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This gets useful engine statistics
       tags:
       - engine
   /admin/engine/{EngineID}/builds:
