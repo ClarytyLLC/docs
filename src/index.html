@@ -56,34 +56,42 @@
   </head>
 
   <body>
-    <nav class="vtn-action-links hide-in-embed-mode">
-      <a href="https://veritonedev.slack.com" target="_blank">
-        <!--suppress HtmlUnknownTarget -->
-        <img
-          src="/docs/_media/slack.svg"
-          style="margin-right: 4px; top: 2px; position: relative"
-          alt="Slack logo"
-        />
-        <span class="nav-label"> Chat </span>
-      </a>
-      <a href="https://github.com/veritone/" target="_blank">
-        <!--suppress HtmlUnknownTarget -->
-        <img
-          src="/docs/_media/github.png"
-          style="width: 16px; margin-right: 4px; top: 2px; position: relative"
-          alt="GitHub logo"
-        />
-        <span class="nav-label"> Code </span>
-      </a>
-      <a href="https://www.npmjs.com/org/veritone" target="_blank">
-        <!--suppress HtmlUnknownTarget -->
-        <img
-          src="/docs/_media/npm.png"
-          style="height: 13px; margin-right: 4px; top: 2px; position: relative"
-          alt="NPM logo"
-        />
-        <span class="nav-label"> Packages </span>
-      </a>
+    <nav class=" headerbar vtn-action-links ">
+      <div id="search-wrapper">
+          <img 
+            class="search-icon" 
+            src="/docs/_media/search-icon.svg">
+        </img>
+      </div>
+      <div class="headbar-icons">
+        <a href="https://veritonedev.slack.com" target="_blank">
+          <!--suppress HtmlUnknownTarget -->
+          <img
+            src="/docs/_media/slack.svg"
+            style="margin-right: 4px; top: 2px; position: relative"
+            alt="Slack logo"
+          />
+          <span class="nav-label"> Chat </span>
+        </a>
+        <a style="margin-left: 12px;" href="https://github.com/veritone/" target="_blank">
+          <!--suppress HtmlUnknownTarget -->
+          <img
+            src="/docs/_media/github.png"
+            style="width: 16px; margin-right: 4px; top: 2px; position: relative"
+            alt="GitHub logo"
+          />
+          <span class="nav-label"> Code </span>
+        </a>
+        <a style="margin-left: 12px;" href="https://www.npmjs.com/org/veritone" target="_blank">
+          <!--suppress HtmlUnknownTarget -->
+          <img
+            src="/docs/_media/npm.png"
+            style="height: 13px; margin-right: 4px; top: 2px; position: relative"
+            alt="NPM logo"
+          />
+          <span class="nav-label"> Packages </span>
+        </a>
+      </div>
     </nav>
     <div id="app"></div>
 
@@ -104,6 +112,58 @@
     <script src="/docs/apis/swagger/swagger-ui-standalone-preset.js"> </script>
     -->
     <style>
+      #search-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex:1
+      }
+      .search{
+        flex: 1;
+        margin: 0;
+      }
+      .search input:focus{
+        box-shadow: none !important;
+        border: 1px solid #fff;
+        border-bottom: 1px solid lightgray;
+      }
+      .search-icon{
+        height: 18px;
+        width: 18px;
+        margin-left: 20px;
+        margin-top: 15px;
+      }
+      .results-panel{
+        background: #FFF;
+        max-height: 600px;
+        overflow-y: scroll;
+        border: 1px solid lightgray;
+      }
+      .matching-post{
+        text-align: left !important;
+        padding: 10px;
+      }
+      .headerbar {
+        display: flex;
+        width: calc(100% - 300px);
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+        background: white;
+      }
+      .headbar-icons{
+        padding-top: 15px;
+        margin-right: 25px;
+      }
+      .app-nav{
+        position: fixed;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .app-nav.no-badge{
+        margin: 0;
+      }
+
       :root {
         --docsifytabs-border-color: #ededed;
         --docsifytabs-tab-highlight-color: rgb(0, 162, 255);
@@ -128,6 +188,14 @@
         ::-webkit-scrollbar-thumb {
           background: #c4c4c4 !important;
           border-radius: 3px !important;
+        }
+
+      }
+      @media only screen and (max-width: 768px) {
+        .headerbar {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
         }
       }
     </style>

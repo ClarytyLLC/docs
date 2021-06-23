@@ -57,15 +57,15 @@ p.graphql-link {
 
 // embed mode
 @media screen and (min-width: 718px) and (max-width: 720px) {
-  main {
-    height: 100%;
-  }
+  // main {
+  //   height: 100%;
+  // }
 
   .sidebar {
     left: 0;
   }
   .content {
-    padding-top: 0px;
+    padding-top: 100px;
     left: 200px;
     position: fixed;
     overflow: auto;
@@ -75,6 +75,11 @@ p.graphql-link {
 
   .hide-in-embed-mode {
     display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .content {
+    padding-top: 100px;
   }
 }
 
@@ -90,3 +95,4 @@ p.graphql-link {
     display: none !important;
   }
 }
+ p, ul, ol, li { font-size: 18px !important;}
