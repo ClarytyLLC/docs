@@ -197,7 +197,7 @@
 
   <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
+  - [Adding  Custom Fields](/tutorials/pages/adding-custom-fields.md)
 
   <!-- - [Automate Studio Tutorials](/tutorials/pages/temp-under-construction.md) -->
 
@@ -221,8 +221,6 @@
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
 
-  <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
-
   <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
@@ -230,10 +228,9 @@
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [Install aiWARE on local environment](/tutorials/pages/temp-under-construction.md) -->
-  
+
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Training an Engine](/tutorials/pages/training-an-engine.md) -->
   <!-- - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md) -->
@@ -244,7 +241,13 @@
   <!-- - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
+  
+  - [Working with Jobs](/tutorials/pages/working-with-jobs.md)
+  
+  
+  
   <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
+  
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
