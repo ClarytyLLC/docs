@@ -8,7 +8,7 @@ th { text-align:left; }
 
 **APPROXIMATE READING TIME: 8 MINUTES**
 
-It is easy to get started with Veritones aiWARE platform. Runnig a cognition job is just few steps away.
+It is easy to get started with Veritone's aiWARE platform. Running a cognition job is just few steps away.
 
 
 ## Step 1: Register for free <!-- {docsify-ignore} -->
@@ -62,10 +62,10 @@ Using the **Admin App** it is easy to manage your organization details, edit pro
 
 > Visit [developer.veritone.com](https://developer.veritone.com/)
 
-Just like the name says, this is the development platform where you can build your own costum engines, schemas, adapters, or even create your own applications.
+Just like the name says, this is the development platform where you can build your own custom engines, schemas, adapters, or even create your own applications.
 
 
-In the next sections we will learn how to run an existig engine in few simple steps.
+In the next sections we will learn how to run an existing engine in few simple steps.
 
 
 ### AUTOMATE STUDIO
@@ -74,7 +74,7 @@ In the next sections we will learn how to run an existig engine in few simple st
 
 Veritone **Automate Studio** is a low-code workflow designer that empowers technical and business teams to tap into a full-stack AI architecture to design and deploy AI-powered business processes at scale in days, not months. Leverage an intuitive drag-and-drop UI to easily create advanced business logic on a digital canvas, without the need for in-depth coding skills or AI expertise. Automate Studio enables intelligent process automation (IPA) and workflow enrichment across both new and existing systems and applications.
 
-?>Learn how to use Automate Studio and build your first flow by visitin the [Automate Studio](/automate-studio/) section
+?>Learn how to use Automate Studio and build your first flow by visiting the [Automate Studio](/automate-studio/) section
 
 
 </li>                  
