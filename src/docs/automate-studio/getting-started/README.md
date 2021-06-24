@@ -192,7 +192,7 @@ label {
         border: 1px solid #fff;
         border-radius: 7px;
         border-bottom: none;
-        background-color: #766;
+        background-color: #1871E8;
         position: relative;
     }
 
