@@ -95,7 +95,6 @@ Veritone aiWARE is a production-proven AI platform that lets you harness the pow
 <div style="width: 400px; height: 350px; flex: 6;" display:inline><iframe style="border: none; width:400px; height:350px" src="https://player.vimeo.com/video/548657409?color=ff9933&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 </div>
-
 <hr>
 
 ## aiWARE: The Operating System for Artificial Intelligence 
