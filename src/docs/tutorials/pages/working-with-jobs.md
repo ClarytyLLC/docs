@@ -4,7 +4,7 @@
 
 >**Tip** Before getting started, we recommend to read about [available engines](https://docs.veritone.com/#/cognitive-technology/) that you can use in Veritone.
 
-## Subject Description <!-- {docsify-ignore} -->
+## Creating and Running Jobs <!-- {docsify-ignore} -->
 
 **aiWare** lets you define Jobs that in turn consist of Tasks. A job is the smallest building block that can be processed by the engine. All engines in aiWARE break up a workflow into multiple jobs. You must understand that a typical workflow might use multiple engines. Jobs, and their tasks, lets you design and build your workflow utilizing the [available engines](https://docs.veritone.com/#/cognitive-technology/).
 

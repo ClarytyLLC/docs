@@ -236,7 +236,7 @@
 
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
+  <!-- - [How to get your engine approved](/tutorials/pages/how-to-get-egine-approved.md) -->
 
 
   - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 
@@ -254,16 +254,16 @@
   <!-- - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
-  
+
   - [Working with Jobs](/tutorials/pages/working-with-jobs.md)
+
   
-  
-  
+
   <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
 
-    
-    
-    
+
+​    
+​    
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
 
   - [Core APIs](/apis/using-graphql.md)
