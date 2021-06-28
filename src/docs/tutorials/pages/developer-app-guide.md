@@ -27,11 +27,10 @@ After following this step-by-step tutorial, you will be successfully able to use
 
 As of now, the Developer app includes the resources on the upper left for configuring and extending aiWARE. (see the below screenshot).
 
-Screenshot 1
+![Screenshot 1](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%201.PNG)
+
 
 At a high level, you will see seven options on the upper left corner to carry out AI operations.
-
-- Overview
 
 - (+)Create New
 
@@ -53,7 +52,7 @@ Ready to get started? Let's go.
 
 Once you sign in to the developer app using the veritone account, by default, you are redirected to an overview page that provides the status of your created engines and applications.
 
-Screenshot 1
+![Screenshot 1](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%201.PNG)
 
 To know more about Engines and how to create an Engine, check getting started with [engines](https://docs.veritone.com/#/developer/engines/getting-started/).
 
@@ -63,7 +62,8 @@ To know how to create an AI app, check [building applications](https://docs.veri
 
 Clicking on the create new button will list the AI resources you can create using the developer app.
 
-screenshot 2
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/Screenshot2.PNG)
+
 As seen in the above screenshot, these are the following resources you can create
 
 ### Flow:
@@ -128,29 +128,32 @@ To learn the basics of Veritone Benchmark(Clarity) and run benchmarks, visit our
 
 Click on the Engines tab on the upper left will provide you the list of engines registered on the Veritone network. (see the below screenshot)
 
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%203.PNG)
+
 For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities your Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities).  (Click on the particular capability in the table to get detailed information about the engine input and output).
-
-
-screenshot 3:
 
 You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about Face Detection - F V3 engine.
 
 Clicking on the Face Detection - F V3 engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs. (see the screenshot below)
 
-screenshot 4
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%204.PNG)
 
 Builds: Provide specific information on how many times an engine was build and deployed.
 
-screenshot 5
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%205.PNG)
+
+
 
 
 Tasks: Processed run by users on that Engine.
 
-screenshot 6
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%206.PNG)
+
+
 
 Logs: Record of events that occur during the run of an engine
 
-Screenshot 7
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%207.PNG)
 
 
 
@@ -158,7 +161,7 @@ Screenshot 7
 
 Clicking on the Applications tab on the upper left will list the applications created using the veritone developer platform.
 
-screenshot 8
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screeenshot%208.PNG)
 
 To know how to create your own App, check our step-by-step [build your own AI app](https://docs.veritone.com/#/developer/applications/app-tutorial/) guide to build and integrate an app in the Veritone Platform.
 
@@ -166,11 +169,11 @@ To know how to create your own App, check our step-by-step [build your own AI ap
 
 Clicking on the Automate Studio on the upper left redirects you to the Automate studio App
 
-screenshot 9  
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%209.PNG)
 
 Automate Studio is a low-code workflow designer that leverages an intuitive drag-and-drop UI to easily create advanced business solutions without the need for in-depth coding skills or AI expertise.
 
-screenshot 10
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2010.PNG)
 
 To know the basics of Veritone Automate Studio, visit  [ Automate Studio Overview ](https://docs.veritone.com/#/automate-studio/application/README) for more information
 
@@ -179,7 +182,7 @@ To know the basics of Veritone Automate Studio, visit  [ Automate Studio Overvie
 
 Clicking on the Machine Box on the upper left redirects you to the Veritone Machine Box app, which allows you to integrate, deploy and scale Machine Learning capabilities fast, on-prem, or in the cloud.
 
-screenshot 11
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2011.PNG)
 
 In the developer app, you get an option to upgrade your Machine Box plan to Enterprise. Machine box is free for developers, but there is an enterprise plan for companies that allows the creation of unlimited boxes.
 
@@ -203,9 +206,11 @@ To know more about Machine Box and its capabilities, check [here](https://docs.v
 
 Clicking on the Benchmark App in the upper left corner redirects you to the Veritone Clarity Benchmark app, which allows you to compare engine results for efficiency can performance.
 
-screenshot 12
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2014.PNG)
 
 To know how to benchmark an engine using the Clarity Benchmark App, visit [Clarity Overview](https://docs.veritone.com/#/benchmark/?id=introduction) for more information.  
+
+![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2013.PNG)
 
 ## Next Steps <!-- {docsify-ignore} -->
 
