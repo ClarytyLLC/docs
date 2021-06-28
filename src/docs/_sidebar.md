@@ -217,19 +217,19 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
 
   <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
 
-  <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
+   - [Developer App Guide](/tutorials/pages/developer-app-guide.md) 
 
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 
+  - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md)
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
