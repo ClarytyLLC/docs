@@ -4,7 +4,7 @@
 
 ## Before we begin <!-- {docsify-ignore} -->
 
-If you're new to Veritone aiWARE and Developer app, we recommend you read about aiWARE and its applications using the below links.
+If you're new to Veritone aiWARE and Developer app, we recommend you read about aiWARE and its applications using the links below.
 
 [aiWARE Overview](https://docs.veritone.com/#/aiware/README)
 
@@ -25,7 +25,7 @@ After following this step-by-step tutorial, you will be successfully able to use
 
 ## Guide Overview <!-- {docsify-ignore} -->
 
-As of now, the Developer app includes the resources on the upper left for configuring and extending aiWARE. (see the below screenshot).
+As of now, the Developer app includes the resources on the upper left for configuring and extending aiWARE. See the screenshot below.
 
 ![Screenshot 1](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%201.PNG)
 
@@ -121,15 +121,15 @@ To learn the basics of Veritone Benchmark(Clarity) and run benchmarks, check [Cl
 
 ## Developer App: Engines <!-- {docsify-ignore} -->
 
-Clicking on the Engines tab on the upper left will provide you the list of engines registered on the Veritone network. (see the below screenshot)
+Clicking on the Engines tab on the upper left will provide you with a list of engines you have access to on the Veritone network. This will include both private engines you have created as well as public engines that you can use. See the screenshot below.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%203.PNG)
 
-For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities your Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities). 
+For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities each Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities). 
 
-You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about Face Detection - F V3 engine.
+You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about "Face Detection - F V3" engine.
 
-Clicking on the Face Detection - F V3 engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs. (see the screenshot below)
+Clicking on the "Face Detection - F V3" engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs.See the screenshot below.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%204.PNG)
 
