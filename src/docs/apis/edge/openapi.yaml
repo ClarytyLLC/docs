@@ -7131,7 +7131,7 @@ components:
       enum:
       - subscribe
       - ack
-      - unsubcribe
+      - unsubscribe
       - taskOutput
       - taskStatus
       type: string
@@ -8654,6 +8654,10 @@ components:
       properties:
         aion:
           type: object
+        chunkID:
+          description: chunk ID
+          format: string
+          type: string
         jobID:
           description: Core Job ID
           format: string
@@ -8736,7 +8740,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.4.2855
+  version: 3.18.4.2856
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
