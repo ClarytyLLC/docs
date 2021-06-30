@@ -268,6 +268,8 @@ For example, If we want to provide a **media url** to our AI Cognition Flow ( cl
 
 ?>Regardless of how you initiate the **POST**, be sure to set the header: **“content-type”: “application/json”**
 
+Set the header: **"Authorization": "Bearer token". Click [here](/automate-studio/working-with-flows/README?id=authentication) to know how to get token.
+
 If the Flow is started successfully, we will receive a response in the following format:
 ```json
 {
