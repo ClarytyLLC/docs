@@ -8740,7 +8740,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.1.2869
+  version: 3.19.1.2870
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
