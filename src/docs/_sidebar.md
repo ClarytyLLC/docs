@@ -57,7 +57,7 @@
   - [Install Cluster](/aiware/install/cluster.md)
   - [Validate Install](/aiware/install/validate.md)
   - [Cluster Management Guide](/aiware/manage/)
-    - [Air Gapped Install](/aiware/install/airgap/)
+    - [Air Gapped Install](/aiware/install/airgap.md)
     - [Prerequisites](/aiware/install/prereq.md)
     - [Sizing](/aiware/manage/sizing.md)
     - [Usage Reporting](/aiware/manage/usage.md)
