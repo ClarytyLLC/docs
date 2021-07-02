@@ -2385,6 +2385,9 @@ components:
           type: string
         basePriority:
           type: integer
+        coreID:
+          format: uuid
+          type: string
         coreOrganizationID:
           type: integer
         createdDateTime:
@@ -8740,7 +8743,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.1.2874
+  version: 3.19.1.2875
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
