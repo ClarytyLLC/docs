@@ -5689,6 +5689,10 @@ components:
         numGPU:
           description: The number of GPU attached to the container
           type: integer
+        startupTimestamp:
+          description: The engine instance startup timestamp in UTC
+          format: int64
+          type: integer
         ttl:
           description: the remaining TTL for the engine instance
           format: int64
@@ -8743,7 +8747,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.1.2878
+  version: 3.19.1.2880
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
