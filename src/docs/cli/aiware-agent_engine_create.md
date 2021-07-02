@@ -13,9 +13,13 @@ aiware-agent engine create [flags]
 ### Options
 
 ```
+      --build-id string               Build id from Core to use.
+      --docker-image string           Docker image name for the build.
       --engine-category-id string     Engine Category ID to use for engine.
       --engine-category-name string   Engine Category Name to use for engine
+      --engine-id string              Engine id from Core to use.
   -h, --help                          help for create
+      --manifest-engine-name string   Name of the engine specified in the manifest.
       --organization-id string        Organization ID to use for this engine.
       --organization-name string      Organization Name to use for this engine.
 ```
