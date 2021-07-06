@@ -8609,6 +8609,18 @@ components:
       - running
       - timeout
       type: string
+    controllerSubscriptions:
+      description: subscription of task
+      properties:
+        controllerOutputCallbackURI:
+          description: uri to receive output from engines when chunks are produced
+            for tasks/jobs in subscripttions
+          type: string
+        subscriptions:
+          items:
+            $ref: '#/components/schemas/Subscription'
+          type: array
+      type: object
     socketAck:
       description: message sent to client for acknowledgement of a previously sent
         message
@@ -8653,6 +8665,9 @@ components:
           description: sender timestamp when the message was sent
           example: 2018-03-20 10:12:28+00:00
           format: date-time
+          type: string
+        token:
+          description: authorization token
           type: string
       type: object
     socketTaskOutput:
@@ -8729,6 +8744,21 @@ components:
           example: 2018-03-20 10:12:28+00:00
           format: date-time
           type: string
+        token:
+          description: authorization token
+          type: string
+      type: object
+    subscription:
+      description: subscription of task
+      properties:
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
       type: object
   securitySchemes:
     api_key:
@@ -8747,7 +8777,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.1.2884
+  version: 3.19.1.2885
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
