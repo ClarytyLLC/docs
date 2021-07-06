@@ -191,7 +191,7 @@ To know more about Machine Box and its capabilities, check [here](https://docs.v
 
 ## Developer App: Benchmark <!-- {docsify-ignore} -->
 
-Clicking on the Benchmark App in the upper left corner redirects you to the Veritone Clarity Benchmark app, which allows you to compare engine results for efficiency can performance.
+Clicking on the Benchmark App in the upper left corner redirects you to the Veritone Clarity Benchmark app, which allows you to compare engine results for efficiency and performance.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2014.PNG)
 
