@@ -54,7 +54,7 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
 
 If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
 
-Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper left corner of that page, click the `Add New` button.
+Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper left corner of that page, click the `New Flow` button.
 
 ![CreateNewFlowpage](Automate-new-1.png)
 
@@ -192,7 +192,7 @@ label {
         border: 1px solid #fff;
         border-radius: 7px;
         border-bottom: none;
-        background-color: #766;
+        background-color: #1871E8;
         position: relative;
     }
 

@@ -1,6 +1,7 @@
 import initializeDocsify from './scripts/docsifyConfig';
 import initializeSentry from './scripts/vendor/initializeSentry';
 import pendo from './scripts/vendor/initializePendo';
+import initSearchBar from './scripts/searchbar';
 import './scripts/developerQuiz';
 
 import './styles/sidebar.scss';
@@ -17,3 +18,4 @@ window.config = config;
 initializeSentry(config.sentryDSN, config.nodeEnv);
 initializeDocsify();
 pendo(config.pendoKey, config.apiRoot);
+initSearchBar();

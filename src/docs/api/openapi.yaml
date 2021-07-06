@@ -2385,6 +2385,9 @@ components:
           type: string
         basePriority:
           type: integer
+        coreID:
+          format: uuid
+          type: string
         coreOrganizationID:
           type: integer
         createdDateTime:
@@ -5686,6 +5689,10 @@ components:
         numGPU:
           description: The number of GPU attached to the container
           type: integer
+        startupTimestamp:
+          description: The engine instance startup timestamp in UTC
+          format: int64
+          type: integer
         ttl:
           description: the remaining TTL for the engine instance
           format: int64
@@ -7124,6 +7131,16 @@ components:
       enum:
       - http_service
       - queue_service
+      type: string
+    SocketMsgTypeEnum:
+      description: message type for web socket communication between controller and
+        external clients
+      enum:
+      - subscribe
+      - ack
+      - unsubscribe
+      - taskOutput
+      - taskStatus
       type: string
     SortOrderEnum:
       enum:
@@ -8592,6 +8609,157 @@ components:
       - running
       - timeout
       type: string
+    controllerSubscriptions:
+      description: subscription of task
+      properties:
+        controllerOutputCallbackURI:
+          description: uri to receive output from engines when chunks are produced
+            for tasks/jobs in subscripttions
+          type: string
+        subscriptions:
+          items:
+            $ref: '#/components/schemas/Subscription'
+          type: array
+      type: object
+    socketAck:
+      description: message sent to client for acknowledgement of a previously sent
+        message
+      properties:
+        ackMsgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+          description: which message type for which the acknowledgement
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        msgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+        status:
+          description: more descriptive status message
+          type: string
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+        timestamp:
+          description: sender timestamp when the message was sent
+          example: 2018-03-20 10:12:28+00:00
+          format: date-time
+          type: string
+      type: object
+    socketSubscribe:
+      description: message sent from client to subscribe output or statet change events
+        for a job or task
+      properties:
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        msgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+        timestamp:
+          description: sender timestamp when the message was sent
+          example: 2018-03-20 10:12:28+00:00
+          format: date-time
+          type: string
+        token:
+          description: authorization token
+          type: string
+      type: object
+    socketTaskOutput:
+      description: message sent to client for engine task outputs, which can be text
+        or aion - AI object notation, in response to a subscription
+      properties:
+        aion:
+          type: object
+        chunkID:
+          description: chunk ID
+          format: string
+          type: string
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        msgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+        text:
+          description: If present, the output is a text string
+          type: string
+        timestamp:
+          description: sender timestamp when the message was sent
+          example: 2018-03-20 10:12:28+00:00
+          format: date-time
+          type: string
+      type: object
+    socketTaskStatus:
+      description: message sent to client to inform state change of a subscribed task
+        or job
+      properties:
+        failureDetail:
+          description: If there is an error, the detail will be set here.
+          type: string
+        failureReason:
+          $ref: '#/components/schemas/FailureReasonEnum'
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        msgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+        status:
+          $ref: '#/components/schemas/TaskStatusEnum'
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+        timestamp:
+          description: sender timestamp when the message was sent
+          example: 2018-03-20 10:12:28+00:00
+          format: date-time
+          type: string
+      type: object
+    socketUnsubscribe:
+      description: message to unsubscribe a previous subscription
+      properties:
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        msgType:
+          $ref: '#/components/schemas/SocketMsgTypeEnum'
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+        timestamp:
+          description: sender timestamp when the message was sent
+          example: 2018-03-20 10:12:28+00:00
+          format: date-time
+          type: string
+        token:
+          description: authorization token
+          type: string
+      type: object
+    subscription:
+      description: subscription of task
+      properties:
+        jobID:
+          description: Core Job ID
+          format: string
+          type: string
+        taskID:
+          description: Core Task ID
+          format: string
+          type: string
+      type: object
   securitySchemes:
     api_key:
       in: header
@@ -8609,7 +8777,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.18.4.2818
+  version: 3.19.1.2885
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:

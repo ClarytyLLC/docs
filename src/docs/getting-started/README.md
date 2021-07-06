@@ -1,5 +1,8 @@
 <!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
 
+<!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
+
+
 <style>
      p, ul, ol, li { font-size: 18px !important;}
      
@@ -8,6 +11,7 @@
         display: flex;
         flex-direction: column;
     }
+
     .section{
         display: flex;
         justify-content: center;
@@ -27,7 +31,7 @@
     }
     .card{
         display: flex;
-        margin: 15px;
+        margin: 7.5px;
         /* justify-content: space-between; */
         min-width: 333px;
         border: 0.5px solid #D5DFE9;
@@ -69,14 +73,16 @@
     .card-container{
         align-items: center;
         background: #FAFAFA;
-        padding: 20px;
+        /* padding: 20px; */
+        padding: 7.5px;
         border-radius: 4px;
+        max-width: 695px;
     }
     .info-text{
         padding-right:30px; 
-        padding-top:50px; 
+        /* padding-top:10px;  */
         flex: 6; 
-        min-width: 400px
+        min-width: 350px
     }
 </style>
 <style>
@@ -85,21 +91,71 @@ th { text-align:left; }
 
 # Get Stated <!-- {docsify-ignore} -->
 
-<!-- <br>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="container">
 
 <br>
-<hr> -->
+<div class="section card-container">
 
-<!-- ## Table of Contents -->
- - [Quick Start for First Time Users](/getting-started/quickstart/)
- - [Get Started as an Application Developer](/getting-started/app-developer/)
- - [Get Started as a Data Scientist](/getting-started/engine-developer/)
- - [Get Started as a ML or MLOps Engineer]()
- - [More Tutorials](/tutorials/)
+<!-- [Quick Start for First Time Users](/getting-started/quickstart/) -->
+<a class="card" href="/#/getting-started/quickstart/">
+<div class="icon">
 
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Quick Start for First Time Users</h3>
+</div>
+</a>
+
+<!-- [Get Started as an Application Developer](/getting-started/app-developer/) -->
+<a class="card" href="/#/getting-started/app-developer/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Get Started as an Application Developer</h3>
+</div>
+</a>
+
+<!-- [Get Started as a Data Scientist](/getting-started/engine-developer/) -->
+<a class="card" href="/#/getting-started/engine-developer/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Get Started as a Data Scientist</h3>
+</div>
+</a>
+
+<!-- [Get Started as a ML or MLOps Engineer](/getting-started/mlops-engineer/) -->
+<a class="card" href="/#/getting-started/mlops-engineer/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Get Started as a ML or MLOps Engineer</h3>
+</div>
+</a>
+
+<!-- [More Tutorials](/tutorials/) -->
+
+<a class="card" href="/#/tutorials/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">More Tutorials</h3>
+</div>
+</a>
 
 </div>
+
+<hr>
+
+
+
+
