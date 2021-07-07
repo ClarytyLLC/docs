@@ -2,107 +2,303 @@
 
 ## Architecture
 
-![](aiWAREAnywhere.png)
-
-A full aiWARE Anywhere cluster comes with 12 run modes. A run mode is the cluster role of that instance that can be one or many of the following: `api`, `controller`, `db`, `elasticsearch`, `engine`, `lb`, `minio`, `nfs`, `nsq`, `prometheus`, `redis`, `registry` To run a minimal cluster that is able to run jobs and produce results, the controller, engine, PostgreSQL database (db) and NFS nodes are necessary. Prometheus is necessary for monitoring and providing dynamic targets. 
+A full aiWARE Anywhere cluster comes with 12 run modes. A run mode is the cluster role of that instance that can be one or many of the following: `api`, `controller`, `db`, `es`, `engine`, `lb`, `minio`, `nfs`, `nsq`, `prometheus`, `redis`, `registry` To run a minimal cluster that can run jobs and produce results, the controller, engine, PostgreSQL database (db) and NFS nodes are necessary. Prometheus is necessary for monitoring and providing dynamic targets. 
 
 With aiWARE Anywhere, in addition to having the ability to run cognitive engines on a local platform or cluster, you can also have the power of indexing your job results, storing the data in long term storage and have the history of jobs available to you. With the controller, you have the brains of the cluster. With the api node(s), you add the hard drive capabilities and potentially, the graphical user interface (GUI). 
 
 ## Requirements
 
 * At a minimum, the `controller`, `engine`, `db`, `nfs`, `prometheus`, and `registry` run modes are required
-* Ubuntu 18.04 or Ubuntu 20.04. Support for Red Hat is coming soon. 
+  * Available run modes: `api`, `controller`, `db`, `es`, `engine`, `lb`, `minio`, `nfs`, `nsq`, `prometheus`, `redis`, `registry` 
+* Ubuntu 18.04, Ubuntu 20.04, Red Hat 7 (Requires Docker EE)
 
 ## Admin Node
-### Step 1: Elevate Permissions to Root
-```
-sudo bash
-```
 
-This will ensure that all following steps are executed as root.
+The `admin` instance should run a minimum of the `controller`, `nfs` and `db` (unless you are utilizing a managed database service such as [AWS RDS](https://aws.amazon.com/rds/)). 
+1. Open a Terminal window. 
+   
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-1">
+    <label for="list-item-1"><span class="expandText">Open a Terminal window.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+   MacOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
+   
+   Ubuntu: Press `Ctrl` + `Alt` + `T` to open a terminal window.
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
-### Step 2: Install Dependencies
-```
-apt update -y
-apt install docker.io nfs-common uuid prometheus-node-exporter
-```
+1. Change to root user 
 
-### Step 3: Setup Environment Variables and Directories
-```bash
-export AIWARE_DB_PORT=5432 # if PG is running locally
-export AIWARE_MODE=controller,db,registry,nfs,prometheus
-export AIWARE_HOST_EXPIRE=false
-export INSTALL_AIWARE_CHANNEL=prod
-export AIWARE_DB_MIGRATE=true
-export AIWARE_DB_ROOT=/opt/aiware/postgres
-export AIWARE_REGISTRY_ROOT=/opt/aiware/registry
-export AIWARE_HOST_EXPIRE=false
-export AIWARE_LICENSE=<LICENSE_KEY>
-export AIWARE_INIT_TOKEN=`uuidgen`
-curl -sfL https://get.aiware.com | sudo -E sh -
+   The aiWARE installation needs elevated privileges to install
 
-echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
-```
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-2">
+    <label for="list-item-2"><span class="expandText">Change to root user.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
 
-Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
-you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
+    ```bash
+    sudo bash 
+    ```
 
-For the reminder of the cluster, install aiWARE in the same fashion, changing the environment variable `AIWARE_MODE` to include one or many of the `registry`, `engine`, `prometheus`, `nfs`, etc.
+    The root access is specified in Ubuntu Linux by root@hostname. For MacOS, root indicates that you have root access.
+
+    <!-- make the screenshot smaller -->
+    <img src="https://user-images.githubusercontent.com/65766301/122611396-e3314800-d09e-11eb-8ce0-7fd9fbc5c2c6.PNG" width="500" align="middle" alt="screenshot 1"/>
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Setup Environment Variables 
+
+   Review the [environment variables](/aiware/install/envs) for all available environment variables.
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-3">
+   <label for="list-item-3"><span class="expandText">Setup Environment Variables.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   The following environment environments are necessary for an initial installation. `AIWARE_MODE` indicates the mode that should be installed. `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from termination. aiWARE gives each instance a lifecycle. `AIWARE_INIT_TOKEN` provides the initial admin token for the installation. 
+
+   ```bash
+   export AIWARE_MODE=controller,db,nfs
+   export AIWARE_HOST_EXPIRE=false
+   export AIWARE_LICENSE=<LICENSE_KEY>
+   export AIWARE_INIT_TOKEN=`uuidgen`
+
+   echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
+   ```
+
+   Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
+
+   For the remainder of the cluster, install aiWARE in the same fashion, changing the environment variable `AIWARE_MODE` to include one or many of the `registry`, `engine`, `prometheus`, `nfs`, etc.
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
 
-### Step 3: Run Installation Command
-```bash
-curl -sfL https://get.aiware.com | sh -
-```
+1. Run install command
 
-### Step 4: Validate the Installation
-Run: exportfs to validate /opt/aiware/nfs is exported
-Run: docker ps to validate aiware-controller, aiware-postgres, aiware-registry are running
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-4">
+    <label for="list-item-4"><span class="expandText">aiWARE Installation.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
 
-Please note the IP of the Admin box and use for the other systems.
+    ```bash
+    curl -sfL https://get.aiware.com |  sh -
+    ```
 
-Go to http://<HOST>:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as :
+    This will install the aiware-agent as a service.
 
-```
-{ "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
-```
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
 
-## Engine Node
-Please note the IP of the Admin box above and use for the other systems. Do this for each engine instance.
-### Step 1: Elevate Permissions to Root
-`sudo bash`
+1. Validate the Installation
 
-This will ensure that all following steps are executed as root.
-### Step 2: Setup Environment Variables and Directories
-```bash
-export AIWARE_MODE=engine
-export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
-export AIWARE_HOST_EXPIRE=false
-```
+   Validate service installation by ensuring that this admin node is active.
 
-### Step 3: Run Installation Command
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-5">
+   <label for="list-item-5"><span class="expandText">Valiate aiWARE Installation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
 
-```bash
-curl -sfL https://get.aiware.com | sudo sh -
-```
+   Run: docker ps to validate `aiware-controller`, `aiware-postgres` are running
 
-### Step 4: Validate the Installation
-ADD
+   Please note the IP of the Admin box and use it for the other systems.
+
+   Go to http://<HOST>:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as :
+
+   ```bash
+   { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
+   ```
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+This completes the installation of an admin node. You can deploy more than one admin node if required for high availability. The variable `AIWARE_INIT_TOKEN` will need to be used for the installation and addition of admin nodes. 
+
+HA PostgreSQL databases are not yet available but coming soon. 
+
+## Engine (Worker) Node
+
+Please note the IP of the Admin box above and use it for the other systems. Do this for each engine instance.
+
+1. Open a Terminal window. 
+   
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-6">
+    <label for="list-item-6"><span class="expandText">Open a Terminal window.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+   MacOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
+   
+   Ubuntu: Press `Ctrl` + `Alt` + `T` to open a terminal window.
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Change to root user 
+
+   The aiWARE installation needs elevated privileges to install
+
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-7">
+    <label for="list-item-7"><span class="expandText">Change to root user.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+
+    ```bash
+    sudo bash 
+    ```
+
+    The root access is specified in Ubuntu Linux by root@hostname. For MacOS, root indicates that you have root access.
+
+    <!-- make the screenshot smaller -->
+    <img src="https://user-images.githubusercontent.com/65766301/122611396-e3314800-d09e-11eb-8ce0-7fd9fbc5c2c6.PNG" width="500" align="middle" alt="screenshot 1"/>
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Setup Environment Variables 
+
+   Review the [environment variables](/aiware/install/envs) for all available environment variables.
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-8">
+   <label for="list-item-8"><span class="expandText">Setup Environment Variables.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   ```bash
+   export AIWARE_MODE=engine
+   export AIWARE_HOST_EXPIRE=false
+   export AIWARE_LICENSE=<LICENSE_KEY>
+   export AIWARE_CONTROLLER=http://IP_OF_ADMIN_NODE:9000/edge/v1
+   export AIWARE_INIT_TOKEN=`uuidgen`
+
+   echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
+   ```
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Run install command
+
+    <div class="collapse-accordion"><ul><li>
+    <input type="checkbox" id="list-item-9">
+    <label for="list-item-9"><span class="expandText">aiWARE Installation.</span><span class="collapseText">Click here to close this section.</span></label>
+    <ul>
+    <li class="inner-content">
+
+    ```bash
+    curl -sfL https://get.aiware.com |  sh -
+    ```
+
+    This will install the aiware-agent as a service.
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
+1. Validate the installation
+
+   Validate service installation by ensuring that this node is active.
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-10">
+   <label for="list-item-10"><span class="expandText">Validate aiWARE installation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+
+   ```bash
+   ai host ls --type engine --format json
+   ```
+
+   This step requires the aiWARE CLI to be configured to connect to your cluster. The above will list active `engine` nodes in your cluster. Review the list to ensure that the newly added node is present.
+
+   </li>                  
+   </ul>
+   </li>          
+   </ul>
+   </div>
+
 
 ## Install aiWARE Anywhere
-### Step 1: Run install command for aiWARE applications
+aiWARE Anywhere brings the full stack of aiWARE to your cluster. The installation of aiWARE Anywhere requires the additional run modes of `api`, `db`, `es`, `lb`, `minio`, `nsq`, `redis`. If you don't have these run modes available in your cluster, please follow [the guide](#engine-node) to install a worker node.
+1. Run install command for aiWARE applications
 
-```bash
-ai --controller-url http://<HOST>:9000/edge/v1/ --controller-token $AIWARE_INIT_TOKEN hub install core --channel prod
-```
+   ```bash
+   ai hub install core
+   ```
 
-This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
-it in realtime with `watch service aiware-agent status`.
-
+   This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
 
 ## Deployment Considerations
+
+### Configure aiWARE CLI
+
+This step is helpful if you are working with an aiWARE Anywhere installation that is not on your local environment or if you are managing multiple aiWARE Anywhere clusters. 
+
+Requirements: The aiWARE application on your local environment. 
+
+1. Create `~/.config/aiware-cli.yaml`. 
+
+   ```bash
+   ---
+   profiles:
+     default:
+       url: "http://localhost:9000/edge/v1"
+       token: "$AIWARE_INIT_TOKEN"
+   ```
+
+   Replace the hostname under `url` with the hostname of the admin node from the [Admin Node step](#admin-node).
+
+2. Validate CLI
+
+   Run the following to retrieve a list of hosts in your cluster.
+
+   ```bash
+   ai host ls
+   ```
+
+### User Management
+
+Refer to the [users management](/aiware/users) for details on managing users and organizations.
+
 ### Database
-* An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required.
+An existing PostgreSQL server can replace a `db` node. The `postgres` will have a new schema named `edge` added to it. Access to the `postgres` database on a PostgreSQL server is required.
+
+### NFS
+If using the `nfs` run mode, you can check to see if NFS is set on your instance by running `exportfs`. `exportfs` should list `/opt/aiware/nfs` as an exported share.
 
 ### Docker
 Many of the services that run in the cluster run in Docker containers. As such, ensure that there is enough disk space available for the Docker root directory (typically located at `/var/lib/docker`).
@@ -184,4 +380,171 @@ Coming soon
 
 <style>
      p, ul, ol, li { font-size: 18px !important;}
+
+label {
+        color: #fff;
+    }
+    
+    .markdown-section code {
+        border-radius: 2px;
+        color: #322;
+        font-size: .8rem;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: pre-wrap;
+    }
+    
+    .collapse-accordion { width:83%; padding-bottom: 25px; }
+
+    .collapse-accordion ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .collapse-accordion label {
+        display: block;
+        cursor: pointer;
+        padding: 4px 32px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        border-bottom: none;
+        background-color: #1871E8;
+        position: relative;
+    }
+
+    .collapse-accordion label:hover {
+        background: #999;
+    }
+
+    .collapse-accordion label:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        text-indent: -9999px;
+        border-top: 1px solid #f2f2f2;
+        border-left: 1px solid #f2f2f2;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(135deg);
+        left: 10px;
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label:after {
+        transform: rotate(-135deg);
+        top: 20px;
+    }
+
+    .collapse-accordion label.last {
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion ul ul li {
+        padding: 10px;
+    }
+
+    .inner-content p{
+        font-size: 18px;
+    }
+    .inner-content *{
+        font-size: 18px;
+    }
+    .inner-content code *{
+       font-size: 14px;
+    }
+
+
+    .collapse-accordion input[type="checkBox"] {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .collapse-accordion input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .collapse-accordion input[type="checkBox"]~ul {
+        height: 0;
+        transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+    
+    .collapse-accordion input[type="radio"]~ul {
+        height: 0;
+        transform: scaleY(0);
+        transition: transform .5s ease-out;
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .5s ease-out;
+        transform: scaleY(1);
+    }
+
+   .collapse-accordion input[type="radio"]:checked~ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform .2s ease-out;
+        transform: scaleY(1);
+    }
+
+    .collapse-accordion input[type="checkBox"]:checked+label {
+        background:#00a2ff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="radio"]:checked+label {
+        background: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
+        display: block;
+    }
+
+   .collapse-accordion input[type="radio"]:checked+label .collapseText {
+        display: block;
+    }
+
+    .collapse-accordion input[type="checkbox"]:checked+label .expandText {
+        display: none;
+    }
+
+.collapse-accordion input[type="radio"]:checked+label .expandText {
+        display: none;
+    }
+
+    .collapseText {
+        display: none;
+    }
+
+.info {
+  margin-top: 50px;
+color: #000;
+  font-size: 24px;
+}
+.info span {
+  color: red;
+}
+
+li {
+    font-size: 16px;
+}
 </style>
+

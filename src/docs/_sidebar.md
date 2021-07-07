@@ -21,30 +21,43 @@
     float: left
 }
 
+.logo-wrapper{
+  position: fixed;
+  background-color: white;
+  padding-top: 21px;
+  z-index: 999;
+  width: 299px;
+  height: 70px;
+}
+
+
 </style>
 
-<a href="/"><div class="logo hide-in-embed-mode"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">Veritone Docs<span></div></a>
+
+<div class="logo-wrapper">
+  <a href="/"><div class="logo hide-in-embed-mode"><img src="https://static.veritone.com/assets/favicon/favicon.ico" alt="Veritone logo"/><span class="logo-text">VERITONE DOCS<span></div></a>
+</div>
 
 <!-- Hide the logo in the embed mode and only show text -->
-<div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div>
-
+<!-- <div class="logo show-in-embed-mode"><span class="logo-text">Documentation<span></div> -->
 
 - [Veritone aiWARE](/aiware/README.md)
 
 - [Get Started](/getting-started/)
     <!-- - [For Beginners](/getting-started/beginner/) -->
-    - [Quick Start for First Time Users](/getting-started/quickstart/)
-    - [For Application Developers](/getting-started/app-developer/)
-    - [For Data Scientists](/getting-started/engine-developer/)
+  - [Quick Start for First Time Users](/getting-started/quickstart/)
+  - [For Application Developers](/getting-started/app-developer/)
+  - [For Data Scientists](/getting-started/engine-developer/)
     <!-- - [For Solution Architects](/getting-started/ml-integrator/) -->
-    - [For MLOps Engineer](/getting-started/mlops-engineer/)
-    - [More Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
+  - [For MLOps Engineer](/getting-started/mlops-engineer/)
+  - [More Tutorials](/tutorials/pages/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
+- [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)
 
-- [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)  
   - [Install Single Machine](/aiware/install/install.md)
   - [Install Cluster](/aiware/install/cluster.md)
   - [Validate Install](/aiware/install/validate.md)
   - [Cluster Management Guide](/aiware/manage/)
+    - [Air Gapped Install](/aiware/install/airgap/)
     - [Prerequisites](/aiware/install/prereq.md)
     - [Sizing](/aiware/manage/sizing.md)
     - [Usage Reporting](/aiware/manage/usage.md)
@@ -68,15 +81,17 @@
     <!-- - [Path to Monetization](/aiware/aiWARE-in-depth/path-to-monetization/) this is a duplicate of (/developer/benefits.md)-->
 
 - [aiWARE Overview & Concepts](/concept-guides/)
+
   - [aiWARE In-Depth](/aiware/aiWARE-in-depth/)
     - [aiWARE Architecture](/aiware/aiWARE-in-depth/architecture-overview/)
     - [GPU Support](/aiware/aiWARE-in-depth/gpu-support.md)
     - [Controller](/aiware/aiWARE-in-depth/controller)
     - [Engines](/aiware/aiWARE-in-depth/engines)
     - [Adapters (Ingestion)](/aiware/aiWARE-in-depth/adapters/)
-    - [Job Processing](/aiware/aiWARE-in-depth/job-processing)
-    - [Job Examples](/aiware/aiWARE-in-depth/job-examples)
-    - [Single-Engine Jobs](/aiware/aiWARE-in-depth/single-engine-jobs)
+    - [Jobs](/aiware/aiWARE-in-depth/jobs)
+      - [Job Processing](/aiware/aiWARE-in-depth/job-processing)
+      - [Job Examples](/aiware/aiWARE-in-depth/job-examples)
+      - [Single-Engine Jobs](/aiware/aiWARE-in-depth/single-engine-jobs)
     - [File System](/aiware/aiWARE-in-depth/file-system)
     - [Stream Ingestor 2](/aiware/aiWARE-in-depth/stream-ingestor)
     - [More About aiWARE](/aiware/aiWARE-in-depth/aiware-features.md)
@@ -135,7 +150,7 @@
         - [Nudebox](/developer/machine-box/boxes/nudebox)
         - [Objectbox](/developer/machine-box/boxes/objectbox)
         - [Fakebox](/developer/machine-box/boxes/fakebox)
-        <!-- - [Cognitive Data Lake](/data-lake/)  -->
+          <!-- - [Cognitive Data Lake](/data-lake/)  -->
   - [Working with Structured Data](/data-lake/structured-data/)
     - [Quickstart](/data-lake/structured-data/quick-start/)
   - [Working with Search](/data-lake/search-quickstart/)
@@ -193,13 +208,13 @@
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
 
-- [Tutorials](/tutorials/pages/temp-under-construction.md)
+- [Tutorials](/tutorials/)
 
   <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Automate Studio Tutorials](/tutorials/pages/temp-under-construction.md) -->
+  - [Automate Studio Tutorials](/automate-studio/tutorials/README)
 
   - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) -->
 
@@ -217,6 +232,7 @@
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
 
+  - [Getting Started with Core](/tutorials/pages/getting-started-with-core.md)
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
@@ -245,7 +261,9 @@
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
+
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
+
   - [Core APIs](/apis/using-graphql.md)
     - [Mutation Methods](/apis/reference/mutation/)
     - [Query Methods](/apis/reference/query/)
@@ -274,22 +292,23 @@
     - [JS API](/api/js/README.md)
     - [Python API](/api/python/README.md)
   - [CLI](/cli/aiware-agent.md)
-  - [Configuration](/config/admin.md) <!--/page-under-construction)-->
-    - [Admin](/config/admin.md)
-    - [Controller](/config/controller.md)
-    - [DB](/config/db.md)
-    - [NFS](/config/nfs.md)
-    - [Registry](/config/registry.md)
+    <!-- - [Configuration](/config/admin.md) /page-under-construction)
+      - [Admin](/config/admin.md)
+      - [Controller](/config/controller.md)
+      - [DB](/config/db.md)
+      - [NFS](/config/nfs.md)
+      - [Registry](/config/registry.md) -->
 
 - [Automate Studio](/automate-studio/)
+
   - [Quickstart](/automate-studio/getting-started/README)
   - [Overview & Concepts](/automate-studio/application/README)
-      - [Canvas](/automate-studio/application/README?id=canvas)
-      - [Node Palette](/automate-studio/application/README?id=node-palette)
-      - [Debug/Info](/automate-studio/application/README?id=debug-info)
-      - [Variables](/automate-studio/application/README?id=variables)
-        - [Message (msg)](/automate-studio/application/README?id=message-msg)
-        - [Context, Flow, and Global](/automate-studio/application/README?id=context-flow-and-global)
+    - [Canvas](/automate-studio/application/README?id=canvas)
+    - [Node Palette](/automate-studio/application/README?id=node-palette)
+    - [Debug/Info](/automate-studio/application/README?id=debug-info)
+    - [Variables](/automate-studio/application/README?id=variables)
+      - [Message (msg)](/automate-studio/application/README?id=message-msg)
+      - [Context, Flow, and Global](/automate-studio/application/README?id=context-flow-and-global)
   - [Working with Flows](/automate-studio/working-with-flows/README)
     - [Flow Basics](/automate-studio/working-with-flows/README?id=flow-basics)
       - [Create New Flow](/automate-studio/working-with-flows/README?id=create-new-flow)
@@ -324,14 +343,14 @@
       - [Transcription](/automate-studio/tutorials/basic/transcription/tutorial)
       - [Content Classification](/automate-studio/tutorials/basic/content-classification/tutorial)
       - [Object Detection](/automate-studio/tutorials/basic/object-detection/tutorial)
-      <!-- - Chained Cognition -->
+        <!-- - Chained Cognition -->
     - [Advanced](/automate-studio/tutorials/advanced/README)
       - [Customer Recognition by Face](/automate-studio/tutorials/advanced/customer-recognition/tutorial)
       - [Detection of Negative Social Media Posts](/automate-studio/tutorials/advanced/detection-of-negative-social-media-posts/tutorial)
-      <!-- - Dynamic Language Translation -->
+        <!-- - Dynamic Language Translation -->
   - [Alteryx Tools](/automate-studio/alteryx/)
     - [aiWARE for Alteryx](/automate-studio/Training/intro-to-automate/unit-3.md)
   - [Get Paid!](/automate-studio/flow-bounties/README)
-  <!-- - [Clarity (BETA)](/benchmark/) -->
+    <!-- - [Clarity (BETA)](/benchmark/) -->
 
 - [Developer Terms & Conditions](/terms-and-conditions/)

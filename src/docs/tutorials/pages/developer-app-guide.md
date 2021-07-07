@@ -4,7 +4,7 @@
 
 ## Before we begin <!-- {docsify-ignore} -->
 
-If you're new to Veritone aiWARE and Developer app, we recommend you read about aiWARE and its applications using the below links.
+If you're new to Veritone aiWARE and Developer app, we recommend you read about aiWARE and its applications using the links below.
 
 [aiWARE Overview](https://docs.veritone.com/#/aiware/README)
 
@@ -14,7 +14,7 @@ If you're new to Veritone aiWARE and Developer app, we recommend you read about 
 
 ## Veritone Developer App <!-- {docsify-ignore} -->
 
-In this guide, we will provide an overview of [Veritone Developer](https://docs.veritone.com/#/developer/) App, a self-service environment through which registered developers get easy access to tools, documentation, APIs, adapters, cognitive engines, or data schemas to extend aiWARE for their use
+In this guide, we will provide an overview of [Veritone Developer](https://docs.veritone.com/#/developer/) App, a self-service environment through which registered developers get easy access to tools, documentation, APIs, adapters, cognitive engines, or data schemas to extend aiWARE for their use.
 
 Sign up to the Developer app [here](https://www.veritone.com/onboarding/#/signUp) using your email and username.
 
@@ -25,7 +25,7 @@ After following this step-by-step tutorial, you will be successfully able to use
 
 ## Guide Overview <!-- {docsify-ignore} -->
 
-As of now, the Developer app includes the resources on the upper left for configuring and extending aiWARE. (see the below screenshot).
+As of now, the Developer app includes the resources on the upper left for configuring and extending aiWARE. See the screenshot below.
 
 ![Screenshot 1](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%201.PNG)
 
@@ -50,11 +50,11 @@ Ready to get started? Let's go.
 
 ## Developer App: Overview <!-- {docsify-ignore} -->
 
-Once you sign in to the developer app using the veritone account, by default, you are redirected to an overview page that provides the status of your created engines and applications.
+Once you sign in to the developer app using the veritone account, by default, you are redirected to an overview page that provides the status of created engines and applications.
 
 ![Screenshot 1](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%201.PNG)
 
-To know more about Engines and how to create an Engine, check getting started with [engines](https://docs.veritone.com/#/developer/engines/getting-started/).
+To know more about Engines and how to create an Engine, check [getting started with engines](https://docs.veritone.com/#/developer/engines/getting-started/).
 
 To know how to create an AI app, check [building applications](https://docs.veritone.com/#/developer/applications/) section in the documentation.
 
@@ -68,11 +68,9 @@ As seen in the above screenshot, these are the following resources you can creat
 
 ### Flow:
 
-A Flow in a Veritone aiWARE system is a group of logically connected nodes that run certain processes. The flow of nodes is developed using Veritone Automate Studio- a low-code workflow designer that leverages an intuitive drag-and-drop UI to easily create advanced business solutions without the need for in-depth coding skills or AI expertise.
+A Flow in a Veritone aiWARE system is a group of logically connected nodes that run certain processes. The flow of nodes is developed using Veritone Automate Studio- a low-code workflow designer that leverages an intuitive drag-and-drop UI to easily create advanced AI solutions without the need for in-depth coding skills or AI expertise.
 
 To know what a typical Veritone Automate studio flow contains, check the [overview and concepts](https://docs.veritone.com/#/automate-studio/application/README) section for more information. If you want to quickly build some basic and advanced AI Flows using check our [Automate Studio step-by-step guides](https://docs.veritone.com/#/automate-studio/tutorials/README).
-
-.
 
 ### Engine:
 
@@ -86,9 +84,8 @@ An adaptor in the Veritone developer platform helps consume data from external s
 
 Veritone provides a lot of inbuilt adapters for popular external data sources such as Amazon Web Services S3, YouTube, Google Drive, Box, Dropbox, and RSS feeds. Depending on your needs, you can also create your own custom adaptor based on the source and the format of the incoming data.
 
-For more info regarding the specific adaptor type, check the Building adapters section.
+For more info regarding the specific adaptor type, check the [Building adapters](https://docs.veritone.com/#/developer/adapters/) section.
 If you want to begin development instantly, check our  [Quickstart](https://docs.veritone.com/#/adapters/quick-start/) guide to adaptors here.
-
 
 
 ### Application
@@ -113,28 +110,26 @@ As of now, the Veritone platform provides the API's for
 
 A schema in the Veritone developer platform provides the necessary information to properly ingest, store and index your data. Indexing your data with well-defined fixed fields and structure allows the Veritone platform to easily process and transform a vast swath of the world's data to extract actionable intelligence.
 
-To register and upload a schema for your data in the Veritone platform, it should be expressed in the JSON format. Other formats to be supported in the future.
+To register and upload a schema for your data in the Veritone platform, it should be expressed in the JSON format. Other formats will be supported in the future.
 For step-by-step instructions on how to register a schema within the Veritone platform, check out the [Quick Start Guide](https://docs.veritone.com/#/developer/data/quick-start/).
 
 ### Benchmark:
 
-Benchmark in a Veritone developer platform allows result comparisons between a group of engines that run certain processes. The results are generated using  [Veritone Clarity](https://docs.veritone.com/#/benchmark/)- a self-service tool that compares your Engine against other engines for the best combination of speed accuracy and performance while maximizing business value.
+Benchmark in a Veritone developer platform allows result comparisons between a group of engines. The results are generated using  [Veritone Clarity](https://docs.veritone.com/#/benchmark/)- a self-service tool that compares your Engine against other engines for the best combination of speed accuracy and performance while maximizing business value.
 
-To learn the basics of Veritone Benchmark(Clarity) and run benchmarks, visit our [Clarity](https://docs.veritone.com/#/benchmark/?id=introduction) section in the documentation. The section covers everything to get acquainted with key concepts and capabilities and run benchmarks using Clarity.
-
-
+To learn the basics of Veritone Benchmark(Clarity) and run benchmarks, check [Clarity Overview](https://docs.veritone.com/#/benchmark/?id=introduction) section in the documentation. The section covers everything to get acquainted with key concepts,capabilities and run benchmarks using Clarity.
 
 ## Developer App: Engines <!-- {docsify-ignore} -->
 
-Click on the Engines tab on the upper left will provide you the list of engines registered on the Veritone network. (see the below screenshot)
+Clicking on the Engines tab on the upper left will provide you with a list of engines you have access to on the Veritone network. This will include both private engines you have created as well as public engines that you can use. See the screenshot below.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%203.PNG)
 
-For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities your Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities).  (Click on the particular capability in the table to get detailed information about the engine input and output).
+For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities each Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities). 
 
-You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about Face Detection - F V3 engine.
+You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about "Face Detection - F V3" engine.
 
-Clicking on the Face Detection - F V3 engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs. (see the screenshot below)
+Clicking on the "Face Detection - F V3" engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs.See the screenshot below.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%204.PNG)
 
@@ -142,20 +137,13 @@ Builds: Provide specific information on how many times an engine was build and d
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%205.PNG)
 
-
-
-
 Tasks: Processed run by users on that Engine.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%206.PNG)
 
-
-
 Logs: Record of events that occur during the run of an engine
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%207.PNG)
-
-
 
 ## Developer App: Applications <!-- {docsify-ignore} -->
 
@@ -201,10 +189,9 @@ In the developer app, you get the option to get started with the following machi
 To know more about Machine Box and its capabilities, check [here](https://docs.veritone.com/#/developer/machine-box/)
 
 
-
 ## Developer App: Benchmark <!-- {docsify-ignore} -->
 
-Clicking on the Benchmark App in the upper left corner redirects you to the Veritone Clarity Benchmark app, which allows you to compare engine results for efficiency can performance.
+Clicking on the Benchmark App in the upper left corner redirects you to the Veritone Clarity Benchmark app, which allows you to compare engine results for efficiency and performance.
 
 ![](https://raw.githubusercontent.com/veritone/docs/hm90121-patch-2/src/docs/tutorials/pages/developer-app-guide-images/screenshot%2014.PNG)
 
