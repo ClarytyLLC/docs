@@ -2,15 +2,13 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
-Learn to build your first flow in just a few minutes with this quickstart guide of Automate Studio.
+We will learn to quickly build our first flow in just a few minutes with this quickstart guide of Automate Studio. 
 
-If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
+## Before you Start
 
-Navigate to [automate.veritone.com](https://automate.veritone.com)
+Before we start, if you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started). If you do, then we can start by navigating to [automate.veritone.com](https://automate.veritone.com).
 
-## Step 0: Learn about the Building Blocks
-
-Before we create a flow, let's quickly look at the main concepts you need to know about. This only takes a second!
+Once we are ready with your Automate Studio login, we can start on creating our flow. However before we create a flow, let's quickly look at the main concepts we need to know about. This only takes a second!
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-1">
@@ -18,23 +16,27 @@ Before we create a flow, let's quickly look at the main concepts you need to kno
                 <ul>
                     <li class="inner-content">
 
-The main concepts you need to know about are:
+The main concepts we would need to know before we create a flow are:
 
-1. **Nodes:** These are the button-like shapes in the editor that represent discrete steps in your flow.
-2. **Wires:** These are the lines that connect the nodes together.
-3. **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
-4. **Subflow:** A group of nodes presented as a node in the palette which can be reused in the main flow.
-5. **Message:** The `msg` variable is the highest level variable that is sent from one node to another at flow runtime.
+- **Nodes:** These are the button-like shapes in the editor that represent discrete steps in your flow.
+- **Wires:** These connect the nodes together.
+- **Flow:** This is an overall term for the "graph" (or node-and-wire model) that you define by dropping and connecting your nodes on the canvas.
+- **Subflow:** A group of nodes presented as a node in the palette which can be reused in the main flow.
+- **Message:** A`msg` variable is the highest level variable that is sent from one node to another at flow runtime.
 
-<!-- > **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
+> **Tip:** Hover your cursor over a node in the node palette, on the left, to learn what a given type of node does.
 
-![node-hover](node-hover-11.png) -->
+
+
+![node-hover](node-hover-11.png) 
 
 </li>                  
 </ul>
 </li>          
 </ul>
 </div>
+
+
 
 ## Step 1: Create a Flow
 
@@ -45,70 +47,82 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
                 <label for="list-item-2"><span class="expandText">Click here to learn how to create a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li class="inner-content">
-     
+​     
 
-                    
+​                    
 
+**To create a flow:**
 
+1. Navigate to [automate.veritone.com](https://automate.veritone.com), click on the `Add New` button in the upper left corner of that page.
 
+   ![CreateNewFlowpage](Automate-new-1.png)
 
-If you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started).
+   ​	The **Automate Studio Editor** design-time environment will open.
 
-Navigate to [automate.veritone.com](https://automate.veritone.com). In the upper left corner of that page, click the `Add New` button.
-
-![CreateNewFlowpage](Automate-new-1.png)
-
-After a few seconds, the **Automate Studio Editor** design-time environment will open. When it does, notice that you can single-click the name of your flow (shown in the upper left) to bring up a small dialog that lets you change the name of your to something more meaningful than "Untitled Flow." Try it!
+2. In the editor, click on the name of our flow (shown in the upper left) to change the name of the flow. 
 
 ![Editing the flow name](untitled-flow.png)
+
+
+
+Next, let us start by adding nodes to our flow.
+
 </li>                  
 </ul>
 </li>          
 </ul>
 </div>
 
-## Step 2: Add Nodes to Your Flow
+## Step 2: Add Nodes to Our Flow
 
-You've got the basics, now let's start building out our flow &mdash; and test it right in the design-time UI!
+We are all ready to start building our flow and then test it right in the design-time UI!
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-3">
                 <label for="list-item-3"><span class="expandText">Click here to learn how to build a flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li class="inner-content">
-                    
+​                    
 
+### Working with Nodes
 
+It is very easy to work with nodes if we remember these points:
 
-### Nodes Are Easy to Work With
+- To add a node, just drag-and-drop it from the node palette to the canvas.
 
-&#9642; To put a node in your graph, just drag any node from the node palette to the canvas, and let go of the mouse.
+- Click a node to select it. Press Delete or Backspace key on your keyboard to delete it. 
 
-&#9642; Single-click a node on the canvas to select it. When it is selected, hit the Delete or Backspace key on your keyboard to delete it. 
+- To connect two nodes with a wire, click and drag from the _output_ endpoint on the right side of a node to the _input_ endpoint on the left side of a second node.
 
-&#9642; Click and drag from the _output_ endpoint on the right side of a node, to the _input_ endpoint on the left side of a second node, to connect two nodes with a wire.
+- Press Ctrl+Z to undo any action.
 
-&#9642; Use Ctrl-Z to Undo any action.
+Now, we are ready to build our first flow.
 
 ### Build a Simple Flow
 
-In this example, we'll create a simple flow that extracts your user information and sends you an email. 
+In this example, we'll create a simple flow that extracts user information and sends us an email:
 
-1\. From the node palette on the left, drag an **aiware in** node, a **user details** node, and an **aiware email** node onto the canvas.
+1. From the node palette on the left, drag an **aiware in** node, a **user details** node, and an **aiware email** node onto the canvas.
 
-2\. Connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. Your canvas should look something like this:
+2. Let's connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. We can select the node to view help about the node. 
 
-![3 nodes](three-nodes-1.png)
+   Our canvas should look something like this:
 
-> Note: Some nodes have two output ports on the right. The top port is for ordinary output, while the bottom port is for error reporting. For now, you needn't worry about the bottom port. As long as the top port is wired, the flow will be functional.
+   ![3 nodes](three-nodes-1.png)
 
-3\. Double-click on the **aiware email** node. Change the  "To Email" field's value by setting the picker to `msg.`, then enter `payload.aiware.user.name` after it. Enter text of your choosing in the "Email Subject" and "Message Body" fields. The Properties pane in the node should look something like this:
+   > **Note:** Some nodes have two output ports (little squares on the node) on the right. The top port is for ordinary output, and the bottom port is for error reporting. For now, you can ignore the bottom port. For this flow, we will use only the top port.
 
-![email node Properties](email-node-2.png)
+   
 
-4\. Click the blue **Done** button in the upper right part of the Properties pane. The pane goes away.
+3. Double-click on the **aiware email** node. Change the  **To Email** field's value by setting the picker to `msg.`, then enter `payload.aiware.user.name`. Enter the Email Subject and Message Body. 
 
-> A small blue dot will appear along the top edge of the node whose properties you just edited. This dot will disappear in a second or two, after your changes have been auto-saved.
+   The **Properties** pane in the node would look like:
+
+   ![email node Properties](email-node-2.png)
+
+4. Click the **Done** button to save our changes. 
+
+> A small blue dot will appear along the top edge of the node whose properties you just edited. This dot indicates that the node is updated and disappear in a second or two after your changes have been auto-saved.
 
 </li>                  
 </ul>
@@ -118,24 +132,32 @@ In this example, we'll create a simple flow that extracts your user information 
 
 ## Step 3 : Test The Flow
 
-Let's test our brand new flow
+Now that we have a flow ready, let us test the flow. 
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-4">
                 <label for="list-item-4"><span class="expandText">Click here to learn how to test your flow</span><span class="collapseText">Click here to close this section.</span></label>
                 <ul>
                     <li class="inner-content">
-                
+​                
 
-1\. Click the little _bug_ icon in the information pane, on the right, to enable the display of debug messages.
+**To test the flow:**
 
-2\. Click once on the ballot-box square at the left edge of the first node (the node labelled "aiware in"). This runs the flow, from start to finish.
+1. Click the little _bug_ icon in the information pane, on the right, to enable the display of debug messages.
 
-3\. You should see a brief message ("inject.airware-in.success") appear onscreen, and then all three nodes should show an `aiware.success` message underneath. 
+   ![debug button](debug.png)
 
-4\. You should see a new e-mail in your inbox (at the address you used when you signed up for your Veritone account). 
+   
 
-> If any errors occurred, they will be shown in the Debug pane (on the right).
+2. Click on the ballot-box square at the left edge of the aiware.in node to run the flow.
+
+   ![](run_success.png)
+
+   We will see a message ("inject.airware-in.success") appear onscreen, and then all three nodes should show an `aiware.success` message underneath. 
+
+3. We should get an e-mail at the email address associated with our Veritone account. 
+
+> Any errors will be displayed in the Debug pane (on the right).
 
 Congratulations! You just ran your first flow.
 
@@ -152,22 +174,23 @@ Congratulations! You just ran your first flow.
 </ul>
 </div>
 
-## Congratulations!
 
-Congratulations on building and running your first flow engine using Automate Studio.
 
-## Next steps
+Congratulations on building and running your first flow engine using Automate Studio!!
 
-Now that we have the basics, go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription/tutorial)
 
-?> Need help or have a question? Contact us in our [Slack Community.](http://veritonedev.slack.com/)
+
+> We recommend that you go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription/tutorial).
+>
+> ?> For any questions, contact us in our [Slack Community.](http://veritonedev.slack.com/)
+>
 
 <style>
-
 label {
         color: #fff;
     }
     
+
     .markdown-section code {
         border-radius: 2px;
         color: #322;
@@ -178,13 +201,13 @@ label {
     }
     
     .collapse-accordion { width:83%; }
-
+    
     .collapse-accordion ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
-
+    
     .collapse-accordion label {
         display: block;
         cursor: pointer;
@@ -195,11 +218,11 @@ label {
         background-color: #766;
         position: relative;
     }
-
+    
     .collapse-accordion label:hover {
         background: #999;
     }
-
+    
     .collapse-accordion label:after {
         content: "";
         position: absolute;
@@ -221,21 +244,21 @@ label {
         top: 50%;
         margin-top: -5px;
     }
-
+    
     .collapse-accordion input[type="checkbox"]:checked+label:after {
         transform: rotate(-135deg);
         top: 20px;
     }
-
+    
     .collapse-accordion input[type="radio"]:checked+label:after {
         transform: rotate(-135deg);
         top: 20px;
     }
-
+    
     .collapse-accordion label.last {
         border-bottom: 1px solid #fff;
     }
-
+    
     .collapse-accordion ul ul li {
         padding: 10px;
         
@@ -244,7 +267,7 @@ label {
         font-size: 18px;
         font-weight: 500;
     }
-
+    
     .inner-content *{
         font-size: 18px;
         font-weight: 500;
@@ -260,7 +283,7 @@ label {
         position: absolute;
         left: -9999px;
     }
-
+    
     .collapse-accordion input[type="checkBox"]~ul {
         height: 0;
         transform: scaleY(0);
@@ -272,7 +295,7 @@ label {
         transform: scaleY(0);
         transition: transform .5s ease-out;
     }
-
+    
     .collapse-accordion input[type="checkBox"]:checked~ul {
         height: 100%;
         transform-origin: top;
@@ -291,12 +314,12 @@ label {
         background:#bda0a0;
         border-bottom: 1px solid #fff;
     }
-
+    
     .collapse-accordion input[type="radio"]:checked+label {
         background: red;
         border-bottom: 1px solid #fff;
     }
-
+    
     .collapse-accordion input[type="checkbox"]:checked+label .collapseText {
         display: block;
     }
