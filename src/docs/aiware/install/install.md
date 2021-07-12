@@ -8,15 +8,17 @@
 * [Appendix](#appendix)
 
 # Install
-You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow the instructions below. 
+You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the instructions below. 
 <!-- Replace the above with Hub once released https://hub.aiware.com -->
 
 ## Dependencies
 
-* OS:  Ubuntu 18.04, Ubuntu 20.04, MacOS 10.14 (Mojave), MacOS 10.15 (Catalina), MacOS 11 (Big Sur)
-* Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time)
-* Recommendeded Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engine running at a time)
-  * [Docker on MacOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
+* OS:  Ubuntu 18.04, Ubuntu 20.04, macOS 10.14 (Mojave), macOS 10.15 (Catalina), macOS 11 (Big Sur)
+* Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time). In AWS, this is usually a m4.xlarge or m5.xlarge. 
+* Recommended Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engines running at a time)
+* 150 GB of available disk is the minimum requirement. 500 GB of available disk space is recommended. 
+* Docker Engine
+  * [Docker on macOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
   * [Docker on Ubuntu Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Single Instance Install
@@ -28,7 +30,7 @@ You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow th
     <label for="list-item-1"><span class="expandText">Open a Terminal window.</span><span class="collapseText">Click here to close this section.</span></label>
     <ul>
     <li class="inner-content">
-   MacOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
+   macOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
    
    Ubuntu: Press `Ctrl` + `Alt` + `T` to open a terminal window.
    </li>                  
@@ -37,13 +39,13 @@ You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow th
    </ul>
    </div>
 
-1. Change to root user 
+1. Change to the root user 
 
    The aiWARE installation needs elevated privileges to install
 
     <div class="collapse-accordion"><ul><li>
     <input type="checkbox" id="list-item-2">
-    <label for="list-item-2"><span class="expandText">Change to root user.</span><span class="collapseText">Click here to close this section.</span></label>
+    <label for="list-item-2"><span class="expandText">Change to the root user.</span><span class="collapseText">Click here to close this section.</span></label>
     <ul>
     <li class="inner-content">
 
@@ -51,7 +53,7 @@ You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow th
     sudo bash 
     ```
 
-    The root access is specified in Ubuntu Linux by root@hostname. For MacOS, root indicates that you have root access.
+    The root access is specified in Ubuntu Linux by root@hostname. For macOS, root indicates that you have root access.
 
     <!-- make the screenshot smaller -->
     <img src="https://user-images.githubusercontent.com/65766301/122611396-e3314800-d09e-11eb-8ce0-7fd9fbc5c2c6.PNG" width="500" align="middle" alt="screenshot 1"/>
@@ -81,6 +83,8 @@ You can install [aiWARE via Hub](/aiware/hub/). Alternatively, you can follow th
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
+
+    `uuidgen` should be a globally unique identifier. If you don't have 'uuidgen` installed on your local machine, [UUID Generator](https://www.uuidgenerator.net/) is an alternate source.
 
     Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
     you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
@@ -127,11 +131,11 @@ We need to ensure that the aiware-agent service is running.
 
    <div class="collapse-accordion"><ul><li>
    <input type="checkbox" id="list-item-5">
-   <label for="list-item-5"><span class="expandText">MacOS Service Validation.</span><span class="collapseText">Click here to close this section.</span></label>
+   <label for="list-item-5"><span class="expandText">macOS Service Validation.</span><span class="collapseText">Click here to close this section.</span></label>
    <ul>
    <li class="inner-content">
 
-   MacOS: You can check the status of the installation via running `launchctl list | grep aiware-agent`
+   macOS: You can check the status of the installation via running `launchctl list | grep aiware-agent`
 
    ![screenshot 2](https://user-images.githubusercontent.com/53197964/123053909-37973900-d3b9-11eb-9e29-590a14a113c6.png)
 
@@ -147,7 +151,7 @@ We need to ensure that the aiware-agent service is running.
    <ul>
    <li class="inner-content">
 
-   Ubuntu: This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor it in realtime with `watch service aiware-agent status`.
+   Ubuntu: This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command or monitor it in real-time with `watch service aiware-agent status`.
 
    ![screenshot 3](https://user-images.githubusercontent.com/53197964/123047225-e5064e80-d3b1-11eb-8972-cdee8d8ee45d.png)
 
@@ -267,8 +271,8 @@ We need to ensure that the aiware-agent service is running.
     ai hub install core
     ```
 
-    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command, or monitor
-    it in realtime with `watch service aiware-agent status`.
+    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command or monitor
+    it in real-time with `watch service aiware-agent status`.
 
    </li>                  
    </ul>
