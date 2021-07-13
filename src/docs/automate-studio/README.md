@@ -19,11 +19,11 @@
         background: #FAFAFA;
         margin: 15px 0px;
     }
-
+    
     a.in-text-link {
         text-decoration: none;
     }
-
+    
     div.featureColumn {
         position:relative;
         left:25px;
@@ -35,13 +35,13 @@
         position: relative; 
         top: -40px
     }
-
+    
     div.featureImage {
         width: 25%;
         position: relative;
         bottom: 8px;
     }
-
+    
     div.do-more-aiware-featureColumn {
         position:relative;
         left:25px;
@@ -53,12 +53,12 @@
         position: relative; 
         top: -40px
     }
-
+    
     a.link {
         bottom: -10px;
         position: relative;
     }
-
+    
     div.newsSectionColumn{
         position:relative;
         left:10px;
@@ -68,16 +68,16 @@
     div.newsDateColumn {
         width: 175px;
     }
-
+    
     div.newsColumn {
         width: 800px
     }
-
+    
     div.buttonColumn {
         display: flex;
         justify-content: center;
     }
-
+    
     #view-more-templates-btn {
         display: block;
         color: #2F80ED;
@@ -89,7 +89,7 @@
         padding: 5px;
         text-decoration: none;
     }
-
+    
     #learn-automate-studio-btn {
         display: block;
         background-color: #2F80ED;
@@ -101,7 +101,7 @@
         padding: 5px;
         position: relative;
     }
-
+    
     #explore-templates-btn {
         display: block;
         color: #2F80ED;
@@ -113,7 +113,7 @@
         position: relative;
         text-decoration: none;
     }
-
+    
     .date-text {
         background-color: #d9d9d7;
         width: 110px;
@@ -123,11 +123,11 @@
         padding: 4px 6px;  
         text-align: center
     }
-
+    
     .wrapper {
-	    display: flex;
-	    width: 100%;
-	    justify-content: space-around;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
         flex-wrap: wrap;
     }
     .card {
@@ -166,7 +166,7 @@
     	 z-index: 2;
     	 transition: 0.5s;
     	 opacity: 0;
-
+    
     }
     .card img {
     	 width: 360px;
@@ -194,7 +194,7 @@
         border-top: 0.5px solid lightgrey;
         padding: 8px 8px;
         margin-top:180px;
-
+    
     }
     .card .level {
         position: absolute;
@@ -209,7 +209,7 @@
         border-radius: 5px 5px 0 0;
         font-size: 12px;
         color: grey;
-
+    
     }
     .card p {
     	 letter-spacing: 1px;
@@ -234,7 +234,7 @@
     .card:hover {
     	 color: black;
     }
-
+    
     .card:hover img {
        opacity: 0;
        transition: 0.2s ease;
@@ -396,8 +396,8 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
         - New <a class="in-text-link" href="/#/overview/aiWARE-in-depth/edge/logs"> "How to view job and task logs"</a> guide.
     </div>
 </div>
-
 <br>
+
 <div class= "newsSectionColumn">
     <div class="newsDateColumn">
         <div class="date-text">
@@ -430,6 +430,5 @@ Veritone Automate Studio is a low-code workflow designer that empowers technical
 </div>
 <hr>
 
-> More Tutorials are comming up soon
-
+> More Tutorials are coming up soon
 
