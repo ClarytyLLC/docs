@@ -8777,7 +8777,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.2.2896
+  version: 3.19.3.2927
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
@@ -9966,6 +9966,121 @@ paths:
       security:
       - api_key: []
       summary: This API creates a new engine build
+      tags:
+      - engine
+  /admin/build/{BuildID}/delete:
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/BuildID_Path_Required'
+    post:
+      operationId: delete_build_post
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminOperationResponse'
+          description: Delete a specific build
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This API deletes a specific build
       tags:
       - engine
   /admin/build/{BuildID}/detail:
@@ -14144,6 +14259,121 @@ paths:
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
     - $ref: '#/components/parameters/LicenseID'
+  /admin/organization/{OrganizationID}/delete:
+    parameters:
+    - $ref: '#/components/parameters/CorrelationID'
+    - $ref: '#/components/parameters/OrganizationID'
+    post:
+      operationId: delete_organization
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminOperationResponse'
+          description: Delete a particular organization
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid argument.  Please see the error response for more information.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        401:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not authorized
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        403:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        405:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request is not allowed.
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        429:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        501:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Implemented
+          headers:
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+        503:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: System Unavailable
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/CorrelationId'
+            X-Aiware-Version:
+              $ref: '#/components/headers/AiwareVersion'
+            X-Correlation-Id:
+              $ref: '#/components/headers/CorrelationId'
+      security:
+      - api_key: []
+      summary: This deletes the specified organization
+      tags:
+      - admin
   /admin/organization/{OrganizationID}/detail:
     get:
       operationId: getAdminOrganizationDetail
@@ -24665,122 +24895,6 @@ paths:
       schema:
         format: uuid
         type: string
-  /engine/{EngineID}/build/{BuildID}/delete:
-    parameters:
-    - $ref: '#/components/parameters/CorrelationID'
-    - $ref: '#/components/parameters/EngineID_Path_Required'
-    - $ref: '#/components/parameters/BuildID_Path_Required'
-    post:
-      operationId: delete_build_post
-      responses:
-        204:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AdminOperationResponse'
-          description: Delete a particular engine
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        400:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Invalid argument.  Please see the error response for more information.
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        401:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not authorized
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        403:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Forbidden
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        404:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not Found
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        405:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: The request is not allowed.
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        429:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Too Many Requests
-          headers:
-            Retry-After:
-              $ref: '#/components/headers/CorrelationId'
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        501:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Not Implemented
-          headers:
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-        503:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: System Unavailable
-          headers:
-            Retry-After:
-              $ref: '#/components/headers/CorrelationId'
-            X-Aiware-Version:
-              $ref: '#/components/headers/AiwareVersion'
-            X-Correlation-Id:
-              $ref: '#/components/headers/CorrelationId'
-      security:
-      - api_key: []
-      summary: This API provides the engine detail result
-      tags:
-      - engine
   /engine/{EngineID}/createjob:
     parameters:
     - $ref: '#/components/parameters/CorrelationID'
