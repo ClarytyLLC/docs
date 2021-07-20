@@ -3,7 +3,7 @@
 
 <style>
      p, ul, ol, li { font-size: 18px !important;}
-     
+
      .container{
         /* padding-right: 50px; */
         display: flex;
@@ -79,9 +79,9 @@
         max-width: 695px;
     }
     .info-text{
-        padding-right:30px; 
+        padding-right:30px;
         /* padding-top:10px;  */
-        flex: 6; 
+        flex: 6;
         min-width: 350px
     }
 </style>
@@ -104,8 +104,17 @@ th { text-align:left; }
 <h3 style="margin-top:15px">Automate Studio Tutorials</h3>
 </div>
 </a>
+     
+<a class="card" href="/#/automate-studio/tutorials/README">
+<div class="icon">     
 
-
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Build your First Engine using Developer App</h3>
+</div>
+</a>     
+     
 <a class="card" href="/#/tutorials/pages/getting-started-with-core">
 <div class="icon">
 
@@ -158,10 +167,16 @@ th { text-align:left; }
 </div>
 </a>
 
+<a class="card" href="/#/tutorials/pages/developer-app/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Developer App Guide</h3>
+</div>
+</a>
+
 </div>
 
 <hr>
-
-
-
-

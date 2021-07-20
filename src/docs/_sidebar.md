@@ -216,7 +216,7 @@
 
   - [Automate Studio Tutorials](/automate-studio/tutorials/README)
 
-  <!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) -->
+  - [Build your First Engine using Developer App](/tutorials/pages/build-engine-using-developer-app/) 
 
   <!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) -->
 
@@ -238,7 +238,7 @@
 
   <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
 
-  - [Developer App Guide](/tutorials/pages/developer-app/) 
+  - [Developer App Guide](/tutorials/pages/developer-app/)
 
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
