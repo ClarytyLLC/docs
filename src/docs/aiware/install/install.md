@@ -226,8 +226,10 @@ We need to ensure that the aiware-agent service is running.
    profiles:
      default:
        url: "http://localhost:9000/edge/v1"
-       token: "$AIWARE_INIT_TOKEN"
+       token: "<INSERT $AIWARE_INIT_TOKEN here>"
    ```
+    
+   Replace `$AIWARE_INIT_TOKEN` with the actual token from the installation step. The value should be in UUID format.
 
    </li>                  
    </ul>
