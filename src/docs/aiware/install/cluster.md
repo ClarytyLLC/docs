@@ -16,7 +16,7 @@ With aiWARE Anywhere, in addition to having the ability to run cognitive engines
 
 ## Terminology 
 
-*Admin Node*: An admin node of aiWARE is a node that is running with the `controller` run mode activated. The `db` and `nfs` run modes are usually co-located with the admin node. The admin node is responsible for job coordination. In addition, the admin node hosts a UI to monitor a cluster. If you are running multiple admin nodes in a cluster, select a single instance for the `db` run mode. Currently, the `db` run mode does not support high availability (HA).
+*Controller Node*: A controller node of aiWARE is a node that is running with the `controller` run mode activated. The `db` and `nfs` run modes are usually co-located with the controller node. The controller node is responsible for job coordination. In addition, the controller node hosts a UI to monitor a cluster. If you are running multiple controller nodes in a cluster, select a single instance for the `db` run mode. Currently, the `db` run mode does not support high availability (HA).
 
 *Engine Node*: An engine node of aiWARE is a node that runs tasks for the aiWARE stack. These instances are usually dedicated instances in that they only have the `engine` run mode.
 
@@ -33,9 +33,9 @@ There are several cluster types available with aiWARE.
 
 * At a minimum, the `controller`, `engine`, `db`, `nfs`, `prometheus`, and `registry` run modes are required. Available run modes: `api`, `controller`, `db`, `es`, `engine`, `lb`, `minio`, `nfs`, `nsq`, `prometheus`, `redis`, `registry` 
 
-## Admin Node
+## Controller Node
 
-The `admin` instance should run a minimum of the `controller`, `nfs`, and `db` (unless you are utilizing a managed database service such as [AWS RDS](https://aws.amazon.com/rds/)). 
+The `controller` instance should run a minimum of the `controller`, `nfs`, and `db` (unless you are utilizing a managed database service such as [AWS RDS](https://aws.amazon.com/rds/)). 
 1. Open a Terminal window. 
    
     <div class="collapse-accordion"><ul><li>
@@ -158,13 +158,13 @@ The `admin` instance should run a minimum of the `controller`, `nfs`, and `db` (
    </ul>
    </div>
 
-This completes the installation of an admin node. You can deploy more than one admin node if required for high availability. The variable `AIWARE_INIT_TOKEN` will need to be used for the installation and addition of admin nodes. 
+This completes the installation of an controller node. You can deploy more than one controller node if required for high availability. The variable `AIWARE_INIT_TOKEN` will need to be used for the installation and addition of controller nodes. 
 
 HA PostgreSQL databases are not yet available but coming soon. 
 
 ## Engine (Worker) Node
 
-Please note the IP of the Admin box above and use it for the other systems. Do this for each engine instance.
+Please note the IP of the controller node above and use it for the other systems. Do this for each engine instance.
 
 1. Open a Terminal window. 
    
