@@ -6,11 +6,11 @@
 
 ## Flow Description
 
-In this tutorial, we will understand how we can create a transcription flow that transcribes a video. We will use the Object Detection engine to transcribe  the video. This flow receives a video URL, runs it through an Object Detection engine, and creates an annotated version of the file. The annotation link is emailed to the user.
+In this tutorial, you will understand how you can create a transcription flow that transcribes a video. You will use the Object Detection engine to transcribe  the video. This flow receives a video URL, runs it through an Object Detection engine, and creates an annotated version of the file. The annotation link is emailed to the user.
 
 ## Expected Result
 
-At the end of the tutorial, we would have created a flow that looks like:
+At the end of the tutorial, you'll have created a flow that looks like:
 
 ![full flow](full-flow.png)
 
@@ -18,7 +18,7 @@ At the end of the tutorial, we would have created a flow that looks like:
 
 ### Step 1: Setup the 'aiware-in' Node
 
-We will first add the aiware-in node and set it up to accept a JSON object.
+You will first add the aiware-in node and set it up to accept a JSON object.
 
 **To set up the aiware-in node:**
 
@@ -47,13 +47,13 @@ We will first add the aiware-in node and set it up to accept a JSON object.
 
 ### Step 2: Setup the Cognition Node
 
-Next, we will configure the core cognition node that transcribes the video.
+Next, you will configure the core cognition node that transcribes the video.
 
 **To set up the cognition node:**
 
 1. Drag the **Cognition - Core** node from the Node Palette and drop it next to the previous node. Once done, wire up the two nodes.
 2. Double-click on the **Cognition - Core** node to open the node properties. 
-3. We will rename this node by typing *Object detection* in the name field.
+3. You will rename this node by typing *Object detection* in the name field.
 4. From the *Category* dropdown, select the *Object Detection* option.
 5. Next, from the *Engine* dropdown select the *Image Classification - A V3* option.
 6. Scroll down to **Advanced Settings**, and from the *Cluster* option select the *prd5 - Adhoc Cluster*.
@@ -65,7 +65,7 @@ Next, we will configure the core cognition node that transcribes the video.
 
 ### Step 3: Setup the User Details Node
 
-Next, we will get the user details so that we can use it to send the email.
+Next, you will get the user details so that you can use it to send the email.
 
 **To set up the user details node:**
 
@@ -77,7 +77,7 @@ Next, we will get the user details so that we can use it to send the email.
 
 3. The **User Details** node doesn't need any special settings. It accepts *Username* and *Password* as inputs in the Node's properties. If not provided it will get the user details of the logged-in user by default.
 
-4. We can view the user details in the **msg** object under **.payload.aiware.user**. The logged-in user email will be available under the **name** property in msg.payload.aiware.user. The full path to the logged-in user email is **msg.payload.aiware.user.name**.
+4. You can view the user details in the **msg** object under **.payload.aiware.user**. The logged-in user email will be available under the **name** property in msg.payload.aiware.user. The full path to the logged-in user email is **msg.payload.aiware.user.name**.
 
 <hr/>
 
@@ -98,7 +98,7 @@ Next, we will get the user details so that we can use it to send the email.
 
    - **Email Subject**: Click on the *Input Type* dropdown and select the **string** type. This means that Node will take the actual value provided in the Input Field as a string. In the Input Field, paste the 'Automate Hello World Object Detection'.
 
-   - **Email Body**: Click on the *Input Type* dropdown and select the **expression** type. Using the expression type we will be able to provide values from the **msg** object to our email body directly in the node. Click on the horizontal menu button on the right edge of the Input.
+   - **Email Body**: Click on the *Input Type* dropdown and select the **expression** type. Using the expression type you will be able to provide values from the **msg** object to your email body directly in the node. Click on the horizontal menu button on the right edge of the Input.
 
      Paste the following expression. Once done, click on the *Done* button to close the editor, and then once again to close the Node Properties and save the changes:
 
@@ -118,7 +118,7 @@ Next, we will get the user details so that we can use it to send the email.
 
 #### Step 5: Add output nodes
 
-We will now add output nodes to the flow - one for success and the other for failure.
+You will now add output nodes to the flow - one for success and the other for failure.
 
 **To add output nodes:**
 
@@ -126,7 +126,7 @@ We will now add output nodes to the flow - one for success and the other for fai
 
 2. Click on the **aiware out** node once to select it. 
 
-3. Press `Control + C` and `Control + V` on your keyboard to copy and paste the node. Now we have two output nodes. One for success and one for failure.
+3. Press `Control + C` and `Control + V` on your keyboard to copy and paste the node. Now you have two output nodes. One for success and one for failure.
 
 4. Move one of the two identical **aiware out** down a little bit.
 
@@ -146,15 +146,13 @@ We will now add output nodes to the flow - one for success and the other for fai
 
 
 
-While moving the wire, you will notice it is dashed. Once the node is unselected, the wire becomes invisible. This is a good practice to keep the flow nice and clean.
-
-
+While moving the wire, you will notice it is dashed and when the node is unselected the wire becomes invisible. This is a good practice to keep the flow nice and clean.
 
 <hr/>
 
 #### Step 6: Error handling and debugging
 
-Let us configure the flow to catch errors and help us debug errors. 
+You'll configure the flow to catch errors and help us debug errors. 
 
 **To catch and debug errors:**
 

@@ -231,12 +231,13 @@
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
-
+  - [How to get your engine approved](/tutorials/pages/how-to-get-egine-approved.md)
+  
   <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
-
+  
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [How to get your engine approved](/tutorials/pages/how-to-get-egine-approved.md) -->
+  
+  
 
 
   - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 

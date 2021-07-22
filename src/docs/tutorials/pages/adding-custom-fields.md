@@ -2,21 +2,21 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
->**Tip** Before getting started, we recommend to read about [Build Your Own Engine](/developer/engines/tutorial/) and [Training an Engine](training-an-engine).
+>**Tip** Before getting started, you recommend to read about [Build Your Own Engine](/developer/engines/tutorial/) and [Training an Engine](training-an-engine).
 
 ## Custom Fields <!-- {docsify-ignore} -->
 
-Based on the engine's functionality, we may use additional parameters. The user can enter the values for these additional parameters, and then process the task based on user inputs.
+Based on the engine's functionality, you may use additional parameters. The user can enter the values for these additional parameters, and then process the task based on user inputs.
 
-For example, a detection-based engine may need to know the minimum confidence level to consider a result as valid. In this case, we can define these parameters in `Custom Fields` . The end-users of our engine can configure these parameters. These configured parameters will be available to your engine inside of the payload it receives at runtime.
+For example, a detection-based engine may need to know the minimum confidence level to consider a result as valid. In this case, you can define these parameters in `Custom Fields` . The end-users of our engine can configure these parameters. These configured parameters will be available to your engine inside of the payload it receives at runtime.
 
-We can create the custom fields inside of VBA either when creating a new engine or on the details page of an existing engine.
+You can create the custom fields inside of VBA either when creating a new engine or on the details page of an existing engine.
 
 
 
 ## Expected Result <!-- {docsify-ignore} -->
 
-By the end of this tutorial, we would have learnt how to create custom fields and how to query custom fields.
+By the end of this tutorial, you would have learnt how to create custom fields and how to query custom fields.
 
 
 
@@ -24,7 +24,7 @@ By the end of this tutorial, we would have learnt how to create custom fields an
 
 ### Step 1: Create a Custom Field 
 
-We will start by creating a custom field in the Veritone Developer App.
+You will start by creating a custom field in the Veritone Developer App.
 
 1. Go to the [developer.veritone.com](https://developer.veritone.com) page and login using your credentials.
 
@@ -34,7 +34,7 @@ We will start by creating a custom field in the Veritone Developer App.
 
    
 
-3. We will be prompted to enter properties for the custom field in the `Add Field`. We will discuss the purpose of each of these properties in the next step.
+3. You will be prompted to enter properties for the custom field in the `Add Field`. You will discuss the purpose of each of these properties in the next step.
 
 
 
@@ -66,7 +66,7 @@ You must enter the following properties of the custom field before you can save 
 
 ### Final result
 
-After you have created and saved your custom field, we can use the below query to retrieve a list of fields used by our engine. You can use the query below to view an engines fields by replacing id `replaceMe` with the id of our engine.
+After you have created and saved your custom field, you can use the below query to retrieve a list of fields used by our engine. You can use the query below to view an engines fields by replacing id `replaceMe` with the id of our engine.
 
 ```graphql
 query {

@@ -2,13 +2,13 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
-We will learn to quickly build our first flow in just a few minutes with this quickstart guide of Automate Studio. 
+You will learn to quickly build your first flow in just a few minutes with this quickstart guide of Automate Studio. 
 
 ## Before you Start
 
-Before we start, if you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started). If you do, then we can start by navigating to [automate.veritone.com](https://automate.veritone.com).
+Before you start, if you haven't already done so, [create your free account](https://www.veritone.com/onboarding/#/signUp?type=automate&lead_source_detail=docs.veritone.com%2Fautomate-studio%2Fgetting-started). If you do, then you can start by navigating to [automate.veritone.com](https://automate.veritone.com).
 
-Once we are ready with your Automate Studio login, we can start on creating our flow. However before we create a flow, let's quickly look at the main concepts we need to know about. This only takes a second!
+Once you are ready with your Automate Studio login, you can start on creating a flow. However before you create a flow, let's quickly look at the main concepts you need to know about. This only takes a second!
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-1">
@@ -16,7 +16,7 @@ Once we are ready with your Automate Studio login, we can start on creating our 
                 <ul>
                     <li class="inner-content">
 
-The main concepts we would need to know before we create a flow are:
+The main concepts you would need to know before you create a flow are:
 
 - **Nodes:** These are the button-like shapes in the editor that represent discrete steps in your flow.
 - **Wires:** These connect the nodes together.
@@ -59,13 +59,13 @@ Automate Studio provides an easy drag-and-drop design experience. Creating a flo
 
    ​	The **Automate Studio Editor** design-time environment will open.
 
-2. In the editor, click on the name of our flow (shown in the upper left) to change the name of the flow. 
+2. In the editor, click on the name of the flow (shown in the upper left) to change the name of the flow. 
 
 ![Editing the flow name](untitled-flow.png)
 
 
 
-Next, let us start by adding nodes to our flow.
+Next, let us start by adding nodes to the  flow.
 
 </li>                  
 </ul>
@@ -73,9 +73,9 @@ Next, let us start by adding nodes to our flow.
 </ul>
 </div>
 
-## Step 2: Add Nodes to Our Flow
+## Step 2: Add Nodes to Your Flow
 
-We are all ready to start building our flow and then test it right in the design-time UI!
+You are all ready to start building the flow and then test it right in the design-time UI!
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-3">
@@ -86,7 +86,7 @@ We are all ready to start building our flow and then test it right in the design
 
 ### Working with Nodes
 
-It is very easy to work with nodes if we remember these points:
+It is very easy to work with nodes if you remember these points:
 
 - To add a node, just drag-and-drop it from the node palette to the canvas.
 
@@ -96,7 +96,7 @@ It is very easy to work with nodes if we remember these points:
 
 - Press Ctrl+Z to undo any action.
 
-Now, we are ready to build our first flow.
+Now, you are ready to build the first flow.
 
 ### Build a Simple Flow
 
@@ -104,13 +104,13 @@ In this example, we'll create a simple flow that extracts user information and s
 
 1. From the node palette on the left, drag an **aiware in** node, a **user details** node, and an **aiware email** node onto the canvas.
 
-2. Let's connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. We can select the node to view help about the node. 
+2. Let's connect the nodes by dragging out a new wire from the right edge of each node to the left edge of the next node. You can select the node to view help about the node. 
 
    Our canvas should look something like this:
 
    ![3 nodes](three-nodes-1.png)
 
-   > **Note:** Some nodes have two output ports (little squares on the node) on the right. The top port is for ordinary output, and the bottom port is for error reporting. For now, you can ignore the bottom port. For this flow, we will use only the top port.
+   > **Note:** Some nodes have two output ports (squares on the node) on the right. The top port is for ordinary output, and the bottom port is for error reporting. For now, you can ignore the bottom port. For this flow, you will use only the top port.
 
    
 
@@ -120,7 +120,7 @@ In this example, we'll create a simple flow that extracts user information and s
 
    ![email node Properties](email-node-2.png)
 
-4. Click the **Done** button to save our changes. 
+4. Click the **Done** button to save your changes. 
 
 > A small blue dot will appear along the top edge of the node whose properties you just edited. This dot indicates that the node is updated and disappear in a second or two after your changes have been auto-saved.
 
@@ -132,7 +132,7 @@ In this example, we'll create a simple flow that extracts user information and s
 
 ## Step 3 : Test The Flow
 
-Now that we have a flow ready, let us test the flow. 
+Now that you have a flow ready, let us test the flow. 
 
 <div class="collapse-accordion"><ul><li>
                 <input type="checkbox" id="list-item-4">
@@ -143,7 +143,7 @@ Now that we have a flow ready, let us test the flow.
 
 **To test the flow:**
 
-1. Click the little _bug_ icon in the information pane, on the right, to enable the display of debug messages.
+1. Click the _bug_ icon in the information pane, on the right, to enable the display of debug messages.
 
    ![debug button](debug.png)
 
@@ -153,9 +153,9 @@ Now that we have a flow ready, let us test the flow.
 
    ![](run_success.png)
 
-   We will see a message ("inject.airware-in.success") appear onscreen, and then all three nodes should show an `aiware.success` message underneath. 
+   You will see a message ("inject.airware-in.success") appear onscreen, and then all three nodes should show an `aiware.success` message underneath. 
 
-3. We should get an e-mail at the email address associated with our Veritone account. 
+3. You should get an e-mail at the email address associated with your Veritone account. 
 
 > Any errors will be displayed in the Debug pane (on the right).
 
@@ -176,20 +176,19 @@ Congratulations! You just ran your first flow.
 
 
 
-Congratulations on building and running your first flow engine using Automate Studio!!
+Congratulations on building and running your first flow engine using Automate Studio!
 
 
 
-> We recommend that you go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription/tutorial).
+> You recommend that you go ahead and create your first [AI flow](/automate-studio/tutorials/basic/transcription/tutorial).
 >
 > ?> For any questions, contact us in our [Slack Community.](http://veritonedev.slack.com/)
->
 
 <style>
 label {
         color: #fff;
     }
-    
+​    
 
     .markdown-section code {
         border-radius: 2px;

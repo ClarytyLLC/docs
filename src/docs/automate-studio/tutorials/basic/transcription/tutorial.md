@@ -6,11 +6,11 @@
 
 ## Flow Description
 
-In this tutorial, we will understand how we can create a transcription flow that receives a video or audio URL, runs it through a Speech-to-Text Engine, and creates a text transcription of the file. The transcript is emailed to the user along with a link to the Veritone CMS page that contains the full engine output.
+In this tutorial, you will understand how you can create a transcription flow that receives a video or audio URL, runs it through a Speech-to-Text Engine, and creates a text transcription of the file. The transcript is emailed to the user along with a link to the Veritone CMS page that contains the full engine output.
 
 ## Expected Result
 
-At the end of the tutorial, we would have created a flow that looks like:
+At the end of the tutorial, you'll have created a flow that looks like:
 
 ![transcription](transcription.png)
 
@@ -18,7 +18,7 @@ At the end of the tutorial, we would have created a flow that looks like:
 
 #### Step 1: Setup the 'aiware-in' Node
 
-We will first add the aiware-in node and set it up to accept a JSON object.
+You'll first add the aiware-in node and set it up to accept a JSON object.
 
 **To set up the aiware-in node:**
 
@@ -47,7 +47,7 @@ We will first add the aiware-in node and set it up to accept a JSON object.
 
 #### Step 2: Setup the Cognition Node
 
-Next, we will configure the core cognition node that transcribes the audio.
+Next, you will configure the core cognition node that transcribes the audio.
 
 **To set up the cognition node:**
 
@@ -64,7 +64,7 @@ Next, we will configure the core cognition node that transcribes the audio.
 
 #### Step 3: Setup the User Details Node
 
-Next, we will get the user details so that we can use it to send the email.
+Next, you will get the user details so that you can use it to send the email.
 
 **To set up the user details node:**
 
@@ -76,7 +76,7 @@ Next, we will get the user details so that we can use it to send the email.
 
 3. The **User Details** node doesn't need any special settings. It accepts *Username* and *Password* as inputs in the Node's properties. If not provided it will get the user details of the logged-in user by default.
 
-4. We can view the user details in the **msg** object under **.payload.aiware.user**. The logged-in user email will be available under the **name** property in msg.payload.aiware.user. The full path to the logged-in user email is **msg.payload.aiware.user.name**.
+4. You can view the user details in the **msg** object under **.payload.aiware.user**. The logged-in user email will be available under the **name** property in msg.payload.aiware.user. The full path to the logged-in user email is **msg.payload.aiware.user.name**.
 
 <hr/>
 
@@ -97,7 +97,7 @@ Next, we will get the user details so that we can use it to send the email.
 
    - **Email Subject**: Click on the *Input Type* dropdown and select the **string** type. This means that Node will take the actual value provided in the Input Field as a string. In the Input Field, paste the 'Automate Hello World Transcription'.
 
-   - **Email Body**: Click on the *Input Type* dropdown and select the **expression** type. Using the expression type we will be able to provide values from the **msg** object to our email body directly in the node. Click on the horizontal menu button on the right edge of the Input.
+   - **Email Body**: Click on the *Input Type* dropdown and select the **expression** type. Using the expression type you will be able to provide values from the **msg** object to our email body directly in the node. Click on the horizontal menu button on the right edge of the Input.
 
      Paste the following expression. Once done, click on the *Done* button to close the editor, and then once again to close the Node Properties and save the changes:
 
@@ -111,15 +111,15 @@ Next, we will get the user details so that we can use it to send the email.
 
 #### Step 5: Add output nodes
 
-We will now add output nodes to the flow - one for success and the other for failure.
+You will now add output nodes to the flow - one for success and the other for failure.
 
 **To add output nodes:**
 
 1. Drag the **aiware out** Node from the Node Palette and drop it to the canvas next to the previous Node. 
 2. Click on the **aiware out** node once to select it. 
-3. Press `Control + C` and `Control + V` on your keyboard to copy and paste the node. Now we have two output nodes. One for success and one for failure.
+3. Press `Control + C` and `Control + V` on your keyboard to copy and paste the node. Now you have two output nodes. One for success and one for failure.
 4. Move one of the two identical **aiware out** down a little bit.
-5. Double click on the node you have just moved to open the Node Properties, and from the  *Output Status* dropdown select *failure*. Now we have two output nodes - one for success and one for failure.
+5. Double click on the node you have just moved to open the Node Properties, and from the  *Output Status* dropdown select *failure*. Now you have two output nodes - one for success and one for failure.
 6. Wire the **aiware email** node success output to the **aiware out \[success\]** node.
 7. Next, add three **link out** nodes from the Node Palette and place them just below the **Cognition - Core**, **user details**, and **aiware email** nodes and wire each to the **failure output** of the node above.
 8. Drag a **link in** node, put it in front of the **aiware out \[failure\]]** node, and wire it to its port.
