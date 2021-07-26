@@ -4,7 +4,7 @@
 
 >**Tip** Before getting started, we recommend to read about [Training an Engine](training-an-engine) and [Working with Jobs](#/developer/engines).
 
-## Subject Description <!-- {docsify-ignore} -->
+## Polling a Job for Status <!-- {docsify-ignore} -->
 
 In this tutorial, we will learn together how to do perform polling. You can review the status of your job by polling its status. The possible statuses of a job are:
 
@@ -73,15 +73,12 @@ In the body, there are four keys:
 
 When the time specified in `nextPollTimeUTC` key passes, a new task is created and a new segment is submitted to the engine. The engines inspect the payload to determine if it is a polled task. If it is a polled task, then the engine checks the third-party for status based on the data passed in `taskPayload`. If it is not a polled task, then the engine submits an external job.
 
-When the job is running, 
-
  When the engine receives this task, it should inspect the payload to determine if it is a polled task. If so, instead of submitting an external job as before, the engine should check the third-party service for status based on the data passed in `taskPayload`. If the job is complete, the engine should return the result as a normal `vtn-standard` response but referencing the original task ID. If the job is not complete, the engine should return another polling message in the same structure as the previous one.
 
 
-### 
+
 
 ### Final result
 
 When the job is running and incomplete, the engine returns another polling message in the same structure as the above example. When the job is completed, the engine returns the results as  a normal `vtn-standard` response with a reference to the original task ID. 
-
 

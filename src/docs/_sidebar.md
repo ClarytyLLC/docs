@@ -208,47 +208,22 @@
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
 
-- [Tutorials](/tutorials/)
+- [Tutorials](/tutorials/pages/temp-under-construction.md)<!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
-
-  - [Automate Studio Tutorials](/automate-studio/tutorials/README)
-
-  - [Build your First Engine using Developer App](/tutorials/pages/build-engine-using-developer-app/) 
-
-  <!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
-  - [Getting Started with Core](/tutorials/pages/getting-started-with-core.md)
-  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
+  - [Adding  Custom Fields](/tutorials/pages/adding-custom-fields.md)
+  - [Automate Studio Tutorials](/automate-studio/tutorials/README)<!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) --><!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) --><!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
+  - [Getting Started](/tutorials/pages/getting-started.md)
+  - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
-
-  <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
-
-  - [Developer App Guide](/tutorials/pages/developer-app/)
-
-  <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
+  
+  - [How to get your engine approved](/tutorials/pages/how-to-get-engine-approved.md)<!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) --><!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
   - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md)
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Training an Engine](/tutorials/pages/training-an-engine.md) -->
   <!-- - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md) -->
@@ -259,7 +234,10 @@
   <!-- - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
+
+  - [Working with Jobs](/tutorials/pages/working-with-jobs.md)
+
+  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->    
 
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
 
