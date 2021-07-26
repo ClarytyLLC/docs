@@ -48,6 +48,7 @@
     <!-- - [For Solution Architects](/getting-started/ml-integrator/) -->
   - [For MLOps Engineer](/getting-started/mlops-engineer/)
   - [More Tutorials](/apis/tutorials/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
+  
 - [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)
 
   - [Install Single Machine](/aiware/install/install.md)
@@ -204,44 +205,19 @@
     - [Resources](/developer/applications/resources.md)
     - [FAQ](/developer/applications/faq.md)
 
-- [Tutorials](/tutorials/pages/temp-under-construction.md)
-
-  <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
+- [Tutorials](/tutorials/pages/temp-under-construction.md)<!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
   - [Adding  Custom Fields](/tutorials/pages/adding-custom-fields.md)
-
-  - [Automate Studio Tutorials](/automate-studio/tutorials/README)
-
-  <!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
-
-  <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
+  - [Automate Studio Tutorials](/automate-studio/tutorials/README)<!-- - [Build your first engine in developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) --><!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Schema in Developer App](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new Ingestion job using the CMS app](/tutorials/pages/temp-under-construction.md) --><!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) --><!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
   - [Getting Started](/tutorials/pages/getting-started.md)
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md) 
+  
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
   - [Polling](/tutorials/pages/polling.md)
-  - [How to get your engine approved](/tutorials/pages/how-to-get-egine-approved.md)
   
-  <!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) -->
-  
-  <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
-  
-  
-
+  - [How to get your engine approved](/tutorials/pages/how-to-get-engine-approved.md)<!-- - [Developer App Guide](/tutorials/pages/temp-under-construction.md) --><!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
   - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md) 
-
 
   <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
@@ -258,13 +234,8 @@
 
   - [Working with Jobs](/tutorials/pages/working-with-jobs.md)
 
-  
+  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->    
 
-  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
-
-
-​    
-​    
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
 
   - [Core APIs](/apis/using-graphql.md)
