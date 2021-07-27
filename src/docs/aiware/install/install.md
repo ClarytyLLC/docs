@@ -296,8 +296,8 @@ We need to ensure that the aiware-agent service is running.
 1. Adding SSL Certificates 
 
    <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-11">
-   <label for="list-item-11"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
+   <input type="checkbox" id="list-item-12">
+   <label for="list-item-12"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
    <ul>
    <li class="inner-content">
    To add a SSL certificate to an installation of aiWARE Anywhere, you'll need the following:
