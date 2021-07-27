@@ -4,7 +4,7 @@
 
 >**Tip** Before getting started, we recommend to read  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine. We recommend you also read the [Customize Engine Output](customizing-engine-output) tutorial.
 
-## Subject Description <!-- {docsify-ignore} -->
+## Engine Input Customization<!-- {docsify-ignore} -->
 
 In this tutorial we will learn together how to pass a custom input to your engine. We may want to specific custom configuration parameters for our engines to:
 
@@ -57,7 +57,7 @@ At the runtime, the engine will receive a variety of form fields as part of the 
 
 The parsed JSON object will look something like this:
 
-?> Note that the API token in this json is a sample and not usable.
+?> Note that the API token in this `json` is a sample and not usable.
 
 ```json
 {

@@ -4,7 +4,7 @@
 
 >**Tip** Before getting started, we recommend to read  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine and generate an output.
 
-## Subject Description <!-- {docsify-ignore} -->
+## Engine Output Customization <!-- {docsify-ignore} -->
 
 In this tutorial we will learn together how to customize an engine's output to contain additional data. For interoperability, Veritone requires all cognitive engines to produce a [standardized output](/developer/engines/standards/engine-output/?id=engine-output-standard-vtn-standard). However, we can easily include data that is beyond the minimum requirements of the `vtn-standard` schema. 
 
