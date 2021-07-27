@@ -297,6 +297,9 @@ We need to ensure that the aiware-agent service is running.
 To uninstall aiWARE Anywhere, run the following script: 
 ```bash 
 sh /usr/local/bin/aiware-agent-uninstall.sh
+
+# optionally remove data
+sudo rm -rf /opt/aiware
 ```
 
 
