@@ -1,2 +1,2 @@
-# Require review from a docs editor for all changes
-*.* @veritone/docs-editors
+# Require review from a docs owner for all changes
+*.* @veritone/docs-owners
