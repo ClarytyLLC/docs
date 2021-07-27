@@ -89,6 +89,8 @@ The `controller` instance should run a minimum of the `controller`, `nfs`, and `
 
    The following environment environments are necessary for an initial installation. `AIWARE_MODE` indicates the mode that should be installed. `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from termination. aiWARE gives each instance a lifecycle. `AIWARE_INIT_TOKEN` provides the initial admin token for the installation. 
 
+   If you're installing aiWARE Anywhere on a private domain name, you'll need to add the `AIWARE_DOMAIN_NAME` environment variable. Go to the [SSL Certificate](#Adding-SSL-Certificates) section for details about setting up SSL certificates with aiWARE Applications.
+
    ```bash
    export AIWARE_MODE=controller,db,nfs
    export AIWARE_HOST_EXPIRE=false
@@ -97,6 +99,11 @@ The `controller` instance should run a minimum of the `controller`, `nfs`, and `
 
    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
    ```
+
+    *Optional* For custom domains
+    ```bash
+    export AIWARE_DOMAIN_NAME=dev-local.aiware.run
+    ```
 
    `uuidgen` should be a globally unique identifier. If you don't have 'uuidgen` installed on
  your local machine, [UUID Generator](https://www.uuidgenerator.net/) is an alternate source.
@@ -396,8 +403,8 @@ cd /opt/aiware/haproxy/certs
 vi ca.pem # Paste the CA bundle 
 vi server.pem # Paste the server's certificate
 vi server.pem.key # Paste the server's key
-# Restart HAProxy
-docker restart haproxy
+# Restart HAProxy container
+docker restart aiware-haproxy
 ```
 
 ### SELinux

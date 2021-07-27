@@ -73,6 +73,8 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
     <li class="inner-content">
 
     The following environment environments are necessary for an initial installation. `AIWARE_MODE` indicates the mode that should be installed. `AIWARE_MODE` with `single` mode installs the entire aiWARE stack on an instance. This is suitable for a single instance installation. This variable is broken up for a [cluster installation](/aiware/install/cluster). `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from termination. aiWARE gives each instance a lifecycle. `AIWARE_INIT_TOKEN` provides the initial admin token for the installation. 
+
+    If you're installing aiWARE Anywhere on a private domain name, you'll need to add the `AIWARE_DOMAIN_NAME` environment variable. Go to the [SSL Certificate](#Adding-SSL-Certificates) section for details about setting up SSL certificates with aiWARE Applications.
     <!-- single needs updating in code-->
     <!-- #export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es,automate -->
     <!-- if AIWARE_MODE isn't set, assume single -->
@@ -81,7 +83,16 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
     export AIWARE_MODE=single
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
+    
+    # Set a domain for aiware - REQ'd if using Core due to SSL for the applications
+    # export AIWARE_DOMAIN_NAME=dev-local.aiware.com
+     
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
+    ```
+
+    *Optional* For custom domains
+    ```bash
+    export AIWARE_DOMAIN_NAME=dev-local.aiware.run
     ```
 
     `uuidgen` should be a globally unique identifier. If you don't have 'uuidgen` installed on your local machine, [UUID Generator](https://www.uuidgenerator.net/) is an alternate source.
@@ -282,6 +293,39 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
+1. Adding SSL Certificates 
+
+   <div class="collapse-accordion"><ul><li>
+   <input type="checkbox" id="list-item-12">
+   <label for="list-item-12"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
+   <ul>
+   <li class="inner-content">
+   To add a SSL certificate to an installation of aiWARE Anywhere, you'll need the following:
+
+   * A server certificate. (server.pem)
+   * A server certificate key. (server.pem.key)
+   * (Optional) A CA bundle. This should be a file with the certificate authority's certificate and all intermediate certificate authority certificates in a chain. (ca.pem)
+
+   The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
+
+   ```bash
+   
+   sudo su
+   cd /opt/aiware/haproxy/certs
+   # Replace the following files, ca.pem, server.pem and server.pem.key
+   vi ca.pem # Paste the CA bundle (if provided)
+   vi server.pem # Paste the server's certificate
+   vi server.pem.key # Paste the server's key
+   # Restart HAProxy container
+   docker restart aiware-haproxy
+   ```
+
+   </li>
+   </ul>
+   </li>
+   </ul>
+   </div>
+
 1. Next Steps 
 
    Explore the full capabilities of aiWARE. You can review the following applications or jobs that you can take advantage of:
@@ -297,6 +341,9 @@ We need to ensure that the aiware-agent service is running.
 To uninstall aiWARE Anywhere, run the following script: 
 ```bash 
 sh /usr/local/bin/aiware-agent-uninstall.sh
+
+# optionally remove data
+sudo rm -rf /opt/aiware
 ```
 
 
