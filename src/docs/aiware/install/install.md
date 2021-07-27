@@ -81,6 +81,10 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
     export AIWARE_MODE=single
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
+    
+    # Set a domain for aiware - REQ'd if using Core due to SSL for the applications
+    # export AIWARE_DOMAIN_NAME=dev-local.aiware.com
+     
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
     ```
 
