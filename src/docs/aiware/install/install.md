@@ -80,7 +80,7 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
     <!-- if AIWARE_MODE isn't set, assume single -->
 
     ```bash
-    export AIWARE_MODE=single
+    export AIWARE_MODE=redis,db,nsq,es,api,lb,minio,engine,automate,controller
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
     
