@@ -14,7 +14,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
 * Docker Engine
   * [Docker on macOS installation guide](https://docs.docker.com/docker-for-mac/install/)
   * [Docker on Ubuntu installation guide](https://docs.docker.com/engine/install/ubuntu/)
-* Ubuntu (easy to install by [Multipass](https://multipass.run/docs/installing-on-macos))
+* Ubuntu
 
 ### Recommended
 
