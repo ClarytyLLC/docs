@@ -1,144 +1,83 @@
-# Contents <!-- {docsify-ignore} -->
+# Single Machine Install <!-- {docsify-ignore} -->
 
 **APPROXIMATE READING TIME: 35 MINUTES**
 
-* [Single Instance Install](#single-instance-install) 
-* [Install on Ubuntu](#install-on-ubuntu)
-* [Uninstall aiWARE Anywhere](#uninstall-aiware-anywhere)
-* [Appendix](#appendix)
-
-# Install
-You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the instructions below. 
+Follow these instructions to install aiWARE Anywhere on a single machine. 
 <!-- Replace the above with Hub once released https://hub.aiware.com -->
 
-## Dependencies
+## System Requirements
+### Minimum
 
 * OS:  Ubuntu 18.04, Ubuntu 20.04, macOS 10.14 (Mojave), macOS 10.15 (Catalina), macOS 11 (Big Sur)
-* Minimum Requirement: Docker with 2 CPUs and 16GB of RAM (Expectation 1 engine running at a time). In AWS, this is usually a m4.xlarge or m5.xlarge. 
-* Recommended Requirement: Docker with 4 CPUs and 16GB of RAM (Expectation 1-2 engines running at a time)
-* 150 GB of available disk is the minimum requirement. 500 GB of available disk space is recommended. 
+* Storage: 150 GB available space
+* Memory: 2 CPUs and 16GB of RAM to run 1 engine at a time. In AWS, this is usually a m4.xlarge or m5.xlarge. 
 * Docker Engine
-  * [Docker on macOS Installation Guide](https://docs.docker.com/docker-for-mac/install/)
-  * [Docker on Ubuntu Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
+  * [Docker on macOS installation guide](https://docs.docker.com/docker-for-mac/install/)
+  * [Docker on Ubuntu installation guide](https://docs.docker.com/engine/install/ubuntu/)
+* Ubuntu (easy to install by [Multipass](https://multipass.run/docs/installing-on-macos))
 
-## Single Instance Install
+### Recommended
+
+* Storage: 500 GB available space
+* Memory: 4 CPUs and 16GB of RAM to run 1-2 engines at a time.
+
+## Installation Steps
 
 1. Open a Terminal window. 
    
-    <div class="collapse-accordion"><ul><li>
-    <input type="checkbox" id="list-item-1">
-    <label for="list-item-1"><span class="expandText">Open a Terminal window.</span><span class="collapseText">Click here to close this section.</span></label>
-    <ul>
-    <li class="inner-content">
-   macOS: This can be done by opening Spotlight (⌘ + space) and typing `Terminal` followed by pressing the return key.
-   
-   Ubuntu: Press `Ctrl` + `Alt` + `T` to open a terminal window.
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
+   > macOS shortcut: Open **Spotlight** (⌘ + space) and type _Terminal_, then press **Return**.<br>
+   > Ubuntu shortcut: Press **Ctrl+Alt+T**.
 
-1. Change to the root user 
+1. Run `multipass shell <name>` (ex. `multipass shell master-skater`) to start an Ubuntu shell. The terminal text will change to `ubuntu@<hostname>` (ex. `ubuntu@master~skater`).
 
-   The aiWARE installation needs elevated privileges to install
+1. Run `sudo bash` to change to the root user. This gives you the elevated privileges needed to install aiWARE. The root access is specified in Ubuntu Linux by `root@<hostname>`. For macOS, `root` indicates that you have root access.
 
-    <div class="collapse-accordion"><ul><li>
-    <input type="checkbox" id="list-item-2">
-    <label for="list-item-2"><span class="expandText">Change to the root user.</span><span class="collapseText">Click here to close this section.</span></label>
-    <ul>
-    <li class="inner-content">
+1. Set up your environment variables by modifying the following command if needed, then running it. This step is optional if you've done it already.
+
+    * `AIWARE_MODE` is the mode that should be installed. `AIWARE_MODE` with `single` mode installs the entire aiWARE stack on a single instance. This variable is broken up for a [cluster installation](/aiware/install/cluster).
+    * `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from terminating. aiWARE gives each instance a lifecycle.
+    * `AIWARE_INIT_TOKEN` contains your `uuidgen`. `uuidgen` must be unique because it's the initial admin token for your installation and is also your bearer token for calls to `aiware-agent`, so write it down.
+    
+    ?> Don't have 'uuidgen' installed on your local machine? Run `uuidgen install` or use [UUID Generator](https://www.uuidgenerator.net/).
+
+    > For a full list of available environment variables, see [Environment Variables](/aiware/install/envs).
+
+    Run this command to set up your environment variables.
 
     ```bash
-    sudo bash 
+    export AIWARE_MODE=redis,db,nsq,es,api,lb,minio,engine,automate,controller
+    export AIWARE_HOST_EXPIRE=false
+    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID
+    
+    # Set a domain for aiware - REQ'd if using Core due to SSL for the applications
+    # export AIWARE_DOMAIN_NAME=dev-local.aiware.com
+     
+    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN" # print the random UUID
     ```
 
-    The root access is specified in Ubuntu Linux by root@hostname. For macOS, root indicates that you have root access.
-
-    <!-- make the screenshot smaller -->
-    <img src="https://user-images.githubusercontent.com/65766301/122611396-e3314800-d09e-11eb-8ce0-7fd9fbc5c2c6.PNG" width="500" align="middle" alt="screenshot 1"/>
-
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
-
-1. Set up environment variables (Optional).
-
-    <div class="collapse-accordion"><ul><li>
-    <input type="checkbox" id="list-item-3">
-    <label for="list-item-3"><span class="expandText">Set up environment variables (Optional).</span><span class="collapseText">Click here to close this section.</span></label>
-    <ul>
-    <li class="inner-content">
-
-    The following environment environments are necessary for an initial installation. `AIWARE_MODE` indicates the mode that should be installed. `AIWARE_MODE` with `single` mode installs the entire aiWARE stack on an instance. This is suitable for a single instance installation. This variable is broken up for a [cluster installation](/aiware/install/cluster). `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from termination. aiWARE gives each instance a lifecycle. `AIWARE_INIT_TOKEN` provides the initial admin token for the installation. 
-
-    If you're installing aiWARE Anywhere on a private domain name, you'll need to add the `AIWARE_DOMAIN_NAME` environment variable. Go to the [SSL Certificate](#Adding-SSL-Certificates) section for details about setting up SSL certificates with aiWARE Applications.
+    If you're installing aiWARE Anywhere on a private domain name, you'll need to add the `AIWARE_DOMAIN_NAME` environment variable using the command below. See the [SSL Certificate](#Adding-SSL-Certificates) section for details about setting up SSL certificates with aiWARE Applications.
     <!-- single needs updating in code-->
     <!-- #export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es,automate -->
     <!-- if AIWARE_MODE isn't set, assume single -->
 
     ```bash
-    export AIWARE_MODE=redis,db,nsq,es,api,lb,minio,engine,automate,controller
-    export AIWARE_HOST_EXPIRE=false
-    export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
-    
-    # Set a domain for aiware - REQ'd if using Core due to SSL for the applications
-    # export AIWARE_DOMAIN_NAME=dev-local.aiware.com
-     
-    echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN"
+    export AIWARE_DOMAIN_NAME=dev-local.aiware.run # the `AIWARE_DOMAIN_NAME` environment variable
     ```
 
-    *Optional* For custom domains
-    ```bash
-    export AIWARE_DOMAIN_NAME=dev-local.aiware.run
-    ```
 
-    `uuidgen` should be a globally unique identifier. If you don't have 'uuidgen` installed on your local machine, [UUID Generator](https://www.uuidgenerator.net/) is an alternate source.
+        <!-- Tip: If you are reinstalling aiWARE on the machine, make sure that the variables are set to the right values. [Learn more](/aiware/troubleshooting/maintenance) -->
 
-    Note that the value of `AIWARE_INIT_TOKEN` is important. This will be the "Bearer Token" that
-    you'll need to authorize calls to `aiware-agent` later, so make sure you record this somewhere.
-
-    Set the [environment variables](/aiware/install/envs) that you want before installation. 
-
-    Tip: If you are reinstalling aiWARE on the machine, make sure that the variables are set to the right values. [Learn more](/aiware/troubleshooting/maintenance)
-
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
-
-1. Run install command
-
-    <div class="collapse-accordion"><ul><li>
-    <input type="checkbox" id="list-item-4">
-    <label for="list-item-4"><span class="expandText">aiWARE Installation.</span><span class="collapseText">Click here to close this section.</span></label>
-    <ul>
-    <li class="inner-content">
+5. Install the aiware-agent as a service.
 
     ```bash
     curl -sfL https://get.aiware.com |  sh -
     ```
 
-    This will install the aiware-agent as a service.
+    If it installs correctly, you’ll see `[INFO] aiware <version number> installed`.
 
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
+## Post Installation Steps
 
-# Post Install
-
-## Validate aiWARE
-
-We need to ensure that the aiware-agent service is running. 
-
-1. Service Validation
-
-   Validate service installation by ensuring that the aiWARE Service is running.
+1. Validate the service installation by checking that the aiWARE Service is running.
 
    <div class="collapse-accordion"><ul><li>
    <input type="checkbox" id="list-item-5">
@@ -146,7 +85,7 @@ We need to ensure that the aiware-agent service is running.
    <ul>
    <li class="inner-content">
 
-   macOS: You can check the status of the installation via running `launchctl list | grep aiware-agent`
+   macOS: You can check the status of the installation by running `launchctl list | grep aiware-agent`.
 
    ![screenshot 2](https://user-images.githubusercontent.com/53197964/123053909-37973900-d3b9-11eb-9e29-590a14a113c6.png)
 
@@ -162,7 +101,7 @@ We need to ensure that the aiware-agent service is running.
    <ul>
    <li class="inner-content">
 
-   Ubuntu: This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command or monitor it in real-time with `watch service aiware-agent status`.
+   Ubuntu: This will install the aiware-agent as a service. You can check the status by running `service aiware-agent status` or monitor it in real-time with `watch service aiware-agent status`.
 
    ![screenshot 3](https://user-images.githubusercontent.com/53197964/123047225-e5064e80-d3b1-11eb-8972-cdee8d8ee45d.png)
 
@@ -172,139 +111,62 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Docker Container Validation 
-   
-   Validate that the Docker containers for aiWARE start as expected. 
+1. Run `docker ps -a` to validate that the Docker containers for aiWARE start as expected. You should see `aiware-prom-alertmgr`, `aiware-prometheus`, `cadvisor`, `aiware-controller`, and other services with the prefix `aiware-`. 
 
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-7">
-   <label for="list-item-7"><span class="expandText">Docker container validation.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
+   ![List of aiware services](https://user-images.githubusercontent.com/53197964/123047643-64941d80-d3b2-11eb-8148-8eb58cf1ddc3.png)
 
-   Run: `docker ps -a`. This should show the `aiware-prom-alertmgr`, `aiware-prometheus`, `cadvisor`, `aiware-controller`, and other services with the prefix `aiware-` 
+   If you notice any issues, visit the [Troubleshooting page](/aiware/install/troubleshooting/maintenance) for help.
 
-   ![screenshot 4](https://user-images.githubusercontent.com/53197964/123047643-64941d80-d3b2-11eb-8148-8eb58cf1ddc3.png)
-
-   If you notice any issues, visit the [Troubleshooting page](/aiware/install/troubleshooting/maintenance) for steps to address potential issues. 
-
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
-
-1. aiWARE Validation 
-
-   Check to see if the aiWARE API is running and accessible. 
-
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-8">
-   <label for="list-item-8"><span class="expandText">aiWARE validation.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
-
-   Go to http://localhost:9000/edge/v1/version, or curl localhost:9000/edge/v1/version, for aiWARE Edge version information.  This will return information such as:
+1.    Confirm that the aiWARE API is running and accessible by going to http://localhost:9000/edge/v1/version or running `curl localhost:9000/edge/v1/version`. If it succeeds, you'll see aiWARE Edge version information like this:
 
    ```bash
    { "version": "Build number: , Build time: 2021-04-27_19:30:26, Build commit hash: b6e1b627c20489463f7dca463200649af1000222" }
    ```
 
-   If you are running aiWARE on a VM or remote machine, replace localhost with the IP address or hostname of that machine. 
+   > If you're running aiWARE on a VM or remote machine, replace "localhost" with the IP address or hostname of that machine. 
 
-   If you run into issues, visit the [Troubleshooting page](/aiware/install/troubleshooting/maintenance) for steps to address potential issues. 
+1. Configure aiWARE CLI, a helpful tool that interacts with the aiWARE stack you just deployed. 
 
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
+    Run `mkdir -p ~/.config` to create a new, hidden folder called config, then run `touch ~/.config/aiware-cli.yaml` to create a `.yaml` file. This file helps if you're working with an aiWARE Anywhere installation that's not on your local environment or if you're managing multiple aiWARE Anywhere clusters.
 
-1. Configure aiWARE CLI 
+    > `ls -a` shows all files in the directory, including hidden files.
 
-   The aiWARE CLI is a helpful tool that interacts with aiWARE stack just deployed. 
-
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-9">
-   <label for="list-item-9"><span class="expandText">aiWARE CLI Configuration.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
-
-   Create `~/.config/aiware-cli.yaml`. This step is helpful if you are working with an aiWARE Anywhere installation that is not on your local environment or if you are managing multiple aiWARE Anywhere clusters. 
+1. Copy the command below, replace `<YOUR $AIWARE_INIT_TOKEN>` with your `uuid` token from the installation step, then run the command. This lets you run aiware commands without providing a bearer token every time.
 
    ```bash
+   cat << 'EOF' > aiware-cli.yaml
    ---
    profiles:
      default:
        url: "http://localhost:9000/edge/v1"
-       token: "<INSERT $AIWARE_INIT_TOKEN here>"
+       token: "<YOUR $AIWARE_INIT_TOKEN>"
+    EOF
    ```
     
-   Replace `$AIWARE_INIT_TOKEN` with the actual token from the installation step. The value should be in UUID format.
-
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
-
-1. Create User(s) Using aiWARE CLI
-
-   A new user needs to be created to access tools such as the Edge UI. 
-
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-10">
-   <label for="list-item-10"><span class="expandText">Create a user.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
-
-   Running the following using the aiWARE CLI will create a new user `admin-user` with the password `test123`
+1. Create a new user with the aiWARE CLI so you can access tools such as the Edge UI. Run the command below to create a new user called `admin-user` with the password `test123`.
     
    ```bash
    ai users create -a --display-name Admin -e admin@admin.com --password test123 admin-user
    ```
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
 
-1. Run install command for aiWARE Core (Optional)
+1. Run install command for aiWARE Core (optional).
    <!-- to be removed -->
    <!-- Note the default channel -->
    <!-- Add to installation script, assume single -->
-
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-11">
-   <label for="list-item-11"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
 
     ```bash
     ai hub install core
     ```
 
-    This will install the aiware-agent as a service. You can check the status via running `service aiware-agent status` command or monitor
-    it in real-time with `watch service aiware-agent status`.
-
-   </li>                  
-   </ul>
-   </li>          
-   </ul>
-   </div>
+    This will install the aiware-agent as a service. Once the install completes, the terminal will print "Installation is completed". You can check the status by running `service aiware-agent status` command or monitor it in real-time with `watch service aiware-agent status`.
 
 1. Adding SSL Certificates 
 
-   <div class="collapse-accordion"><ul><li>
-   <input type="checkbox" id="list-item-12">
-   <label for="list-item-12"><span class="expandText">Install aiWARE Core.</span><span class="collapseText">Click here to close this section.</span></label>
-   <ul>
-   <li class="inner-content">
    To add a SSL certificate to an installation of aiWARE Anywhere, you'll need the following:
 
-   * A server certificate. (server.pem)
-   * A server certificate key. (server.pem.key)
-   * (Optional) A CA bundle. This should be a file with the certificate authority's certificate and all intermediate certificate authority certificates in a chain. (ca.pem)
+    * A server certificate. (server.pem)
+    * A server certificate key. (server.pem.key)
+    * (Optional) A CA bundle. This should be a file with the certificate authority's certificate and all intermediate certificate authority certificates in a chain. (ca.pem)
 
    The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. The below will add the certificates for dev-local.aiware.run. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
 
@@ -321,13 +183,7 @@ We need to ensure that the aiware-agent service is running.
    docker restart aiware-haproxy
    ```
 
-   </li>
-   </ul>
-   </li>
-   </ul>
-   </div>
-
-1. Next Steps 
+## Next Steps 
 
    Explore the full capabilities of aiWARE. You can review the following applications or jobs that you can take advantage of:
 
@@ -338,7 +194,7 @@ We need to ensure that the aiware-agent service is running.
    - [Tutorials](/tutorials/pages/getting-started) <!-- update the link -->
  
 
-# Uninstall aiWARE Anywhere
+## Uninstall aiWARE Anywhere
 To uninstall aiWARE Anywhere, run the following script: 
 ```bash 
 sh /usr/local/bin/aiware-agent-uninstall.sh
@@ -517,3 +373,4 @@ li {
     font-size: 16px;
 }
 </style>
+
