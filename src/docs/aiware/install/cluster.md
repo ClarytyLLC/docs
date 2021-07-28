@@ -393,19 +393,20 @@ To add a SSL certificate to an installation of aiWARE Anywhere, you'll need the 
 * A server certificate. (server.pem)
 * A server certificate key. (server.pem.key)
 
-The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
+The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. The below will add the certificates for dev-local.aiware.run. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
 
 ```bash
-
-sudo su 
+sudo su
 cd /opt/aiware/haproxy/certs
 # Replace the following files, ca.pem, server.pem and server.pem.key
-vi ca.pem # Paste the CA bundle 
-vi server.pem # Paste the server's certificate
-vi server.pem.key # Paste the server's key
+# Download server.pem for dev-local.aiware.run
+curl https://get.aiware.com/anywhere/certs/server.pem -sLO
+# Download server.pem.key for dev-loca.aiware.run
+curl https://get.aiware.com/anywhere/certs/server.pem.key -sLO
 # Restart HAProxy container
 docker restart aiware-haproxy
 ```
+
 
 ### SELinux
 ```

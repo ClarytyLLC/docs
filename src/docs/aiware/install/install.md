@@ -80,7 +80,7 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
     <!-- if AIWARE_MODE isn't set, assume single -->
 
     ```bash
-    export AIWARE_MODE=single
+    export AIWARE_MODE=redis,db,nsq,es,api,lb,minio,engine,automate,controller
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID for
     
@@ -306,16 +306,17 @@ We need to ensure that the aiware-agent service is running.
    * A server certificate key. (server.pem.key)
    * (Optional) A CA bundle. This should be a file with the certificate authority's certificate and all intermediate certificate authority certificates in a chain. (ca.pem)
 
-   The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
+   The certificates are located in the directory <AIWARE_ROOT>/haproxy/certs. The below will add the certificates for dev-local.aiware.run. For a standard installation of aiWARE, `AIWARE_ROOT` is `/opt/aiware`. Here are the installation steps:
 
    ```bash
    
    sudo su
    cd /opt/aiware/haproxy/certs
    # Replace the following files, ca.pem, server.pem and server.pem.key
-   vi ca.pem # Paste the CA bundle (if provided)
-   vi server.pem # Paste the server's certificate
-   vi server.pem.key # Paste the server's key
+   # Download server.pem for dev-local.aiware.run
+   curl https://get.aiware.com/anywhere/certs/server.pem -sLO
+   # Download server.pem.key for dev-loca.aiware.run
+   curl https://get.aiware.com/anywhere/certs/server.pem.key -sLO
    # Restart HAProxy container
    docker restart aiware-haproxy
    ```
