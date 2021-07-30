@@ -10,6 +10,8 @@
 | *auth.token_types_tocheck_permission_on_orgs* | string | user |  | List of token types that needs to check permission on organizations, it should be separated by commas, looks like: engine_instance, host, api, user |
 | *automate.automate_response_timeout* | int64 | 45 |  | The max wait response time in seconds of node-red request |
 | *automate.host_cpu_limit* | int64 | 80 |  | Automate max host's CPUUtilization allow for create node-red container |
+| *automate.node_red_engine_image* | int64 | registry.central.aiware.com/node-red-runner-v3:prod |  | The age of automate request for cleaning |
+| *automate.node_red_studio_image* | int64 | registry.central.aiware.com/node-red-v3:prod |  | The age of automate request for cleaning |
 | *automate.request_clean_time* | int64 | 604800 |  | The age of automate request for cleaning |
 | *automate.request_pull_limit* | int64 | 5 |  | Number automate request for each time automate agent processing |
 | *autoscale.enabled* | bool | false |  | Whether autoscale is enabled |
