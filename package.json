@@ -35,7 +35,7 @@
     "svg-inline-loader": "^0.8.0",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
-    "yarn": "^1.22.0"
+    "yarn": "1.22.11"
   },
   "engines": {
     "node": ">=10"
