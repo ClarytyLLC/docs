@@ -14,7 +14,7 @@
     "test:only": "E2E_SKIP_BOOTSTRAP=true yarn test"
   },
   "devDependencies": {
-    "allure-commandline": "^2.9.0",
+    "allure-commandline": "2.13.8",
     "clean-webpack-plugin": "1.0.1",
     "codeceptjs": "^2.0.7",
     "concurrently": "^6.0.2",
