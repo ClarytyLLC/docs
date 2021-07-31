@@ -44,7 +44,7 @@ RUN echo '### yarn...' && yarn
 RUN echo '### yarn build...' && yarn build
 #RUN echo '### yarn test...' && yarn test
 
-FROM nginx:1.15-alpine
+FROM nginx:1.21-alpine
 ENV NGINX_PORT=9000
 ARG ENVIRONMENT
 RUN echo '### Starting COPY from builder...'
