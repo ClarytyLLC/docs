@@ -170,12 +170,24 @@ th { text-align:left; }
 <a class="card" href="/#/tutorials/pages/developer-app/">
 <div class="icon">
 
+
 ![tutorial](./tutorial.svg)
 </div>
 <div class="card-content">
 <h3 style="margin-top:15px">Developer App Guide</h3>
 </div>
 </a>
+
+<a class="card" href="/#/tutorials/pages/azure-ad-application-and-openid">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Azure AD and OpenId</h3>
+</div>
+</a>
+
 
 </div>
 
