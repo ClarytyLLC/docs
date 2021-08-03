@@ -104,8 +104,8 @@ th { text-align:left; }
 <h3 style="margin-top:15px">Automate Studio Tutorials</h3>
 </div>
 </a>
-     
-<a class="card" href="/#/automate-studio/tutorials/README">
+
+<a class="card" href="/#/tutorials/pages/built-engine-using-developer-app/">
 <div class="icon">     
 
 ![tutorial](./tutorial.svg)
@@ -113,8 +113,18 @@ th { text-align:left; }
 <div class="card-content">
 <h3 style="margin-top:15px">Build your First Engine using Developer App</h3>
 </div>
+</a>
+
+<a class="card" href="/#/tutorials/pages/create-application-using-developer-app/">
+<div class="icon">     
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Create an Application using Developer App</h3>
+</div>
 </a>     
-     
+
 <a class="card" href="/#/tutorials/pages/getting-started-with-core">
 <div class="icon">
 

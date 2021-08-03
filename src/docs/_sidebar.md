@@ -216,11 +216,11 @@
 
   - [Automate Studio Tutorials](/automate-studio/tutorials/README)
 
-  - [Build your First Engine using Developer App](/tutorials/pages/build-engine-using-developer-app/) 
+  - [Build your First Engine using Developer App](/tutorials/pages/build-engine-using-developer-app/)
 
   <!-- - [Callbacks](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Create application in developer app](/tutorials/pages/temp-under-construction.md) -->
+  - [Create an Application using Developer App](/tutorials/pages/create-application-using-developer-app/)
 
   <!-- - [Create new Adapter in Developer app](/tutorials/pages/temp-under-construction.md) -->
 
