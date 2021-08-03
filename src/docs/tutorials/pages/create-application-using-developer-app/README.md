@@ -35,7 +35,7 @@ At a high level, there are six steps you need to carry out to build your applica
 - Step 5: Adding Processing Logic
 - Step 5: Perform Object/Face Detection on a video using the Application.
 
-## Steps
+## Steps <!-- {docsify-ignore} -->
 
 ## Step 1: Setting up the Project <!-- {docsify-ignore} -->
 
@@ -63,7 +63,7 @@ To deploy these 3 static files we are using [Netlify](https://www.netlify.com/) 
 
   3. Click on new site from Git,provide your own or forked repository name and click on deploy site. Our repo includes  `yarn.lock`, `package.json`, and other files to allow Netlify to deploy the files automatically, straight from the Github repo.
 
-  4. You app will be automatically deployed. Preview the deploy and  the app should be similar to the screenshot below containing the sign in box and log in,TDO details and New Job links at the bottom.
+  4. You app will be automatically deployed. Preview the deploy using the app link it should be similar to the screenshot below containing the sign in box and log in,TDO details and New Job links at the bottom.
 
      ![Sample App Preview](sample-app-preview.png)
 
@@ -109,7 +109,7 @@ The Veritone system administrator will be notified of your submission. Within 24
 
  Once it has been set to Active, it will be visible (in Veritone's App Switcher menu) to all registered users within your organization.
 
-## Step 3: Creating a Context Menu Extension
+## Step 3: Creating a Context Menu Extension <!-- {docsify-ignore} -->
 
 **What is a CME (Context Menu Extension) :** A custom command in the UI that's seen when a user clicks the "three dots" icon on a media file in the [Veritone CMS](https://cms.veritone.com/).
 
@@ -174,7 +174,7 @@ function getOAuthLink() {
 }
 ```
 
-2. Change the `CLIENT_ID` and `HOME_URL` fields with your App id and URL and deploy the app to server again. In our case Netlify will the deploy the app automatically.
+2. Change the `CLIENT_ID` and `HOME_URL` fields with your App id and URL and deploy the app to server again. In our case Netlify will the deploy the app to server automatically.
 
    Note: You can find your app id under **Applications** in the sidebar menu of Developer App. A list of applications will appear. Find your app in the list, and click it. A detail view will appear. In the detail view you app id will be listed below your app name .
 

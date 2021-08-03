@@ -105,7 +105,7 @@ th { text-align:left; }
 </div>
 </a>
 
-<a class="card" href="/#/tutorials/pages/built-engine-using-developer-app/">
+<a class="card" href="/#/tutorials/pages/build-engine-using-developer-app/">
 <div class="icon">     
 
 ![tutorial](./tutorial.svg)
