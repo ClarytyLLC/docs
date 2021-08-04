@@ -10,17 +10,17 @@ It's easy to use Veritone's aiWARE platform. Follow this quickstart to run your 
 
 ## Register <!-- {docsify-ignore} -->
 
-1. [Register for Veritone's platform and applications](https://www.veritone.com/onboarding/#/signUp?type=developer). If you've already registered, skip to Step 2.
+1. [Register for Veritone's platform and applications](https://www.veritone.com/onboarding/#/signUp?type=developer). If you've already registered and chosen a password, [login](https://login.veritone.com/) and skip to [Learn about Veritone Apps](#learn-about-veritone-apps).
 
 2. After registering, open the email you received from the Veritone team, then confirm your account by selecting **Confirm account**. A new tab will open for you to create a password.
 
-4. Create your password, then select **Continue**. Your application (app) will load. Congratulations, you're registered!
+3. Create your password, then select **Continue**. Your application (app) will load. Congratulations, you're registered!
 
 ## Learn about Veritone Apps <!-- {docsify-ignore} -->
 
-The Veritone aiWARE platform includes a set of modern web apps that make AI easy to use. To view your Veritone apps, select the grid icon in the upper right corner of the screen. The apps menu will appear.
+The Veritone aiWARE platform includes a set of modern web apps that make AI easy to use. To view the Veritone apps menu, select the grid icon in the upper right corner of the screen.
 
-![Grid icon that shows your Veritone apps](opening-apps-menu.png)
+![Grid icon that shows your Veritone apps](grid-icon.png)
 
 Some of the most frequently used apps are:
 
@@ -43,15 +43,17 @@ Veritone provides over 100 active and ready-to-use [engines (flows)](/developer/
 
 1. Select the grid icon to open the Apps menu.
 
-    ![Grid icon that shows your Veritone apps](opening-apps-menu.png)
+    ![Grid icon that shows your Veritone apps](grid-icon.png)
 
 1. From the Apps menu, select **Automate Studio**. It'll open in a new tab.
 
 2. In the upper left corner, select **+New Flow**, then search for _Starter Flow: Object Detection_. The search results will appear.
 
-4. Select the **Templates** tab, then select **Starter Flow: Object Detection**. A pane called **Starter Flow: Object Detection** will appear on the right. 
+4. Select the **Templates** tab, then select **Starter Flow: Object Detection**.
 
     ![Starter flow object detection in the search results](starter-flow-search-result.png)
+
+    A pane called **Starter Flow: Object Detection** will appear on the right. 
 
 5. In the pane, select **+Create Flow From Template**. A new tab will open and load the flow (engine).
 
