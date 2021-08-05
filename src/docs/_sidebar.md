@@ -244,9 +244,9 @@
 
   <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
 
-  - [Install aiWARE on local environment](/tutorials/pages/install-aiware-on-local-environment.md)
+  - [Install aiWARE on Local Environment](/tutorials/pages/install-aiware-on-local-environment.md)
 
-  <!-- - [Install aiWARE on cluster](/tutorials/pages/temp-under-construction.md) -->
+  - [Install aiWARE on Cluster](/tutorials/pages/install-aiware-on-cluster/) 
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->

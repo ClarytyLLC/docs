@@ -163,7 +163,17 @@ th { text-align:left; }
 ![tutorial](./tutorial.svg)
 </div>
 <div class="card-content">
-<h3 style="margin-top:15px">Install aiWARE on local environment</h3>
+<h3 style="margin-top:15px">Install aiWARE on Local Environment</h3>
+</div>
+</a>
+
+<a class="card" href="/#/tutorials/pages/install-aiware-on-cluster/">
+<div class="icon">
+
+![tutorial](./tutorial.svg)
+</div>
+<div class="card-content">
+<h3 style="margin-top:15px">Install aiWARE on Cluster</h3>
 </div>
 </a>
 
