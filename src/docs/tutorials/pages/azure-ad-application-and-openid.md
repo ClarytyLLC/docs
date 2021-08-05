@@ -131,7 +131,7 @@ mutation {
 
 ![OpenIDConnectGraphql](images\OpenIDConnectGraphql.png)
 
-- Copy the id and the loginUrl that are returned from GraphQL and save them somewhere - We will use them in the next step.
+- Copy the id and the loginUrl that are returned from GraphQL and save them somewhere - We will use them in the next step and later.
 
 
 ### Step 5: Start to setup the required configuration for the new Azure AD Application.
@@ -196,13 +196,153 @@ https://api.dev.us-1.veritone.com/v1/admin/openid/16f982b7-17fa-4c6c-a17b-9e7e01
 Video https://drive.google.com/file/d/1x84zycnEXwD2sCkySovqi4-NXBp2O8GE/view
 
 ### Step 6: Create and add new user in Azure AD Application.
-- Create and add the new user into Azure Application. 
-- Make sure the new User includes “email” information in his profile.
-- Create and add new User. 
+- Go back to https://portal.azure.com
+- Click on Manage Azure Active Directory - same as done previously
+- Click on Users in left Side Menu
+
+![Users](images\Users.png)
+
+- CLick + New user tab at top
+
+![NewUser](images\NewUser.png)
+
+- Add User name password and fill in any other fields in job info section you like
+- Click the Create button at bottom of page
+
+![AllUsers](images\AllUsers.png)
+
+- Click on your new User that you created and make sure thier email is in the contact info section
+
+![NewUserCreated](images\NewUserCreated.png)
+
+- if the users email is not in the Contact info Section
+- Click the Edit Tab and add their email in the Contact info section
+- Click the Save Tab 
+
+- Go back to https://portal.azure.com
+- Click on Manage Azure Active Directory - same as done previously
+- Click on Enterprise Applications
+- Click on our Application
+- Click on Users and groups in left menu
+
+![AddUser](images\AddUser.png)
+
+- Click on + Add user/group at the top
+
+![AddAssignment](images\AddAssignment.png)
+
+- Click on None Selected under Users
+- a portal should open called Users
+- Select the user we created earlier
+- Click the Select button at the bottom of the portal
+- Click the Assign button at the bottom of page that should blue now
+
+
+
+
 Recording: https://drive.google.com/file/d/1WhICbOLavCs9iG32GmRNEc_ldVHWp1Cp/view
-- Please make sure the new User has “email” information https://drive.google.com/file/d/19DmYILxPMSrNshJiC95eRHLK59H0NBFp/view
+https://drive.google.com/file/d/19DmYILxPMSrNshJiC95eRHLK59H0NBFp/view
 
 ### Step 7: Users provisioning with Azure AD via SCIM Endpoints
+
+- Sign into Veritone Admin Console with your User Admin Account
+
+![AdminConsole](images\AdminConsole.png)
+
+- Click on API Keys
+- Click on NEW API KEY button
+
+![NewApiKey](images\NewApiKey.png)
+
+- Add a Key Name for your token
+- the User input is left blank
+- Check the Box for User under Select Permissions 
+- Click Generate Token
+
+![TokenGenerated](images\TokenGenerated.png)
+
+- Copy Your Token and save it somewhere - we will use it next
+
+- Go back to https://portal.azure.com
+- Click on Manage Azure Active Directory - same as done previously
+- Click on Enterprise Applications 
+
+![Application](images\Application.png)
+
+- Click on your Application
+
+![ApplicationOverview](images\ApplicationOverview.png)
+
+- Click on Provisioning in left Menu
+
+![ProvisionStart](images\ProvisionStart.png)
+
+- Click the Get Started button
+
+![Provisioning](images\Provisioning.png)
+
+- Select Automatic under the Provisioning Mode
+- Next under Admin Credentials we are going to use two values we have previously saved 
+- Get the ID we copied at the end of step 4 above and add it to the end of this URL https://api.dev.us-1.veritone.com/v1/admin/scim/{connectId}
+- so for this example the Tenant URL that you would use is https://api.dev.us-1.veritone.com/v1/admin/scim/16f982b7-17fa-4c6c-a17b-9e7e018d42c0
+- Paste it into the Tenant URL
+- Paste the API token we just created in the last step into the secret token field
+- Click the test connection button
+- You should see a message saying the test was successful
+- Click the Save button at the top
+
+
+- Go back to https://portal.azure.com
+- Click on Manage Azure Active Directory - same as done previously
+- Click on Enterprise Applications 
+- Click on Provisioning in left Menu
+
+![EditProvisioning](images\EditProvisioning.png)
+
+- Click the Edit Provisioning Button at the Top 
+
+![ProvisioningMapping](images\ProvisioningMapping.png)
+- Expand the section that says Mappings
+- Click on Provision Azure Active Directory Groups
+
+![AttributeMappings](images\AttributeMappings.png)
+
+- Make sure the name field says Provision Azure Active Directory Groups
+- Change the Enabled Toggle to No
+- Click the Save Button at the Top
+- You will be prompted to Save Changes 
+- Click Yes
+
+![EditProvisioning](images\EditProvisioning.png)
+
+- Click the Edit Provisioning Button at the Top 
+
+![TurnOnProvisioning](images\TurnOnProvisioning.png)
+
+- Toggle the Provisioning Status at the bottom of page to On
+- Click the Save button at the top  
+- Close by clicking X on the right
+
+![ProvisionSuccess](images\ProvisionSuccess.png)
+
+- Provisioning cycles every 40 minutes - so you can also provision immediately
+- Click the Provision on Demand Button at the Top 
+
+![ProvisionOnDemand](images\ProvisionOnDemand.png)
+
+- Start typing user to provision in search bar
+- Select the user
+- Click the Provision button at the bottom of the Page
+
+![OnDemandUser](images\OnDemandUser.png)
+
+- You can now log into Veritones Admin Console and verify the new user was Created.
+
+![AdminConsoleUser](images\AdminConsoleUser.png)
+
+
+
+ 
 - User admin account to generate a new API Token which will be used for the SCIM Endpoints. Then save the token somewhere to use in step 2
 Video: https://drive.google.com/file/d/1x0HO2_Qffoz75kmO_D1hlorLiguKIYq_/view
 
@@ -215,7 +355,84 @@ Login for the new User of Azure AD in aiWare system
 
 ### Step 8: Set up ms graph - need to watch video here and adjust description
 
+- Go back to https://portal.azure.com
+- Click on Manage Azure Active Directory - same as done previously
+- Click on App registrations in side menu - same as done previously
+- Select the All applications tab and click on your application 
+- Select your Application
+
+![NewApp](images\NewApp.png)
+
+- Click on Owners in the left menu
+
+![Owners](images\Owners.png)
+
+- Click on the Add Owners button
+
+![OwnersSelection](images\OwnersSelection.png)
+
+- You should see a portal titled Owners
+- Select the administrator  - not the user you recently created
+- Click Select at the bottom of the Owners portal
+
+![OwnerSuccess](images\OwnerSuccess.png)
+
+- You should see your owner listed now
+- Click API Permissions from the left menu
+
+![ApiPermissions](images\ApiPermissions.png)
+
+- Click the + add a permission tab in the Configured permissions section
+
+![RequestApiPermissions](images\RequestApiPermissions.png)
+
+- You will see a Request API permissions portal
+- Click on the My APIs Tab at the top
+
+![MyApis](images\MyApis.png)
+
+- Click on your Application
+
+![SelectPermissions](images\SelectPermissions.png)
+
+- Check the box next to user_impersonation
+- Click the Add permissions button at the bottom of portal
+
+![UpdatedPermissions](images\UpdatedPermissions.png)
+
+- You should see your updated permissions 
+- Click the + add a permission tab in the Configured permissions section
+
+![RequestApiPermissions](images\RequestApiPermissions.png)
+
+- Click on the APIs my organization uses Tab
+
+![ApisOrg](images\ApisOrg.png)
+
+- Click on Microsoft Graph in the portal
+
+![MsGraph](images\MsGraph.png)
+
+- Click on the box titled Delegated Permissions - Then more info will appear
+- Make sure all 4 boxes in the above image are checked under Openid permissions
+- Click the Add permissions button at the bottom of the portal
+
+![AdminConsent](images\AdminConsent.png)
+
+- Click the Grant Admin Consent for (your AD) Tab - under Configured Permissions 
+- A popup will show up to ask you to confirm 
+- Click Yes
+
+![Consent](images\ConsentSuccess.png)
+
+- All the permissions should have a green checkmark next to them now
+
+
 ### Step 9: Use GQL to query the OpenID Connect Provider
+ - You can now place the loginUrl you copied in Step3 into the browser 
+ - Log in using the email of the user you created
+ 
+ 
  - Use GQL to query the OpenID Connect Provider using this query:
  - Then login the new User by the loginURL from above query
 Video for step 1 & 2: https://drive.google.com/file/d/1EKxe1b-AhMGNJrQ5RUSAEZrqE9F_R1Pk/view
