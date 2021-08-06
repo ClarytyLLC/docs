@@ -14,7 +14,6 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
 * Docker Engine
   * [Docker on macOS installation guide](https://docs.docker.com/docker-for-mac/install/)
   * [Docker on Ubuntu installation guide](https://docs.docker.com/engine/install/ubuntu/)
-* Ubuntu
 
 ### Recommended
 
@@ -28,11 +27,9 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
    > macOS shortcut: Open **Spotlight** (⌘ + space) and type _Terminal_, then press **Return**.<br>
    > Ubuntu shortcut: Press **Ctrl+Alt+T**.
 
-1. Run `multipass shell <name>` (ex. `multipass shell master-skater`) to start an Ubuntu shell. The terminal text will change to `ubuntu@<hostname>` (ex. `ubuntu@master~skater`).
-
 1. Run `sudo bash` to change to the root user. This gives you the elevated privileges needed to install aiWARE. The root access is specified in Ubuntu Linux by `root@<hostname>`. For macOS, `root` indicates that you have root access.
 
-1. Set up your environment variables by modifying the following command if needed, then running it. This step is optional if you've done it already.
+1. Review the following [environment variables](/aiware/install/envs) you'll need so you can set them up in the next step. This step is optional if you've done it already.
 
     * `AIWARE_MODE` is the mode that should be installed. `AIWARE_MODE` with `single` mode installs the entire aiWARE stack on a single instance. This variable is broken up for a [cluster installation](/aiware/install/cluster).
     * `AIWARE_HOST_EXPIRE` prevents instances in a cloud (such as AWS) from terminating. aiWARE gives each instance a lifecycle.
@@ -40,22 +37,20 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
     
     ?> Don't have 'uuidgen' installed on your local machine? Run `uuidgen install` or use [UUID Generator](https://www.uuidgenerator.net/).
 
-    > For a full list of available environment variables, see [Environment Variables](/aiware/install/envs).
-
-    Run this command to set up your environment variables.
+1. Run this command to set up your environment variables.
 
     ```bash
     export AIWARE_MODE=redis,db,nsq,es,api,lb,minio,engine,automate,controller
     export AIWARE_HOST_EXPIRE=false
     export AIWARE_INIT_TOKEN=`uuidgen` # generate a random UUID
-    
+
     # Set a domain for aiware - REQ'd if using Core due to SSL for the applications
     # export AIWARE_DOMAIN_NAME=dev-local.aiware.com
-     
+        
     echo "AIWARE_INIT_TOKEN is $AIWARE_INIT_TOKEN" # print the random UUID
     ```
 
-    If you're installing aiWARE Anywhere on a private domain name, you'll need to add the `AIWARE_DOMAIN_NAME` environment variable using the command below. See the [SSL Certificate](#Adding-SSL-Certificates) section for details about setting up SSL certificates with aiWARE Applications.
+    ?> If you want to use aiWARE applications, you need to install aiWARE Anywhere on a private domain name, [set up an SSL certificate](#Adding-SSL-Certificates), and add the `AIWARE_DOMAIN_NAME` environment variable using the command below. 
     <!-- single needs updating in code-->
     <!-- #export AIWARE_MODE=controller,db,api,lb,engine,redis,prometheus,minio,nsq,es,automate -->
     <!-- if AIWARE_MODE isn't set, assume single -->
@@ -64,8 +59,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
     export AIWARE_DOMAIN_NAME=dev-local.aiware.run # the `AIWARE_DOMAIN_NAME` environment variable
     ```
 
-
-        <!-- Tip: If you are reinstalling aiWARE on the machine, make sure that the variables are set to the right values. [Learn more](/aiware/troubleshooting/maintenance) -->
+    <!-- Tip: If you are reinstalling aiWARE on the machine, make sure that the variables are set to the right values. [Learn more](/aiware/troubleshooting/maintenance) -->
 
 5. Install the aiware-agent as a service.
 
@@ -85,7 +79,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
    <ul>
    <li class="inner-content">
 
-   macOS: You can check the status of the installation by running `launchctl list | grep aiware-agent`.
+   macOS: Run `launchctl list | grep aiware-agent`.
 
    ![screenshot 2](https://user-images.githubusercontent.com/53197964/123053909-37973900-d3b9-11eb-9e29-590a14a113c6.png)
 
@@ -101,7 +95,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
    <ul>
    <li class="inner-content">
 
-   Ubuntu: This will install the aiware-agent as a service. You can check the status by running `service aiware-agent status` or monitor it in real-time with `watch service aiware-agent status`.
+   Ubuntu: Run `service aiware-agent status` or monitor it in real-time with `watch service aiware-agent status`.
 
    ![screenshot 3](https://user-images.githubusercontent.com/53197964/123047225-e5064e80-d3b1-11eb-8972-cdee8d8ee45d.png)
 
@@ -196,6 +190,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
 
 ## Uninstall aiWARE Anywhere
 To uninstall aiWARE Anywhere, run the following script: 
+
 ```bash 
 sh /usr/local/bin/aiware-agent-uninstall.sh
 
