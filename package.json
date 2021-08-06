@@ -41,7 +41,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@sentry/browser": "5.7.1",
+    "@sentry/browser": "6.11.0",
     "docsify": "^4.12.0",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
