@@ -1,348 +1,335 @@
-# Setting up a Azure Active Directory Application and OpenID
+# Setting up an Azure Active Directory Application and OpenID
 
-**APPROXIMATE READING TIME: XXX MINUTES**
+**APPROXIMATE READING TIME: 30 MINUTES**
 
->**Tip** Before getting started, we recommend to read XYZXXXXXXX to understand how XXXXXXXXX tutorial.
-
-## Subject Description <!-- {docsify-ignore} -->
-
-The Following is a full steps by step integration guide of creating Org/Azure AD Application/Users and configuration for SCIM Endpoints. With the video recording for each step.
+This tutorial will show you how to configure SCIM (System for Cross-Domain Identity Management) endpoints and create an aiWare organization, Azure Active Directory (AD) application, and users.
 
 - Create aiWare Organization
 - New Org Admin, 
 - Azure AD Application, 
 - OpenID Provider
 
-?>  Steps 1 & 2 can be skipped if you already have an organization and org admin setup already
+## Create an organization
 
-### Step 1: Use Admin Console to create your organization 
-- Login to super-admin user and create a new Organization
+1. Login to super-admin user and create a new organization. If you've already setup an organization and org admin, skip to the next section. 
 
-### Step 2: Create an Org Admin 
-- Create a new org admin to manage the new organization
-- step 1 and 2 recording: https://drive.google.com/file/d/1AO5VQjzD9YROl1M1ZeB4iCkPyjaQvaSU/view
+1. Create a new org admin to manage the new organization.
+<!-- keeping this link as a comment in case I need it later. step 1 and 2 recording: https://drive.google.com/file/d/1AO5VQjzD9YROl1M1ZeB4iCkPyjaQvaSU/view
+ -->
 
-### Step 3: Create a new Enterprise Application in Azure AD
- - Go to Azure AD https://portal.azure.com and create a new Enterprise Application for testing
-Record: https://drive.google.com/file/d/151ubvL-Cui3Y2qENuu0AE4s0tvcGCBAH/view
+## Create a new Enterprise Application
 
-![PortalAzure](images\PortalAzure.png)
-- Click on Manage Azure Active Directory
+![Gif of creating a new application](images/azure-ad-application-and-openid/create-application.gif)
 
+<!-- Record: https://drive.google.com/file/d/151ubvL-Cui3Y2qENuu0AE4s0tvcGCBAH/view -->
 
-![AzureAd](images\AzureAd.png)
+1. Go to [Azure AD](https://portal.azure.com) and create a new Enterprise Application for testing.
 
-- Click on Enterprise applications in left menu
+1. Select **Azure Active Directory**.
+
+1. Select **Enterprise applications** from the left panel.
  
-![EnterpriseApplications](images\EnterpriseApplications.png)
+1. Select **+ New Application**.
 
-- Click on  + New Application
+1. Select **+ Create your own application**. The **Create your own application** panel will appear.
 
-![NewApplication](images\NewApplication.png)
+1. In the **Create your own application** panel, name your application and select the **Integrate any other application you don't find in the gallery** radio button.
 
-- Click on + Create your own application
+1. Select **Create**. The app overview page will load and show your app's properties.
 
-![CreateOwnApp](images\CreateOwnApp.png)
+      ![Properties of your new app](images/azure-ad-application-and-openid/app-properties.png)
 
-- Add a name for your application in the portal that shows on right
-- select the (integrate any other application you don't find in the gallery) option
-- Click the create button
+1. Select **Home** in the breadcrumb menu at the top of the page.
 
-![NewAppCreated](images\NewAppCreated.png)
+## Collect values for a GraphQL call
 
-- Click on Home in the breadcrumb menu at the top of the page
-- Click on Manage Azure Active Directory
+1. Select or search for **Azure Active Directory**.
 
-![AzureAd](images\AzureAd.png)
+1. In the panel on the left, select **App registrations**.
 
-- Click on App registrations on left hand menu
+      ![App registration tab](images/azure-ad-application-and-openid/app-registration.png)
 
-![AppRegistrations](images\AppRegistrations.png)
+1. Select the **All applications** tab. Your newly created app should appear in the **Display name** list.
 
-- Make sure the All applications tab is selected - you should see your newly created application there
-- Click on your new application in the list (in this image) veri-tutorial-scim-test
+      ![All applications tab](images/azure-ad-application-and-openid/all-applications-tab.png)
 
-![NewApp](images\NewApp.png)
+1. Select your app from the list.
 
-- Copy the Application (client) ID and save it somewhere - we will use it later
-- Click on the Endpoints tab at the top
+1. Copy the **Application (client) ID** and save it for later.
 
-![EndPoints](images\EndPoints.png)
+      ![The application ID](images/azure-ad-application-and-openid/application-id.png)
 
-- You should see Endpoints
-- Copy the OpenID Connect metadata document and save it somewhere - we will use it later
-- Close the Endpoints by clicking on the X
-- Click on Certificates and secrets on the left menu
+1. Select the **Endpoints** tab. The **Endpoints** panel will appear.
 
-![CertsSecrets](images\CertsSecrets.png)
+1. Copy the **OpenID Connect metadata document** value and save it for later.
 
-- Click on + New Client Secret
+      ![Open ID connect property](images/azure-ad-application-and-openid/open-id-connect.png)
 
-![CreateSecret](images\CreateSecret.png)
+1. Select the **Certificates and secrets** tab from the menu on the left.
 
-- You should see and Add a client secret portal
-- add a description
-- select an expiration 
-- Click the add button at the bottom
+      ![Certificates and secrets tab](images/azure-ad-application-and-openid/certificates-tab.png)
 
-![NewSecret](images\NewSecret.png)
+1. Select **+ New Client Secret**. An **Add a client secret** panel will appear.
 
-- copy the Value for your new secret and save it somewhere - we will use it next along with the previous values you saved
+1. Enter a description, select an expiration, and then select **Add**.
 
-### Step 4: Create new OpenID Provider Connect via GraphQL
- - Use your Org Admin account to create a new OpenID Provider Connect in aiWare via GraphQL
- - Log in to your veritone account using your org admin credentials 
- - The go to Veritones GraphQL interface and run the following mutation with the values that you copied
+1. In the **Client secrets** section, copy the value for your new secret and save it for later.
+
+      ![Client secret value](images/azure-ad-application-and-openid/secret-value.png)
+
+## Create a new OpenID Provider in aiWare using GraphQL
+
+1. [Login to your Veritone account](https://login.dev.veritone.com/) using your org admin credentials, then go to Veritone's [GraphQL interface](https://api.us-1.veritone.com/v3/graphql) (use the domain of the environment you are logged into, if not `us-1`).
+
+1. Run the following mutation after you replace the values **clientId**, **clientSecret**, and **issuerURL** with the values you saved earlier:
  
-Video: https://drive.google.com/file/d/1DVc2iBFMP2rJqQ8GMEEm5ldWtVKWWBjQ/view
+      <!-- Video: https://drive.google.com/file/d/1DVc2iBFMP2rJqQ8GMEEm5ldWtVKWWBjQ/view -->
 
-```graphql
-mutation {
-    createOpenIdProvider(
-        input: {
-              name: "Veri-Tutorial-Scim-Test"
-              description: "Test OpenID Azure Description"
-              websiteUrl: "https://login.microsoftonline.com"
-              clientId: "your Client ID XXXXXXXX"
-              clientSecret: "your Client Secret XXXXXXXX"
-              issuerUrl: "your OpenID Connect Metadata document  XXXXXXXX"
-              btnText: "Veri Tutorial Login"
-              btnLogo: "https://seeklogo.com/images/A/azure-active-directory-logo-C196F4B2D3-seeklogo.com"
-              btnColor: "#FFFFFF"
-              isGlobal: false
-        }
-      ) {
-            id
-            name
-            description
-            websiteUrl
-            loginUrl
-            loginButtonStyle {
-              btnText
-              btnLogo
-              btnColor
+      ```graphql
+      mutation {
+      createOpenIdProvider(
+            input: {
+                  name: "Veri-Tutorial-Scim-Test"
+                  description: "Test OpenID Azure Description"
+                  websiteUrl: "https://login.microsoftonline.com"
+                  clientId: "<YOUR CLIENT ID>"
+                  clientSecret: "<YOUR CLIENT SECRET>"
+                  issuerUrl: "<YOUR OPENID CONNECT METADATA DOCUMENT>"
+                  btnText: "Veri Tutorial Login"
+                  btnLogo: "https://seeklogo.com/images/A/azure-active-directory-logo-C196F4B2D3-seeklogo.com"
+                  btnColor: "#FFFFFF"
+                  isGlobal: false
             }
-            isGlobal
+            ) {
+                  id
+                  name
+                  description
+                  websiteUrl
+                  loginUrl
+                  loginButtonStyle {
+                  btnText
+                  btnLogo
+                  btnColor
+                  }
+                  isGlobal
+            }
       }
-}
-```
+      ```
 
-- Example of mutation and reponse after creating below
+      Your response should look like this:
 
-![OpenIDConnectGraphql](images\OpenIDConnectGraphql.png)
+      ![Sample GraphQL response](images/azure-ad-application-and-openid/sample-response.png)
 
-- Copy the id and the loginUrl that are returned from GraphQL and save them somewhere - We will use them in the next step and later.
+1. Copy the **id** and the **loginUrl** that are returned from GraphQL and save them somewhere.
 
+## Configure a platform
 
-### Step 5: Start to setup the required configuration for the new Azure AD Application.
+1. Go to [Azure AD](https://portal.azure.com).
 
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on App registrations in side menu - same as done previously
-- select the All applications tab and click on your application
+1. Select **Azure Active Directory**.
 
-![NewApp](images\NewApp.png)
+1. Select **App registrations** from the left panel.
 
-- Click on Authentication on in side menu
+1. Select the **All applications** tab and then select your application.
 
-![Authentication](images\Authentication.png)
+1. Select **Authentication** from the left panel.
  
-- Click on + Add a platform
+1. Select **+ Add a platform**.
 
-![ConfigurePlatform](images\ConfigurePlatform.png)
+      ![ConfigurePlatform](images/azure-ad-application-and-openid/add-a-platform.png)
 
-- You should see a portal that says Configure platforms
-- Click on the box that says Web
+      A **Configure platforms** panel will appear on the right.
 
-![ConfigureWeb](images\ConfigureWeb.png)
+1. In the **Configure platform** panel, select **Web**. The **Configure Web** panel will appear.
 
-- You should see a portal that says Configure Web
-- We will need to add a redirect URI here
-- In the input field that says (Enter the redirect URI of the application) paste the loginUrl you previously saved
-- in this example it was - https://api.dev.us-1.veritone.com/v1/admin/openid/16f982b7-17fa-4c6c-a17b-9e7e018d42c0/login
-- We need to make one alteration to this URL 
-- After pasting in the URL - we need to add the word callback/ before login at the end of the URL
-- so the the redirect URL will look like this
+1. Paste the **loginUrl** you had saved into the text field.
 
-https://api.dev.us-1.veritone.com/v1/admin/openid/16f982b7-17fa-4c6c-a17b-9e7e018d42c0/callback/login
+1. Modify the URL by adding _/callback_ before "login" at the end of the URL. Your URL should look like this:
 
-- Click the configure button at the bottom of the portal
+      https://api.dev.us-1.veritone.com/v1/admin/openid/16f982b7-17fa-4c6c-a17b-9e7e018d42c0/callback/login
 
-![RedirectUri](images\RedirectUri.png)
+1. Select **Configure**. The panel will close, and a **Web** section containing your redirect URI will appear under the **Platform configurations** section.
 
-- You should see a box under Platform configurations that says Web and contains your redirect URI 
-- Click on Token configuration in the left menu
+1. In the left panel, select **Token configuration**.
 
-![TokenConfiguration](images\TokenConfiguration.png)
+1. In the **Optional claims** section, select **+ Add optional claim**.
 
-- Click on + Add optional claim under Optional Claims
+      ![Add optional claim](images/azure-ad-application-and-openid/optional-claims.png)
 
-![OptionalClaim](images\OptionalClaim.png)
+      An **Add optional claim** panel will appear on the right.
 
-- You should see a portal that says Add optional claim
-- Under Token type select ID - This will reveal a claims menu
-- check the top box that says Claim which will select all the boxes
-- Click the Add button at the bottom of the portal
+1. In the **Add optional claim** panel, select the **ID** radio button. A list of claims will appear.
 
-![OptionalClaim2](images\OptionalClaim2.png)
+1. Select the first checkbox, called **Claim**. This will select all the checkboxes.
 
-- Check the box that says  - Turn on the Microsoft Graph email, profile permission (required for claims to appear in token).
-- Click the Add Button
+1. Select **Add**. A pop-up window will tell you that some claims require OpenID Connect scopes.
 
-![OptionalClaim3](images\OptionalClaim3.png)
+1. Select the checkbox in the pop-up window, then select **Add**. The pop-up window and panel will close, and a list of claims will appear. Your list of claims should look like this, but with more claims:
 
-- You should see a claims table now
+      ![List of claims](images/azure-ad-application-and-openid/list-of-claims.png)
 
-Video https://drive.google.com/file/d/1x84zycnEXwD2sCkySovqi4-NXBp2O8GE/view
+      <!-- Video https://drive.google.com/file/d/1x84zycnEXwD2sCkySovqi4-NXBp2O8GE/view -->
 
-### Step 6: Create and add new user in Azure AD Application.
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on Users in left Side Menu
+## Create a new user and add them to your Azure AD app
 
-![Users](images\Users.png)
+### Create the user
 
-- CLick + New user tab at top
+1. Go to [Azure AD](https://portal.azure.com).
 
-![NewUser](images\NewUser.png)
+1. Select **Azure Active Directory**.
 
-- Add User name password and fill in any other fields in job info section you like
-- Click the Create button at bottom of page
+1. In the left panel, select **Users**.
 
-![AllUsers](images\AllUsers.png)
+1. Select the **+ New user** tab at the top of the main panel.
 
-- Click on your new User that you created and make sure thier email is in the contact info section
+      ![Create new user](images/azure-ad-application-and-openid/create-user.png)
 
-![NewUserCreated](images\NewUserCreated.png)
+      The **New user** page will appear.
 
-- if the users email is not in the Contact info Section
-- Click the Edit Tab and add their email in the Contact info section
-- Click the Save Tab 
+1. In the **Identity** section, enter a username and a name. In the **Password** section, choose to either auto-generate or manually set a password, then fill out any other sections or fields you want.
 
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on Enterprise Applications
-- Click on our Application
-- Click on Users and groups in left menu
+1. Select **Create**. A list of all users will appear.
 
-![AddUser](images\AddUser.png)
+      ![List of all users](images/azure-ad-application-and-openid/all-users.png)
 
-- Click on + Add user/group at the top
+1. Select the user you created. Their profile will load. Once it loads, ensure their email is in the **Contact info** section.
 
-![AddAssignment](images\AddAssignment.png)
+      ![Email in contact info section](images/azure-ad-application-and-openid/email.png)
 
-- Click on None Selected under Users
-- a portal should open called Users
-- Select the user we created earlier
-- Click the Select button at the bottom of the portal
-- Click the Assign button at the bottom of page that should blue now
+      >? If the user's email is in the **Contact info** section, skip to Step 10. Otherwise, continue to Step 8.
 
+1. Select the **Edit** tab.
 
+      ![Edit tab](images/azure-ad-application-and-openid/edit-button.png)
 
+1. Enter the user's email in the **Contact info** section, then select the **Save** tab.
 
-Recording: https://drive.google.com/file/d/1WhICbOLavCs9iG32GmRNEc_ldVHWp1Cp/view
-https://drive.google.com/file/d/19DmYILxPMSrNshJiC95eRHLK59H0NBFp/view
+### Add the user
 
-### Step 7: Users provisioning with Azure AD via SCIM Endpoints
+1. Go to [Azure AD](https://portal.azure.com).
 
-- Sign into Veritone Admin Console with your User Admin Account
+1. Select **Azure Active Directory**.
 
-![AdminConsole](images\AdminConsole.png)
+1. Select **Enterprise applications** from the left panel.
 
-- Click on API Keys
-- Click on NEW API KEY button
+1. Select your application.
 
-![NewApiKey](images\NewApiKey.png)
+1. Select **Users and groups** from the left panel.
 
-- Add a Key Name for your token
-- the User input is left blank
-- Check the Box for User under Select Permissions 
-- Click Generate Token
+1. Select the **+ Add user/group** tab at the top of the center panel.
 
-![TokenGenerated](images\TokenGenerated.png)
+1. Select **None Selected** under **Users**. The **Users** panel will appear on the right.
 
-- Copy Your Token and save it somewhere - we will use it next
+1. In the **Users** panel, select the user you created earlier, then select **Select**.
 
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on Enterprise Applications 
+1. Select **Assign** at the bottom of the center panel.
 
-![Application](images\Application.png)
+<!-- Recording: https://drive.google.com/file/d/1WhICbOLavCs9iG32GmRNEc_ldVHWp1Cp/view
+https://drive.google.com/file/d/19DmYILxPMSrNshJiC95eRHLK59H0NBFp/view -->
 
-- Click on your Application
+## User provisioning with Azure AD via SCIM Endpoints
 
-![ApplicationOverview](images\ApplicationOverview.png)
+### Generate an API token
 
-- Click on Provisioning in left Menu
+1. Sign into [Veritone Admin Console](login.veritone.com) with your User Admin account.
 
-![ProvisionStart](images\ProvisionStart.png)
+      ![AdminConsole](images\AdminConsole.png)
 
-- Click the Get Started button
+1. Select **API Keys**.
 
-![Provisioning](images\Provisioning.png)
+1. Select **New API Key**. A **New API Key** window will appear.
 
-- Select Automatic under the Provisioning Mode
-- Next under Admin Credentials we are going to use two values we have previously saved 
-- Get the ID we copied at the end of step 4 above and add it to the end of this URL https://api.dev.us-1.veritone.com/v1/admin/scim/{connectId}
-- so for this example the Tenant URL that you would use is https://api.dev.us-1.veritone.com/v1/admin/scim/16f982b7-17fa-4c6c-a17b-9e7e018d42c0
-- Paste it into the Tenant URL
-- Paste the API token we just created in the last step into the secret token field
-- Click the test connection button
-- You should see a message saying the test was successful
-- Click the Save button at the top
+1. Enter a **Key Name** for your token.
 
+1. In the **Select Permissions** section, select the **User** checkbox.
 
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on Enterprise Applications 
-- Click on Provisioning in left Menu
+1. Select **Generate Token**. The **Token Generated** window will appear. Select **Copy**, and paste the token in a safe place.
 
-![EditProvisioning](images\EditProvisioning.png)
+      ![Token generated](images/azure-ad-application-and-openid/token-generated.png)
 
-- Click the Edit Provisioning Button at the Top 
+### Create credentials and test the connection
 
-![ProvisioningMapping](images\ProvisioningMapping.png)
-- Expand the section that says Mappings
-- Click on Provision Azure Active Directory Groups
+1. Go to [Azure AD](https://portal.azure.com).
 
-![AttributeMappings](images\AttributeMappings.png)
+1. Select **Azure Active Directory**.
 
-- Make sure the name field says Provision Azure Active Directory Groups
-- Change the Enabled Toggle to No
-- Click the Save Button at the Top
-- You will be prompted to Save Changes 
-- Click Yes
+1. Select **Enterprise applications** from the left panel.
 
-![EditProvisioning](images\EditProvisioning.png)
+1. Select your application.
 
-- Click the Edit Provisioning Button at the Top 
+1. Select **Provisioning** from the left panel.
 
-![TurnOnProvisioning](images\TurnOnProvisioning.png)
+1. Select **Get Started** from the center panel.
 
-- Toggle the Provisioning Status at the bottom of page to On
-- Click the Save button at the top  
-- Close by clicking X on the right
+      ![Get started button](images/azure-ad-application-and-openid/get-started.png)
 
-![ProvisionSuccess](images\ProvisionSuccess.png)
+      The **Provisioning** page will load.
 
-- Provisioning cycles every 40 minutes - so you can also provision immediately
-- Click the Provision on Demand Button at the Top 
+1. In the **Provisioning Mode** dropdown, select **Automatic**. An **Admin Credentials** section will appear.
 
-![ProvisionOnDemand](images\ProvisionOnDemand.png)
+1. Add the string in your **loginUrl** you copied at the end of Step 23 in the **Create a new Enterprise Application** section to this URL: https://api.dev.us-1.veritone.com/v1/admin/scim/\<YOUR LOGINURL\>.
 
-- Start typing user to provision in search bar
-- Select the user
-- Click the Provision button at the bottom of the Page
+      Your URL should look like this: https://api.dev.us-1.veritone.com/v1/admin/scim/16f982b7-17fa-4c6c-a17b-9e7e018d42c0.
 
-![OnDemandUser](images\OnDemandUser.png)
+1. Paste the URL into the **Tenant URL** field.
 
-- You can now log into Veritones Admin Console and verify the new user was Created.
+1. Paste the API token you created in Step 6 into the **Secret Token** field.
 
-![AdminConsoleUser](images\AdminConsoleUser.png)
+1. Select **Test Connection**. After a few seconds, a message should appear in the upper right with a green checkmark, indicating the test was successful.
 
+1. Select **Save** at the top of the panel.
 
+### Finalize the provisioning settings
 
- 
+1. Go to [Azure AD](https://portal.azure.com).
+
+1. Select **Azure Active Directory**.
+
+1. Select **Enterprise applications** from the left panel.
+
+1. Select your application.
+
+1. Select **Provisioning** from the left panel.
+
+1. Select **Edit Provisioning**.
+
+      ![Edit Provisioning button](images/azure-ad-application-and-openid/edit-provisioning.png)
+
+      The **Provisioning** page will load.
+
+1. Expand the **Mappings** section, then select **Provision Azure Active Directory Groups**. The **Attribute Mapping** page will load.
+
+1. Ensure the name field says "Provision Azure Active Directory Groups".
+
+1. Toggle **Enabled** to **No**.
+
+1. Select **Save** at the top. When prompted to save your changes, select **Yes**.
+
+1. Select the **Provisioning** breadcrumb. The **Provisioning** page will load.
+
+      ![Provisioning breadcrumb](images/azure-ad-application-and-openid/provisoning-breadcrumb.png)
+
+1. Toggle **Provisioning Status** at the bottom to **On**, then select **Save**.
+
+1. Close by selecting **X** in the upper right.
+
+>? Provisioning cycles every 40 minutes, but you can also provision immediately with [Provision on demand](#provision-on-demand).
+
+## Provision on demand
+
+1. Select **Provision on demand**.
+
+      ![Provision on demand](images/azure-ad-application-and-openid/provision-on-demand.png)
+
+      The **Provision on demand** page will load.
+
+1. In the search bar, search for and select the user to provision, then select **Provision**.
+
+1. Login to Veritone's Admin Console and verify the new user was created.
+
+      ![AdminConsoleUser](images\AdminConsoleUser.png)
+
+<!-- 
 - User admin account to generate a new API Token which will be used for the SCIM Endpoints. Then save the token somewhere to use in step 2
 Video: https://drive.google.com/file/d/1x0HO2_Qffoz75kmO_D1hlorLiguKIYq_/view
 
@@ -353,89 +340,102 @@ Recording: https://drive.google.com/file/d/1THzAaLFuWMnlAKSeBMNHfDMF-02ttYNN/vie
 Video: https://drive.google.com/file/d/10nzOiZ9T4wHlpXlzsk534FqwjT_8RGDH/view
 Login for the new User of Azure AD in aiWare system
 
-### Step 8: Set up ms graph - need to watch video here and adjust description
+-->
 
-- Go back to https://portal.azure.com
-- Click on Manage Azure Active Directory - same as done previously
-- Click on App registrations in side menu - same as done previously
-- Select the All applications tab and click on your application 
-- Select your Application
+## Set up Microsoft Graph
 
-![NewApp](images\NewApp.png)
+### Add the admin account as an owner
 
-- Click on Owners in the left menu
+1. Go to [Azure AD](https://portal.azure.com).
 
-![Owners](images\Owners.png)
+1. Select **Azure Active Directory**.
 
-- Click on the Add Owners button
+1. Select **App registrations** from the left panel.
 
-![OwnersSelection](images\OwnersSelection.png)
+1. Select the **All applications** tab, then select your application.
 
-- You should see a portal titled Owners
-- Select the administrator  - not the user you recently created
-- Click Select at the bottom of the Owners portal
+1. Select **Owners** from the left panel.
 
-![OwnerSuccess](images\OwnerSuccess.png)
+1. Select **Add Owners**.
 
-- You should see your owner listed now
-- Click API Permissions from the left menu
+      ![Add owners button](images/azure-ad-application-and-openid/add-owners.png)
 
-![ApiPermissions](images\ApiPermissions.png)
+      The **Owners** panel will appear on the right.
 
-- Click the + add a permission tab in the Configured permissions section
+1. In the **Owners** panel, search for and select your administrator account, not the user you recently created.
 
-![RequestApiPermissions](images\RequestApiPermissions.png)
+1. Select **Select**. Your administrator account should be listed in the center panel.
 
-- You will see a Request API permissions portal
-- Click on the My APIs Tab at the top
+      ![OwnerSuccess](images/azure-ad-application-and-openid/admin-as-owner.png)
 
-![MyApis](images\MyApis.png)
+### Update permissions
 
-- Click on your Application
+1. Select **API Permissions** from the left panel.
 
-![SelectPermissions](images\SelectPermissions.png)
+1. In the **Configured permissions** section, select **+ Add a permission**.
 
-- Check the box next to user_impersonation
-- Click the Add permissions button at the bottom of portal
+      ![Add an API permission](images/azure-ad-application-and-openid/add-permission.png)
 
-![UpdatedPermissions](images\UpdatedPermissions.png)
+      The **Request API permissions** panel will appear.
 
-- You should see your updated permissions 
-- Click the + add a permission tab in the Configured permissions section
+1. At the top of the **Request API permissions** panel, select the **My APIs** tab, then select your application.
 
-![RequestApiPermissions](images\RequestApiPermissions.png)
+1. Check the box next to user_impersonation, then select **Add permissions** at the bottom of the panel.
 
-- Click on the APIs my organization uses Tab
+      ![User impersonation checkbox](images/azure-ad-application-and-openid/user-impersonation-checkbox.png)
 
-![ApisOrg](images\ApisOrg.png)
+      The panel will close, and your updated permissions will appear in the center panel.
 
-- Click on Microsoft Graph in the portal
+      ![Updated permissions](images/azure-ad-application-and-openid/updated-permissions.png) 
 
-![MsGraph](images\MsGraph.png)
+1. In the **Configured permissions** section, select **+ Add a permission**. The **Request API permissions** panel will appear.
 
-- Click on the box titled Delegated Permissions - Then more info will appear
-- Make sure all 4 boxes in the above image are checked under Openid permissions
-- Click the Add permissions button at the bottom of the portal
+1. At the top of the **Request API permissions** panel, select the **APIs my organization uses** tab, then search for and select **Microsoft Graph**.
 
-![AdminConsent](images\AdminConsent.png)
+1. Select **Delegated Permissions**. A **Select permissions** section will appear in the panel.
 
-- Click the Grant Admin Consent for (your AD) Tab - under Configured Permissions 
-- A popup will show up to ask you to confirm 
-- Click Yes
+1. In **OpenId permissions**, select all 4 boxes.
 
-![Consent](images\ConsentSuccess.png)
+      ![OpenId checkboxes](images/azure-ad-application-and-openid/openid-checkboxes.png)
 
-- All the permissions should have a green checkmark next to them now
+1. Select **Add permissions** at the bottom of the panel. The panel will close, and your Microsoft Graph permissions will appear in the **Configured permissions** section of the center panel.
+
+1. Select the **Grant Admin Consent for \<your AD\>** in **Configured Permissions**. When prompted to confirm, select **Yes**.
+
+      ![Grant admin consent](images/azure-ad-application-and-openid/grant-admin-consent.png)
+
+      All the permissions should now have a green checkmark in the **Status** column.
+
+      ![Permissions with green checkmarks](images/azure-ad-application-and-openid/green-checks.png)
 
 
-### Step 9: Use GQL to query the OpenID Connect Provider
- - You can now place the loginUrl you copied in Step3 into the browser 
- - Log in using the email of the user you created
+## Use GQL to query the OpenID Connect Provider
+
+ 1. In the browser, enter the **loginUrl** you received from the mutation you ran in **Create a new enterprise application**. 
+
+ 1. Login using the email of the user you created.
  
- 
- - Use GQL to query the OpenID Connect Provider using this query:
- - Then login the new User by the loginURL from above query
-Video for step 1 & 2: https://drive.google.com/file/d/1EKxe1b-AhMGNJrQ5RUSAEZrqE9F_R1Pk/view
+ 1. Use GraphQL to query the OpenID Connect Provider using this query:
 
-### Folder with videos of entire process
-- https://drive.google.com/drive/folders/1GRjLvK6TBWp82Ddo7sVn8YZcD8u8yxtL?usp=sharing
+      ```graphql
+      query {
+      openIdProviders(isGlobal: false) {
+      records {
+            id
+            name
+            description
+            loginUrl
+            loginButtonStyle {
+            btnText
+            btnLogo
+            btnColor
+            }
+            id
+            isGlobal
+            websiteUrl
+      }
+      }
+      }
+      ```
+
+ 1. Enter the **loginUrl** returned from the query to login the new user.
