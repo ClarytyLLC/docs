@@ -4,7 +4,7 @@
 
 ## Before we begin <!-- {docsify-ignore} -->
 
-If you're new to Veritone aiWARE, we will recommend you to read about aiWARE and its benefits using the below links.
+If you're new to Veritone aiWARE, we recommend you read about aiWARE and its benefits using the below links.
 
 [aiWARE Overview]()
 
@@ -45,24 +45,24 @@ Open Terminal and access it as a root user. The root access is specified in Ubun
 
 ### Step 2: Install Docker and dependencies
 
-aiWARE resources are packaged and deployed as [Docker](https://www.docker.com/) containers , so to initialize aiWARE, Docker is required,
+aiWARE resources are packaged and deployed as [Docker](https://www.docker.com/) containers, so Docker is required in order to initialize aiWARE.
 
 To install Docker and other required libraries:
 
-1. Copy the below command to the terminal and press enter to update the package information from all of the configured sources  
+1. Copy the below command to the terminal, and press enter to update the package information from all of the configured sources.
 
 ```
 sudo apt update -y
 ```
 ![screenshot 2](https://user-images.githubusercontent.com/65766301/122611797-8e420180-d09f-11eb-81cc-0558962c0607.PNG)
 
-2. Install Docker and other external packages  using the below command
+2. Install Docker and other external packages  using the below command.
 
 ```
 sudo apt install docker.io nfs-common awscli uuid prometheus-node-exporter -y
 ```
 
- This may take a minute or two. Here is the screenshot after successful installation
+ This may take a minute or two. Here is the screenshot after a successful installation.
 
 ![screenshot 3](https://user-images.githubusercontent.com/65766301/122611853-ab76d000-d09f-11eb-9cf3-c41eb659d9c9.PNG)
 
@@ -95,7 +95,7 @@ apt install net-tools
 export IPADDR=$(ifconfig | grep inet | grep -v inet6 | grep -v "169.254" | grep -v 127.0.0.1 | head -n1 | awk '{ print $2 }'); echo $IPADDR
 ```
 
-The response will output the IP address(172.17.0.1) of the machine(see the below screenshot)
+The response will output the IP address(172.17.0.1) of the machine (see the below screenshot)
 
 ![screenshot 6](https://user-images.githubusercontent.com/65766301/122611980-eda01180-d09f-11eb-842c-28f101098782.PNG)
 
@@ -120,7 +120,7 @@ The value for our  `AIWARE_INIT_TOKEN` is `f37c9708-0969-4ca7-b646-bed3e51845f1`
 
 ### Step 5: Install the aiWARE Agent
 
-1. Now install the aiWARE-agent as a service using the following command
+1. Now install the aiWARE-agent as a service using the following command.
 
 ```
 curl -sfL https://get.aiware.com | sudo -E sh -
@@ -138,14 +138,14 @@ Response after successful installation:
 
 Response:
 
-The response should show active(running) and will show downloading progress for aiWARE containers. The process can take up to few minutes, depending upon your internet speed. Press CTRL +C to exit out of the status service screen.
+The response should show active(running) and will show downloading progress for aiWARE containers. The process can take up to a few minutes, depending upon your internet speed. Press CTRL+C to exit out of the status service screen.
 
 ![screenshot 9](https://user-images.githubusercontent.com/65766301/122612107-348e0700-d0a0-11eb-8d23-be00eeb3a6ec.PNG)
 
 
 ### Step 6: Validate aiWARE Installation
 
-1. Once the downloading of containers is finished run the following docker command to check the container status for running and non-running aiWARE containers
+1. Once the downloading of containers is finished run the following docker command to check the container status for running and non-running aiWARE containers:
 
 ```
 docker ps -a
@@ -203,7 +203,7 @@ service aiware-agent status
 ![screenshot 14](https://user-images.githubusercontent.com/65766301/122612431-bd0ca780-d0a0-11eb-9157-53a2ae3c88d2.PNG)
 
 
-5.If the download is still in progress ,let it complete ,the process can take up to 30 minutes or less depending upon your speed of internet connection.Once it is completed you will see the following status(see the below screenshot) and all the aiWARE containers will be ready to launch.
+5. If the download is still in progress ,let it complete ,the process can take up to 30 minutes or less depending upon your speed of internet connection.Once it is completed you will see the following status(see the below screenshot) and all the aiWARE containers will be ready to launch.
 
 ![screenshot 15](https://user-images.githubusercontent.com/65766301/122612467-cc8bf080-d0a0-11eb-9e58-795a33be6df3.PNG)
 
