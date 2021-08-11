@@ -4,11 +4,6 @@
 
 This tutorial will show you how to configure SCIM (System for Cross-Domain Identity Management) endpoints and create an aiWare organization, Azure Active Directory (AD) application, and users.
 
-- Create aiWare Organization
-- New Org Admin, 
-- Azure AD Application, 
-- OpenID Provider
-
 ## Create an organization
 
 1. Login to super-admin user and create a new organization. If you've already setup an organization and org admin, skip to the next section. 
@@ -77,11 +72,11 @@ This tutorial will show you how to configure SCIM (System for Cross-Domain Ident
 
       ![Client secret value](images/azure-ad-application-and-openid/secret-value.png)
 
-## Create a new OpenID Provider in aiWare using GraphQL
+## Create a new OpenID Connect Provider in aiWare using GraphQL
 
 1. [Login to your Veritone account](https://login.dev.veritone.com/) using your org admin credentials, then go to Veritone's [GraphQL interface](https://api.us-1.veritone.com/v3/graphql) (use the domain of the environment you are logged into, if not `us-1`).
 
-1. Run the following mutation after you replace the values **clientId**, **clientSecret**, and **issuerURL** with the values you saved earlier:
+1. Run the following mutation after you replace the values of **clientId**, **clientSecret**, and **issuerURL** with the values you saved earlier:
  
       <!-- Video: https://drive.google.com/file/d/1DVc2iBFMP2rJqQ8GMEEm5ldWtVKWWBjQ/view -->
 
