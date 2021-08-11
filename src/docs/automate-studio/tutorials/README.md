@@ -1,6 +1,6 @@
 # Tutorials
 
-A step-by-step guid to build some basic and some more advanced **AI Flows** from scratch
+A step-by-step guide to building some basic and more advanced **AI Flows** from scratch.
 
 <!-- ### Content
 
@@ -83,7 +83,7 @@ A step-by-step guid to build some basic and some more advanced **AI Flows** from
     </div>
 </div>
 
-> More Tutorials are comming up soon
+> More Tutorials are coming soon
 
 <style>
 * {
