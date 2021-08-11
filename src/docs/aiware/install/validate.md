@@ -49,17 +49,17 @@ In aiWARE, the main unit of work is the _Job_. A Job, in turn, wraps Tasks; and 
 
 This page gives a quick overview of how Jobs work in aiWARE. We will show examples of how to run a job using the GraphQL API (the "cloud API") as well as the Edge REST API (which is tyically used in on-premise/hosted aiWARE).
 
-The process involves these steps:
+The process has 5 steps:
 
-* [Step One](#step-one-authorization-getting-a-token): Authorization and Authentication (Get a Token)
+1. Authorization and Authentication (Get a Token)
 
-* [Step Two](#step-two-choose-an-engine): Choose an Engine
+1. Choose an Engine
 
-* [Step Three](#step-three-create-the-job): Create the Job
+1. Create the Job
 
-* [Step Four](#step-four-poll-for-status): Poll for Status
+1. Poll for Status
 
-* [Step Five](#step-five-obtain-the-results): Obtain the Results
+1. Obtain the Results
 
 <style>
      p, ul, ol, li { font-size: 18px !important;}

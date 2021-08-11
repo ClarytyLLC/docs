@@ -20,7 +20,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
 * Storage: 500 GB available space
 * Memory: 4 CPUs and 16GB of RAM to run 1-2 engines at a time.
 
-## Installation Steps
+## Install aiWARE Anywhere
 
 1. Open a Terminal window. 
    
@@ -69,7 +69,7 @@ Follow these instructions to install aiWARE Anywhere on a single machine.
 
     If it installs correctly, you’ll see `[INFO] aiware <version number> installed`.
 
-## Post Installation Steps
+## Validate the Installation
 
 1. Validate the service installation by checking that the aiWARE Service is running.
 
