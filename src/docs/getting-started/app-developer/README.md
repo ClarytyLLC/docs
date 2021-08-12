@@ -4,7 +4,7 @@
 
 ## Build an AI-Powered App on aiWARE <!-- {docsify-ignore} -->
 
-Harnessing the power of Artificial Intelligence in a custom app is easier than you think. Choose from hundreds of cognitive engines (covering more than 25 cognitive capabilities) to build an AI solution to solve challenging business problems. Leverage aiWARE's built in asset management functionality to build access-controlled, rich-media web apps in record time.
+Harnessing the power of Artificial Intelligence in a custom app is easier than you think. Choose from hundreds of cognitive engines (covering more than 25 cognitive capabilities) to build an AI solution to solve challenging business problems. Leverage aiWARE's built-in asset management functionality to build access-controlled, rich-media web apps in record time.
 
 ## App Development Quickstart <!-- {docsify-ignore} -->
 

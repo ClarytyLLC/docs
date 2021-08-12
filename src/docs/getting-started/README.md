@@ -89,7 +89,7 @@
 th { text-align:left; }
 </style>
 
-# Get Stated <!-- {docsify-ignore} -->
+# Get Started <!-- {docsify-ignore} -->
 
 <div class="container">
 

@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-inline-html no-trailing-spaces blanks-around-headings heading-increment no-multiple-blanks-->
 
 
-# Quickstart for First Time Users <!-- {docsify-ignore} -->
+# Quickstart for First-time Users <!-- {docsify-ignore} -->
 
 **APPROXIMATE READING TIME: 8 MINUTES**
 

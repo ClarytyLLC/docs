@@ -49,9 +49,9 @@
   - [For Application Developers](/getting-started/app-developer/)
   - [For Data Scientists](/getting-started/engine-developer/)
     <!-- - [For Solution Architects](/getting-started/ml-integrator/) -->
-  - [For MLOps Engineer](/getting-started/mlops-engineer/)
+  - [For MLOps Engineers](/getting-started/mlops-engineer/)
   - [More Tutorials](/tutorials/pages/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
-- [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)
+- [Self-Hosted aiWARE](/aiware/install/installation-guide-overview.md)
   - [Install Single Machine](/aiware/install/install.md)
   - [Install Cluster](/aiware/install/cluster.md)
   - [Validate Install](/aiware/install/validate.md)

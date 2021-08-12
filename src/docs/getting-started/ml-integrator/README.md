@@ -140,7 +140,7 @@ When the goal is to transform your clients' existing infrastructure to an AI-ena
 
 ## Try Our GraphQL Sandbox
 
-Run live quieries against real datasets. Federate cognitive engines into complex workflows. Aggregate, search, and analyze temporal data like a pro. You'll be amazed how fast you can go from zero to hero when you combine the ease of declarative programming with the power of AI.
+Run live queries against real datasets. Federate cognitive engines into complex workflows. Aggregate, search, and analyze temporal data like a pro. You'll be amazed how fast you can go from zero to hero when you combine the ease of declarative programming with the power of AI.
 
 [Try it now](https://api.veritone.com/v3/graphql)
 
