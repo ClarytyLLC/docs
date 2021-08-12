@@ -52,7 +52,6 @@
   - [For MLOps Engineer](/getting-started/mlops-engineer/)
   - [More Tutorials](/tutorials/pages/) <!-- distribute those tutorials to the appropriate sectioins; make this page a hub/toc for deep links into docs in other sections. -->
 - [Self Hosted aiWARE](/aiware/install/installation-guide-overview.md)
-
   - [Install Single Machine](/aiware/install/install.md)
   - [Install Cluster](/aiware/install/cluster.md)
   - [Validate Install](/aiware/install/validate.md)
@@ -155,6 +154,11 @@
     - [Quickstart](/data-lake/structured-data/quick-start/)
   - [Working with Search](/data-lake/search-quickstart/)
   - [Configuration](/config/admin.md)
+    - [Admin](/config/admin.md)
+    - [Controller](/config/controller.md)
+    - [DB](/config/db.md)
+    - [NFS](/config/nfs.md)
+    - [Registry](/config/registry.md)
   - [Glossary](/aiware/install/glossary/)
   - [Troubleshooting](/aiware/troubleshooting/)
   - [Engines](/developer/engines/)
