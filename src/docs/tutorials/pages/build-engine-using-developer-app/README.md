@@ -23,7 +23,7 @@ After following this step-by-step tutorial, you will be successfully able to bui
 
 ## Creating an Engine: Overview <!-- {docsify-ignore} -->
 
-All Engines in aiWARE are packaged as executable [Docker](https://www.docker.com/) containers, which are exposed via webhook through a Veritone's Engine Developer Toolkit. An engine webhook can pass data as a JSON object, which makes them widely compatible with all the programming languages. The most common languages used for implementing engines are Go, Node.js, and Python.
+All Engines in aiWARE are packaged as executable [Docker](https://www.docker.com/) containers, which are exposed via webhook through a Veritone's Engine Developer Toolkit. An engine webhook can pass data as a JSON object, which makes engines widely compatible with all the programming languages. The most common languages used for implementing engines are Go, Node.js, and Python.
 
 For building a cognitive engine, you will need to choose what type of extraction capabilities you want to derive insights. For the sake of the demonstration, we are choosing a simple text-processing engine that extracts words from a file.
 
@@ -168,7 +168,7 @@ README.md   keyword-extraction.js  package.json
 
 ![Engine Mode](engine-mode.png)
 
-The rationale for choosing a segment engine mode over a stream is its stateless queue operations. A segment engine does not have to keep track of data that came before or after it. In contrast, Stream Engines process data in streams and keeps track of the order in which it is processed.
+The rationale for choosing a segment engine mode over a stream is its stateless queue operations. A segment engine does not have to keep track of data that came before or after it. In contrast, Stream Engines process data in streams and keep track of the order in which it is processed.
 
 Since the text processing engine does not have to keep track of words coming before or after it, a segment engine is the best use case here.
 Note: Batch Engine Mode is also available as an engine mode, but it is deprecated. We will recommend using segment message or stream engine modes instead.
@@ -197,7 +197,7 @@ All the model types are self-explanatory, and for the test processing engine, we
 
    ![Engine Details 1](engine-details-1.png)
 
-10. Specify an optional icon, provide other information info about the engine and click on review. (See the screenshot below)
+10. Specify an optional icon, provide other information about the engine and click on review. (See the screenshot below)
 
 ![Engine Details 2](engine-details-2.png)
 
@@ -384,7 +384,7 @@ docker run -e "VERITONE_TESTMODE=true"  -p 9090:9090 -p 8080:8080 --name hello-w
 
 This will fire up the 'hello-world` container in *test mode*, exposing ports 9090 and 8080 for WebHooks and Test Console App.
 
-> `--rm` tag is added in the [run](https://docs.docker.com/engine/reference/commandline/run/) command to remove the container when it exits. This mitigates the  `container is already running` error when you re rerun it.
+> `--rm` tag is added in the [run](https://docs.docker.com/engine/reference/commandline/run/) command to remove the container when it exits. This mitigates the  `container is already running` error when you rerun it.
 
 2. If your engine launched normally, you should see a console message something like this:
 
@@ -424,7 +424,7 @@ The various other form fields (`startOffsetMS,` `width,` `height,` etc.) apply o
 
 To get the results, specify a text file for your engine; for example, we are specifying a text file that contains the following phrase: `How much wood would a wood chuck chuck if a wood chuck could chuck wood`.
 
-Click on the green **Submit request** button and the `engine` driver will hit our `/process` webhook with the test-mode data chunk we've configured. The output from the engine code will extract "vocabulary words" from (`testfile`) and captured them in the appropriate output format as results.
+Click on the green **Submit request** button and the `engine` driver will hit our `/process` webhook with the test-mode data chunk we've configured. The output from the engine code will extract "vocabulary words" from (`testfile`) and capture them in the appropriate output format as results.
 
 ![Engine Results](engine-results.png)
 

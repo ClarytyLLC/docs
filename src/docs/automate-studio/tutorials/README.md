@@ -83,7 +83,7 @@ A step-by-step guide to building some basic and more advanced **AI Flows** from 
     </div>
 </div>
 
-> More Tutorials are coming soon
+> More tutorials are coming soon!
 
 <style>
 * {

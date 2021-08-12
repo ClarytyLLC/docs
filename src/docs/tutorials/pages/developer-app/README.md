@@ -50,7 +50,7 @@ Once you sign in to the developer app using the Veritone account, by default, yo
 
 To know more about Engines and how to create an Engine, check [getting started with engines](https://docs.veritone.com/#/developer/engines/getting-started/).
 
-To know how to create an AI app, check [building applications](https://docs.veritone.com/#/developer/applications/) section in the documentation.
+To know how to create an AI app, check out the [building applications](https://docs.veritone.com/#/developer/applications/) section in the documentation.
 
 ## Developer App : (+)Create New <!-- {docsify-ignore} -->
 
@@ -113,7 +113,7 @@ For step-by-step instructions on how to register a schema within the Veritone pl
 
 Benchmark in a Veritone developer platform allows result comparisons between a group of engines. The results are generated using  [Veritone Benchmark](https://docs.veritone.com/#/benchmark/)- a self-service tool that compares your Engine against other engines for the best combination of speed accuracy and performance while maximizing business value.
 
-To learn the basics of Veritone Benchmark and run benchmarks, check [Benchmark Overview](https://docs.veritone.com/#/benchmark/?id=introduction) section in the documentation. The section covers everything to get acquainted with key concepts and capabilities of Benchmark .
+To learn the basics of Veritone Benchmark and run benchmarks, check out the [Benchmark Overview](https://docs.veritone.com/#/benchmark/?id=introduction) section in the documentation. The section covers everything to get acquainted with key concepts and capabilities of Benchmark .
 
 ## Developer App: Engines <!-- {docsify-ignore} -->
 
@@ -123,13 +123,13 @@ Clicking on the Engines tab on the upper left will provide you with a list of en
 
 For every Engine listed, their capabilities, type, last updated, and status(active, pending) are also specified. To know which capabilities each Engine can support, check our [Capabilities Table](https://docs.veritone.com/#/developer/engines/cognitive/?id=capabilities). 
 
-You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about "Face Detection - F V3" engine.
+You can also get build information, logs, and how many tasks are running on an engine, etc., by choosing the specific one on the list. For example, we will check additional information about the "Face Detection - F V3" engine.
 
-Clicking on the "Face Detection - F V3" engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs.See the screenshot below.
+Clicking on the "Face Detection - F V3" engine will redirect you to a new page where you will see the unique engine id, option to generate manifests for docker builds, see build information, tasks, and logs. See the screenshot below.
 
 ![Engine Overview](engine-overview.png)
 
-Builds: Provide specific information on how many times an engine was build and deployed.
+Builds: Provide specific information on how many times an engine was built and deployed.
 
 ![Builds](builds.png)
 

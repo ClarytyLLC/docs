@@ -2,7 +2,7 @@
 
 **APPROXIMATE READING TIME: 5 MINUTES**
 
-Now that you have a working installation of aiWARE, what next? This guide helps you get familiar with aiWARE as you start explore the stack. 
+Now that you have a working installation of aiWARE, what next? This guide helps you get familiar with aiWARE as you start exploring the stack. 
 
 ## aiWARE GraphQL
 
