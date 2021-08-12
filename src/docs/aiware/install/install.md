@@ -39,7 +39,7 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
    </ul>
    </div>
 
-1. Change to the root user 
+1. Change to the root user.
 
    The aiWARE installation needs elevated privileges to install
 
@@ -64,11 +64,11 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
    </ul>
    </div>
 
-1. Set up environment variables (Optional).
+1. Set up environment variables (optional).
 
     <div class="collapse-accordion"><ul><li>
     <input type="checkbox" id="list-item-3">
-    <label for="list-item-3"><span class="expandText">Set up environment variables (Optional).</span><span class="collapseText">Click here to close this section.</span></label>
+    <label for="list-item-3"><span class="expandText">Set up environment variables (optional).</span><span class="collapseText">Click here to close this section.</span></label>
     <ul>
     <li class="inner-content">
 
@@ -110,7 +110,7 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
    </ul>
    </div>
 
-1. Run install command
+1. Run install command.
 
     <div class="collapse-accordion"><ul><li>
     <input type="checkbox" id="list-item-4">
@@ -136,7 +136,7 @@ You can install [aiWARE via Hub](/aiware/hub). Alternatively, you can follow the
 
 We need to ensure that the aiware-agent service is running. 
 
-1. Service Validation
+1. Service Validation.
 
    Validate service installation by ensuring that the aiWARE Service is running.
 
@@ -172,7 +172,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Docker Container Validation 
+1. Docker Container Validation.
    
    Validate that the Docker containers for aiWARE start as expected. 
 
@@ -194,7 +194,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. aiWARE Validation 
+1. aiWARE Validation.
 
    Check to see if the aiWARE API is running and accessible. 
 
@@ -220,7 +220,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Configure aiWARE CLI 
+1. Configure aiWARE CLI.
 
    The aiWARE CLI is a helpful tool that interacts with aiWARE stack just deployed. 
 
@@ -248,7 +248,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Create User(s) Using aiWARE CLI
+1. Create User(s) Using aiWARE CLI.
 
    A new user needs to be created to access tools such as the Edge UI. 
 
@@ -269,7 +269,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Run install command for aiWARE Core (Optional)
+1. Run install command for aiWARE Core (optional).
    <!-- to be removed -->
    <!-- Note the default channel -->
    <!-- Add to installation script, assume single -->
@@ -293,7 +293,7 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Adding SSL Certificates 
+1. Adding SSL Certificates.
 
    <div class="collapse-accordion"><ul><li>
    <input type="checkbox" id="list-item-12">
@@ -315,7 +315,7 @@ We need to ensure that the aiware-agent service is running.
    # Replace the following files, ca.pem, server.pem and server.pem.key
    # Download server.pem for dev-local.aiware.run
    curl https://get.aiware.com/anywhere/certs/server.pem -sLO
-   # Download server.pem.key for dev-loca.aiware.run
+   # Download server.pem.key for dev-local.aiware.run
    curl https://get.aiware.com/anywhere/certs/server.pem.key -sLO
    # Restart HAProxy container
    docker restart aiware-haproxy
@@ -327,9 +327,9 @@ We need to ensure that the aiware-agent service is running.
    </ul>
    </div>
 
-1. Next Steps 
+1. Next Steps.
 
-   Explore the full capabilities of aiWARE. You can review the following applications or jobs that you can take advantage of:
+   Explore the full capabilities of aiWARE. You can review the following documentation:
 
    - [Admin](/aiware/aiWARE-in-depth/apps/?id=admin) <!-- doublecheck -->
    - [Automate Studio](/aiware/aiWARE-in-depth/apps/?id=automate-studio)
