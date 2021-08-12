@@ -8725,35 +8725,6 @@ components:
           description: authorization token
           type: string
       type: object
-    socketTaskOutput:
-      description: message sent to client for engine task outputs, which can be text
-        or aion - AI object notation, in response to a subscription
-      properties:
-        aion:
-          type: object
-        chunkID:
-          description: chunk ID
-          format: string
-          type: string
-        jobID:
-          description: Core Job ID
-          format: string
-          type: string
-        msgType:
-          $ref: '#/components/schemas/SocketMsgTypeEnum'
-        taskID:
-          description: Core Task ID
-          format: string
-          type: string
-        text:
-          description: If present, the output is a text string
-          type: string
-        timestamp:
-          description: sender timestamp when the message was sent
-          example: 2018-03-20 10:12:28+00:00
-          format: date-time
-          type: string
-      type: object
     socketTaskStatus:
       description: message sent to client to inform state change of a subscribed task
         or job
@@ -8832,7 +8803,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://aiware.com/terms/
   title: aiWARE Edge API
-  version: 3.19.4.2999
+  version: 3.20.2.3060
 openapi: 3.0.1
 paths:
   /admin/application/{ApplicationID}/detail:
