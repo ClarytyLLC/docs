@@ -2,11 +2,11 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
->**Tip** Before getting started, we recommend reading [Training an Engine](training-an-engine) and [Working with Jobs](#/developer/engines).
+>**Tip** Before getting started, we recommend to read about [Training an Engine](training-an-engine) and [Working with Jobs](#/developer/engines).
 
 ## Polling a Job for Status <!-- {docsify-ignore} -->
 
-In this tutorial, we will learn together how to do polling. You can review the status of your job by polling its status. The possible statuses of a job are:
+In this tutorial, we will learn together how to do perform polling. You can review the status of your job by polling its status. The possible statuses of a job are:
 
 - Pending
 - Complete
@@ -63,7 +63,7 @@ In the body, there are four keys:
 | `type`            | This must be set to `"schedule_poll_task"` to indicate the response should schedule polling. |
 | `timestampUTC`    | The current time in UTC epoch milliseconds.                  |
 | `nextPollTimeUTC` | The time when you want to start the polling task in UTC epoch milliseconds. This should usually be at least a minute in the future. |
-| `taskPayload`     | The information required by the engine to poll for status. For example, as shown in the example above, it may `workId` to reference the external service's ID and `origTaskId` to return results. We can structure this object per the requirements of the engine. The object is handed to the scheduled polling task as a whole. |
+| `taskPayload`     | The information required by the engine to poll for status. For example, as show in the example above, it may `workId` to reference the external service's ID and `origTaskId` to return results. We can structure this object per the requirements of the engine. The object is handed to the scheduled polling task as a whole. |
 
 > The next scheduled polling task receives a new task ID, but the results are posted to the original task ID. You must pass the original task ID in the taskPayload so that the next run of the engine knows which task to report results against.
 

@@ -216,8 +216,6 @@
 
   <!-- - [Add new source in the CMS app](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [Adding  Custom Fields](/tutorials/pages/temp-under-construction.md) -->
-
   - [Automate Studio Tutorials](/automate-studio/tutorials/README)
 
   - [Build your First Engine using Developer App](/tutorials/pages/build-engine-using-developer-app/) 
@@ -235,35 +233,34 @@
   <!-- - [Create new library and how to use it ](/tutorials/pages/temp-under-construction.md) -->
 
   <!-- - [Comparing Engine Results using Benchmark](/tutorials/pages/temp-under-construction.md) -->
+  - [Install aiWARE on Local Environment](/tutorials/pages/install-aiware-on-local-environment.md)
+  - [Install aiWARE on Cluster](/tutorials/pages/install-aiware-on-cluster/) 
   - [Getting Started with Core](/tutorials/pages/getting-started-with-core.md)
   - [Customizing Engine Output](/tutorials/pages/customizing-engine-output.md)
   - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md)
+  - [How to get your engine approved](/tutorials/pages/how-to-get-engine-approved.md)
+  - [Working with Jobs](/tutorials/pages/working-with-jobs.md)
+  - [Adding  Custom Fields](/tutorials/pages/aading-custom-fields.md) 
   - [Polling](/tutorials/pages/polling.md)
-
-  <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
+  - [Using Temporal Data Objects](/tutorials/pages/using-temporal-data-objects.md)
+  - [Using Structured Data Objects](/tutorials/pages/using-structured-data-objects.md)
+  - [Callbacks](/tutorials/pages/implementing-callbacks.md)
+  - <!-- - [Customizing Engine Input](/tutorials/pages/customizing-engine-input.md) -->
 
   - [Developer App Guide](/tutorials/pages/developer-app/)
 
   <!-- - [Graphql API tutorials](/tutorials/pages/temp-under-construction.md) -->
 
-  <!-- - [How to get your engine approved](/tutorials/pages/temp-under-construction.md) -->
-
-  - [Install aiWARE on Local Environment](/tutorials/pages/install-aiware-on-local-environment.md)
-
-  - [Install aiWARE on Cluster](/tutorials/pages/install-aiware-on-cluster/) 
   <!-- - [Integrate aiWARE in third party applications](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Polling](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Searching Engine data using Cognitive Data Lake](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Training an Engine](/tutorials/pages/training-an-engine.md) -->
   <!-- - [Testing & Debugging Engines](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using MachineBox](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Upload files using the CMS app](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Upload streams using the CMS app](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Using Temporal Data Objects](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Using Structured Data Objects](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Authentication and Authorization Tokens](/tutorials/pages/temp-under-construction.md) -->
   <!-- - [Using Custom Adapters](/tutorials/pages/temp-under-construction.md) -->
-  <!-- - [Working with Jobs](/tutorials/pages/temp-under-construction.md) -->
+  
 
 - [API, SDK, & CLI Reference](/apis/using-graphql.md)
 
