@@ -2,7 +2,7 @@
 
 **APPROXIMATE READING TIME: 7 MINUTES**
 
->**Tip** Before getting started, we recommend to read  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine. We recommend you also read the [Customize Engine Output](customizing-engine-output) tutorial.
+>**Tip** Before getting started, we recommend reading  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine. We recommend you also read the [Customize Engine Output](customizing-engine-output) tutorial.
 
 ## Engine Input Customization<!-- {docsify-ignore} -->
 
@@ -98,7 +98,7 @@ Let us say we are registering a new engine with Veritone. At the bottom of the f
 
 In the above example, we have added a custom field with name `outputLanguage` and label Output Language. When we run our cognitive engine on the [Veritone CMS](https://cms.veritone.com/), the UI prompts us to specify a value for Output Language. The value specified will be passed as  `outputLanguage` form-field parameter in the body and is POSTed to the engine's `/process` handler at runtime.
 
-Next, we will run run the engine and view the output.
+Next, we will run the engine and view the output.
 
 ### Step 3: Run the Engine and View Output
 

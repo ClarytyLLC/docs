@@ -48,7 +48,7 @@ We will first create a summary schema and include it in our output. We will be c
 
 The sample `stats` object has three fields, all of type integer. However, your summary object can include any number of fields of any data type supported by JavaScript.
 
-In order to use a this data structure in our output, we will need to create the JSON schema that support it. You could use any of the easy-to-use online tools, such as  https://jsonschema.net/, to create a schema. A schema that supports the above data structure looks like:
+In order to use this data structure in our output, we will need to create the JSON schema that supports it. You could use any of the easy-to-use online tools, such as  https://jsonschema.net/, to create a schema. A schema that supports the above data structure looks like:
 
 ```
 {
