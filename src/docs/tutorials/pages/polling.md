@@ -6,7 +6,7 @@
 
 ## Polling a Job for Status <!-- {docsify-ignore} -->
 
-In this tutorial, we will learn together how to do perform polling. You can review the status of your job by polling its status. The possible statuses of a job are:
+In this tutorial, we will learn together how to poll the status of a job. You can review the status of your job by polling its status. The possible statuses of a job are:
 
 - Pending
 - Complete

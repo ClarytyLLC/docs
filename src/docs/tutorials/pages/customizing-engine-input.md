@@ -14,7 +14,7 @@ In this tutorial we will learn together how to pass a custom input to your engin
 - Specify the URL of a web hook.
 - Point to a schema.
 
-These are just a few examples. There could be many other possible scenarios where you would use custom parameters.  You can easily pass an arbitrary JSON data to an engine in aiWARE. Let us quickly go through how it is done.
+These are just a few examples. There could be many other possible scenarios where you would use custom parameters.  You can easily pass arbitrary JSON data to an engine in aiWARE. Let us quickly go through how it is done.
 
 
 
