@@ -2,7 +2,7 @@
 
 **APPROXIMATE READING TIME: 4 MINUTES**
 
->**Tip** Before getting started, we recommend to read about [Training an Engine](training-an-engine) and [Working with Jobs](#/developer/engines).
+>**Tip** Before getting started, we recommend reading [Training an Engine](training-an-engine) and [Working with Jobs](#/developer/engines).
 
 ## Polling a Job for Status <!-- {docsify-ignore} -->
 

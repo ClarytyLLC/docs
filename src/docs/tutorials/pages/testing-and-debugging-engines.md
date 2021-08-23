@@ -2,11 +2,11 @@
 
 **APPROXIMATE READING TIME: 10 MINUTES**
 
->**Tip** Before getting started, we recommend reading about [how to quickly get started with aiWARE](/getting-started/quickstart/) and get familiar with our [cognitive engines](/cognitive-technology/). It would also help if you read about [training an engine](training-an-engine) and [working with jobs](#/developer/engines).
+>**Tip** Before getting started, you recommend reading about [how to quickly get started with aiWARE](/getting-started/quickstart/) and get familiar with our [cognitive engines](/cognitive-technology/). It would also help if you read about [training an engine](training-an-engine) and [working with jobs](#/developer/engines).
 
 ## Engine Validation and Debugging <!-- {docsify-ignore} -->
 
-In this tutorial, we will learn together how to test our engine and debug the most common error. You should validate your engine before you submit a build.
+In this tutorial, you will learn together how to test our engine and debug the most common error. You should validate your engine before you submit a build.
 
 You must perform the following steps to ensure that your engine is completely validated and you can submit the build:
 
@@ -27,7 +27,7 @@ Before doing functional testing of your engine, you should take care to see that
 
 ### Engine Output Validation API (Beta)
 
-We understand that writing valid engine output for the first time can be difficult and confusing.
+you understand that writing valid engine output for the first time can be difficult and confusing.
 To make it easier to write conforming output, Veritone provides a simple HTTP POST endpoint that you can use to test the validity of your engine's output.
 
 For example, to validate a speech-to-text engine, you can make the following call:
@@ -83,7 +83,7 @@ curl --request POST \
 }'
 ```
 
-If the engine output is valid, you will see `valid: true` under the `data` key of the response, as well as a `processed` field, which will show you only the fields that have been validated against the vtn-standard.
+If the engine output is valid, you will see `valid: true` under the `data` key of the response, as youll as a `processed` field, which will show you only the fields that have been validated against the vtn-standard.
 
 Here is an example of validating the above `transcript` output.
 
@@ -195,7 +195,7 @@ curl --request POST \
 In the preceding example, the second element in the array has an empty object, and the third element has a negative `startTimeMs`, which would clearly cause problems due to data inconsistency.
 Fortunately, the engine output validator can catch a large subset of these sorts of problems.
 
-Here's what we get when we try to validate our less than perfect output:
+Here's what you get when you try to validate our less than perfect output:
 
 ```json
 {

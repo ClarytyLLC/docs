@@ -2,7 +2,7 @@
 
 **APPROXIMATE READING TIME: 8 MINUTES**
 
->**Tip** Before getting started, we recommend to read  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine and generate an output.
+>**Tip** Before getting started, we recommend reading  [Build Your Own Engine](/developer/engines/tutorial/) to understand how you can build your engine and generate an output.
 
 ## Engine Output Customization <!-- {docsify-ignore} -->
 
@@ -140,7 +140,7 @@ In the above example, we have customized some of the titles just to suit our nee
 
    
 
-7. Click the three-vertical-dots ("kebab") menu on the right in the row for your schema, and select **PUBLISH**. This publishes our schema and makes it available. next, we need to get the schema Id for our schema.
+7. Click the three-vertical-dots ("kebab") menu on the right in the row for your schema, and select **PUBLISH**. This publishes our schema and makes it available. Next, we need to get the schema Id for our schema.
 
 8. Click the *kebab* menu for our schema, and select **VIEW**. In the view page, select copy the schema ID from the browser address bar.
 
@@ -215,7 +215,7 @@ let _words = null;
 
 These lines support our timing variable, `_startTime`, and a new global `_words` (for word count), in this snippet.
 
-You can Save the file, re-build the engine, and test it locally (using Test Mode) as described in the [Build Your Own Engine](#/developer/engines/tutorial/) tutorial. After you verify that the engine works as planned, you can deploy it to Veritone.
+You can save the file, re-build the engine, and test it locally (using Test Mode) as described in the [Build Your Own Engine](#/developer/engines/tutorial/) tutorial. After you verify that the engine works as planned, you can deploy it to Veritone.
 
 ### Final Results
 
