@@ -2,68 +2,50 @@
 
 **APPROXIMATE READING TIME: 10 MINUTES**
 
->**Tip** Before getting started, you recommend to read about [training an engine](training-an-engine.md) and [engine developer's toolkit](deploy-to-veritone).
+>**Tip** Before getting started, you recommend you read about [training an engine](training-an-engine.md) and [engine developer's toolkit](deploy-to-veritone).
 
 ## Authentication and Authorization Tokens <!-- {docsify-ignore} -->
 
-Veritone uses OAuth 2.0 protocol to authenticate, provide single sign-on, and generate tokens for use with APIs. It works by delegating user authentication to Veritone and then authorizing your application to obtain specific user account data while keeping usernames, passwords, and other information private.
+Veritone uses OAuth 2.0 protocol to authenticate, provide single sign-on, and generate tokens for use with APIs. Veritone lets you authenticate using tokens, authorize your application, and provide specific user account data while keeping usernames, passwords, and other information private.
+
+
 
 ## Expected Result <!-- {docsify-ignore} -->
 
-By the end of this tutorial, you would have learnt how to generate various types of tokens in Veritone. You will also learn how to troubleshoot common issues with tokens.
+By the end of this tutorial, you would have learnt how to generate various types of tokens in Veritone. You will understand what are [user tokens](#user-tokens), [API keys](#api-keys), and [Engine tokens](#engine-keys). You will also learn how to [troubleshoot common issues with tokens](#troubleshooting-tokens).
 
-## Tokens in Veritone <!-- {docsify-ignore} -->
+## Using Tokens in Veritone <!-- {docsify-ignore} -->
 
-First, as noted on the main [authentication page](/apis/authentication), the Veritone API accepts authentication in the standard form of a bearer token in the HTTP `Authorization` header:
+All Veritone APIs accept authentication in the standard form of bearer token as a part of the HTTP `Authorization` header - similar to the [authentication API](/apis/authentication):
 
 ```bash
 curl https://api.veritone.com/v3/graphql -H 'Authorization: Bearer <token goes here> ' -H 'Content-Type: application/json' -d '{"query" : "query { me { id }}"}'
 ```
 
-This is the _only_ authentication method accepted by the API.
-Interactive user interfaces acquire and submit this token on behalf of the user.
 
-A token is always an opaque string of letters, numbers, and the characters `-` and `:`.
 
-The token serves to 1) identify the client to the Veritone platform and
+This is the _only_ authentication method accepted by the API. All user interfaces that interact with Veritone will have to use tokens to provide authentication for users. A token is a hash string consisting of letters, numbers, and the characters `-` and `:`. It both identifies a client on the Veritone platform and provides the rights and privileges the client has over resources.
 
-2) describe the rights and privileges the client has over resources.
+There are multiple types of tokens that a client may use depending on the wheather the client is developing an engine, developing an application,
+or performing ad-hoc testing:
 
-There are several types of tokens that a client developer may come across,
-depending on whether they are developing an engine, developing an application,
-or doing ad-hoc testing.
+- [User Tokens](#user-tokens): Session-based tokens that expire when the session ends.
+- [API Keys](#api-keys): Persistent tokens that are used for long-running services.
+- [Engine Tokens](#engine-tokens): Single-task tokens that come with a built-in set of rights. 
 
 
 
 ### User Tokens
 
-A user, or session-based token, is scoped to an individual user within an organization. User tokens are not persistent; they expire.
+A user token, also called a session-based token, is generated for an individual user within an organization. They are not persistent and expire when the session expires. You must use user tokens for all end-user applications - web-based, mobile, or otherwise. To generate a user token, the user must have an account on the Veritone platform for the target environment, such as http://https://www.veritone.com/login/#/. All user accounts are created within an organization by organization administrators or by Veritone.
 
-User tokens should be used within any interactive, end-user application, whether it be web-based, mobile, or otherwise. The user must have an
-account on the Veritone platform within the target environment (for example, [http://https://www.veritone.com/login/#/]). A user account is created within an organization by organization administrators or Veritone staff.
+Each user is granted privileges or roles within an organization, and each role includes certain functional rights that are enforced in the API. For example, a user will "Developer Editor" role in the "Developer" platform application has the rights required to list, create, and update the organization's engines. This would mean that the user has access to the methods `engines(...)`, `createEngine(...)`, `updateEngine(...)`, and other related queries and mutation. 
 
-Each user is granted certain privileges, or roles, within the organization. Each role carries with it certain functional rights enforced within the API.
-For example, a user with the "Developer Editor" role within the "Developer" platform application has rights required to list, create, and update
-the organization's engines with `engines(...)`, `createEngine(...)`, `updateEngine(...)`, and other related queries and mutation.
+The organization administrator or Veritone support can provision accounts and modify roles. An organization administrator uses the main Veritone administration interface to manage users. Administrators can assign roles to users based on the applications and features that are provisioned for the organization. For example, you organization must have access to Veritone Developer Application (VDA) in order for any of its users to have the "Developer" roles.
 
-To provision a user account or modify roles, contact your organization administrator or Veritone support. The organization administrator can
-manage users with the main Veritone administration interface.
+Interactive user applications must authenticate users, acquire a session token, and send the token back to the user. The application code will need to use the session token for each API request. In this case, you must use the *[OAuth flow](/apis/authentication)* method to authenticate. OAuth is an industry standard and is both secure and flexible. 
 
-The roles that are available to assign to users depend on the applications and features that are provisioned for the organization. For example,
-and organization must be entitled to use the Veritone Developer Application (VDA) in order for any of its users to have the "Developer" roles.
-
-If you are _using_ an interactive user application, the application will authenticate you, acquire a token, and send the token on your behalf.
-You might need to have certain roles on your account in order for the application's features to work, but you do not need to worry about
-tokens or authentication.
-
-If you are _developing_ an interactive user application, then the application code will need to authenticate the user to acquire the session
-token and then provide that token with every API request.
-
-The preferred method to authenticate in this case is _OAuth flow_, as described [here](/apis/authentication). OAuth is an industry standard and is
-secure and flexible with a rich set of tooling and infrastructure to support it.
-
-In certain situations a client application might not be able to use OAuth. Such clients can authenticate directly to the Veritone API using the
-`userLogin` mutation.
+When an application is unable to use OAuth, it must authenticate directly using the Veritone API's `userLogin` mutation as shown below:
 
 ```graphql
 mutation {
@@ -76,7 +58,7 @@ mutation {
 }
 ```
 
-If successful, a token is returned:
+If successful, a user token is returned that you can use to authenticate for each request:
 
 ```json
 {
@@ -88,81 +70,66 @@ If successful, a token is returned:
 }
 ```
 
-This user token can then be used to authenticate to the API.
 
-_Important_:  An application should log in _once_ and use the resulting token for the duration of the session. Do _not_ log in before every request!
+
+> You need to get the token once during the session and use it for all methods. You do not need get token for each request.
+
+
 
 ### API Keys 
 
-Some ecosystem developers only build system integrations or engines and may never have a cause to deal with user accounts or tokens.
+API keys are specially provisioned and persistent tokens. These are used by some developers who build only system integrations or engines and may never need create user accounts or tokens. You can use API keys to test engine code when you intend to use long-running system components that interact with Veritone. For example, consider a service such as a webhook handler that needs to use the Veritone API. The service needs to have persistent token that provide appropriate access to the Veritone platform. In this case, you can acquire an API key with appropriate rights and configure the service to send API keys when authenticating the API.
 
-Such developers will generally rely on specially provisioned, persistent tokens called API keys.
+**To create an API key:**
 
-API keys can be used for testing engine code and for intended for long-running system components. For example, if you have a service such as a webhook handler that needs to use the Veritone API, you can acquire an API key with appropriate rights and configure your service to send it when authenticating to the API.
+1. In the Veritone Admin application, navigate to your organization's **Overview** page.
+2. Click **API Keys** tile and click **Add Token**.
+3. Enter a unique name for the token.
+4. Select appropriate rights. Ensure that you select only the rights that are required.
+5. Click **Save** to view the token.
 
-To provision an API key, your organization administrator can use the administration interface.
+You can copy the token and store it safely for future use. For security reasons, the UI does not display actual tokens in the listing. You can always update the rights on this page and generate a new token. 
 
-* Go to the Veritone Admin app
-* Navigate to the organization overview page for your organization
-* Click the "API Keys" tile
-* Click "Add token"
-* Give the token a distinct name that indicates its purpose (for eample, "webhook-handler")
-* Select appropriate rights. Use caution and do not add more rights than are strictly necessary.
-  They can be updated later if necessary.
-* When you click "Save", the entire token will be displayed.
-  Copy it to the clipboard and store it somewhere safe.
-  For security reasons, the UI does not display actual tokens in the listing.
-* If necessary, come back to this tile later to edit the token and change its rights.
-  You can also revoke the token from this page.
+> Note: API keys are sensitive information. They persist until revoked and provide a broad access to your organization's data. You must store them securely and share them only with trusted users.
 
-_Warning_:  API keys are sensitive information. They are persistent, lasting until revoked, and enable broad access to your organization's data.
-Store them only in secure locations and give them out only to trusted users with a true need for the access.
 
-In some cases Veritone support may serve as organization administrator and provide API key.
 
-Like user tokens, API key are given functional rights. Within a given operation, and API keys has implicit access to all of your organization's
-data. For example, an API key with the 'read TDO' right can read _all_ of your organization's TDOs.
+In some cases, Veritone support provides an API key as an administrator.  Similar to User Tokens, API Keys give functional rights to your organization's data. For example, an API key with the 'read TDO' right can read _all_ of your organization's TDOs.
+
+
 
 ### Engine Tokens
 
- Engine processing poses a complex authorization problem.
+Engine tokens are single-task tokens that come with a built-in set of rights. This token allows the engine to perform its intended function on the target data _and nothing else_.  Engine tokens are generated by the platform system components during engine execution and are intended for one-time use for a specific job. 
 
-As a cognitive processing consumer, you create or ingest content and then run a variety of engines against that content. Whether you do so using the Veritone CMS application or some other method, you select content and select engines. You implicitly authorize
-the engines to access _that specific content_.
+> **Note:** Engine Tokens are not suitable for testing engine code during development. You must use an API key for that.
 
-The engines can include core Veritone engines as well as third-party engines produced by the Veritone developer ecosystem. You might, as a consumer,
-not even know exactly which engines are being run. For the engine to work and produce results, the engine code must have access to the content you ran it on (typically a TDO and associated assets). The engine must also be able to store its output and associate it with your content (typically as a new asset on the target TDO).
+You create or ingest content across a variety of engines for your application cognitive processing. Whether processing using the Veritone CMS application or any other method, you select content and the engines required. You then authorize the engines to access that specific content. These engines could be Veritone engines and also third-party engine produced in the Veritone developer ecosystem. As a consumer, you may not know all the engines that run. The engine code must have access to the content such as a TDO and associated assets. The engine should also be able to store its output and associated the output with your content (typically as a new asset on the target TDO). However, engines should not be able to access any other content in your organization. They should not be able to modify your content in ways other than the intended. 
 
-However, the engine should _not_ be able to access any _other_ content within your organization. Nor should it be able to modify your content
-in unexpected ways. For example, say you have uploaded two media files to CMS:
 
-* `meetingRecording.mp4`
-* `securityCameraStream-2018-05-08.mp4`
 
-Each upload results in a new TDO with a single media asset. You then use the CMS interface to run the default transcription engine against `meetingRecording.mp4`. This creates a new job with several tasks:  one for transcoding, one for transcription, perhaps others.
+For example, consider a scenario where you have uploaded two media files to CMS `meetingRecording.mp4` and `securityCameraStream-2018-05-08.mp4`. Each of the upload results in a new TDO with a single media asset. You use the CMS interface to run the default transcription engine against the file `meetingRecording.mp4`. This creates a new job with several tasks such as transcoding job, transcription job, and so on. The transcription engine than uses the Veritone API to retrieve and process the content, and then store the results. 
 
-The transcription engine will use the Veritone API to retrieve and process your content and store its results.
-The engine should be able to:
+In this process, the engine *should be able to*:
 
 * retrieve metadata about `meetingRecording.mp4`
 * download `meetingRecording.mp4`
-* update the status of its own task
-* create and upload an asset containing the transcript and attach it to
-  the TDO for `meetingRecording.mp4`
+* update the status of its task
+* create and upload an asset containing the transcript
+* attach the asset to the TDO for `meetingRecording.mp4`
 
-The engine should _not_ be able to:
+More importantly, the engine *should not be able to*:
 
 * retrieve metadata about `securityCameraStream-2018-05-08.mp4`
 * delete the media asset for `meetingRecording.mp4`
 * update the status of the transcoding engine's task _or_ any other task
-* retrieve or modify other types of data in your organization, such as
-  user information, libraries, etc.
+* retrieve or modify other types of data in your organization, such as user information, libraries, and so on.
 
-In other words, when processing a task, an engine should have permission _only_ to access the data targeted in the task and write its own results to the appropriate location.
 
-To enforce these constraints, the platform generates a special, single-use token for each task. The token comes with a built-in set of rights that allow the engine to perform its intended function on the target data _and nothing else_. Since the token is intended for one-time use in a single engine task, it expires after an appropriate time window.
 
-When examining the rights associated with an engine token through the API (see below for details), you will see something like this:
+To ensure the engine has access to only what is required, the platform generates a single-user token for each task. The token includes a built-in set of rights that lets the engine perform its intended function on the target data and *nothing else*. The token expires after an appropriate time window. 
+
+Here is a sample engine token and its associated rights:
 
 ```json
 {
@@ -189,49 +156,31 @@ When examining the rights associated with an engine token through the API (see b
 }
 ```
 
-Note that the rights include a limited set of functional permissions appropriate for the engine (in this case, read a TDO and update its task) _and_
-rights to a specific set of objects:  the job and task object under which the engine was invoked, and the TDO that it will process.
 
-Certain rights are also derived from the those rights declared in the token. For example, an engine can access an asset it just created, as long as it
-sets source data on that asset with the correct task ID. Any attempt using this engine token (whether by the engine at runtime or in manual testing) to perform any other type of operation or access any other data will result in a `not_allowed` error. For example, with the above sample token rights, an engine cannot invoke `updateTDO` on _any_ TDO (including its target) or call `updateTask` on any task other than the ID specified in `resources.Task`.
 
-Engine tokens are generated by the platform system components during engine execution and are intended for one-time use for a specific job.
-Thus, they are not suitable for testing engine code during development. For that purpose, use an API key as described above.
+Note that the rights included provide a limited set of rights required for the engine and rights to a specific set of objects. There are some additional rights that are derived from the rights declared in the token. For example, an engine can access an asset it created, as long as it sets source data on that asset with the correct task ID. 
+
+If you try to use the engine token for any other operation or to access any other data, then it results in a `not_allowed` error. For example, in the above sample token rights, the engine cannot invoke `updateTDO` on _any_ TDO (including its target) or call `updateTask` on any task other than the ID specified in `resources.Task`.
+
+
 
 ## Troubleshooting Tokens
 
-The Veritone GraphQL API authorizes access by functional rights at the level of individual fields within the top-level GraphQL query.
-Error responses follow the general pattern described in [Error Codes](/apis/error-codes.md) -- the HTTP request will return
-with HTTP 200, the `errors` section of the payload will be non-empty and contain the message and other information about the error,
-and the affected field in the `data` element will be `null`. The error type is listed in the `name` field. Most authorization errors surface as `not_allowed`. You may occasionally see `not_found`.
+The Veritone GraphQL API authorizes access by functional rights at individual field-level. The Veritone API requires authorization to access resources and operations. For example, when you create a TDO it is available for other other organizations' users only if you make it public.
 
-The API enforces authorization on _resources_ as well as operations. For example, if you create a temporal data object (TDO) and do not make it
-public, users from other organizations do not have any access to it. If you do make the TDO public, then users from other organizations
-can read the TDO and its data, but not modify it in any way.
+The error responses follow the general [Error Codes](/apis/error-codes.md) pattern. The HTTP request returns 200, the `errors` section of the payload will contain the message and other information about the error, and the affected field in the `data` element will be `null`.  The error type is listed in the `name` field.  The errors caused by tokens mostly have an error type of `not_allowed`, and in some occasions `not_found`.  A  `not_allowed` error occurs when you try to access a field, query or mutation without authorization. A `not_found` error occurs when the entity you  are trying to access does not exist.
 
-The error messages and payloads that the API returns include as much detail as is possible to share without potentially compromising the confidentiality and integrity of your data.
+The error messages and payloads that the API returns include as much detail as is possible to share without compromising the confidentiality and integrity of your data.
 
-### "not_allowed" Errors
+### *not_allowed* Errors
 
-A `not_allowed` error can occur under normal conditions when a client attempts to access some field, query, or mutation that it is not authorized to use. It does not indicate an error in the server or API.
+A `not_allowed` error occur when you try to a field, query, or mutation that you do not have authorization to access. To access such an entity, you must:
 
-Resolution steps may include:
+* Change tokens. For example, if you are using a user token to test engine code, then you must try changing to an engine token. 
+* Remove the affected field, query, or mutation from your request. You can do this in case the entity is not mandatory to access.
+* Contact your organization admin and request for additional rights. For example, if you are developing an engine, you should probably have the "developer editor" role. If you are writing a system integration that creates jobs using an API token, that token may need "full job permission" rights.
 
-* Switch tokens. For example, if you are using a user token to test
-  engine code, switch to an engine token or API token for a more realistic
-  test
-* Remove the affected field, query, or mutation from your request. If
-  the field is not strictly necessary for your use case, simply do not use it.
-* Get help from your organization admin to give your user or API token
-  additional rights. For example, if you are developing an engine, you should
-  probably have the "developer editor" role. If you are writing a system
-  integration that creates jobs using an API token, that token may need
-  "full job permission" rights.
-
-To handle a `not_allowed` error, first examine the entire response payload
-and the token itself.
-
-Here's a sample `createEngine` attempt:
+To handle a `not_allowed` error, you must first examine the entire response payload and then the token. Below is a sample `createEngine` attempt:
 
 ```graphql
 mutation {
@@ -245,8 +194,7 @@ mutation {
 }
 ```
 
-And here's the response for a token that does not have sufficient rights
-to create an engine:
+The mutation resulted in a not_allowed error because of insufficient rights and returned the below output:
 
 ```json
 {
@@ -284,14 +232,13 @@ to create an engine:
 }
 ```
 
-The Veritone API provides some queries that can be useful for understanding
-what client information is associated with a given token and what rights are
-associated with it.
+To understand the rights associated with a user or token you can get user information and troubleshoot the token.
 
-For example, the following query will return some information about the
-authenticated user, their organization, and the functional rights available.
-This is just an example - additional fields can be added to the user and
-organization fields as needed.
+
+
+#### Getting user information
+
+The Veritone API provides `myrights` query that can be used to understand the client information and rights associated with a given token. For example, the following query returns information about the authenticated user, their organization, and the functional rights available. Note that this is an example and you can add or remove details based on your requirements.
 
 ```graphql
 query {
@@ -310,10 +257,11 @@ query {
 }
 ```
 
-Since our Sandbox is an interactive, browser-based application that requires
-the user be logged into the platform, it implicitly will only use the user-scoped
-session token. It isn't ideal for testing with or troubleshooting the other
-token types. For this purpose (only) we use a raw HTTP client such as `curl`.
+
+
+The Sandbox is an interactive and browser-based application that requires the user to be logged into the platform, and requires user tokens. You cannot use the Sandbox for testing or troubleshooting the other token types. 
+
+We could use a raw HTTP client such as `curl` to test and troubleshoot:
 
 ```bash
 curl https://api.veritone.com/v3/graphql \
@@ -322,9 +270,9 @@ curl https://api.veritone.com/v3/graphql \
   -d '{"query": "query { me { id name organization { id name }} myRights { operations resources }}"}'
 ```
 
-The details of the response will depend on the token in question.
-Just for example, for a user who has the developer editor role
-we might see something like the following.
+
+
+The details of the response depends on token. For example, below is a response for a user who has the developer editor role:
 
 ```json
 {
@@ -377,27 +325,18 @@ we might see something like the following.
 }
 ```
 
-The details of the `myRights` payload are used and managed internally
-and subject to change. However, they may still suffice to give a general
-idea of what rights a token has and why certain GraphQL queries or
-mutations return a `not_allowed` error. For example, `job.create` is required
+
+
+The details of the `myRights` payload are used and managed internally and subject to change. However, it provides they will provide an idea of what rights a token has and why certain GraphQL queries or mutations return a `not_allowed` error. For example, `job.create` is required
 for `createJob`.
 
-You may also encounter a `not_allowed` if you attempt an unauthorized
-operation on a resource that you can read, but not edit.
-For example, if you attempt to run `updateTDO` on a TDO that is owned
-by another organization but is public (readable to you), you will
-receive `not_allowed`. Similarly, if you run `updateTDO` on a TDO that
-is owned by your organization _but_ your user or API key does not have
-permission to update TDOs, you will receive `not_allowed`.
+You may also get a `not_allowed` error when you try to edit a resource that you can read. For example, if you attempt to run `updateTDO` on a public TDO owned by another organization, you will receive `not_allowed`. Similarly, you will get `not_allowed` error when you run `updateTDO` on a TDO that is owned by your organization _but_ your user or API key does not have permission to update TDOs.
 
 ### "not_found" Errors
 
-If you do not have read access to a given resource, for example if it is
-owned by another organization and is private, the resource is effectively
-invisible to you through the API. It will not be returned, even in partial
-form, in any listing. For example, the following query returns only TDOs
-to which the client has at least read access:
+You get `not_found` error if you try to access a resource that is private or does not exist. For example, if you do not have read access to a resource, which owned by another organization and is private, the resource is effectively invisible to you through the API. 
+
+For example, the following query returns only TDOs to which the client has at least read access:
 
 ```graphql
 query {
@@ -409,9 +348,9 @@ query {
 }
 ```
 
-Inaccessible resources are simply not returned. There is no error.
 
-However, this query attempts to access a specific resource by ID:
+
+The resources that are inaccessible resources are not returned and there is no error. However, when you try to access a specific resource by ID, as shown below, you get a `not_found` error.
 
 ```graphql
 query {
@@ -421,8 +360,9 @@ query {
 }
 ```
 
-If the resource does not exist _or_ does exist but you do not have access
-to it, you'll receive a `not_found`:
+
+
+If the resource does not exist _or_ you do not have access to it, then you get a `not_found` error:
 
 ```json
 {
@@ -444,28 +384,20 @@ to it, you'll receive a `not_found`:
 }
 ```
 
-In the latter case, you must of course have got the ID from somewhere in
-order to bootstrap the query. The object may have been made private,
-or un-shared, at some point. Or it may have been passed through some side channel
-(email, instant message, etc.) by a user who does have access to it.
-In any case, unauthorized objects are effectively invisible; the caller is
-not entitled to know if they exist or not.
 
-An unexpected `not_found` can indicate that:
 
-* the resource has been deleted
-* the resource is owned by another organization and your access has been revoked
-* you are inadvertently using a token for a different org (such as a personal
-  free developer account, versus an organization for you company)
-* you are using an engine token that was created for a different job (this is a common mis-step)
+An `not_found` error indicates that:
 
-Resolutions may include:
+* the resource does not exist. 
+* the resource is owned by another organization and you do not have access to it. 
+* the user token you are using does not have the required privileges.
+* the engine token you are using was created for a different job.
 
-* Just don't attempt to access the resource. Ignore the error and continue,
-  or, if you're testing, use a resource that you do have access to.
-* Locate the owner of the resource (whoever gave you its ID) and ask them to
-  share it with your organization or make it public (they might, of course, decline to do so).
-* If you're using an API token, ensure that it is for the correct organization.
-* If you're using an engine token, generate a fresh engine payload and test task.
-  This payload will contain a new token with appropriate rights for the
+
+
+To resolve an  `not_found` error you may:
+
+* Request the resource owner to either share the resource with your organization or make it public. 
+* Ensure that you are using an API token of the correct organization.
+* If using an engine token, then regenerate the engine payload and try again. This payload will include a new token with appropriate rights for the
   resources referenced in the task.
